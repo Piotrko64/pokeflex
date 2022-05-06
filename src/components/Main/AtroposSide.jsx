@@ -1,13 +1,11 @@
 import Atropos from "atropos/react";
-import styled from "styled-components";
-import Stats from "../pokemon/Stats";
 import { examplePokemons } from "../../data/examplePokemons";
 import CardPokemon from "../pokemon/CardPokemon";
 
 function AtroposSide() {
     return (
         <Atropos className="atropos">
-            <CardPokemon />
+            <CardPokemon value={examplePokemons[0]} />
         </Atropos>
         // </AtroposCard>
     );

@@ -28,11 +28,12 @@ const OneStat = styled.div`
     font-family: "Koulen", cursive;
 `;
 const ImportantStat = styled.div`
-    font-size: 45px;
+    font-size: 35px;
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;
     text-align: center;
+    border-bottom-radius: 25px;
     text-shadow: 0px 0px 2px #000000;
 `;
 const Electro = styled(ImportantStat)`
@@ -58,8 +59,8 @@ const Fire = styled(ImportantStat)`
 `;
 ////
 
-function Stats(props) {
-    const { name, type, hp, attack, specialAttack, defense, revenge, speed } = props.value;
+function Stats({ value }) {
+    const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
     return (
         <>
             <TableWithAll>

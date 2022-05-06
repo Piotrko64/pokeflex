@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const AllLeft = styled.div`
@@ -41,6 +42,7 @@ const PlayQuick = styled.button`
     padding: 0px;
     border-radius: 15px;
     transition: all 0.2s ease;
+    width: 100%;
     &:hover {
         transform: scale(1.1);
     }
@@ -53,7 +55,9 @@ function LeftSide() {
                 PokeFLEX <Demo>DEMO</Demo>
             </Welcome>
             <Describe>Card Game by FRONT FLEX</Describe>
-            <PlayQuick>Quick Game</PlayQuick>
+            <Link to="/QuickGame">
+                <PlayQuick>Quick Game</PlayQuick>
+            </Link>
         </AllLeft>
     );
 }
