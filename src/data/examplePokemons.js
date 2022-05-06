@@ -1,5 +1,6 @@
 export const examplePokemons = [
     {
+        id: "Charmander060520221905",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",
         type: "Fire",
@@ -11,6 +12,7 @@ export const examplePokemons = [
         revenge: 0,
     },
     {
+        id: "Pikachu060520221905",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         name: "Pikachu",
         type: "Electro",
@@ -22,6 +24,7 @@ export const examplePokemons = [
         revenge: 3,
     },
     {
+        id: "Barbasaur060520222215Grass",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         name: "Bulbasaur",
         type: "Grass",
