@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { BsFillHeartFill, BsFillShieldFill } from "react-icons/bs";
 import { GiBroadsword, GiZeusSword, GiSpikes } from "react-icons/gi";
 import { RiSpeedFill } from "react-icons/ri";
+import { keyframes } from "styled-components";
 const TableWithAll = styled.div`
     display: flex;
     justify-content: space-around;
@@ -27,6 +28,17 @@ const OneStat = styled.div`
     padding: 0 30px;
     font-family: "Koulen", cursive;
 `;
+const rotate = keyframes`
+  0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+`;
 const ImportantStat = styled.div`
     font-size: 35px;
     font-family: "Koulen", cursive;
@@ -35,6 +47,8 @@ const ImportantStat = styled.div`
     text-align: center;
     border-bottom-radius: 25px;
     text-shadow: 0px 0px 2px #000000;
+    background-size: 125%;
+    animation: ${rotate} 12s ease infinite;
 `;
 const Electro = styled(ImportantStat)`
     background-color: rgba(255, 224, 143, 1);

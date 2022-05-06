@@ -21,4 +21,15 @@ export const examplePokemons = [
         defense: 1,
         revenge: 3,
     },
+    {
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+        name: "Bulbasaur",
+        type: "Grass",
+        hp: 34,
+        attack: 6,
+        specialAttack: 7,
+        speed: 12,
+        defense: 3,
+        revenge: 2,
+    },
 ];
