@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@keyframes rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    background: rgb(115, 29, 150);
+    background: linear-gradient(
+        90deg,
+        rgba(115, 29, 150, 1) 0%,
+        rgba(18, 75, 145, 1) 47%,
+        rgb(155, 13, 53) 100%
+    );
+    background-size: 300%;
+    width: 100%;
+    min-height: 100vh;
+    animation: rotate 10s ease-in-out infinite;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.atropos {
+    position: relative;
+    width: 320px;
+
+    border-radius: 25px;
+    .atropos-inner {
+        border-radius: 25px;
+    }
+    img {
+        height: 240px;
+    }
+}
