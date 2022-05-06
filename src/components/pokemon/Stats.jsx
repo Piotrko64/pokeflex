@@ -30,13 +30,16 @@ const OneStat = styled.div`
 `;
 const rotate = keyframes`
   0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
     }
-    50% {
+    25% {
+        background-position: 25% 100%;
+    }
+    75% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
     }
 `;
 const ImportantStat = styled.div`
@@ -69,6 +72,26 @@ const Fire = styled(ImportantStat)`
         rgba(125, 30, 30, 1) 0%,
         rgba(193, 147, 95, 1) 100%,
         rgba(239, 176, 110, 1) 100%
+    );
+`;
+const Grass = styled(ImportantStat)`
+    background: rgb(58, 172, 47);
+    background: linear-gradient(
+        106deg,
+        rgba(58, 172, 47, 1) 0%,
+        rgba(58, 97, 4, 1) 48%,
+
+        rgba(146, 203, 2, 1) 100%
+    );
+`;
+const Water = styled(ImportantStat)`
+    background: rgb(37, 186, 209);
+    background: linear-gradient(180deg, rgba(37, 186, 209, 1) 24%, rgba(44, 34, 221, 1) 84%);
+`;
+
+const Normal = styled(ImportantStat)`
+    background-color: grey;
+    
     );
 `;
 ////
@@ -130,8 +153,20 @@ function Stats({ value }) {
                                     <Fire>{type}</Fire>
                                 </>
                             );
+                        case "Grass":
+                            return (
+                                <>
+                                    <Grass>{type}</Grass>
+                                </>
+                            );
+                        case "Water":
+                            return (
+                                <>
+                                    <Water>{type}</Water>
+                                </>
+                            );
                         default:
-                            return "XDD";
+                            return <Normal>Normal</Normal>;
                     }
                 })()}
                 {/* <ImportantStat>{type}</ImportantStat> */}

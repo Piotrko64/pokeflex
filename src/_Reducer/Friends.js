@@ -1,14 +1,15 @@
 import { examplePokemons } from "../data/examplePokemons";
 
-const stateFriends = {
-    myTeam: [...examplePokemons],
+const stateFight = {
+    myTeam: [examplePokemons[0], examplePokemons[1], examplePokemons[3]],
+    enemyTeam: [examplePokemons[2], examplePokemons[4], examplePokemons[5]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
     whoIsAttackID: "",
 };
 
-const FriendReducer = (state = stateFriends, action) => {
+const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
         case "attack":
             let whoAttack;
@@ -28,7 +29,8 @@ const FriendReducer = (state = stateFriends, action) => {
         case "chooseEnemy":
             let whoIsAttack;
             let whoIsAttackID;
-            state.myTeam.forEach((e) => {
+            console.log(state.enemyTeam);
+            state.enemyTeam.forEach((e) => {
                 if (e.id === action.payload) {
                     whoIsAttack = e.name;
                     whoIsAttackID = e.id;
@@ -42,24 +44,28 @@ const FriendReducer = (state = stateFriends, action) => {
             let MeIndex;
             let EnemyIndex;
             state.myTeam.forEach((e, i) => {
-                console.log("IDDDDD", e.id, state.whoIsAttackID);
+                console.log(e);
                 if (e.id === state.whoAttackID) {
                     Me = { ...e };
                     MeIndex = i;
-                } else if (e.id === state.whoIsAttackID) {
+                }
+            });
+            state.enemyTeam.forEach((e, i) => {
+                if (e.id === state.whoIsAttackID) {
                     Enemy = { ...e };
 
                     EnemyIndex = i;
                 }
             });
+            console.log(Enemy, Me);
             Enemy.hp -= Me.attack;
-            let stateAfterFight = [...state.myTeam];
-            stateAfterFight[EnemyIndex] = Enemy;
-            console.log({ ...state, myTeam: stateAfterFight });
+            let stateAfterFightEnemy = [...state.enemyTeam];
+            stateAfterFightEnemy[EnemyIndex] = Enemy;
+            console.log({ ...state, myTeam: stateAfterFightEnemy });
 
             return {
                 ...state,
-                myTeam: stateAfterFight,
+                enemyTeam: stateAfterFightEnemy,
                 whoAttack: "",
                 whoAttackID: "",
                 whoIsAttack: "",

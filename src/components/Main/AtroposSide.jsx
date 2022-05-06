@@ -1,14 +1,15 @@
 import Atropos from "atropos/react";
+import { useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import { examplePokemons } from "../../data/examplePokemons";
 import CardPokemon from "../pokemon/CardPokemon";
 
 function AtroposSide() {
-    return (
-        <Atropos className="atropos">
-            <CardPokemon value={examplePokemons[0]} />
-        </Atropos>
-        // </AtroposCard>
-    );
+    const [atroposPokemon, setAtroposPokemon] = useState(examplePokemons[0]);
+    useLayoutEffect(() => {
+        setAtroposPokemon(examplePokemons[Math.round(Math.random() * 5)]);
+    }, []);
+    return <CardPokemon value={atroposPokemon} />;
 }
 
 export default AtroposSide;

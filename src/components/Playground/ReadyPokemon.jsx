@@ -6,7 +6,7 @@ import { examplePokemons } from "../../data/examplePokemons";
 import { useDispatch, useSelector } from "react-redux";
 
 const Pokemon = styled.div`
-    transform: scale(0.75);
+    transform: scale(0.7);
     min-width: 280px;
 `;
 

@@ -1,6 +1,7 @@
 import { examplePokemons } from "../../data/examplePokemons";
 import Stats from "./Stats";
 import styled from "styled-components";
+import Atropos from "atropos/react";
 const Card = styled.div`
     height: 100%;
     width: 100%;
@@ -20,11 +21,13 @@ const Img = styled.img`
 `;
 function CardPokemon({ value }) {
     return (
-        <Card>
-            <Img data-atropos-opacity="1" data-atropos-offset="10" src={value.image} alt="" />
+        <Atropos className="atropos">
+            <Card>
+                <Img data-atropos-opacity="1" data-atropos-offset="10" src={value.image} alt="" />
 
-            <Stats value={value} />
-        </Card>
+                <Stats value={value} />
+            </Card>
+        </Atropos>
     );
 }
 
