@@ -21,13 +21,13 @@ function GroundForCards({ pokemons }) {
     useEffect(() => {
         console.log("ZMIAN", cardDivMe, target);
         if (cardDivMe) {
-            // cardDivMe.style.color = "red";
+            cardDivMe.style.color = "red";
         }
         if (target) {
             console.log(target);
         }
         console.log(cardDivMe);
-    }, [cardDivMe, target]);
+    }, [cardDivMe]);
     function move(e) {
         console.log(e);
         console.log("a", cardDivMe);

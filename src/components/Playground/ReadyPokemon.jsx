@@ -19,19 +19,20 @@ function ReadyPokemon(props) {
     function handleClick(e) {
         const { x, y } = pokemonRef.current.getBoundingClientRect();
         console.log(props.cardDiv);
-        props.setDiv(pokemonRef.current);
-        // if (!whoAttack) {
-        //     dispatch(attack(props.value.id));
-        //     await props.setDiv(pokemonRef.current);
 
-        //     console.log(props.cardDiv);
-        // } else {
-        //     dispatch(chooseEnemy(props.value.id));
+        if (!whoAttack) {
+            dispatch(attack(props.value.id));
+            console.log(pokemonRef);
+            props.setDiv(pokemonRef.current);
 
-        //     dispatch(fight());
-        //     props.setTarget(e);
-        //     props.move();
-        // }
+            console.log(props.cardDiv);
+        } else {
+            dispatch(chooseEnemy(props.value.id));
+
+            dispatch(fight());
+            props.setTarget(e);
+            props.move();
+        }
     }
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
