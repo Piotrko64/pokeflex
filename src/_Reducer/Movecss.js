@@ -1,20 +1,19 @@
 import { examplePokemons } from "../data/examplePokemons";
 
 const Coordinates = {
-    Me: [],
+    Me: "",
     FriendDiv: null,
-    Enemy: [],
+    Enemy: "",
 };
 
 const CoordinatesReducer = (state = Coordinates, action) => {
     switch (action.type) {
         case "whereIAm":
-            const { x, y } = action.payload;
-            return { ...state, Me: [x, y] };
+            console.log({ ...state, Me: action.payload });
+            return { ...state, Me: action.payload };
         case "whereIsEnemy":
-            const { xE, yE } = action.payload;
-            console.log({ ...state, Enemy: [xE, yE] });
-            return { ...state, Enemy: [xE, yE] };
+            console.log({ ...state, Enemy: action.payload });
+            return { ...state, Enemy: action.payload };
         case "friendDiv":
             console.log({ ...state, FriendDiv: action.payload });
             return { ...state, FriendDiv: action.payload };

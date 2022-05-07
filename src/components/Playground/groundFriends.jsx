@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
 import ReadyPokemon from "./ReadyPokemon";
+import { whereIAm } from "../../_Actions/mainAction";
 
 const ForCards = styled.div`
     display: grid;
@@ -16,35 +17,16 @@ const ForCards = styled.div`
 `;
 
 function GroundForCards({ pokemons }) {
-    const [cardDivMe, setCardDivMe] = useState("");
-    const [target, setTarget] = useState("");
-    useEffect(() => {
-        console.log("ZMIAN", cardDivMe, target);
-        if (cardDivMe) {
-            cardDivMe.style.color = "red";
-        }
-        if (target) {
-            console.log(target);
-        }
-        console.log(cardDivMe);
-    }, [cardDivMe]);
-    function move(e) {
-        console.log(e);
-        console.log("a", cardDivMe);
-        // cardDivMe.style.transform = `translateX(${e.target.pageY})`;
+    const dispatch = useDispatch();
+    const whoAttack = useSelector((state) => state.FriendsTeam.whoAttack);
+    function whichPokemonAttack(id) {
+        dispatch(whereIAm(id));
     }
     return (
         <>
             <ForCards>
                 {pokemons.map((el, i) => (
-                    <ReadyPokemon
-                        value={el}
-                        key={el.id}
-                        setDiv={(e) => setCardDivMe(e)}
-                        setTarget={(e) => setTarget(e)}
-                        cardDiv={cardDivMe}
-                        move={() => move}
-                    />
+                    <ReadyPokemon value={el} key={el.id} whichPokemonAttack={whichPokemonAttack} />
                 ))}
             </ForCards>
         </>

@@ -24,10 +24,13 @@ function QuickGame() {
     const whoIsAttack = useSelector((state) => state.FriendsTeam.whoIsAttack);
 
     return (
-        <WholeField>
-            <GroundForCards pokemons={FriendsTeam} />
-            <GroundForCards pokemons={EnemyTeam} />
-        </WholeField>
+        <>
+            <h1>{`${whoAttack} attack ${whoIsAttack}`} </h1>
+            <WholeField>
+                <GroundForCards pokemons={FriendsTeam} />
+                <GroundForCards pokemons={EnemyTeam} />
+            </WholeField>
+        </>
     );
 }
 
