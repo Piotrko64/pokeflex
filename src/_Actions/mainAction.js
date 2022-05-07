@@ -16,3 +16,29 @@ export const fight = () => {
         type: "fight",
     };
 };
+export const whereIAm = (x, y) => {
+    return {
+        type: "whereIAm",
+        payload: {
+            x,
+            y,
+        },
+    };
+};
+
+export const whereIsEnemy = (xE, yE) => {
+    return {
+        type: "whereIsEnemy",
+        payload: {
+            xE,
+            yE,
+        },
+    };
+};
+
+export const friendDiv = (div) => {
+    return {
+        type: "friendDiv",
+        payload: div,
+    };
+};

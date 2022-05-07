@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
-import { attack, chooseEnemy, fight } from "../../_Actions/mainAction";
+import { attack, chooseEnemy, fight, friendDiv, whereIAm, whereIsEnemy } from "../../_Actions/mainAction";
 import { examplePokemons } from "../../data/examplePokemons";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,25 +10,32 @@ const Pokemon = styled.div`
     min-width: 280px;
 `;
 
-function ReadyPokemon({ value }) {
+function ReadyPokemon(props) {
     const pokemonRef = useRef(null);
     const dispatch = useDispatch();
     const whoAttack = useSelector((state) => state.FriendsTeam.whoAttack);
-    const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
+    const where = useSelector((state) => state.CoordinatesReducer);
+
     function handleClick(e) {
-        console.log(e);
-        console.log(pokemonRef.current.getBoundingClientRect());
-        if (!whoAttack) {
-            dispatch(attack(value.id));
-        } else {
-            dispatch(chooseEnemy(value.id));
-            dispatch(fight());
-        }
-        console.log(whoAttack);
+        const { x, y } = pokemonRef.current.getBoundingClientRect();
+        console.log(props.cardDiv);
+        props.setDiv(pokemonRef.current);
+        // if (!whoAttack) {
+        //     dispatch(attack(props.value.id));
+        //     await props.setDiv(pokemonRef.current);
+
+        //     console.log(props.cardDiv);
+        // } else {
+        //     dispatch(chooseEnemy(props.value.id));
+
+        //     dispatch(fight());
+        //     props.setTarget(e);
+        //     props.move();
+        // }
     }
     return (
-        <Pokemon onClick={() => handleClick(value)} ref={pokemonRef}>
-            <CardPokemon value={value} />
+        <Pokemon onClick={handleClick} ref={pokemonRef}>
+            <CardPokemon value={props.value} />
         </Pokemon>
     );
 }

@@ -13,7 +13,6 @@ function App() {
                     <Route path="/" element={<MainPage />} />
                 </Routes>
             </BrowserRouter>
-            ,
         </React.Fragment>
     );
 }

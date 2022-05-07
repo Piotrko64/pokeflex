@@ -14,8 +14,7 @@ const FriendReducer = (state = stateFight, action) => {
         case "attack":
             let whoAttack;
             let whoAttackID;
-            console.log(state.myTeam);
-            console.log(state, action);
+
             window.state = state;
             state.myTeam.forEach((e) => {
                 if (e.id === action.payload) {
@@ -29,7 +28,7 @@ const FriendReducer = (state = stateFight, action) => {
         case "chooseEnemy":
             let whoIsAttack;
             let whoIsAttackID;
-            console.log(state.enemyTeam);
+
             state.enemyTeam.forEach((e) => {
                 if (e.id === action.payload) {
                     whoIsAttack = e.name;
@@ -44,7 +43,6 @@ const FriendReducer = (state = stateFight, action) => {
             let MeIndex;
             let EnemyIndex;
             state.myTeam.forEach((e, i) => {
-                console.log(e);
                 if (e.id === state.whoAttackID) {
                     Me = { ...e };
                     MeIndex = i;
@@ -57,11 +55,11 @@ const FriendReducer = (state = stateFight, action) => {
                     EnemyIndex = i;
                 }
             });
-            console.log(Enemy, Me);
+
             Enemy.hp -= Me.attack;
+            Enemy.defense -= 1;
             let stateAfterFightEnemy = [...state.enemyTeam];
             stateAfterFightEnemy[EnemyIndex] = Enemy;
-            console.log({ ...state, myTeam: stateAfterFightEnemy });
 
             return {
                 ...state,
