@@ -33,28 +33,19 @@ const FriendReducer = (state = stateFight, action) => {
             if (Choosing) {
                 return { ...state, whoAttack, whoAttackID };
             }
-            state.enemyTeam.forEach((e) => {
+            state.enemyTeam.forEach((e, i) => {
                 if (e.id === action.payload) {
-                    whoIsAttack = e.name;
-                    whoIsAttackID = e.id;
+                    Enemy = { ...e };
 
+                    EnemyIndex = i;
                     state.myTeam.forEach((f, fi) => {
                         if (f.id === state.whoAttackID) {
                             console.log(f);
                             Me = { ...f };
                             MeIndex = fi;
-                            console.log(Me);
                         }
                     });
-                    state.enemyTeam.forEach((en, i) => {
-                        console.log(state.whoIsAttackID);
-                        if (en.id === e.id) {
-                            Enemy = { ...en };
 
-                            EnemyIndex = i;
-                        }
-                    });
-                    console.log(Me);
                     if (Me.hp > Me.speed) {
                         Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
                     } else {
