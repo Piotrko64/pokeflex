@@ -8,20 +8,21 @@ const stateFight = {
     whoIsAttack: "",
     whoIsAttackID: "",
     whereIsEnemy: [],
+    allCoordinates: [],
 };
 let whoAttack = "";
 let whoAttackID = "";
-let whoIsAttack = "";
-let whoIsAttackID = "";
-function chooseAndFight(state, payload) {
+
+function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
     let Me;
     let Enemy;
     let MeIndex;
     let Choosing = false;
     let EnemyIndex;
-    let stateAfterFightEnemy = [...state.enemyTeam];
-    let stateAfterFightFriends = [...state.myTeam];
-    state.myTeam.forEach((e) => {
+    let stateAfterFightEnemy = [...teamEnemy];
+    let stateAfterFightFriends = [...teamFriends];
+    console.log(payload);
+    teamFriends.forEach((e) => {
         if (e.id === payload) {
             whoAttack = e.name;
             whoAttackID = e.id;
@@ -31,14 +32,13 @@ function chooseAndFight(state, payload) {
     if (Choosing) {
         return { ...state, whoAttack, whoAttackID };
     }
-    state.enemyTeam.forEach((e, i) => {
+    teamEnemy.forEach((e, i) => {
         if (e.id === payload) {
             Enemy = { ...e };
 
             EnemyIndex = i;
-            state.myTeam.forEach((f, fi) => {
+            teamFriends.forEach((f, fi) => {
                 if (f.id === state.whoAttackID) {
-                    console.log(f);
                     Me = { ...f };
                     MeIndex = fi;
                 }
@@ -64,7 +64,7 @@ function chooseAndFight(state, payload) {
                         break;
 
                     case "Water":
-                        state.myTeam.forEach((el) => {
+                        teamFriends.forEach((el) => {
                             el.hp++;
                         });
 
@@ -106,8 +106,8 @@ function chooseAndFight(state, payload) {
 
     return {
         ...state,
-        myTeam: stateAfterFightFriends,
-        enemyTeam: stateAfterFightEnemy,
+        enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
+        myTeam: computer ? stateAfterFightEnemy : stateAfterFightFriends,
         whoAttack: "",
         whoAttackID,
         whoIsAttack: "",
@@ -117,12 +117,19 @@ function chooseAndFight(state, payload) {
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
         case "choose":
-            return chooseAndFight(state, action.payload);
+            return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
+        case "computerMove":
+            return chooseAndFight(state, action.payload, state.enemyTeam, state.myTeam, true);
         case "animation":
             return { ...state, whereIsEnemy: action.payload };
 
         case "noEnemy":
             return { ...state, whoIsAttack: "" };
+
+        case "pushCoordinate":
+            const { id, coordinate } = action.payload;
+            console.log([...state.allCoordinates]);
+            return { ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] };
         default:
             return state;
     }

@@ -16,3 +16,15 @@ export const noEnemy = () => {
         type: "noEnemy",
     };
 };
+export const computerMove = (id) => {
+    return {
+        type: "computerMove",
+        payload: id,
+    };
+};
+export const pushCoordinate = (id, coordinate) => {
+    return {
+        type: "pushCoordinate",
+        payload: { id, coordinate },
+    };
+};

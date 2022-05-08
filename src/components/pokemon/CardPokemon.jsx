@@ -23,7 +23,7 @@ function CardPokemon({ value }) {
     return (
         <Atropos className="atropos">
             <Card>
-                <Img data-atropos-opacity="1" data-atropos-offset="10" src={value.image} alt="" />
+                <Img data-atropos-opacity="1" data-atropos-offset="15" src={value.image} alt="" />
 
                 <Stats value={value} />
             </Card>

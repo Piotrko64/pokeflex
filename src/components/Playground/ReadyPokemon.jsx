@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
-import { animation, choose, noEnemy } from "../../_Actions/mainAction";
-import { examplePokemons } from "../../data/examplePokemons";
+import { animation, choose, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const Pokemon = styled.div`
@@ -16,7 +15,7 @@ function ReadyPokemon(props) {
     const pokemonRef = useRef(null);
     const dispatch = useDispatch();
     const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
-    const myTeam = useSelector((state) => state.FriendsTeam.myTeam);
+    const All = useSelector((state) => state.FriendsTeam);
     const whoIsAttack = useSelector((state) => state.FriendsTeam.whoIsAttack);
     const whereIsEnemy = useSelector((state) => state.FriendsTeam.whereIsEnemy);
 
@@ -39,6 +38,15 @@ function ReadyPokemon(props) {
             }, 220);
         }
     }, [whereIsEnemy]);
+    useEffect(() => {}, [All]);
+    useEffect(() => {
+        dispatch(
+            pushCoordinate(props.value.id, [
+                pokemonRef.current.getBoundingClientRect().x,
+                pokemonRef.current.getBoundingClientRect().y,
+            ])
+        );
+    }, []);
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
             <CardPokemon value={props.value} />
