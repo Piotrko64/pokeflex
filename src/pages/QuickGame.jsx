@@ -17,6 +17,10 @@ const WholeField = styled.div`
     align-items: center;
     max-width: 1800px;
 `;
+const Cos = styled.div`
+    transform: translateX(80px);
+    transition: all 5s ease;
+`;
 function QuickGame() {
     const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
     const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
@@ -26,6 +30,7 @@ function QuickGame() {
     return (
         <>
             <h1>{`${whoAttack} attack ${whoIsAttack}`} </h1>
+            {whoAttack && <Cos>AAA</Cos>}
             <WholeField>
                 <GroundForCards pokemons={FriendsTeam} />
                 <GroundForCards pokemons={EnemyTeam} />

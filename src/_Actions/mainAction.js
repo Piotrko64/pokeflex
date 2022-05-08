@@ -11,6 +11,13 @@ export const chooseEnemy = (id) => {
     };
 };
 
+export const choose = (id) => {
+    return {
+        type: "choose",
+        payload: id,
+    };
+};
+
 export const fight = () => {
     return {
         type: "fight",

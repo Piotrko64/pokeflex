@@ -27,6 +27,10 @@ const OneStat = styled.div`
     color: white;
     padding: 0 30px;
     font-family: "Koulen", cursive;
+    color: ${(props) => {
+        if (props.hp < 1 || props.df < 1) return "#ff7070";
+        if (props.hp < props.speed) return "#ffba1f";
+    }};
 `;
 const rotate = keyframes`
   0% {
@@ -74,6 +78,17 @@ const Fire = styled(ImportantStat)`
         rgba(239, 176, 110, 1) 100%
     );
 `;
+
+const TurboFire = styled(ImportantStat)`
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 19%,
+        rgba(101, 5, 16, 1) 50%,
+        rgba(255, 70, 0, 1) 100%
+    );
+`;
+
 const Grass = styled(ImportantStat)`
     background: rgb(58, 172, 47);
     background: linear-gradient(
@@ -98,19 +113,21 @@ const Normal = styled(ImportantStat)`
 
 function Stats({ value }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
+    // const arrayStats = [{ icon: <BsFillHeartFill />, stat: {hp}
+    // }]
     return (
         <>
             <TableWithAll>
                 <ImportantStat>{name}</ImportantStat>
                 <GridStats>
                     <div data-atropos-offset="5">
-                        <OneStat isOdd>
+                        <OneStat isOdd hp={hp}>
                             {hp}
                             <BsFillHeartFill />
                         </OneStat>
                     </div>
                     <div data-atropos-offset="5">
-                        <OneStat>
+                        <OneStat df={defense}>
                             {defense} <BsFillShieldFill />
                         </OneStat>
                     </div>
@@ -121,7 +138,7 @@ function Stats({ value }) {
                         </OneStat>
                     </div>
                     <div data-atropos-offset="5">
-                        <OneStat>
+                        <OneStat speed={speed} hp={hp}>
                             {specialAttack}
                             <GiZeusSword />
                         </OneStat>
@@ -151,6 +168,12 @@ function Stats({ value }) {
                             return (
                                 <>
                                     <Fire>{type}</Fire>
+                                </>
+                            );
+                        case "Turbo Fire":
+                            return (
+                                <>
+                                    <TurboFire>{type}</TurboFire>
                                 </>
                             );
                         case "Grass":
