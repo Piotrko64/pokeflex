@@ -7,7 +7,7 @@ import CardPokemon from "../pokemon/CardPokemon";
 function AtroposSide() {
     const [atroposPokemon, setAtroposPokemon] = useState(examplePokemons[0]);
     useLayoutEffect(() => {
-        setAtroposPokemon(examplePokemons[Math.round(Math.random() * 5)]);
+        setAtroposPokemon(examplePokemons[Math.round(Math.random() * 8)]);
     }, []);
     return <CardPokemon value={atroposPokemon} />;
 }

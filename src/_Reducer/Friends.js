@@ -1,8 +1,8 @@
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
-    myTeam: [examplePokemons[0], examplePokemons[1], examplePokemons[3]],
-    enemyTeam: [examplePokemons[2], examplePokemons[4], examplePokemons[5]],
+    myTeam: [examplePokemons[2], examplePokemons[7], examplePokemons[5]],
+    enemyTeam: [examplePokemons[0], examplePokemons[3], examplePokemons[4]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -52,24 +52,22 @@ const FriendReducer = (state = stateFight, action) => {
                             Enemy = { ...en };
 
                             EnemyIndex = i;
-                            console.log(Enemy);
                         }
                     });
-                    console.log(Me, Enemy);
+                    console.log(Me);
                     if (Me.hp > Me.speed) {
                         Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
                     } else {
-                        Enemy.hp = Math.max(0, Enemy.hp - Me.Specialattack) || 0;
+                        Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
                     }
 
                     // TYPE
                     if (Me.type === "Turbo Fire") {
-                        Enemy.hp = Math.max(0, Enemy.hp - 4) || 0;
+                        Enemy.hp = Math.max(0, Enemy.hp - 3) || 0;
                         Me.type = "Fire";
                     } else if (Enemy.defense === 0) {
                         switch (Me.type) {
                             case "Electro":
-                                console.log("DZDZ");
                                 Me.revenge++;
                                 break;
                             case "Fire":
@@ -82,16 +80,38 @@ const FriendReducer = (state = stateFight, action) => {
                                 });
 
                                 break;
+
+                            case "Grass":
+                                Me.defense++;
+
+                                break;
+                            case "Normal":
+                                Me.hp += 2;
+
+                                break;
                             default:
+                                Me.hp += 2;
                                 return;
                         }
                     }
 
                     Enemy.defense = Math.max(0, Enemy.defense - 1);
                     Me.hp -= Enemy.revenge;
+                    // DEAD
+                    if (Me.hp < 1) {
+                        console.log("MNIEJ");
 
-                    stateAfterFightEnemy[EnemyIndex] = Enemy;
-                    stateAfterFightFriends[MeIndex] = Me;
+                        stateAfterFightFriends = stateAfterFightFriends.filter((s) => s.id !== Me.id);
+                    } else {
+                        stateAfterFightFriends[MeIndex] = Me;
+                    }
+                    if (Enemy.hp < 1) {
+                        console.log(Enemy, stateAfterFightEnemy);
+                        stateAfterFightEnemy = stateAfterFightEnemy.filter((enemy) => enemy.id !== Enemy.id);
+                        console.log(Enemy, stateAfterFightEnemy);
+                    } else {
+                        stateAfterFightEnemy[EnemyIndex] = Enemy;
+                    }
                 }
             });
 
@@ -105,7 +125,6 @@ const FriendReducer = (state = stateFight, action) => {
                 whoIsAttackID: "",
             };
         case "animation":
-            console.log(action.payload);
             return { ...state, whereIsEnemy: action.payload };
 
         case "noEnemy":

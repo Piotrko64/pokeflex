@@ -105,8 +105,12 @@ const Water = styled(ImportantStat)`
 `;
 
 const Normal = styled(ImportantStat)`
-    background-color: grey;
-    
+    background: rgb(156, 156, 156);
+    background: linear-gradient(
+        137deg,
+        rgba(156, 156, 156, 1) 8%,
+        rgba(42, 22, 24, 1) 45%,
+        rgba(126, 120, 117, 1) 91%
     );
 `;
 ////

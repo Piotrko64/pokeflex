@@ -27,7 +27,6 @@ function ReadyPokemon(props) {
         dispatch(animation([x, y]));
     }
     useEffect(() => {
-        console.log("a", props.value.id, "b", whoAttackID);
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
