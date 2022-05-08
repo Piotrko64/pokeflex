@@ -17,16 +17,11 @@ const ForCards = styled.div`
 `;
 
 function GroundForCards({ pokemons }) {
-    const dispatch = useDispatch();
-    const whoAttack = useSelector((state) => state.FriendsTeam.whoAttack);
-    function whichPokemonAttack(id) {
-        dispatch(whereIAm(id));
-    }
     return (
         <>
             <ForCards>
                 {pokemons.map((el, i) => (
-                    <ReadyPokemon value={el} key={el.id} whichPokemonAttack={whichPokemonAttack} />
+                    <ReadyPokemon value={el} key={el.id} />
                 ))}
             </ForCards>
         </>

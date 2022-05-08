@@ -1,16 +1,3 @@
-export const attack = (id) => {
-    return {
-        type: "attack",
-        payload: id,
-    };
-};
-export const chooseEnemy = (id) => {
-    return {
-        type: "chooseEnemy",
-        payload: id,
-    };
-};
-
 export const choose = (id) => {
     return {
         type: "choose",
@@ -18,28 +5,14 @@ export const choose = (id) => {
     };
 };
 
-export const fight = () => {
+export const animation = ([x, y]) => {
     return {
-        type: "fight",
+        type: "animation",
+        payload: [x, y],
     };
 };
-export const whereIAm = (id) => {
+export const noEnemy = () => {
     return {
-        type: "whereIAm",
-        payload: id,
-    };
-};
-
-export const whereIsEnemy = (id) => {
-    return {
-        type: "whereIsEnemy",
-        payload: id,
-    };
-};
-
-export const friendDiv = (div) => {
-    return {
-        type: "friendDiv",
-        payload: div,
+        type: "noEnemy",
     };
 };

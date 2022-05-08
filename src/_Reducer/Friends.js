@@ -7,6 +7,7 @@ const stateFight = {
     whoAttackID: "",
     whoIsAttack: "",
     whoIsAttackID: "",
+    whereIsEnemy: [],
 };
 let whoAttack = "";
 let whoAttackID = "";
@@ -14,19 +15,6 @@ let whoIsAttack = "";
 let whoIsAttackID = "";
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
-        // case "attack":
-        //     let whoAttack;
-        //     let whoAttackID;
-
-        //     state.myTeam.forEach((e) => {
-        //         if (e.id === action.payload) {
-        //             whoAttack = e.name;
-        //             whoAttackID = e.id;
-        //         }
-        //     });
-
-        //     return { ...state, whoAttack, whoAttackID };
-
         case "choose":
             let Me;
             let Enemy;
@@ -112,36 +100,16 @@ const FriendReducer = (state = stateFight, action) => {
                 myTeam: stateAfterFightFriends,
                 enemyTeam: stateAfterFightEnemy,
                 whoAttack: "",
-                whoAttackID: "",
+                whoAttackID,
                 whoIsAttack: "",
                 whoIsAttackID: "",
             };
+        case "animation":
+            console.log(action.payload);
+            return { ...state, whereIsEnemy: action.payload };
 
-        // case "chooseEnemy":
-        //     let whoIsAttack = "";
-        //     let whoIsAttackID = "";
-        //     let A = "";
-        //     let B = "";
-        //     state.myTeam.forEach((e) => {
-        //         if (e.id === action.payload) {
-        //             A = e.name;
-        //             B = e.id;
-        //         }
-        //     });
-        //     state.enemyTeam.forEach((e) => {
-        //         if (e.id === action.payload) {
-        //             whoIsAttack = e.name;
-        //             whoIsAttackID = e.id;
-        //             A = state.whoAttack;
-        //             B = state.whoAttackID;
-        //         }
-        //     });
-
-        //     return { ...state, whoAttack: A, whoAttackID: B, whoIsAttack, whoIsAttackID };
-
-        // case "fight":
-        //     //
-        //     break;
+        case "noEnemy":
+            return { ...state, whoIsAttack: "" };
         default:
             return state;
     }
