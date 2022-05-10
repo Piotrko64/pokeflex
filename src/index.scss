@@ -50,3 +50,22 @@ code {
 a {
     text-decoration: none;
 }
+//  CSS TRANSITION GROUP
+
+.animHP-enter {
+    opacity: 2;
+    transform: scale(0.7);
+}
+.animHP-enter-active {
+    opacity: 0;
+    transform: translateX(-250px);
+    transition: all 1500ms ease-in-out;
+}
+// .animHP-exit {
+//     opacity: 1;
+// }
+// .animHP-exit-active {
+//     opacity: 0;
+//     transform: translateX(200px);
+//     transition: opacity 1000ms, transform 1000ms;
+// }

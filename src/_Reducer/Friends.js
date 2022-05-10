@@ -1,8 +1,8 @@
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
-    myTeam: [examplePokemons[2], examplePokemons[7], examplePokemons[5]],
-    enemyTeam: [examplePokemons[0], examplePokemons[3], examplePokemons[4]],
+    myTeam: [examplePokemons[3], examplePokemons[4], examplePokemons[5]],
+    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[1]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -21,7 +21,7 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
     let EnemyIndex;
     let stateAfterFightEnemy = [...teamEnemy];
     let stateAfterFightFriends = [...teamFriends];
-    console.log(payload);
+
     teamFriends.forEach((e) => {
         if (e.id === payload) {
             whoAttack = e.name;
@@ -64,17 +64,25 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
                         break;
 
                     case "Water":
-                        teamFriends.forEach((el) => {
-                            el.hp++;
-                        });
+                        Me.defense++;
 
                         break;
 
                     case "Grass":
-                        Me.defense++;
+                        Me.hp += Enemy.revenge;
 
                         break;
                     case "Normal":
+                        stateAfterFightFriends = [...stateAfterFightFriends].map((e) => ({
+                            ...e,
+                            hp: e.hp++,
+                        }));
+                        console.log(
+                            [...stateAfterFightFriends].map((e) => ({
+                                ...e,
+                                hp: e.hp++,
+                            }))
+                        );
                         Me.hp += 2;
 
                         break;
@@ -88,16 +96,12 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
             Me.hp -= Enemy.revenge;
             // DEAD
             if (Me.hp < 1) {
-                console.log("MNIEJ");
-
                 stateAfterFightFriends = stateAfterFightFriends.filter((s) => s.id !== Me.id);
             } else {
                 stateAfterFightFriends[MeIndex] = Me;
             }
             if (Enemy.hp < 1) {
-                console.log(Enemy, stateAfterFightEnemy);
                 stateAfterFightEnemy = stateAfterFightEnemy.filter((enemy) => enemy.id !== Enemy.id);
-                console.log(Enemy, stateAfterFightEnemy);
             } else {
                 stateAfterFightEnemy[EnemyIndex] = Enemy;
             }
@@ -128,7 +132,7 @@ const FriendReducer = (state = stateFight, action) => {
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;
-            console.log([...state.allCoordinates]);
+
             return { ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] };
         default:
             return state;
