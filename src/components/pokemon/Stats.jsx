@@ -105,6 +105,11 @@ const Water = styled(ImportantStat)`
 `;
 
 const Normal = styled(ImportantStat)`
+    background: rgb(107, 39, 70);
+    background: linear-gradient(90deg, rgba(107, 39, 70, 1) 0%, rgba(45, 80, 117, 1) 100%);
+`;
+
+const Blocked = styled(ImportantStat)`
     background: rgb(156, 156, 156);
     background: linear-gradient(
         137deg,
@@ -113,6 +118,11 @@ const Normal = styled(ImportantStat)`
         rgba(126, 120, 117, 1) 91%
     );
 `;
+const Psychic = styled(ImportantStat)`
+    background: rgb(199, 28, 63);
+    background: radial-gradient(circle, rgba(199, 28, 63, 1) 35%, rgba(24, 51, 187, 1) 96%);
+`;
+
 ////
 
 function Stats({ value }) {
@@ -190,6 +200,16 @@ function Stats({ value }) {
                             return (
                                 <>
                                     <Water>{type}</Water>
+                                </>
+                            );
+                        case "Psychic":
+                            return <Psychic>{type}</Psychic>;
+                        case "Normal":
+                            return <Normal>{type}</Normal>;
+                        case "Blocked":
+                            return (
+                                <>
+                                    <Blocked>Blocked</Blocked>
                                 </>
                             );
                         default:

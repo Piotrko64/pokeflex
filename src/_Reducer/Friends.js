@@ -1,7 +1,8 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
-    myTeam: [examplePokemons[3], examplePokemons[4], examplePokemons[5]],
+    myTeam: [examplePokemons[8], examplePokemons[4], examplePokemons[5]],
     enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[1]],
     whoAttack: "",
     whoAttackID: "",
@@ -64,7 +65,11 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
                         break;
 
                     case "Water":
-                        Me.defense++;
+                        // IT WORKS
+                        stateAfterFightFriends = [...stateAfterFightFriends].map((e) => ({
+                            ...e,
+                            hp: e.hp + 1,
+                        }));
 
                         break;
 
@@ -73,21 +78,16 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
 
                         break;
                     case "Normal":
-                        stateAfterFightFriends = [...stateAfterFightFriends].map((e) => ({
-                            ...e,
-                            hp: e.hp++,
-                        }));
-                        console.log(
-                            [...stateAfterFightFriends].map((e) => ({
-                                ...e,
-                                hp: e.hp++,
-                            }))
-                        );
-                        Me.hp += 2;
-
+                        Me.hp += 1;
+                        Me.speed += 3;
                         break;
-                    default:
+                    case "Psychic":
+                        Me.type = Enemy.type;
                         Me.hp += 2;
+                        break;
+                    case "Block":
+                        return;
+                    default:
                         return;
                 }
             }
@@ -138,4 +138,15 @@ const FriendReducer = (state = stateFight, action) => {
             return state;
     }
 };
+
+// const friendReducerSlice = createSlice({
+//     name: "fight",
+//     initialState: stateFight,
+//     reducers: {
+//         choose: (state, action) => {
+//             chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
+//         },
+//     },
+// });
+
 export default FriendReducer;

@@ -33,12 +33,14 @@ function ReadyPokemon(props) {
         dispatch(animation([x, y]));
     }
     useEffect(() => {
+        console.log("aaaaaa", whereIsEnemy);
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
+
             pokemonRef.current.style.zIndex = `99`;
             pokemonRef.current.style.transform = `scale(0.8) translateX(${coordinateX}px) translateY(${coordinateY}px)`;
-
+            console.log("aaaaaa", whereIsEnemy);
             setTimeout(() => {
                 pokemonRef.current.style.zIndex = `9`;
                 pokemonRef.current.style.transform = `scale(0.7)`;
