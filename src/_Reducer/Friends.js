@@ -132,8 +132,10 @@ const FriendReducer = (state = stateFight, action) => {
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;
-
+            console.log({ ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] });
             return { ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] };
+        case "tokenPowerUse":
+            return action.payload;
         default:
             return state;
     }

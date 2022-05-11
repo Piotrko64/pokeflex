@@ -8,7 +8,7 @@ import { CSSTransition } from "react-transition-group";
 import { Transition } from "react-transition-group";
 
 const Pokemon = styled.div`
-    transform: scale(0.7);
+    transform: scale(0.685);
     min-width: 280px;
     z-index: 9;
     transition: all 0.2s ease-in-out;
@@ -29,11 +29,11 @@ function ReadyPokemon(props) {
     async function handleClick() {
         dispatch(choose(props.value.id));
         const { x, y } = pokemonRef.current.getBoundingClientRect();
-
+        console.log(x, y);
         dispatch(animation([x, y]));
     }
     useEffect(() => {
-        console.log("aaaaaa", whereIsEnemy);
+        console.log("aaaaaa", whereIsEnemy[0]);
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
@@ -49,6 +49,7 @@ function ReadyPokemon(props) {
     }, [whereIsEnemy]);
 
     useEffect(() => {
+        console.log(pokemonRef.current.getBoundingClientRect().x);
         dispatch(
             pushCoordinate(props.value.id, [
                 pokemonRef.current.getBoundingClientRect().x,

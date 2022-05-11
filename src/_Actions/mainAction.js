@@ -28,3 +28,10 @@ export const pushCoordinate = (id, coordinate) => {
         payload: { id, coordinate },
     };
 };
+
+export const tokenPowerUse = (functionToken) => {
+    return {
+        type: "tokenPowerUse",
+        payload: functionToken,
+    };
+};
