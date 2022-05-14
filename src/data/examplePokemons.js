@@ -1,6 +1,8 @@
+import { v4 } from "uuid";
+
 export const examplePokemons = [
     {
-        id: "Charmander060520221905",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",
         type: "Fire",
@@ -12,7 +14,7 @@ export const examplePokemons = [
         revenge: 0,
     },
     {
-        id: "Pikachu060520221905",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         name: "Pikachu",
         type: "Electro",
@@ -24,7 +26,7 @@ export const examplePokemons = [
         revenge: 3,
     },
     {
-        id: "Barbasaur060520222215Grass",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         name: "Bulbasaur",
         type: "Grass",
@@ -36,7 +38,7 @@ export const examplePokemons = [
         revenge: 2,
     },
     {
-        id: "SquitlE060520022345Water",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
         type: "Water",
@@ -48,7 +50,7 @@ export const examplePokemons = [
         revenge: 10,
     },
     {
-        id: "Cyndaquil06052002234Fire2242",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/155.png",
         name: "Cyndaquil",
         type: "Fire",
@@ -60,7 +62,7 @@ export const examplePokemons = [
         revenge: 3,
     },
     {
-        id: "SnorlaxE060Normal2248",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
         name: "Snorlax",
         type: "Normal",
@@ -72,7 +74,7 @@ export const examplePokemons = [
         revenge: 1,
     },
     {
-        id: "Turtwigrmal22481718",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
         name: "Turtwig",
         type: "Grass",
@@ -84,7 +86,7 @@ export const examplePokemons = [
         revenge: 1,
     },
     {
-        id: "1723eevee481718",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
         name: "Eevee",
         type: "Normal",
@@ -96,7 +98,7 @@ export const examplePokemons = [
         revenge: 2,
     },
     {
-        id: "17mrMimeE41718",
+        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
         name: "Mr mime",
         type: "Psychic",

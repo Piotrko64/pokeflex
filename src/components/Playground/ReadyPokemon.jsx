@@ -39,7 +39,7 @@ function ReadyPokemon(props) {
 
             pokemonRef.current.style.zIndex = `99`;
             pokemonRef.current.style.transform = `scale(0.75) translateX(${coordinateX}px) translateY(${coordinateY}px)`;
-            console.log("aaaaaa", whereIsEnemy);
+
             setTimeout(() => {
                 pokemonRef.current.style.zIndex = `9`;
                 pokemonRef.current.style.transform = `scale(0.6)`;
@@ -54,6 +54,7 @@ function ReadyPokemon(props) {
                 pokemonRef.current.getBoundingClientRect().y,
             ])
         );
+        console.log(props.value.id);
     }, []);
     useEffect(() => {
         let timeAnim;

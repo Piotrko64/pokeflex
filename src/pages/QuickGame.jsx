@@ -54,8 +54,8 @@ function QuickGame() {
             <button onClick={() => handleUseToken(allTokens[1].functionToken(All))}>
                 Zapalniczka {allTokens[1].icon}
             </button>
-            <button onClick={() => handleUseToken(allTokens[3].functionToken(All))}>
-                elektro {allTokens[3].icon}
+            <button onClick={() => handleUseToken(allTokens[5].functionToken(All))}>
+                elektro {allTokens[5].icon}
             </button>
         </>
     );

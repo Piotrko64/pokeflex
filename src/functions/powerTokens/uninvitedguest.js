@@ -4,13 +4,13 @@ export default function uninvitedGuest(state) {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
         name: "Meowth",
         type: "Normal",
-        hp: 13,
+        hp: 12,
         attack: 3,
-        specialAttack: 7,
+        specialAttack: 6,
         speed: 4,
         defense: 1,
         revenge: 3,
     };
-    console.log([...state.myTeam, { ...Meowth }]);
+
     return { ...state, myTeam: [...state.myTeam, { ...Meowth }] };
 }

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { allTokens } from "../data/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
@@ -11,6 +12,8 @@ const stateFight = {
     whereIsEnemy: [],
     allCoordinates: [],
     grave: [],
+    myTokens: [allTokens[0], allTokens[5], allTokens[1]],
+    enemyTokens: [allTokens[2], allTokens[3], allTokens[4]],
 };
 let whoAttack = "";
 let whoAttackID = "";
@@ -96,16 +99,16 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
             Enemy.defense = Math.max(0, Enemy.defense - 1);
             Me.hp -= Enemy.revenge;
             // DEAD
-            if (Me.hp < 1) {
-                stateAfterFightFriends = stateAfterFightFriends.filter((s) => s.id !== Me.id);
-            } else {
-                stateAfterFightFriends[MeIndex] = Me;
-            }
-            if (Enemy.hp < 1) {
-                stateAfterFightEnemy = stateAfterFightEnemy.filter((enemy) => enemy.id !== Enemy.id);
-            } else {
-                stateAfterFightEnemy[EnemyIndex] = Enemy;
-            }
+            // if (Me.hp < 1) {
+            //     stateAfterFightFriends = stateAfterFightFriends.filter((s) => s.id !== Me.id);
+            // } else {
+            stateAfterFightFriends[MeIndex] = Me;
+            // }
+            // if (Enemy.hp < 1) {
+            //     stateAfterFightEnemy = stateAfterFightEnemy.filter((enemy) => enemy.id !== Enemy.id);
+            // } else {
+            stateAfterFightEnemy[EnemyIndex] = Enemy;
+            // }
         }
     });
 
@@ -139,8 +142,15 @@ const FriendReducer = (state = stateFight, action) => {
         case "tokenPowerUse":
             return action.payload;
         case "moveToGrave":
-            let newStateFriends = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
-            return { ...state, enemyTeam: newStateFriends, grave: [...state.grave, action.payload] };
+            let newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
+            let newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
+
+            return {
+                ...state,
+                enemyTeam: newStateEnemy,
+                myTeam: newStateFriends,
+                grave: [...state.grave, action.payload],
+            };
         default:
             return state;
     }
