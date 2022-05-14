@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-
+import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import ReadyPokemon from "./ReadyPokemon";
 import { whereIAm } from "../../_Actions/mainAction";
@@ -27,13 +27,13 @@ const Tokens = styled.div``;
 function GroundForCards({ pokemons, tokens }) {
     return (
         <PlayGround>
-            <TransitionGroup className="gridForCards">
-                {pokemons.map((el, i) => (
-                    <CSSTransition in={true} key={el.id} timeout={3000} classNames="dead">
+            <motion.div className="gridForCards">
+                <AnimatePresence>
+                    {pokemons.map((el, i) => (
                         <ReadyPokemon value={el} key={el.id} />
-                    </CSSTransition>
-                ))}
-            </TransitionGroup>
+                    ))}
+                </AnimatePresence>
+            </motion.div>
 
             <Tokens>
                 <ListTokens list={tokens} />

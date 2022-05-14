@@ -1,5 +1,5 @@
-const SMALL_ATTACK = 27;
-const STRONGER_ATTACK = 34;
+const SMALL_ATTACK = 7;
+const STRONGER_ATTACK = 14;
 
 export default function electroAction(state) {
     const newState = JSON.parse(JSON.stringify(state));

@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { tokenPowerUse } from "../../../_Actions/mainAction";
-
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css"; // optional
+import Tooltip from "../../Tooltip/tooltip";
 const Item = styled.button`
     border: 2px solid white;
     font-size: 28px;
@@ -27,10 +29,13 @@ function ItemToken({ item }) {
     const dispatch = useDispatch();
     const All = useSelector((state) => state.FriendsTeam);
     function handleUseToken(fun, id) {
-        console.log(item.id);
         dispatch(tokenPowerUse(fun, id));
     }
 
-    return <Item onClick={() => handleUseToken(item.functionToken(All), item.id)}>{item.icon}</Item>;
+    return (
+        <Tippy content={<Tooltip title={item.name} desc={item.desc} />}>
+            <Item onClick={() => handleUseToken(item.functionToken(All), item.id)}>{item.icon}</Item>
+        </Tippy>
+    );
 }
 export default ItemToken;

@@ -47,7 +47,7 @@ export const examplePokemons = [
         specialAttack: 7,
         speed: 12,
         defense: 4,
-        revenge: 2,
+        revenge: 0,
     },
     {
         id: v4(),

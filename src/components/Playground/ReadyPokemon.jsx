@@ -5,7 +5,7 @@ import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/m
 import { useDispatch, useSelector } from "react-redux";
 import AnimHP from "../animOneStatComponents/AnimHp";
 import { CSSTransition } from "react-transition-group";
-import { Transition } from "react-transition-group";
+import { motion } from "framer-motion";
 
 const Pokemon = styled.div`
     transform: scale(0.6);
@@ -74,7 +74,19 @@ function ReadyPokemon(props) {
     }, [props.value.hp]);
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
-            <CardPokemon value={props.value} />
+            <motion.div
+                layout
+                animate={{ opacity: 1 }}
+                exit={{
+                    y: 100,
+                    filter: " hue-rotate(-50deg) saturate(600%) contrast(0.8)",
+                    opacity: 0,
+                }}
+                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0 }}
+            >
+                <CardPokemon value={props.value} />
+            </motion.div>
             <CSSTransition in={!!showNewStat} timeout={1500} classNames="animHP">
                 <AnimHP value={showNewStat} />
             </CSSTransition>

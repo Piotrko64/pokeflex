@@ -3,8 +3,8 @@ import { allTokens } from "../data/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
-    myTeam: [examplePokemons[4], examplePokemons[2], examplePokemons[5]],
-    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[3]],
+    myTeam: [examplePokemons[1], examplePokemons[2], examplePokemons[3]],
+    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[4]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",

@@ -2,7 +2,7 @@ import lighter from "../functions/powerTokens/lighter";
 
 // Import Icons
 import { BsFillHeartFill } from "react-icons/bs";
-import { GiCat, GiWaterFountain, GiBlackHandShield, GiLighter } from "react-icons/gi";
+import { GiCat, GiWaterFountain, GiBlackHandShield, GiLighter, GiDeadlyStrike } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
 // function for roken
@@ -20,12 +20,14 @@ export const allTokens = [
         name: "Lighter",
         icon: <GiLighter />,
         functionToken: lighter,
+        desc: "All your characters receive 'Turbo Fire' type and +5 to speed",
     },
     {
         id: v4(),
         name: "Electro Action",
         icon: <AiOutlineThunderbolt />,
         functionToken: electroAction,
+        desc: "Deal 7 points to the weakest enemy character. If you have at least one 'Electro' character, deal 14 points to the strongest enemy character",
     },
     {
         id: v4(),
@@ -42,7 +44,7 @@ export const allTokens = [
     {
         id: v4(),
         name: "Sacrifice",
-        icon: <GiBlackHandShield />,
+        icon: <GiDeadlyStrike />,
         functionToken: sacrifice,
     },
     {

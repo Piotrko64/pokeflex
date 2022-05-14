@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tippyjs/react": "^4.2.6",
     "atropos": "^1.0.2",
     "framer-motion": "^6.3.3",
     "react": "^18.1.0",
