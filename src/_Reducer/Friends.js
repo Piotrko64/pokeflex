@@ -2,14 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { examplePokemons } from "../data/examplePokemons";
 
 const stateFight = {
-    myTeam: [examplePokemons[8], examplePokemons[4], examplePokemons[5]],
-    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[1]],
+    myTeam: [examplePokemons[4], examplePokemons[2], examplePokemons[5]],
+    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[3]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
     whoIsAttackID: "",
     whereIsEnemy: [],
     allCoordinates: [],
+    grave: [],
 };
 let whoAttack = "";
 let whoAttackID = "";
@@ -118,6 +119,7 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
         whoIsAttackID: "",
     };
 }
+
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
         case "choose":
@@ -132,10 +134,13 @@ const FriendReducer = (state = stateFight, action) => {
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;
-            console.log({ ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] });
+
             return { ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] };
         case "tokenPowerUse":
             return action.payload;
+        case "moveToGrave":
+            let newStateFriends = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
+            return { ...state, enemyTeam: newStateFriends, grave: [...state.grave, action.payload] };
         default:
             return state;
     }

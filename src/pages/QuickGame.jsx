@@ -51,8 +51,11 @@ function QuickGame() {
             </WholeField>
 
             <button onClick={() => handleMoveComputer("Charmander060520221905")}>Symuluj</button>
-            <button onClick={() => handleUseToken(allTokens[0].functionToken(All))}>
-                Zapalniczka {allTokens[0].icon}
+            <button onClick={() => handleUseToken(allTokens[1].functionToken(All))}>
+                Zapalniczka {allTokens[1].icon}
+            </button>
+            <button onClick={() => handleUseToken(allTokens[3].functionToken(All))}>
+                elektro {allTokens[3].icon}
             </button>
         </>
     );

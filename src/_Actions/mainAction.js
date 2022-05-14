@@ -35,3 +35,10 @@ export const tokenPowerUse = (functionToken) => {
         payload: functionToken,
     };
 };
+
+export const moveToGrave = (pokemon) => {
+    return {
+        type: "moveToGrave",
+        payload: pokemon,
+    };
+};

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
-import { animation, choose, pushCoordinate } from "../../_Actions/mainAction";
+import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
 import AnimHP from "../animOneStatComponents/AnimHp";
 import { CSSTransition } from "react-transition-group";
@@ -29,11 +29,10 @@ function ReadyPokemon(props) {
     async function handleClick() {
         dispatch(choose(props.value.id));
         const { x, y } = pokemonRef.current.getBoundingClientRect();
-        console.log(x, y);
+
         dispatch(animation([x, y]));
     }
     useEffect(() => {
-        console.log("aaaaaa", whereIsEnemy[0]);
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
@@ -49,7 +48,6 @@ function ReadyPokemon(props) {
     }, [whereIsEnemy]);
 
     useEffect(() => {
-        console.log(pokemonRef.current.getBoundingClientRect().x);
         dispatch(
             pushCoordinate(props.value.id, [
                 pokemonRef.current.getBoundingClientRect().x,
@@ -66,7 +64,13 @@ function ReadyPokemon(props) {
         timeAnim = setTimeout(() => {
             setShowNewStat(0);
         }, 1500);
+        console.log(hp);
     }, [All]);
+    useEffect(() => {
+        if (props.value.hp < 1) {
+            dispatch(moveToGrave(props.value));
+        }
+    }, [props.value.hp]);
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
             <CardPokemon value={props.value} />
