@@ -6,10 +6,10 @@ export default function uninvitedGuest(state) {
         type: "Normal",
         hp: 12,
         attack: 3,
-        specialAttack: 6,
-        speed: 4,
+        specialAttack: 5,
+        speed: 7,
         defense: 1,
-        revenge: 3,
+        revenge: 4,
     };
 
     return { ...state, myTeam: [...state.myTeam, { ...Meowth }] };

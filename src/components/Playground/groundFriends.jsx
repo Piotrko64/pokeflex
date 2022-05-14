@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import ReadyPokemon from "./ReadyPokemon";
 import { whereIAm } from "../../_Actions/mainAction";
+import ListTokens from "./Tokens/ListTokens";
+import { TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 const ForCards = styled.div`
     display: grid;
@@ -15,16 +18,27 @@ const ForCards = styled.div`
     max-width: 750px;
     place-items: center;
 `;
+const PlayGround = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+const Tokens = styled.div``;
 
-function GroundForCards({ pokemons }) {
+function GroundForCards({ pokemons, tokens }) {
     return (
-        <>
-            <ForCards>
+        <PlayGround>
+            <TransitionGroup className="gridForCards">
                 {pokemons.map((el, i) => (
-                    <ReadyPokemon value={el} key={el.id} />
+                    <CSSTransition in={true} key={el.id} timeout={3000} classNames="dead">
+                        <ReadyPokemon value={el} key={el.id} />
+                    </CSSTransition>
                 ))}
-            </ForCards>
-        </>
+            </TransitionGroup>
+
+            <Tokens>
+                <ListTokens list={tokens} />
+            </Tokens>
+        </PlayGround>
     );
 }
 export default GroundForCards;

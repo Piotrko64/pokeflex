@@ -50,8 +50,19 @@ code {
 a {
     text-decoration: none;
 }
+.gridForCards {
+    display: grid;
+    grid-template-columns: repeat(2, 240px);
+    grid-template-rows: repeat(2, 380px);
+    grid-template-areas:
+        "a b"
+        "c b";
+    max-width: 750px;
+    place-items: center;
+}
 //  CSS TRANSITION GROUP
-
+//  ANIMATION STATS
+// animation HP
 .animHP-enter {
     opacity: 2;
     transform: scale(0.7);
@@ -61,11 +72,30 @@ a {
     transform: translateX(-250px);
     transition: all 1500ms ease-in-out;
 }
-// .animHP-exit {
-//     opacity: 1;
-// }
-// .animHP-exit-active {
-//     opacity: 0;
-//     transform: translateX(200px);
-//     transition: opacity 1000ms, transform 1000ms;
-// }
+.animHP-exit {
+    opacity: 1;
+}
+.animHP-exit-active {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+// ANIMATION DEAD
+.dead-enter {
+    opacity: 2;
+    transform: scale(0.7);
+}
+.dead-enter-active {
+    opacity: 0;
+    transform: translateX(-250px);
+    transition: all 1500ms ease-in-out;
+}
+.dead-exit {
+    opacity: 1;
+}
+.dead-exit-active {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 1000ms, transform 1000ms;
+}

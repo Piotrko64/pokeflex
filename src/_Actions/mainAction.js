@@ -29,10 +29,10 @@ export const pushCoordinate = (id, coordinate) => {
     };
 };
 
-export const tokenPowerUse = (functionToken) => {
+export const tokenPowerUse = (functionToken, id) => {
     return {
         type: "tokenPowerUse",
-        payload: functionToken,
+        payload: { fun: functionToken, id: id },
     };
 };
 
