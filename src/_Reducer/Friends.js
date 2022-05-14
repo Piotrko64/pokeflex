@@ -1,4 +1,3 @@
-import { createSlice } from "@reduxjs/toolkit";
 import { allTokens } from "../data/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
 
@@ -14,6 +13,7 @@ const stateFight = {
     grave: [],
     myTokens: [allTokens[0], allTokens[5], allTokens[1]],
     enemyTokens: [allTokens[2], allTokens[3], allTokens[4]],
+    yourTurn: true,
 };
 let whoAttack = "";
 let whoAttackID = "";
@@ -120,6 +120,7 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
         whoAttackID,
         whoIsAttack: "",
         whoIsAttackID: "",
+        yourTurn: !state.yourTurn,
     };
 }
 function stateAfterToken(state, id) {

@@ -1,11 +1,13 @@
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
 const ToolTipComponent = styled.div`
     padding: 5px;
-    text-align: center;
+    text-align: justify;
     max-width: 200px;
     h2 {
         margin: 0 auto;
+        text-align: center;
     }
     p {
         font-size: 1rem;
@@ -21,7 +23,9 @@ function Tooltip({ title, desc }) {
         <ToolTipComponent>
             <h2>{title}</h2>
             <hr />
-            <p>{desc}</p>
+            <p>
+                <ReactMarkdown>{desc}</ReactMarkdown>
+            </p>
         </ToolTipComponent>
     );
 }

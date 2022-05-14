@@ -6,19 +6,20 @@ import { animation, choose, noEnemy, computerMove, tokenPowerUse } from "../_Act
 
 import GroundForCards from "../components/Playground/groundFriends";
 
-import { allTokens } from "../data/allTokens";
-
 const WholeField = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
     max-width: 1800px;
+    margin: auto;
 `;
 
 function QuickGame() {
     const dispatch = useDispatch();
 
     const All = useSelector((state) => state.FriendsTeam);
+
+    const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
 
     const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
     const FriendsTokens = useSelector((state) => state.FriendsTeam.myTokens);
@@ -44,10 +45,11 @@ function QuickGame() {
     return (
         <>
             <h1>{`${whoAttack} attack ${whoIsAttack}`} </h1>
-            {whoAttack && <div>AAA</div>}
+
             <WholeField>
                 <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
-                <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} />
+                {yourTurn ? "Your Turn" : "Turn of enemy"}
+                <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI />
             </WholeField>
 
             {/* <button onClick={() => handleMoveComputer("Charmander060520221905")}>Symuluj</button>

@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
 
 const HPplus = styled.div`
-    font-size: 18rem;
+    font-size: 16rem;
     color: rgba(179, 15, 15, 1);
     position: absolute;
     top: 0;

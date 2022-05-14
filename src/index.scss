@@ -52,11 +52,10 @@ a {
 }
 .gridForCards {
     display: grid;
-    grid-template-columns: repeat(2, 240px);
-    grid-template-rows: repeat(2, 380px);
-    grid-template-areas:
-        "a b"
-        "c b";
+
+    grid-template-rows: repeat(2, 280px);
+    grid-template-columns: 40px;
+    grid-auto-flow: column;
     max-width: 750px;
     place-items: center;
 }

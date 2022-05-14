@@ -25,10 +25,13 @@ const Item = styled.button`
     }
 `;
 
-function ItemToken({ item }) {
+function ItemToken({ item, AI }) {
     const dispatch = useDispatch();
     const All = useSelector((state) => state.FriendsTeam);
     function handleUseToken(fun, id) {
+        if (AI) {
+            return;
+        }
         dispatch(tokenPowerUse(fun, id));
     }
 

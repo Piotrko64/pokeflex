@@ -8,7 +8,7 @@ import { CSSTransition } from "react-transition-group";
 import { motion } from "framer-motion";
 
 const Pokemon = styled.div`
-    transform: scale(0.6);
+    transform: scale(0.5);
     min-width: 280px;
     z-index: 9;
     transition: all 0.2s ease-in-out;
@@ -38,11 +38,13 @@ function ReadyPokemon(props) {
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
 
             pokemonRef.current.style.zIndex = `99`;
-            pokemonRef.current.style.transform = `scale(0.75) translateX(${coordinateX}px) translateY(${coordinateY}px)`;
+            pokemonRef.current.style.transform = `scale(0.5) translateX(${coordinateX * 1.8}px) translateY(${
+                coordinateY * 1.8
+            }px)`;
 
             setTimeout(() => {
                 pokemonRef.current.style.zIndex = `9`;
-                pokemonRef.current.style.transform = `scale(0.6)`;
+                pokemonRef.current.style.transform = `scale(0.5)`;
             }, 220);
         }
     }, [whereIsEnemy]);
