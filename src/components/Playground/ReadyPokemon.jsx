@@ -56,8 +56,7 @@ function ReadyPokemon(props) {
                 pokemonRef.current.getBoundingClientRect().y,
             ])
         );
-        console.log(props.value.id);
-    }, []);
+    }, [All.myTeam, All.enemyTeam]);
     useEffect(() => {
         let timeAnim;
         clearTimeout(timeAnim);
@@ -67,7 +66,6 @@ function ReadyPokemon(props) {
         timeAnim = setTimeout(() => {
             setShowNewStat(0);
         }, 1500);
-        console.log(hp);
     }, [All]);
     useEffect(() => {
         if (props.value.hp < 1) {

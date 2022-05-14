@@ -17,10 +17,10 @@ export default function electroAction(state) {
         })[newStateEnemyTeam.length - 1];
         thisAttack = SMALL_ATTACK;
     }
-    console.log(thisEnemy);
+
     const powerfulEnemyIndex = newState.enemyTeam.findIndex((el) => el.id === thisEnemy.id);
     let enemyTeam = newState.enemyTeam;
     enemyTeam[powerfulEnemyIndex] = { ...thisEnemy, hp: thisEnemy.hp - thisAttack };
-    console.log({ ...state, enemyTeam });
+
     return { ...state, enemyTeam };
 }

@@ -10,7 +10,10 @@ import { configureStore } from "@reduxjs/toolkit";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = configureStore({
     reducer: allReducers,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        }),
 });
 root.render(
     <React.StrictMode>

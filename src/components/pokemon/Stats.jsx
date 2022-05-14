@@ -29,7 +29,7 @@ const OneStat = styled.div`
     font-family: "Koulen", cursive;
     color: ${(props) => {
         if (props.hp < 1 || props.df < 1) return "#ff7070";
-        if (props.hp < props.speed) return "#ffba1f";
+        if (props.hp <= props.speed) return "#ffba1f";
     }};
 `;
 const rotate = keyframes`

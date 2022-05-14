@@ -35,6 +35,12 @@ export const tokenPowerUse = (functionToken, id) => {
         payload: { fun: functionToken, id: id },
     };
 };
+export const tokenPowerAi = (functionToken, id) => {
+    return {
+        type: "tokenPowerAi",
+        payload: { fun: functionToken, id: id },
+    };
+};
 
 export const moveToGrave = (pokemon) => {
     return {

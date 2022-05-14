@@ -2,9 +2,20 @@ import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { animation, choose, noEnemy, computerMove, tokenPowerUse } from "../_Actions/mainAction";
+import {
+    animation,
+    choose,
+    noEnemy,
+    computerMove,
+    tokenPowerUse,
+    tokenPowerAi,
+} from "../_Actions/mainAction";
 
 import GroundForCards from "../components/Playground/groundFriends";
+import YourTurn from "../components/Playground/YourTurn";
+import { useEffect } from "react";
+import { chooseRandomEnemy } from "../functions/computerAI/chooseRandomEnemy";
+import lighter from "../functions/powerTokens/lighter";
 
 const WholeField = styled.div`
     display: flex;
@@ -27,9 +38,10 @@ function QuickGame() {
     const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
     const EnemyTokens = useSelector((state) => state.FriendsTeam.enemyTokens);
 
-    const whoAttack = useSelector((state) => state.FriendsTeam.whoAttack);
-    const whoIsAttack = useSelector((state) => state.FriendsTeam.whoIsAttack);
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
+
+    console.log(chooseRandomEnemy(FriendsTeam, EnemyTeam));
+
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
         dispatch(animation([]));
@@ -37,28 +49,30 @@ function QuickGame() {
     function handleMoveComputer(x) {
         handleComputerChoose(x);
         setTimeout(() => {
-            dispatch(computerMove("17mrMimeE41718"));
-            dispatch(animation(allCoordinates.find((e) => e.id === "17mrMimeE41718").coordinate));
+            dispatch(computerMove(chooseRandomEnemy(FriendsTeam, EnemyTeam)[0]));
+            dispatch(
+                animation(
+                    allCoordinates.find((e) => e.id === chooseRandomEnemy(FriendsTeam, EnemyTeam)[0])
+                        .coordinate
+                )
+            );
         }, 1000);
     }
-
+    useEffect(() => {
+        if (!yourTurn) {
+            setTimeout(() => {
+                dispatch(tokenPowerAi(lighter(All, true), All.enemyTokens[1].id));
+                // handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]);
+            }, 2000);
+        }
+    }, [yourTurn]);
     return (
         <>
-            <h1>{`${whoAttack} attack ${whoIsAttack}`} </h1>
-
             <WholeField>
                 <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
-                {yourTurn ? "Your Turn" : "Turn of enemy"}
+                <YourTurn turn={yourTurn} />
                 <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI />
             </WholeField>
-
-            {/* <button onClick={() => handleMoveComputer("Charmander060520221905")}>Symuluj</button>
-            <button onClick={() => handleUseToken(allTokens[1].functionToken(All))}>
-                Zapalniczka {allTokens[1].icon}
-            </button>
-            <button onClick={() => handleUseToken(allTokens[5].functionToken(All))}>
-                elektro {allTokens[5].icon}
-            </button> */}
         </>
     );
 }

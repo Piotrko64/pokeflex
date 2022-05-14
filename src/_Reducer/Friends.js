@@ -125,8 +125,13 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
 }
 function stateAfterToken(state, id) {
     let newStateTokens = [...state.myTokens].filter((el) => el.id !== id);
-    console.log(id);
+
     return { ...state, myTokens: newStateTokens };
+}
+function stateAfterTokenAi(state, id) {
+    let newStateTokens = [...state.enemyTokens].filter((el) => el.id !== id);
+
+    return { ...state, myTeam: state.myTeam, enemyTeam: state.enemyTeam, enemyTokens: newStateTokens };
 }
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
@@ -142,10 +147,12 @@ const FriendReducer = (state = stateFight, action) => {
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;
-
-            return { ...state, allCoordinates: [...state.allCoordinates, { id, coordinate }] };
+            console.log({ ...state, allCoordinates: [{ id, coordinate }, ...state.allCoordinates] });
+            return { ...state, allCoordinates: [{ id, coordinate }, ...state.allCoordinates] };
         case "tokenPowerUse":
             return stateAfterToken(action.payload.fun, action.payload.id);
+        case "tokenPowerAi":
+            return stateAfterTokenAi(action.payload.fun, action.payload.id);
         case "moveToGrave":
             let newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
             let newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
