@@ -16,6 +16,11 @@ import YourTurn from "../components/Playground/YourTurn";
 import { useEffect } from "react";
 import { chooseRandomEnemy } from "../functions/computerAI/chooseRandomEnemy";
 import lighter from "../functions/powerTokens/lighter";
+import electroAction from "../functions/powerTokens/electroaction";
+import fountain from "../functions/powerTokens/fountain";
+import resurrection from "../functions/powerTokens/resurrection";
+import sacrifice from "../functions/powerTokens/sacrifice";
+import uninvitedGuest from "../functions/powerTokens/uninvitedguest";
 
 const WholeField = styled.div`
     display: flex;
@@ -40,8 +45,6 @@ function QuickGame() {
 
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
-    console.log(chooseRandomEnemy(FriendsTeam, EnemyTeam));
-
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
         dispatch(animation([]));
@@ -49,20 +52,23 @@ function QuickGame() {
     function handleMoveComputer(x) {
         handleComputerChoose(x);
         setTimeout(() => {
-            dispatch(computerMove(chooseRandomEnemy(FriendsTeam, EnemyTeam)[0]));
-            dispatch(
-                animation(
-                    allCoordinates.find((e) => e.id === chooseRandomEnemy(FriendsTeam, EnemyTeam)[0])
-                        .coordinate
-                )
-            );
+            const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
+            dispatch(computerMove(randomEnemy));
+            console.log(allCoordinates.find((e) => e.id === randomEnemy).coordinate, randomEnemy);
+            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
         }, 1000);
     }
     useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                dispatch(tokenPowerAi(lighter(All, true), All.enemyTokens[1].id));
-                // handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]);
+                if (EnemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
+                    const randomNumberTokens = Math.round(Math.random() * (EnemyTokens.length - 1));
+                    const randomToken = EnemyTokens[randomNumberTokens];
+
+                    dispatch(tokenPowerAi(randomToken.functionToken(All, true), randomToken.id));
+                } else {
+                    handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]);
+                }
             }, 2000);
         }
     }, [yourTurn]);

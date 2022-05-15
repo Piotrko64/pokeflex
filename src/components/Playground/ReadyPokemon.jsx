@@ -33,11 +33,25 @@ function ReadyPokemon(props) {
         dispatch(animation([x, y]));
     }
     useEffect(() => {
+        if (pokemonRef.current) {
+            setTimeout(
+                () =>
+                    dispatch(
+                        pushCoordinate(props.value.id, [
+                            pokemonRef.current.getBoundingClientRect().x,
+                            pokemonRef.current.getBoundingClientRect().y,
+                        ])
+                    ),
+                600
+            );
+        }
+    }, [All.myTeam.length, All.enemyTeam.length]);
+    useEffect(() => {
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
 
-            pokemonRef.current.style.zIndex = `99`;
+            pokemonRef.current.style.zIndex = `999`;
             pokemonRef.current.style.transform = `scale(0.5) translateX(${coordinateX * 1.8}px) translateY(${
                 coordinateY * 1.8
             }px)`;
@@ -49,14 +63,6 @@ function ReadyPokemon(props) {
         }
     }, [whereIsEnemy]);
 
-    useEffect(() => {
-        dispatch(
-            pushCoordinate(props.value.id, [
-                pokemonRef.current.getBoundingClientRect().x,
-                pokemonRef.current.getBoundingClientRect().y,
-            ])
-        );
-    }, [All.myTeam, All.enemyTeam]);
     useEffect(() => {
         let timeAnim;
         clearTimeout(timeAnim);

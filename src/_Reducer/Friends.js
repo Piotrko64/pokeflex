@@ -44,12 +44,13 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
             EnemyIndex = i;
             teamFriends.forEach((f, fi) => {
                 if (f.id === state.whoAttackID) {
+                    console.log(f);
                     Me = { ...f };
                     MeIndex = fi;
                 }
             });
 
-            if (Me.hp > Me.speed) {
+            if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
             } else {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
@@ -126,12 +127,24 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
 function stateAfterToken(state, id) {
     let newStateTokens = [...state.myTokens].filter((el) => el.id !== id);
 
-    return { ...state, myTokens: newStateTokens };
+    return { ...state, myTokens: newStateTokens, yourTurn: !state.yourTurn };
 }
 function stateAfterTokenAi(state, id) {
     let newStateTokens = [...state.enemyTokens].filter((el) => el.id !== id);
 
-    return { ...state, myTeam: state.myTeam, enemyTeam: state.enemyTeam, enemyTokens: newStateTokens };
+    return {
+        ...state,
+        myTeam: state.myTeam,
+        enemyTeam: state.enemyTeam,
+        enemyTokens: newStateTokens,
+        yourTurn: !state.yourTurn,
+    };
+}
+function pushNewCoordinate(state, id, coordinate) {
+    let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
+    newCoordinate = [{ id, coordinate }, ...newCoordinate];
+    console.log(newCoordinate);
+    return newCoordinate;
 }
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
@@ -147,8 +160,8 @@ const FriendReducer = (state = stateFight, action) => {
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;
-            console.log({ ...state, allCoordinates: [{ id, coordinate }, ...state.allCoordinates] });
-            return { ...state, allCoordinates: [{ id, coordinate }, ...state.allCoordinates] };
+
+            return { ...state, allCoordinates: pushNewCoordinate(state, id, coordinate) };
         case "tokenPowerUse":
             return stateAfterToken(action.payload.fun, action.payload.id);
         case "tokenPowerAi":

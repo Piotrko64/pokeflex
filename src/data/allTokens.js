@@ -41,7 +41,7 @@ export const allTokens = [
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,
-        desc: "Give your strongest pokemon **+12** hp and change its type to **Water**",
+        desc: "Give your strongest pokemon **+13** hp and change its type to **Water**",
     },
     {
         id: v4(),
