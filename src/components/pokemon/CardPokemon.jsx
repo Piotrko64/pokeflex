@@ -1,4 +1,3 @@
-import { examplePokemons } from "../../data/examplePokemons";
 import Stats from "./Stats";
 import styled from "styled-components";
 import Atropos from "atropos/react";

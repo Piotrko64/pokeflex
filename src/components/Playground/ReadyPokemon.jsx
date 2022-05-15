@@ -85,7 +85,6 @@ function ReadyPokemon(props) {
                 animate={{ opacity: 1 }}
                 exit={{
                     y: 100,
-                    filter: " hue-rotate(-50deg) saturate(600%) contrast(0.8)",
                     opacity: 0,
                 }}
                 transition={{ duration: 0.5 }}

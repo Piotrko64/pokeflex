@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import ItemToken from "./ItemToken";
 
@@ -12,9 +13,11 @@ const List = styled.div`
 function ListTokens({ list, AI }) {
     return (
         <List>
-            {list.map((el, i) => (
-                <ItemToken item={el} key={el.id} AI={AI} />
-            ))}
+            <AnimatePresence>
+                {list.map((el, i) => (
+                    <ItemToken item={el} key={el.id} AI={AI} />
+                ))}
+            </AnimatePresence>
         </List>
     );
 }

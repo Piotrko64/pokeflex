@@ -12,18 +12,26 @@ const PlayGround = styled.div`
     display: flex;
     flex-direction: column;
 `;
+const GridForCards = styled.div`
+    display: grid;
+    grid-template-rows: repeat(2, 280px);
+    grid-template-columns: 40px;
+    grid-auto-flow: column;
+    max-width: 750px;
+    place-items: center;
+`;
 const Tokens = styled.div``;
 
 function GroundForCards({ pokemons, tokens, AI }) {
     return (
         <PlayGround>
-            <motion.div className="gridForCards">
+            <GridForCards>
                 <AnimatePresence>
                     {pokemons.map((el, i) => (
                         <ReadyPokemon value={el} key={el.id} />
                     ))}
                 </AnimatePresence>
-            </motion.div>
+            </GridForCards>
 
             <Tokens>
                 <ListTokens list={tokens} AI={AI} />
