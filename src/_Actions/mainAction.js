@@ -11,9 +11,9 @@ export const animation = ([x, y]) => {
         payload: [x, y],
     };
 };
-export const noEnemy = () => {
+export const noWhoAttack = () => {
     return {
-        type: "noEnemy",
+        type: "noWhoAttack",
     };
 };
 export const computerMove = (id) => {

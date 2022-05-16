@@ -128,7 +128,7 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
 function stateAfterToken(state, id) {
     let newStateTokens = [...state.myTokens].filter((el) => el.id !== id);
 
-    return { ...state, myTokens: newStateTokens, yourTurn: !state.yourTurn };
+    return { ...state, myTokens: newStateTokens, whoAttackID: "", yourTurn: !state.yourTurn };
 }
 function stateAfterTokenAi(state, id) {
     let newStateTokens = [...state.enemyTokens].filter((el) => el.id !== id);
@@ -139,6 +139,7 @@ function stateAfterTokenAi(state, id) {
         enemyTeam: state.enemyTeam,
         enemyTokens: newStateTokens,
         yourTurn: !state.yourTurn,
+        whoAttackID: "",
     };
 }
 function pushNewCoordinate(state, id, coordinate) {
@@ -156,8 +157,8 @@ const FriendReducer = (state = stateFight, action) => {
         case "animation":
             return { ...state, whereIsEnemy: action.payload };
 
-        case "noEnemy":
-            return { ...state, whoIsAttack: "" };
+        case "noWhoAttack":
+            return { ...state, whoAttackID: "" };
 
         case "pushCoordinate":
             const { id, coordinate } = action.payload;

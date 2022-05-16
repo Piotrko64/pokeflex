@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { animation, computerMove, tokenPowerAi } from "../_Actions/mainAction";
+import { animation, computerMove, noEnemy, noWhoAttack, tokenPowerAi } from "../_Actions/mainAction";
 
 import GroundForCards from "../components/Playground/groundFriends";
 import YourTurn from "../components/Playground/YourTurn";
@@ -43,6 +43,7 @@ function QuickGame() {
             const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
             dispatch(computerMove(randomEnemy));
             dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+            setTimeout(() => dispatch(noWhoAttack()), 400);
         }, 500);
     }
     useEffect(() => {

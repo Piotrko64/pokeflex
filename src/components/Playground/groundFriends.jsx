@@ -19,7 +19,6 @@ const GridForCards = styled.div`
 const Tokens = styled.div``;
 
 function GroundForCards({ pokemons, tokens, AI }) {
-    console.log(AI);
     return (
         <PlayGround AI={AI}>
             <GridForCards>

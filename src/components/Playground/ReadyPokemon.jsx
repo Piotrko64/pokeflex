@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
-import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
+import { animation, choose, moveToGrave, noWhoAttack, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
 import AnimHP from "../animOneStatComponents/AnimHp";
 import { CSSTransition } from "react-transition-group";
@@ -55,9 +55,7 @@ function ReadyPokemon(props) {
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
 
             pokemonRef.current.style.zIndex = `999`;
-            pokemonRef.current.style.transform = `translateX(${
-                coordinateX * 0.6
-            }px) translateY(${coordinateY}px)`;
+            pokemonRef.current.style.transform = `translateX(${coordinateX}px) translateY(${coordinateY}px)`;
 
             setTimeout(() => {
                 pokemonRef.current.style.zIndex = `9`;
