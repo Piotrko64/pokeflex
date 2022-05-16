@@ -9,7 +9,11 @@ function AtroposSide() {
     useLayoutEffect(() => {
         setAtroposPokemon(examplePokemons[Math.round(Math.random() * 8)]);
     }, []);
-    return <CardPokemon value={atroposPokemon} />;
+    return (
+        <Atropos className="atropos">
+            <CardPokemon value={atroposPokemon} />
+        </Atropos>
+    );
 }
 
 export default AtroposSide;

@@ -1,6 +1,6 @@
 import { allTokens } from "../data/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
-
+import Hit from "../Audio/Hit.wav";
 const stateFight = {
     myTeam: [examplePokemons[1], examplePokemons[2], examplePokemons[3]],
     enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[4]],
@@ -96,7 +96,8 @@ function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
                         return;
                 }
             }
-
+            const audio = new Audio(Hit);
+            audio.play();
             Enemy.defense = Math.max(0, Enemy.defense - 1);
             Me.hp -= Enemy.revenge;
             // DEAD

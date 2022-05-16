@@ -1,4 +1,4 @@
-const SMALL_ATTACK = 7;
+const SMALL_ATTACK = 9;
 const STRONGER_ATTACK = 14;
 
 export default function electroAction(state, AI) {

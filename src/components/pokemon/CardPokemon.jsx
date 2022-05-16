@@ -1,6 +1,7 @@
 import Stats from "./Stats";
 import styled from "styled-components";
 import Atropos from "atropos/react";
+import { useSelector } from "react-redux";
 const Card = styled.div`
     height: 100%;
     width: 100%;
@@ -11,22 +12,39 @@ const Card = styled.div`
     align-items: center;
     border-radius: 25px;
     flex-direction: column;
-    box-shadow: 0px 0px 10px rgba(75, 1, 77, 0.98);
+    font-size: ${(props) => (props.versionMini ? "14px" : "28px")};
+    width: ${(props) => (props.versionMini ? "180px" : "")};
     overflow: hidden;
     padding-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "")};
+    &:hover {
+        box-shadow: 0px 0px 46px -1px rgba(255, 255, 255, 1);
+    }
 `;
 const Img = styled.img`
-    height: 200px;
+    height: ${(props) => (props.versionMini ? "120px" : "240px")};
+    transform: "scale(0.5)";
+    filter: ${(props) => (props.choose ? "drop-shadow(0px 0px 95px red)" : "")};
 `;
-function CardPokemon({ value }) {
-    return (
-        <Atropos className="atropos">
-            <Card>
-                <Img data-atropos-opacity="1" data-atropos-offset="5" src={value.image} alt="" />
+function CardPokemon({ value, versionMini }) {
+    const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
 
-                <Stats value={value} />
-            </Card>
-        </Atropos>
+    return (
+        // <Atropos className="atropos">
+        <Card versionMini={versionMini} choose={value.id === whoAttackID}>
+            <Img
+                data-atropos-opacity="1"
+                data-atropos-offset="5"
+                src={value.image}
+                alt=""
+                versionMini={versionMini}
+            />
+
+            <Stats value={value} versionMini={versionMini} />
+        </Card>
+        // </Atropos>
     );
 }
 

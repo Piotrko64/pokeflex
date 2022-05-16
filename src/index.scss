@@ -43,9 +43,6 @@ code {
     .atropos-inner {
         border-radius: 25px;
     }
-    img {
-        height: 240px;
-    }
 }
 a {
     text-decoration: none;
@@ -58,6 +55,11 @@ a {
     grid-auto-flow: column;
     max-width: 750px;
     place-items: center;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 //  CSS TRANSITION GROUP
 //  ANIMATION STATS

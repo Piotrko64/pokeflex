@@ -12,10 +12,10 @@ const TableWithAll = styled.div`
 `;
 const GridStats = styled.div`
     display: grid;
-    grid-template-rows: repeat(3, 50px);
+    grid-auto-rows: 50px
     color: white;
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 28px;
+    grid-template-columns: repeat(2,1fr);
+
     width: 90%;
 `;
 const OneStat = styled.div`
@@ -25,7 +25,7 @@ const OneStat = styled.div`
     border-right: ${(props) => (props.isOdd ? "2px solid white" : "")};
     border-bottom: ${(props) => (props.isLastTwo ? "" : "2px solid white")};
     color: white;
-    padding: 0 30px;
+    padding: ${(props) => (props.versionMini ? "0 30px" : "0 20px")};
     font-family: "Koulen", cursive;
     color: ${(props) => {
         if (props.hp < 1 || props.df < 1) return "#ff7070";
@@ -47,7 +47,7 @@ const rotate = keyframes`
     }
 `;
 const ImportantStat = styled.div`
-    font-size: 35px;
+    font-size: ${(props) => (props.versionMini ? "23px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;
@@ -57,7 +57,7 @@ const ImportantStat = styled.div`
     background-size: 125%;
     animation: ${rotate} 12s ease infinite;
 `;
-const Electro = styled(ImportantStat)`
+const Electro = styled.div`
     background-color: rgba(255, 224, 143, 1);
     background-image: linear-gradient(
         141deg,
@@ -68,7 +68,7 @@ const Electro = styled(ImportantStat)`
     );
 `;
 
-const Fire = styled(ImportantStat)`
+const Fire = styled.div`
     background-color: rgba(255, 0, 0, 1);
     background-image: linear-gradient(
         181deg,
@@ -79,7 +79,7 @@ const Fire = styled(ImportantStat)`
     );
 `;
 
-const TurboFire = styled(ImportantStat)`
+const TurboFire = styled.div`
     background: rgb(255, 0, 0);
     background: linear-gradient(
         90deg,
@@ -89,7 +89,7 @@ const TurboFire = styled(ImportantStat)`
     );
 `;
 
-const Grass = styled(ImportantStat)`
+const Grass = styled.div`
     background: rgb(58, 172, 47);
     background: linear-gradient(
         106deg,
@@ -99,17 +99,17 @@ const Grass = styled(ImportantStat)`
         rgba(146, 203, 2, 1) 100%
     );
 `;
-const Water = styled(ImportantStat)`
+const Water = styled.div`
     background: rgb(37, 186, 209);
     background: linear-gradient(180deg, rgba(37, 186, 209, 1) 24%, rgba(44, 34, 221, 1) 84%);
 `;
 
-const Normal = styled(ImportantStat)`
+const Normal = styled.div`
     background: rgb(107, 39, 70);
     background: linear-gradient(90deg, rgba(107, 39, 70, 1) 0%, rgba(45, 80, 117, 1) 100%);
 `;
 
-const Blocked = styled(ImportantStat)`
+const Blocked = styled.div`
     background: rgb(156, 156, 156);
     background: linear-gradient(
         137deg,
@@ -125,14 +125,14 @@ const Psychic = styled(ImportantStat)`
 
 ////
 
-function Stats({ value }) {
+function Stats({ value, versionMini }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
     // const arrayStats = [{ icon: <BsFillHeartFill />, stat: {hp}
     // }]
     return (
         <>
             <TableWithAll>
-                <ImportantStat>{name}</ImportantStat>
+                <ImportantStat versionMini={versionMini}>{name}</ImportantStat>
                 <GridStats>
                     <div data-atropos-offset="5">
                         <OneStat isOdd hp={hp}>
@@ -170,53 +170,54 @@ function Stats({ value }) {
                         </OneStat>
                     </div>
                 </GridStats>
-                {(() => {
-                    switch (type) {
-                        case "Electro":
-                            return (
-                                <>
-                                    <Electro>{type}</Electro>
-                                </>
-                            );
-                        case "Fire":
-                            return (
-                                <>
-                                    <Fire>{type}</Fire>
-                                </>
-                            );
-                        case "Turbo Fire":
-                            return (
-                                <>
-                                    <TurboFire>{type}</TurboFire>
-                                </>
-                            );
-                        case "Grass":
-                            return (
-                                <>
-                                    <Grass>{type}</Grass>
-                                </>
-                            );
-                        case "Water":
-                            return (
-                                <>
-                                    <Water>{type}</Water>
-                                </>
-                            );
-                        case "Psychic":
-                            return <Psychic>{type}</Psychic>;
-                        case "Normal":
-                            return <Normal>{type}</Normal>;
-                        case "Blocked":
-                            return (
-                                <>
-                                    <Blocked>Blocked</Blocked>
-                                </>
-                            );
-                        default:
-                            return <Normal>Normal</Normal>;
-                    }
-                })()}
-                {/* <ImportantStat>{type}</ImportantStat> */}
+                <ImportantStat versionMini={versionMini}>
+                    {(() => {
+                        switch (type) {
+                            case "Electro":
+                                return (
+                                    <>
+                                        <Electro>{type}</Electro>
+                                    </>
+                                );
+                            case "Fire":
+                                return (
+                                    <>
+                                        <Fire>{type}</Fire>
+                                    </>
+                                );
+                            case "Turbo Fire":
+                                return (
+                                    <>
+                                        <TurboFire>{type}</TurboFire>
+                                    </>
+                                );
+                            case "Grass":
+                                return (
+                                    <>
+                                        <Grass>{type}</Grass>
+                                    </>
+                                );
+                            case "Water":
+                                return (
+                                    <>
+                                        <Water>{type}</Water>
+                                    </>
+                                );
+                            case "Psychic":
+                                return <Psychic>{type}</Psychic>;
+                            case "Normal":
+                                return <Normal>{type}</Normal>;
+                            case "Blocked":
+                                return (
+                                    <>
+                                        <Blocked>Blocked</Blocked>
+                                    </>
+                                );
+                            default:
+                                return <Normal>Normal</Normal>;
+                        }
+                    })()}
+                </ImportantStat>
             </TableWithAll>
         </>
     );

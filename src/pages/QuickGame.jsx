@@ -2,25 +2,12 @@ import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-    animation,
-    choose,
-    noEnemy,
-    computerMove,
-    tokenPowerUse,
-    tokenPowerAi,
-} from "../_Actions/mainAction";
+import { animation, computerMove, tokenPowerAi } from "../_Actions/mainAction";
 
 import GroundForCards from "../components/Playground/groundFriends";
 import YourTurn from "../components/Playground/YourTurn";
 import { useEffect } from "react";
 import { chooseRandomEnemy } from "../functions/computerAI/chooseRandomEnemy";
-import lighter from "../functions/powerTokens/lighter";
-import electroAction from "../functions/powerTokens/electroaction";
-import fountain from "../functions/powerTokens/fountain";
-import resurrection from "../functions/powerTokens/resurrection";
-import sacrifice from "../functions/powerTokens/sacrifice";
-import uninvitedGuest from "../functions/powerTokens/uninvitedguest";
 
 const WholeField = styled.div`
     display: flex;
@@ -28,6 +15,7 @@ const WholeField = styled.div`
     align-items: center;
     max-width: 1800px;
     margin: auto;
+    flex-direction: column-reverse;
 `;
 
 function QuickGame() {
@@ -54,9 +42,8 @@ function QuickGame() {
         setTimeout(() => {
             const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
             dispatch(computerMove(randomEnemy));
-            console.log(allCoordinates.find((e) => e.id === randomEnemy).coordinate, randomEnemy);
             dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
-        }, 1000);
+        }, 500);
     }
     useEffect(() => {
         if (!yourTurn) {
@@ -77,7 +64,7 @@ function QuickGame() {
             <WholeField>
                 <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
                 <YourTurn turn={yourTurn} />
-                <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI />
+                <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />
             </WholeField>
         </>
     );

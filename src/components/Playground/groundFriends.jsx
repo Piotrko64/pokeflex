@@ -5,26 +5,23 @@ import { useSelector, useDispatch } from "react-redux";
 import ReadyPokemon from "./ReadyPokemon";
 import { whereIAm } from "../../_Actions/mainAction";
 import ListTokens from "./Tokens/ListTokens";
-import { TransitionGroup } from "react-transition-group";
-import { CSSTransition } from "react-transition-group";
 
 const PlayGround = styled.div`
     display: flex;
-    flex-direction: column;
+
+    flex-direction: ${(props) => (!props.AI ? "column" : "column-reverse")};
 `;
 const GridForCards = styled.div`
     display: grid;
-    grid-template-rows: repeat(2, 280px);
-    grid-template-columns: 40px;
     grid-auto-flow: column;
-    max-width: 750px;
-    place-items: center;
+    grid-auto-columns: clamp(210px, 20vw, 290px);
 `;
 const Tokens = styled.div``;
 
 function GroundForCards({ pokemons, tokens, AI }) {
+    console.log(AI);
     return (
-        <PlayGround>
+        <PlayGround AI={AI}>
             <GridForCards>
                 <AnimatePresence>
                     {pokemons.map((el, i) => (
