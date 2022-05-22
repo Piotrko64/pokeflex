@@ -4,8 +4,8 @@ import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 const stateFight = {
-    myTeam: [examplePokemons[1], examplePokemons[2], examplePokemons[3]],
-    enemyTeam: [examplePokemons[0], examplePokemons[7], examplePokemons[4]],
+    myTeam: [examplePokemons[1]],
+    enemyTeam: [examplePokemons[0]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -21,7 +21,7 @@ const stateFight = {
 function pushNewCoordinate(state, id, coordinate) {
     let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
     newCoordinate = [{ id, coordinate }, ...newCoordinate];
-    console.log(newCoordinate);
+
     return newCoordinate;
 }
 const FriendReducer = (state = stateFight, action) => {

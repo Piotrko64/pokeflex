@@ -8,8 +8,9 @@ import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../_Actio
 
 import GroundForCards from "./groundFriends";
 import YourTurn from "./YourTurn";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
+import WinLose from "./WinLose";
 
 const WholeField = styled.div`
     display: flex;
@@ -22,6 +23,7 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground() {
+    const [endGame, setEndGame] = useState(null);
     const dispatch = useDispatch();
 
     const All = useSelector((state) => state.FriendsTeam);
@@ -63,14 +65,25 @@ function CompletePlayground() {
             }, 1000);
         }
     }, [yourTurn]);
+
+    useEffect(() => {
+        if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
+            setEndGame("remis");
+        } else if (FriendsTeam.length === 0) {
+            setEndGame("lose");
+        } else if (EnemyTeam.length === 0) {
+            setEndGame("win");
+        }
+    }, [FriendsTeam.length, EnemyTeam.length]);
+
     return (
         <>
             <WholeField>
-                {/* <Confetti width={2000} height={1000} numberOfPieces={800} gravity={0.05} recycle={false} /> */}
                 <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
                 <YourTurn turn={yourTurn} />
                 <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />
             </WholeField>
+            {endGame && <WinLose value={endGame} />}
         </>
     );
 }
