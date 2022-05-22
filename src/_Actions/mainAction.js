@@ -48,3 +48,12 @@ export const moveToGrave = (pokemon) => {
         payload: pokemon,
     };
 };
+export const setEnemyTeam = (team, tokens) => {
+    return {
+        type: "setEnemyTeam",
+        payload: {
+            team,
+            tokens,
+        },
+    };
+};

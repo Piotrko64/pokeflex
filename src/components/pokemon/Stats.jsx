@@ -47,7 +47,7 @@ const rotate = keyframes`
     }
 `;
 const ImportantStat = styled.div`
-    font-size: ${(props) => (props.versionMini ? "23px" : "35px")};
+    font-size: ${(props) => (props.versionMini ? "20px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;

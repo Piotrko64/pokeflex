@@ -2,7 +2,14 @@ import lighter from "../functions/powerTokens/lighter";
 
 // Import Icons
 import { BsFillHeartFill } from "react-icons/bs";
-import { GiCat, GiWaterFountain, GiBlackHandShield, GiLighter, GiDeadlyStrike } from "react-icons/gi";
+import {
+    GiCat,
+    GiWaterFountain,
+    GiBlackHandShield,
+    GiLighter,
+    GiDeadlyStrike,
+    GiCirclingFish,
+} from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
 // function for roken
@@ -13,6 +20,7 @@ import sacrifice from "../functions/powerTokens/sacrifice";
 import resurrection from "../functions/powerTokens/resurrection";
 
 import { v4 } from "uuid";
+import fishingRoad from "../functions/powerTokens/fishingRod";
 
 export const allTokens = [
     {
@@ -55,6 +63,13 @@ export const allTokens = [
         name: "Resurrection",
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
-        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field",
+        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **11hp**",
+    },
+    {
+        id: v4(),
+        name: "Fishing Road",
+        icon: <GiCirclingFish />,
+        functionToken: fishingRoad,
+        desc: "Summon two **Magikarp**",
     },
 ];

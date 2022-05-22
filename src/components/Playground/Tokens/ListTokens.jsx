@@ -3,11 +3,12 @@ import styled from "styled-components";
 import ItemToken from "./ItemToken";
 
 const List = styled.div`
-    margin-top: 15px;
+    margin: 10px auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 320px;
+    max-width: 600px;
+    height: 62px;
 `;
 
 function ListTokens({ list, AI }) {

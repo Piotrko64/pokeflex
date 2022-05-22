@@ -22,6 +22,7 @@ const Item = styled.button`
     transition: all 0.1s linear;
     z-index: 9999;
     &:hover {
+        z-index: 999999;
         transform: scale(1.25);
         background: white;
         color: black;

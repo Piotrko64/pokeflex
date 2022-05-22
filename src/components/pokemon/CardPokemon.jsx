@@ -1,6 +1,6 @@
 import Stats from "./Stats";
 import styled from "styled-components";
-import Atropos from "atropos/react";
+
 import { useSelector } from "react-redux";
 const Card = styled.div`
     height: 100%;
@@ -15,12 +15,13 @@ const Card = styled.div`
     font-size: ${(props) => (props.versionMini ? "14px" : "28px")};
     width: ${(props) => (props.versionMini ? "180px" : "")};
     overflow: hidden;
-    padding-top: 10px;
+    transform: ${(props) => (props.choose ? "scale(1.1)" : "")};
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "")};
+    box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "0px 0px 46px -1px transparent")};
     &:hover {
         box-shadow: 0px 0px 46px -1px rgba(255, 255, 255, 1);
+        transform: scale(1.05);
     }
 `;
 const Img = styled.img`

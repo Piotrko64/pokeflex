@@ -30,12 +30,12 @@ const Describe = styled.div`
     max-width: 600px;
     text-align: center;
 `;
-const PlayQuick = styled.button`
+const Play = styled.button`
     font-size: 32px;
     margin-top: 20px;
-    font-family: "Lato", sans-serif;
+
     font-family: "Koulen", cursive;
-    background: #a703ab;
+    background: ${(props) => (props.color ? props.color : "#a703ab")};
     color: white;
     border: none;
     cursor: pointer;
@@ -56,7 +56,10 @@ function LeftSide() {
             </Welcome>
             <Describe>Card Game by FRONT FLEX</Describe>
             <Link to="/QuickGame">
-                <PlayQuick>Quick Game</PlayQuick>
+                <Play>Quick Game</Play>
+            </Link>
+            <Link to="/ChooseLevel">
+                <Play color="#03942a">Select Level</Play>
             </Link>
         </AllLeft>
     );

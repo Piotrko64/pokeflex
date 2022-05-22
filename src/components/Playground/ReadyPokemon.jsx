@@ -51,8 +51,8 @@ function ReadyPokemon(props) {
     }, [All.myTeam.length, All.enemyTeam.length]);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
-            const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x + 15;
-            const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y;
+            const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x;
+            const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y - 10;
 
             pokemonRef.current.style.zIndex = `999`;
             pokemonRef.current.style.transform = `translateX(${coordinateX}px) translateY(${coordinateY}px)`;

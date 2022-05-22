@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
+import { AnimatePresence } from "framer-motion";
+
 import ReadyPokemon from "./ReadyPokemon";
-import { whereIAm } from "../../_Actions/mainAction";
+
 import ListTokens from "./Tokens/ListTokens";
 
 const PlayGround = styled.div`
@@ -14,7 +14,7 @@ const PlayGround = styled.div`
 const GridForCards = styled.div`
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: clamp(210px, 20vw, 290px);
+    grid-auto-columns: clamp(180px, 15vw, 290px);
 `;
 const Tokens = styled.div``;
 
