@@ -20,9 +20,9 @@ const Item = styled.button`
     background: transparent;
     cursor: pointer;
     transition: all 0.1s linear;
-    z-index: 9999;
+    position: relative;
+    z-index: 999;
     &:hover {
-        z-index: 999999;
         transform: scale(1.25);
         background: white;
         color: black;
@@ -48,11 +48,11 @@ function ItemToken({ item, AI }) {
                 layout
                 animate={{ opacity: 1 }}
                 exit={{
-                    y: -100,
+                    y: -50,
                     opacity: 0,
                     scale: 2,
                 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 initial={{ opacity: 1 }}
             >
                 <Item onClick={() => handleUseToken(item.functionToken(All), item.id)}>{item.icon}</Item>

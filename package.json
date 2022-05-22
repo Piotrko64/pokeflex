@@ -11,6 +11,7 @@
     "atropos": "^1.0.2",
     "framer-motion": "^6.3.3",
     "react": "^18.1.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-markdown": "^8.0.3",

@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
-import { animation, choose, moveToGrave, noWhoAttack, pushCoordinate } from "../../_Actions/mainAction";
+import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
 import AnimHP from "../animOneStatComponents/AnimHp";
 import { CSSTransition } from "react-transition-group";
 import { motion } from "framer-motion";
+
+import blockSound from "../../Audio/blockAction.wav";
+const blockPlay = new Audio(blockSound);
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -16,8 +19,11 @@ const Pokemon = styled.div`
 function ReadyPokemon(props) {
     const [hpChange, setHpChange] = useState(props.value.hp);
     const [showNewStat, setShowNewStat] = useState(0);
+
     const pokemonRef = useRef(null);
+
     const dispatch = useDispatch();
+
     const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
 
     const All = useSelector((state) => state.FriendsTeam);
@@ -28,10 +34,12 @@ function ReadyPokemon(props) {
     function handleClick() {
         if (yourTurn) {
             dispatch(choose(props.value.id));
+
             const { x, y } = pokemonRef.current.getBoundingClientRect();
 
             dispatch(animation([x, y]));
         } else {
+            blockPlay.play();
             alert("It is not your turn");
         }
     }
@@ -48,10 +56,12 @@ function ReadyPokemon(props) {
                 600
             );
         }
+        console.log(props.value.id, props.value.name);
     }, [All.myTeam.length, All.enemyTeam.length]);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x;
+
             const coordinateY = whereIsEnemy[1] - pokemonRef.current.getBoundingClientRect().y - 10;
 
             pokemonRef.current.style.zIndex = `999`;

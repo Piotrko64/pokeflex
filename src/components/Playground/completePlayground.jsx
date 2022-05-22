@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Confetti from "react-confetti";
+
 import { useSelector, useDispatch } from "react-redux";
 
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../_Actions/mainAction";
@@ -64,6 +66,7 @@ function CompletePlayground() {
     return (
         <>
             <WholeField>
+                {/* <Confetti width={2000} height={1000} numberOfPieces={800} gravity={0.05} recycle={false} /> */}
                 <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
                 <YourTurn turn={yourTurn} />
                 <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />

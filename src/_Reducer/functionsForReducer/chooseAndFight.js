@@ -1,4 +1,6 @@
 import Hit from "../../Audio/Hit.wav";
+import pick from "../../Audio/PickingCart.wav";
+const pickPlay = new Audio(pick);
 let whoAttack = "";
 let whoAttackID = "";
 export default function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
@@ -18,6 +20,10 @@ export default function chooseAndFight(state, payload, teamFriends, teamEnemy, c
         }
     });
     if (Choosing) {
+        if (!computer) {
+            pickPlay.play();
+        }
+
         return { ...state, whoAttack, whoAttackID };
     }
     teamEnemy.forEach((e, i) => {
