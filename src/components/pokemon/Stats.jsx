@@ -170,7 +170,7 @@ function Stats({ value, versionMini }) {
                         </OneStat>
                     </div>
                 </GridStats>
-                <ImportantStat versionMini={versionMini}>
+                <ImportantStat versionMini={versionMini} data-atropos-offset="5">
                     {(() => {
                         switch (type) {
                             case "Electro":

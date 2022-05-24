@@ -1,3 +1,4 @@
+import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
 import { allTokens } from "../../allTokens";
 
@@ -6,7 +7,7 @@ const Gyarados = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
     name: "Gyarados",
     type: "Water",
-    hp: 62,
+    hp: 2,
     attack: 8,
     specialAttack: 12,
     speed: 16,
@@ -19,7 +20,7 @@ const Greninja = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
     name: "Greninja",
     type: "Water",
-    hp: 32,
+    hp: 2,
     attack: 5,
     specialAttack: 12,
     speed: 20,
@@ -36,4 +37,7 @@ export const level1 = {
         allTokens.find((e) => e.name === "Fishing Road"),
         allTokens.find((e) => e.name === "Fountain"),
     ],
+    award: {
+        tokens: [allTokens.find((e) => e.name === "Fishing Road")],
+    },
 };

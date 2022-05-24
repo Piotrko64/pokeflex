@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import Confetti from "react-confetti";
 import { useEffect } from "react";
-import WinSound from "../../Audio/winLose/Win.wav";
+import WinSound from "../../../Audio/winLose/Win.wav";
+import LoseSound from "../../../Audio/winLose/Lose.wav";
+import RemisSound from "../../../Audio/winLose/Scream.wav";
+import Awards from "./AwardsComponents/Awards";
 
 const winPlay = new Audio(WinSound);
+const losePlay = new Audio(LoseSound);
+const remisPlay = new Audio(RemisSound);
 
 const Blur = styled.div`
     position: fixed;
@@ -21,6 +26,7 @@ const TableScore = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 400px;
     min-width: 600px;
     background-color: white;
@@ -40,12 +46,12 @@ const Win = styled.div`
     -webkit-text-fill-color: transparent;
 `;
 const Lose = styled.div`
-    background: linear-gradient(180deg, rgba(209, 37, 37, 1) 0%, rgba(255, 219, 60, 1) 89%);
+    background: linear-gradient(180deg, rgba(4, 52, 94, 1) 0%, rgba(255, 60, 60, 1) 89%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
 const Remis = styled.div`
-    background: linear-gradient(180deg, rgba(209, 37, 37, 1) 0%, rgba(255, 219, 60, 1) 89%);
+    background: linear-gradient(180deg, rgba(13, 120, 26, 1) 0%, rgba(0, 195, 152, 1) 89%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
@@ -58,8 +64,10 @@ function WinLose({ value }) {
                     winPlay.play();
                     break;
                 case "lose":
+                    losePlay.play();
                     break;
                 case "remis":
+                    remisPlay.play();
                     break;
                 default:
                     break;
@@ -94,6 +102,7 @@ function WinLose({ value }) {
                         }
                     })()}
                 </Score>
+                {value === "win" && <Awards />}
             </TableScore>
         </Blur>
     );

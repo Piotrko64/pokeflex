@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import CompletePlayground from "../components/Playground/completePlayground";
-import { levels } from "../data/dataLevels/levelsMainList";
+import levels from "../data/dataLevels/levelsMainList";
 import { setEnemyTeam, setEnemyTeams } from "../_Actions/mainAction";
 
 function SingleLevel() {

@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import { unmountComponentAtNode } from "react-dom";
 function QuickGame() {
     useEffect(() => {
-        // const main = new Audio(quickGameSoundtrack);
-        // main.volume = 0.2;
-        // main.loop = true;
-        // main.play();
+        const main = new Audio(quickGameSoundtrack);
+        main.volume = 0.2;
+        main.loop = true;
+        main.play();
         return () => {
-            // main.pause();
+            main.pause();
         };
     }, []);
 

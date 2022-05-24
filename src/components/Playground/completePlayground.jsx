@@ -10,7 +10,7 @@ import GroundForCards from "./groundFriends";
 import YourTurn from "./YourTurn";
 import { useEffect, useState } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
-import WinLose from "./WinLose";
+import WinLose from "./WinLoseComponents/WinLose";
 
 const WholeField = styled.div`
     display: flex;

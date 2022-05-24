@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { levels } from "../../data/dataLevels/levelsMainList";
+import levels from "../../data/dataLevels/levelsMainList";
 import OneLevel from "./OneLevel";
 const ListLevel = styled.div`
     display: flex;

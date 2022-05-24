@@ -4,8 +4,8 @@ import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 const stateFight = {
-    myTeam: [examplePokemons[1]],
-    enemyTeam: [examplePokemons[0]],
+    myTeam: [examplePokemons[1], examplePokemons[5]],
+    enemyTeam: [examplePokemons[2]],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -14,7 +14,7 @@ const stateFight = {
     allCoordinates: [],
     grave: [],
     myTokens: [allTokens[0], allTokens[6], allTokens[5]],
-    enemyTokens: [allTokens[2], allTokens[3], allTokens[4]],
+    enemyTokens: [allTokens[2]],
     yourTurn: true,
 };
 

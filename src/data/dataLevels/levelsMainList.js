@@ -1,3 +1,5 @@
 import { level1 } from "./singleLevels/level1";
 
-export const levels = [level1];
+const levels = [level1];
+
+export default levels;
