@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import Confetti from "react-confetti";
 import { Fragment, useEffect } from "react";
-import ListTokenAwards from "./ListTokenAwards";
 
-function ListAwards({ tokens }) {
+import TokenAwards from "./TokenAwards";
+import PokemonAward from "./PokemonAward";
+
+function ListAwards({ token, pokemon }) {
     return (
         <Fragment>
-            <ListTokenAwards tokens={tokens} />
+            {token && <TokenAwards token={token} />}
+            {pokemon && <PokemonAward pokemon={pokemon} />}
         </Fragment>
     );
 }

@@ -31,13 +31,13 @@ const Greninja = {
 export const level1 = {
     id: "level1normal",
     name: "level 1",
-    color: "#0031ff",
+    color: "linear-gradient(180deg, rgba(33,36,254,1) 0%, rgba(47,0,195,1) 89%)",
     enemyTeam: [Gyarados, Greninja],
     enemyTokens: [
         allTokens.find((e) => e.name === "Fishing Road"),
         allTokens.find((e) => e.name === "Fountain"),
     ],
     award: {
-        tokens: [allTokens.find((e) => e.name === "Fishing Road")],
+        tokens: allTokens.find((e) => e.name === "Fishing Road"),
     },
 };

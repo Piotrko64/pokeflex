@@ -99,6 +99,7 @@ export const examplePokemons = [
     },
     {
         id: v4(),
+        idAward: "MRMIMe45648normalPS",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
         name: "Mr mime",
         type: "Psychic",

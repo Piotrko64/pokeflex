@@ -18,18 +18,22 @@ const TokenAward = styled.div`
     transform: rotateZ(360deg);
 `;
 
-function ListTokenAwards({ tokens }) {
+function TokenAwards({ token }) {
     useEffect(() => {
-        localStorage.setItem("tokens", tokens);
+        const checkAllTokensAward = JSON.parse(localStorage.getItem("tokens")) || [];
+        !checkAllTokensAward.length && localStorage.setItem("tokens", "[]");
+
+        checkAllTokensAward.push(token.idAward);
+
+        console.log(checkAllTokensAward);
+        localStorage.setItem("tokens", JSON.stringify([...new Set(checkAllTokensAward)]));
     }, []);
     return (
         <Fragment>
-            {tokens.map((el) => (
-                <Tippy content={<Tooltip title={el.name} desc={el.desc} />}>
-                    <TokenAward> {el.icon} </TokenAward>
-                </Tippy>
-            ))}
+            <Tippy content={<Tooltip title={token.name} desc={token.desc} />}>
+                <TokenAward> {token.icon} </TokenAward>
+            </Tippy>
         </Fragment>
     );
 }
-export default ListTokenAwards;
+export default TokenAwards;

@@ -8,6 +8,7 @@ import ListAwards from "./ListAwards";
 const AwardsSection = styled.div`
     color: black;
     position: relative;
+    margin-bottom: 20px;
     &::after,
     &::before {
         transform: translate(-10%, -50%);
@@ -29,14 +30,15 @@ function Awards() {
     const location = useLocation();
     const levelID = location.pathname.split("/")[2];
     const findAwards = levels.find((el) => el.id === levelID);
-    const awardsToken = findAwards?.award?.tokens;
+    const awardToken = findAwards?.award?.tokens;
+    const awardPokemon = findAwards?.award?.pokemons;
     useEffect(() => {});
 
     return (
         <Fragment>
             <AwardsSection>Your Awards</AwardsSection>
 
-            <ListAwards tokens={awardsToken} />
+            <ListAwards token={awardToken} pokemon={awardPokemon} />
         </Fragment>
     );
 }

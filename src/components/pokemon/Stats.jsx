@@ -47,7 +47,7 @@ const rotate = keyframes`
     }
 `;
 const ImportantStat = styled.div`
-    font-size: ${(props) => (props.versionMini ? "20px" : "35px")};
+    font-size: ${(props) => (props.versionMini ? "22px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;
@@ -118,7 +118,7 @@ const Blocked = styled.div`
         rgba(126, 120, 117, 1) 91%
     );
 `;
-const Psychic = styled(ImportantStat)`
+const Psychic = styled.div`
     background: rgb(199, 28, 63);
     background: radial-gradient(circle, rgba(199, 28, 63, 1) 35%, rgba(24, 51, 187, 1) 96%);
 `;
@@ -204,7 +204,11 @@ function Stats({ value, versionMini }) {
                                     </>
                                 );
                             case "Psychic":
-                                return <Psychic>{type}</Psychic>;
+                                return (
+                                    <>
+                                        <Psychic>{type}</Psychic>
+                                    </>
+                                );
                             case "Normal":
                                 return <Normal>{type}</Normal>;
                             case "Blocked":

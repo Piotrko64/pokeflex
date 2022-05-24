@@ -5,7 +5,7 @@ const OneLevelDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${(props) => props.color};
+    background: ${(props) => props.color};
     width: 300px;
     padding: 5px;
     border-radius: 15px;
@@ -13,6 +13,7 @@ const OneLevelDiv = styled.div`
     font-size: 22px;
     cursor: pointer;
     color: white;
+    margin-bottom: 10px;
 `;
 
 function OneLevel({ value }) {

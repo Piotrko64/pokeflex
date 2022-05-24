@@ -33,6 +33,7 @@ const TableScore = styled.div`
     font-size: 32px;
     z-index: 10000;
     border-radius: 20px;
+    padding: 20px;
     font-family: "Koulen", cursive;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.7);
 `;
