@@ -3,6 +3,7 @@ import Confetti from "react-confetti";
 import { Fragment, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import levels from "../../../../data/dataLevels/levelsMainList";
+import ListAwards from "./ListAwards";
 
 const AwardsSection = styled.div`
     color: black;
@@ -35,7 +36,7 @@ function Awards() {
         <Fragment>
             <AwardsSection>Your Awards</AwardsSection>
 
-            <ListAwards value={awardsToken} />
+            <ListAwards tokens={awardsToken} />
         </Fragment>
     );
 }

@@ -82,8 +82,8 @@ function WinLose({ value }) {
                 <Confetti
                     width={window.innerWidth}
                     height={window.innerHeight}
-                    numberOfPieces={1200}
-                    gravity={0.1}
+                    numberOfPieces={1000}
+                    gravity={0.3}
                     recycle={false}
                 />
             )}
