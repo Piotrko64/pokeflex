@@ -10,6 +10,7 @@
     "@tippyjs/react": "^4.2.6",
     "atropos": "^1.0.2",
     "framer-motion": "^6.3.3",
+    "lodash.clone": "^4.5.0",
     "react": "^18.1.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.1.0",

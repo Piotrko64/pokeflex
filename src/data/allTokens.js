@@ -9,6 +9,7 @@ import {
     GiLighter,
     GiDeadlyStrike,
     GiCirclingFish,
+    GiFireWave,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
@@ -21,6 +22,7 @@ import resurrection from "../functions/powerTokens/resurrection";
 
 import { v4 } from "uuid";
 import fishingRoad from "../functions/powerTokens/fishingRod";
+import conflagration from "../functions/powerTokens/conflagration";
 
 export const allTokens = [
     {
@@ -72,5 +74,13 @@ export const allTokens = [
         icon: <GiCirclingFish />,
         functionToken: fishingRoad,
         desc: "Summon two **Magikarp**",
+    },
+    {
+        id: v4(),
+
+        name: "Conflagration",
+        icon: <GiFireWave />,
+        functionToken: conflagration,
+        desc: "Deal **7** points of damage to all enemies",
     },
 ];

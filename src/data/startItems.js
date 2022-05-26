@@ -2,9 +2,9 @@ import { v4 } from "uuid";
 import { GiWaterFountain, GiBlackHandShield, GiLighter } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import electroAction from "../functions/powerTokens/electroaction";
-import uninvitedGuest from "../functions/powerTokens/uninvitedguest";
+
 import fountain from "../functions/powerTokens/fountain";
-import sacrifice from "../functions/powerTokens/sacrifice";
+
 import resurrection from "../functions/powerTokens/resurrection";
 import lighter from "../functions/powerTokens/lighter";
 

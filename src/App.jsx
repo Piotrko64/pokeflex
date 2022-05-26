@@ -1,21 +1,30 @@
 import "atropos/css";
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ChooseLevel from "./pages/ChooseLevel";
-import MainPage from "./pages/Main";
-import QuickGame from "./pages/QuickGame";
-import SingleLevel from "./pages/SingleLevel";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { BsQuestionCircleFill } from "react-icons/bs";
+import MainRouting from "./components/MainRouting";
+import MainComponentGuide from "./components/Quide/MainComponentGuide";
+
+const Guide = styled.div`
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    font-size: 3rem;
+    z-index: 9;
+    cursor: pointer;
+`;
+
 function App() {
+    const [openGuide, setOpenGuide] = useState(false);
     return (
         <React.Fragment>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/QuickGame" element={<QuickGame />} />
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/ChooseLevel" element={<ChooseLevel />} />
-                    <Route path="/levels/:id" element={<SingleLevel />} />
-                </Routes>
-            </BrowserRouter>
+            <MainRouting />
+            <Guide onClick={() => setOpenGuide(!openGuide)}>
+                <BsQuestionCircleFill />
+            </Guide>
+
+            {openGuide && <MainComponentGuide />}
         </React.Fragment>
     );
 }
