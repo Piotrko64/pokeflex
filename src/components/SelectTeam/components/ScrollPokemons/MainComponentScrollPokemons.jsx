@@ -1,13 +1,15 @@
 import { render } from "react-dom";
 import styled from "styled-components";
+import ListScrollPoke from "./ListScrollPoke";
 const ScrollEntireDiv = styled.div``;
 const TextScroll = styled.div``;
 const Scroll = styled.div``;
-export default function MainComponentScrollPokemons() {
-    render(
+function MainComponentScrollPokemons() {
+    return (
         <ScrollEntireDiv>
             <TextScroll>Select Pokemons</TextScroll>
-            <Scroll></Scroll>
+            <ListScrollPoke />
         </ScrollEntireDiv>
     );
 }
+export default MainComponentScrollPokemons;

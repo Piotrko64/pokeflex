@@ -74,8 +74,6 @@ function WinLose({ value }) {
                     break;
             }
         })();
-
-        console.log(value);
     }, []);
     return (
         <Blur>

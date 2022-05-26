@@ -1,10 +1,9 @@
+import { Fragment } from "react";
 import { render } from "react-dom";
+import MainComponentScrollPokemons from "./components/ScrollPokemons/MainComponentScrollPokemons";
 import ScrollPokemons from "./components/ScrollPokemons/MainComponentScrollPokemons";
 
-export default function MainComponentSelectTeam() {
-    render(
-        <>
-            <ScrollPokemons />
-        </>
-    );
+function MainComponentSelectTeam() {
+    return <MainComponentScrollPokemons />;
 }
+export default MainComponentSelectTeam;
