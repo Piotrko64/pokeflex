@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 const HPplus = styled.div`
     font-size: 16rem;
     color: rgba(179, 15, 15, 1);
@@ -13,7 +14,37 @@ const HPminus = styled(HPplus)`
     text-shadow: 0px 0px 14px #2c8a00;
 `;
 
-function AnimHP({ value }) {
-    return !!value && (value < 0 ? <HPplus>{value}</HPplus> : <HPminus>{value}</HPminus>);
+function MotionValue({ value }) {
+    return (
+        <motion.div
+            layout
+            animate={{ opacity: 0, x: -150 }}
+            exit={{}}
+            transition={{ duration: 0.75 }}
+            initial={{ opacity: 1 }}
+        >
+            {value}
+        </motion.div>
+    );
+}
+
+function AnimHP({ value, deleteHpChange }) {
+    useEffect(() => {
+        setTimeout(() => {
+            deleteHpChange();
+        }, 750);
+    }, []);
+    return (
+        !!value &&
+        (value < 0 ? (
+            <HPplus>
+                <MotionValue value={value} />
+            </HPplus>
+        ) : (
+            <HPminus>
+                <MotionValue value={value} />
+            </HPminus>
+        ))
+    );
 }
 export default AnimHP;

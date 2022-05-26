@@ -8,6 +8,7 @@ import { CSSTransition } from "react-transition-group";
 import { motion } from "framer-motion";
 
 import blockSound from "../../Audio/blockAction.wav";
+import ListAnimHP from "../animOneStatComponents/ListAnimHp";
 const blockPlay = new Audio(blockSound);
 
 const Pokemon = styled.div`
@@ -18,7 +19,7 @@ const Pokemon = styled.div`
 
 function ReadyPokemon(props) {
     const [hpChange, setHpChange] = useState(props.value.hp);
-    const [showNewStat, setShowNewStat] = useState(0);
+    const [arrayHp, setArrayHp] = useState([]);
 
     const pokemonRef = useRef(null);
 
@@ -30,6 +31,10 @@ function ReadyPokemon(props) {
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
 
     const whereIsEnemy = useSelector((state) => state.FriendsTeam.whereIsEnemy);
+
+    function deleteHpChange() {
+        setArrayHp((ar) => ar.filter((_, i) => i !== 0));
+    }
 
     function handleClick() {
         if (yourTurn) {
@@ -56,7 +61,6 @@ function ReadyPokemon(props) {
                 600
             );
         }
-        console.log(props.value.id, props.value.name);
     }, [All.myTeam.length, All.enemyTeam.length]);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
@@ -75,15 +79,13 @@ function ReadyPokemon(props) {
     }, [whereIsEnemy]);
 
     useEffect(() => {
-        let timeAnim;
-        clearTimeout(timeAnim);
         const { hp } = props.value;
-        setShowNewStat(-(hpChange - hp));
-        setHpChange(hp);
-        timeAnim = setTimeout(() => {
-            setShowNewStat(0);
-        }, 1500);
-    }, [All]);
+        console.log(-(hpChange - hp));
+        const newHpChange = -(hpChange - hp);
+
+        newHpChange && setArrayHp((el) => [...el, newHpChange]);
+        setHpChange(props.value.hp);
+    }, [props.value.hp]);
     useEffect(() => {
         if (props.value.hp < 1) {
             dispatch(moveToGrave(props.value));
@@ -104,9 +106,9 @@ function ReadyPokemon(props) {
             >
                 <CardPokemon value={props.value} versionMini />
             </motion.div>
-            <CSSTransition in={!!showNewStat} timeout={1500} classNames="animHP">
-                <AnimHP value={showNewStat} />
-            </CSSTransition>
+            <>
+                <ListAnimHP listHp={arrayHp} deleteHpChange={deleteHpChange} />
+            </>
         </Pokemon>
     );
 }
