@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import RoutingGuide from "./Routing";
-
+import ListObjectsToRender from "./DataToRender";
+import useSwitch from "../../hooks/useSwitch";
 const Blur = styled.div`
     backdrop-filter: blur(2px);
     background-color: #52525273;
@@ -12,6 +13,7 @@ const Blur = styled.div`
 `;
 
 export default function MainComponentGuide() {
+    const [render, setRender] = useSwitch(ListObjectsToRender, "All Pokemons", "All Tokens");
     return (
         <Blur>
             <RoutingGuide />

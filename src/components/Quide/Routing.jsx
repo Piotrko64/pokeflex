@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ListObjectsToRender from "./DataToRender";
 const AllGuides = styled.div`
     display: flex;
     justify-content: center;
@@ -27,9 +28,9 @@ const OneGuide = styled.div`
 export default function Routing() {
     return (
         <AllGuides>
-            <OneGuide>General</OneGuide>
-            <OneGuide>General</OneGuide>
-            <OneGuide>General</OneGuide>
+            {ListObjectsToRender.map((el) => (
+                <OneGuide key={el.name}> {el.name}</OneGuide>
+            ))}
         </AllGuides>
     );
 }
