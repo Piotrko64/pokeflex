@@ -11,7 +11,7 @@ const Guide = styled.div`
     right: 0;
     margin-right: 15px;
     font-size: 3rem;
-    z-index: 9;
+    z-index: 100;
     cursor: pointer;
 `;
 

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Card = styled.div`
     height: 100%;
     width: 100%;
-    max-width: 320px;
+    max-width: ${(props) => (props.versionMini ? "175px" : "320px")};
     background: black;
     display: flex;
     justify-content: flex-end;
@@ -25,7 +25,7 @@ const Card = styled.div`
     }
 `;
 const Img = styled.img`
-    height: ${(props) => (props.versionMini ? "120px" : "240px")};
+    height: ${(props) => (props.versionMini ? "110px" : "240px")};
     transform: "scale(0.5)";
     filter: ${(props) => (props.choose ? "drop-shadow(0px 0px 95px red)" : "")};
 `;

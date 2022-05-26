@@ -80,10 +80,11 @@ function ReadyPokemon(props) {
 
     useEffect(() => {
         const { hp } = props.value;
-        console.log(-(hpChange - hp));
+
         const newHpChange = -(hpChange - hp);
 
         newHpChange && setArrayHp((el) => [...el, newHpChange]);
+
         setHpChange(props.value.hp);
     }, [props.value.hp]);
     useEffect(() => {

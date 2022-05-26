@@ -47,7 +47,7 @@ const rotate = keyframes`
     }
 `;
 const ImportantStat = styled.div`
-    font-size: ${(props) => (props.versionMini ? "22px" : "35px")};
+    font-size: ${(props) => (props.versionMini ? "20px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;
@@ -170,7 +170,7 @@ function Stats({ value, versionMini }) {
                         </OneStat>
                     </div>
                 </GridStats>
-                <ImportantStat versionMini={versionMini} data-atropos-offset="5">
+                <ImportantStat versionMini={versionMini}>
                     {(() => {
                         switch (type) {
                             case "Electro":

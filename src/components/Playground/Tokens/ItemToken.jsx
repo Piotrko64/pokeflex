@@ -21,7 +21,7 @@ const Item = styled.button`
     cursor: pointer;
     transition: all 0.1s linear;
     position: relative;
-    z-index: 999;
+    z-index: 98;
     &:hover {
         transform: scale(1.25);
         background: white;

@@ -10,13 +10,17 @@ const Blur = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 99;
 `;
 
 export default function MainComponentGuide() {
-    const [render, setRender] = useSwitch(ListObjectsToRender, "All Pokemons", "All Tokens");
+    const [render, setRender] = useSwitch(ListObjectsToRender, "All Tokens", "All Pokemons");
     return (
         <Blur>
             <RoutingGuide />
+            {render}
+            <button onClick={() => setRender("Alls")}>{render}</button>
+            <button onClick={() => setRender("All Tokens")}>{render}</button>
         </Blur>
     );
 }
