@@ -3,12 +3,20 @@ import AllTokensGuide from "./singleInstructions/AllTokensGuide";
 
 const ListObjectsToRender = [
     {
-        name: "All Pokemons",
+        name: "General",
+        render: "General",
+    },
+    {
+        name: "Pokemons",
         render: <AllPokemonsGuide />,
     },
     {
-        name: "All Tokens",
+        name: "Tokens",
         render: <AllTokensGuide />,
+    },
+    {
+        name: "Types",
+        render: "Types",
     },
 ];
 export default ListObjectsToRender;

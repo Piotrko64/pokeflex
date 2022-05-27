@@ -11,25 +11,35 @@ const OneGuide = styled.div`
     justify-content: center;
     align-items: center;
     border: 2px solid white;
-    color: white;
+    color: ${(props) => (props.choose ? "black" : "white")};
     padding: 10px;
     font-size: 1.5rem;
+    border-left: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    backdrop-filter: blur(50px);
+    background: ${(props) => (props.choose ? "white" : "transparent")};
     &:nth-child(1) {
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
-        border-right: none;
+        border-left: 2px solid white;
     }
     &:last-child {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
-        border-left: none;
     }
 `;
-export default function Routing() {
+export default function Routing({ changeViewGuide, nameView }) {
     return (
         <AllGuides>
             {ListObjectsToRender.map((el) => (
-                <OneGuide key={el.name}> {el.name}</OneGuide>
+                <OneGuide
+                    choose={el.name === nameView}
+                    key={el.name}
+                    onClick={() => changeViewGuide(el.name)}
+                >
+                    {el.name}
+                </OneGuide>
             ))}
         </AllGuides>
     );

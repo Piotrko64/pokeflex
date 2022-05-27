@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 'listObjectRender must be array objects with propert 'name' and 'render''
 
 export default function useSwitch(listObjectsRender, actualRender, defaultRender) {
     const [actualValue, setActualValue] = useState(actualRender);
+
     function changeRender(value) {
         setActualValue(value);
     }
 
-    const findRender =
-        listObjectsRender.find((el) => el.name === actualValue)?.render ||
-        listObjectsRender.find((el) => el.name === defaultRender).render;
+    const findObject =
+        listObjectsRender.find((el) => el.name === actualValue) ||
+        listObjectsRender.find((el) => el.name === defaultRender);
 
-    return [findRender, changeRender];
+    const toRender = findObject.render;
+    const nameRender = findObject.name;
+
+    return [toRender, changeRender, nameRender];
 }

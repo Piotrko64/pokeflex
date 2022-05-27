@@ -14,13 +14,14 @@ const Blur = styled.div`
 `;
 
 export default function MainComponentGuide() {
-    const [render, setRender] = useSwitch(ListObjectsToRender, "All Tokens", "All Pokemons");
+    const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "Tokens", "General");
+    function changeViewGuide(renderView) {
+        setRenderView(renderView);
+    }
     return (
         <Blur>
-            <RoutingGuide />
-            {render}
-            <button onClick={() => setRender("Alls")}>{render}</button>
-            <button onClick={() => setRender("All Tokens")}>{render}</button>
+            <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
+            {renderView}
         </Blur>
     );
 }
