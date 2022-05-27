@@ -1,10 +1,9 @@
-import { render } from "react-dom";
 import styled from "styled-components";
-import { examplePokemons } from "../../../../data/examplePokemons";
 import CardPokemon from "../../../pokemon/CardPokemon";
 
 const Card = styled.div`
-    margin: 0 90px;
+    padding: 0 20px;
+    transform: scale(0.85);
 `;
 
 export default function OnePokemonScroll({ value }) {
