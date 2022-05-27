@@ -4,7 +4,7 @@ import { examplePokemons } from "../../../../data/examplePokemons";
 import CardPokemon from "../../../pokemon/CardPokemon";
 
 const Card = styled.div`
-    margin: 0 40px;
+    margin: 0 90px;
 `;
 
 export default function OnePokemonScroll({ value }) {
