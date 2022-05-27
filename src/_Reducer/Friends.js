@@ -4,7 +4,7 @@ import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 const stateFight = {
-    myTeam: [examplePokemons[1], examplePokemons[5]],
+    myTeam: [examplePokemons[1], examplePokemons[5], examplePokemons[2]],
     enemyTeam: [examplePokemons[2]],
     whoAttack: "",
     whoAttackID: "",

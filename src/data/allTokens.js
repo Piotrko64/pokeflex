@@ -27,6 +27,7 @@ import conflagration from "../functions/powerTokens/conflagration";
 export const allTokens = [
     {
         id: v4(),
+        idAward: "Lighter44-fireChar7878",
         name: "Lighter",
         icon: <GiLighter />,
         functionToken: lighter,

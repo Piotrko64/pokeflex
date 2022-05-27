@@ -51,6 +51,7 @@ export const examplePokemons = [
     },
     {
         id: v4(),
+        idAward: "Cyndaquil456Norm45al",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/155.png",
         name: "Cyndaquil",
         type: "Fire",

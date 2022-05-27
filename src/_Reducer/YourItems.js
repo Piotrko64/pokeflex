@@ -1,18 +1,21 @@
+import { startPokemons, startTokens } from "../data/startItems";
+import { addFromLocalStorage } from "./functionsForReducer/addFromLocalStorage";
+
 const yourItems = {
-    Pokemons: "",
-    Tokens: "",
-    TeamFight: "",
-    TokensFight: "",
+    Pokemons: [...startPokemons],
+    Tokens: [...startTokens],
+    TeamFight: [],
+    TokensFight: [],
 };
 
-const FriendReducer = (state = yourItems, action) => {
+const YourItemsReducer = (state = yourItems, action) => {
     switch (action.type) {
         case "addItemsFromLocalStorage":
-            return { ...state, enemyTeam: action.payload.team, enemyTokens: action.payload.tokens };
+            return addFromLocalStorage(state);
 
         default:
             return state;
     }
 };
 
-export default FriendReducer;
+export default YourItemsReducer;

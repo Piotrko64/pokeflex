@@ -75,13 +75,6 @@ export const startPokemons = [
 export const startTokens = [
     {
         id: v4(),
-        name: "Lighter",
-        icon: <GiLighter />,
-        functionToken: lighter,
-        desc: "All your characters receive **Turbo Fire** type and **+5** to speed",
-    },
-    {
-        id: v4(),
         name: "Electro Action",
         icon: <AiOutlineThunderbolt />,
         functionToken: electroAction,

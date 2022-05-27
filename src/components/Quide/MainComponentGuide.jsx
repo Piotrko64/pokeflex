@@ -2,6 +2,7 @@ import styled from "styled-components";
 import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
+
 const Blur = styled.div`
     backdrop-filter: blur(4px);
     background-color: #52525273;

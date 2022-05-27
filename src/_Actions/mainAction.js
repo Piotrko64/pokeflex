@@ -57,3 +57,8 @@ export const setEnemyTeam = (team, tokens) => {
         },
     };
 };
+export const addItemsFromLocalStorage = () => {
+    return {
+        type: "addItemsFromLocalStorage",
+    };
+};

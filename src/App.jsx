@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import MainRouting from "./components/MainRouting";
 import MainComponentGuide from "./components/Quide/MainComponentGuide";
+import { useDispatch } from "react-redux";
+import { addItemsFromLocalStorage } from "./_Actions/mainAction";
 
 const Guide = styled.div`
     position: fixed;
@@ -17,6 +19,8 @@ const Guide = styled.div`
 
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
+    const dispatch = useDispatch();
+    dispatch(addItemsFromLocalStorage());
     return (
         <React.Fragment>
             <MainRouting />
