@@ -1,10 +1,11 @@
-import AllPokemonsGuide from "./singleInstructions/AllPokemonsGuide";
-import AllTokensGuide from "./singleInstructions/AllTokensGuide";
+import AllPokemonsGuide from "./singleInstructions/pokemons/AllPokemonsGuide";
+import AllTokensGuide from "./singleInstructions/tokens/AllTokensGuide";
+import GeneralGuide from "./singleInstructions/GeneralGuide";
 
 const ListObjectsToRender = [
     {
         name: "General",
-        render: "General",
+        render: <GeneralGuide />,
     },
     {
         name: "Pokemons",

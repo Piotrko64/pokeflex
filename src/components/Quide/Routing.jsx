@@ -4,7 +4,7 @@ import ListObjectsToRender from "./DataToRender";
 const AllGuides = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin: 40px 0;
 `;
 const OneGuide = styled.div`
     display: flex;

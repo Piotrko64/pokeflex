@@ -14,7 +14,7 @@ const Blur = styled.div`
 `;
 
 export default function MainComponentGuide() {
-    const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "Tokens", "General");
+    const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "General", "General");
     function changeViewGuide(renderView) {
         setRenderView(renderView);
     }
