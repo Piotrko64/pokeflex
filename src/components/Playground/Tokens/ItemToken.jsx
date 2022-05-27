@@ -31,11 +31,14 @@ const Item = styled.button`
     }
 `;
 
-function ItemToken({ item, AI }) {
+function ItemToken({ item, AI, noBattle }) {
     const dispatch = useDispatch();
     const All = useSelector((state) => state.FriendsTeam);
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
     function handleUseToken(fun, id) {
+        if (noBattle) {
+            return;
+        }
         if (AI || !All.myTokens.find((e) => e.id === id) || !yourTurn) {
             return;
         }

@@ -3,7 +3,7 @@ import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
 const Blur = styled.div`
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     background-color: #52525273;
     height: 100%;
     min-height: 100vh;
