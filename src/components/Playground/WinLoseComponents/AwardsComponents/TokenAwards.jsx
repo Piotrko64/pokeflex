@@ -16,6 +16,7 @@ const TokenAward = styled.div`
     font-size: 3rem;
     transition: transform 3s ease;
     transform: rotateZ(360deg);
+    margin-bottom: 25px;
 `;
 
 function TokenAwards({ token }) {

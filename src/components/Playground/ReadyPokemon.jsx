@@ -3,8 +3,7 @@ import styled from "styled-components";
 import CardPokemon from "../pokemon/CardPokemon";
 import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
-import AnimHP from "../animOneStatComponents/AnimHp";
-import { CSSTransition } from "react-transition-group";
+
 import { motion } from "framer-motion";
 
 import blockSound from "../../Audio/blockAction.wav";
@@ -50,18 +49,14 @@ function ReadyPokemon(props) {
     }
     useEffect(() => {
         if (pokemonRef.current) {
-            setTimeout(
-                () =>
-                    dispatch(
-                        pushCoordinate(props.value.id, [
-                            pokemonRef.current.getBoundingClientRect().x,
-                            pokemonRef.current.getBoundingClientRect().y,
-                        ])
-                    ),
-                600
+            dispatch(
+                pushCoordinate(props.value.id, [
+                    pokemonRef.current.getBoundingClientRect().x,
+                    pokemonRef.current.getBoundingClientRect().y,
+                ])
             );
         }
-    }, [All.myTeam.length, All.enemyTeam.length]);
+    }, [All.myTeam, All.enemyTeam]);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x;

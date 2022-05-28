@@ -19,6 +19,10 @@ const Guide = styled.div`
 
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
+
+    function handleEscape() {
+        setOpenGuide(false);
+    }
     const dispatch = useDispatch();
     dispatch(addItemsFromLocalStorage());
     return (
@@ -28,7 +32,7 @@ function App() {
                 <BsQuestionCircleFill />
             </Guide>
 
-            {openGuide && <MainComponentGuide />}
+            {openGuide && <MainComponentGuide handleEscape={handleEscape} />}
         </React.Fragment>
     );
 }
