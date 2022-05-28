@@ -7,7 +7,7 @@ const Mime1 = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
     name: "Mr mime",
     type: "Psychic",
-    hp: 42,
+    hp: 40,
     attack: 6,
     specialAttack: 8,
     speed: 24,

@@ -20,6 +20,7 @@ const stateFight = {
 
 function pushNewCoordinate(state, id, coordinate) {
     let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
+
     newCoordinate = [{ id, coordinate }, ...newCoordinate];
 
     return newCoordinate;

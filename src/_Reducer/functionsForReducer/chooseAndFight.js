@@ -33,12 +33,13 @@ export default function chooseAndFight(state, payload, teamFriends, teamEnemy, c
             EnemyIndex = i;
             teamFriends.forEach((f, fi) => {
                 if (f.id === state.whoAttackID) {
-                    console.log(f);
                     Me = { ...f };
                     MeIndex = fi;
                 }
             });
-
+            if (!Me) {
+                Me = teamFriends[0];
+            }
             if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
             } else {

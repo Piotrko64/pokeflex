@@ -1,5 +1,5 @@
 import "atropos/css";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import MainRouting from "./components/MainRouting";
@@ -19,21 +19,25 @@ const Guide = styled.div`
 
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
-
-    function handleEscape() {
-        setOpenGuide(false);
+    const Component = useMemo(() => <MainComponentGuide />, []);
+    function handleEscape(e) {
+        if (e.key === "Escape") {
+            setOpenGuide(false);
+        } else if (e.key === "p") {
+            setOpenGuide(true);
+        }
     }
     const dispatch = useDispatch();
     dispatch(addItemsFromLocalStorage());
     return (
-        <React.Fragment>
+        <div onKeyDown={handleEscape} tabIndex="-1">
             <MainRouting />
             <Guide onClick={() => setOpenGuide(!openGuide)}>
                 <BsQuestionCircleFill />
             </Guide>
 
-            {openGuide && <MainComponentGuide handleEscape={handleEscape} />}
-        </React.Fragment>
+            {openGuide && Component}
+        </div>
     );
 }
 

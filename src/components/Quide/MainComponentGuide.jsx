@@ -2,7 +2,7 @@ import styled from "styled-components";
 import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 const Blur = styled.div`
     backdrop-filter: blur(4px);
@@ -15,14 +15,14 @@ const Blur = styled.div`
     z-index: 99;
 `;
 
-export default function MainComponentGuide({ handleEscape }) {
+export default function MainComponentGuide() {
     const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "General", "General");
 
     function changeViewGuide(renderView) {
         setRenderView(renderView);
     }
     return (
-        <Blur onKeyDown={handleEscape} tabindex={-1}>
+        <Blur>
             <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
             {renderView}
         </Blur>

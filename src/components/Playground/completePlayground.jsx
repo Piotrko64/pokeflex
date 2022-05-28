@@ -42,12 +42,14 @@ function CompletePlayground() {
         dispatch(computerMove(x));
         dispatch(animation([]));
     }
+
     function handleMoveComputer(x) {
         handleComputerChoose(x);
         setTimeout(() => {
             const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
             dispatch(computerMove(randomEnemy));
-            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+
+            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy)?.coordinate));
             setTimeout(() => dispatch(noWhoAttack()), 400);
         }, 500);
     }
@@ -59,8 +61,13 @@ function CompletePlayground() {
                     const randomToken = EnemyTokens[randomNumberTokens];
 
                     dispatch(tokenPowerAi(randomToken.functionToken(All, true), randomToken.id));
-                } else {
+                } else if (chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]) {
                     handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]);
+                    console.log(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]);
+                } else {
+                    console.log("tu2");
+                    console.log(FriendsTeam[0].id, EnemyTeam[0].id);
+                    handleMoveComputer(FriendsTeam[0].id, EnemyTeam[0].id);
                 }
             }, 1000);
         }

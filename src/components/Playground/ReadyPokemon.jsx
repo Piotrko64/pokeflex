@@ -44,19 +44,24 @@ function ReadyPokemon(props) {
             dispatch(animation([x, y]));
         } else {
             blockPlay.play();
-            alert("It is not your turn");
         }
     }
     useEffect(() => {
-        if (pokemonRef.current) {
-            dispatch(
-                pushCoordinate(props.value.id, [
-                    pokemonRef.current.getBoundingClientRect().x,
-                    pokemonRef.current.getBoundingClientRect().y,
-                ])
-            );
-        }
-    }, [All.myTeam, All.enemyTeam]);
+        const Interval = setInterval(
+            () =>
+                dispatch(
+                    pushCoordinate(props.value.id, [
+                        pokemonRef.current.getBoundingClientRect().x,
+                        pokemonRef.current.getBoundingClientRect().y,
+                    ])
+                ),
+            300
+        );
+
+        return () => {
+            clearInterval(Interval);
+        };
+    }, []);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
             const coordinateX = whereIsEnemy[0] - pokemonRef.current.getBoundingClientRect().x;
