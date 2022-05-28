@@ -1,5 +1,7 @@
 import { startPokemons, startTokens } from "../data/startItems";
+import { deleteFromTeam } from "./functionsForReducer/deleteFromTeam";
 import { addFromLocalStorage } from "./functionsForReducer/addFromLocalStorage";
+import { addToTeam } from "./functionsForReducer/addToTeam";
 
 const yourItems = {
     Pokemons: [...startPokemons],
@@ -12,7 +14,10 @@ const YourItemsReducer = (state = yourItems, action) => {
     switch (action.type) {
         case "addItemsFromLocalStorage":
             return addFromLocalStorage(state);
-
+        case "deleteFromTeam":
+            return deleteFromTeam(state, action.payload);
+        case "addToTeam":
+            return addToTeam(state, action.payload);
         default:
             return state;
     }

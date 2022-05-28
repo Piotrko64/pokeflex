@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addToTeam } from "../../../../_Actions/mainAction";
 import CardPokemon from "../../../pokemon/CardPokemon";
 
 const Card = styled.div`
@@ -7,8 +9,9 @@ const Card = styled.div`
 `;
 
 export default function OnePokemonScroll({ value }) {
+    const dispatch = useDispatch();
     return (
-        <Card>
+        <Card onClick={() => dispatch(addToTeam(value))}>
             <CardPokemon value={value} versionMini />
         </Card>
     );

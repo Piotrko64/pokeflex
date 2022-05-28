@@ -62,3 +62,17 @@ export const addItemsFromLocalStorage = () => {
         type: "addItemsFromLocalStorage",
     };
 };
+
+export const deleteFromTeam = (id) => {
+    return {
+        type: "deleteFromTeam",
+        payload: id,
+    };
+};
+
+export const addToTeam = (pokemon) => {
+    return {
+        type: "addToTeam",
+        payload: pokemon,
+    };
+};

@@ -1,16 +1,21 @@
+import clone from "lodash.clone";
 import Hit from "../../Audio/Hit.wav";
 import pick from "../../Audio/PickingCart.wav";
 const pickPlay = new Audio(pick);
 let whoAttack = "";
 let whoAttackID = "";
-export default function chooseAndFight(state, payload, teamFriends, teamEnemy, computer) {
+export default function chooseAndFight(state, payload, tF, tE, computer) {
+    // clone teamFriends and teamEnemy
+    const teamFriends = clone(tF);
+    const teamEnemy = clone(tE);
+
     let Me;
     let Enemy;
     let MeIndex;
     let Choosing = false;
     let EnemyIndex;
-    let stateAfterFightEnemy = [...teamEnemy];
-    let stateAfterFightFriends = [...teamFriends];
+    let stateAfterFightEnemy = clone(teamEnemy);
+    let stateAfterFightFriends = clone(teamFriends);
 
     teamFriends.forEach((e) => {
         if (e.id === payload) {
@@ -37,6 +42,7 @@ export default function chooseAndFight(state, payload, teamFriends, teamEnemy, c
                     MeIndex = fi;
                 }
             });
+            console.log(Me);
             if (!Me) {
                 Me = teamFriends[0];
             }

@@ -8,7 +8,7 @@ export default function ListScrollPoke() {
     return (
         <ScrollListComponent>
             {PokemonsTeam.map((el) => (
-                <OnePokemonScroll key={el} value={el} />
+                <OnePokemonScroll key={el.id} value={el} />
             ))}
         </ScrollListComponent>
     );

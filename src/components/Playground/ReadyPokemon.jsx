@@ -26,7 +26,7 @@ function ReadyPokemon(props) {
 
     const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
 
-    const All = useSelector((state) => state.FriendsTeam);
+    // const All = useSelector((state) => state.FriendsTeam);
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
 
     const whereIsEnemy = useSelector((state) => state.FriendsTeam.whereIsEnemy);
@@ -47,6 +47,12 @@ function ReadyPokemon(props) {
         }
     }
     useEffect(() => {
+        dispatch(
+            pushCoordinate(props.value.id, [
+                pokemonRef.current.getBoundingClientRect().x,
+                pokemonRef.current.getBoundingClientRect().y,
+            ])
+        );
         const Interval = setInterval(
             () =>
                 dispatch(
@@ -55,7 +61,7 @@ function ReadyPokemon(props) {
                         pokemonRef.current.getBoundingClientRect().y,
                     ])
                 ),
-            300
+            200
         );
 
         return () => {
