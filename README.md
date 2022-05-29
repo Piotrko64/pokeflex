@@ -22,6 +22,9 @@
 
 <img src="https://user-images.githubusercontent.com/77500425/170885426-9bc6ce1e-0dd3-4b5a-a7ef-dd87d72ab99c.png" alt="Styled Components" height="50"  align="center" title="Styled Components"/>
 
+<img src="https://user-images.githubusercontent.com/77500425/170885511-5423c082-5293-4581-99ce-d1e5d0f6671c.jpg" alt="Redux" height="50"  align="center" title="Redux"/>
+
+
 
 </div>
 
@@ -47,19 +50,16 @@
 
 
 
-### You need to complete the **.env** file with the following variables:
-- **MONGODB**: "your_connection_string"
-- **API_KEY**: "paths_to_API"
-
 <br />
 
 # About 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a justo eget elit aliquam aliquet. Nullam dictum mauris libero, in finibus leo suscipit at. Etiam bibendum ex ac imperdiet accumsan. In at neque vitae odio vehicula pulvinar sed nec velit. Donec pulvinar semper libero non cursus. Vivamus imperdiet lorem enim, a euismod mauris facilisis eu. Nulla sapien ante, laoreet eget diam id, dapibus pharetra nibh. Quisque bibendum justo elit, sed sagittis nisl mattis quis.
+In this game you can create own pokemons crew, fights and gets new pokemons and tokens. This game isn't so easy how look on first glance. Every type have own unique ability.  Each pokemons have different stats which will be good depending on the situation
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/164990774-eb31b66c-6166-46f5-ada9-3c0875dce883.png"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/><p>
+
 
 <br />
 
