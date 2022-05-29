@@ -1,4 +1,4 @@
-# <p align="center"> [POKEFLEX](https://github.com/Piotrko64/pokeflex/edit/master/README.md)</p>
+# <p align="center"> [POKEFLEX Card Game](https://github.com/Piotrko64/pokeflex/edit/master/README.md)</p>
 
 <br />
 
@@ -6,8 +6,10 @@
 
 <br />
 
-<p align="center">This is sample documentation using README. Here you can put a short general text about our application.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a justo eget elit aliquam aliquet. Nullam dictum mauris libero, in finibus leo suscipit at. </p>
+<p align="center">When I was younger I loved card games. I spend a lot of time on Hearstone or Gwent. Thanks to Javascript my dream is real! I create simple card game in pokemon world! Nowadays this game is only demo version without database. However, your awards for winning levels will be saving in local storage!
+
+I don't have any money benefits from this project! This is project for passion and self develop :) Images of pokemons are displayed thanks links from [PokeApi](pokeapi.co)
+  </p>
 
 <br />
 
