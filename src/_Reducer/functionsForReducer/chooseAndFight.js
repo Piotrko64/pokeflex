@@ -97,17 +97,10 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             audio.play();
             Enemy.defense = Math.max(0, Enemy.defense - 1);
             Me.hp -= Enemy.revenge;
-            // DEAD
-            // if (Me.hp < 1) {
-            //     stateAfterFightFriends = stateAfterFightFriends.filter((s) => s.id !== Me.id);
-            // } else {
+
             stateAfterFightFriends[MeIndex] = Me;
-            // }
-            // if (Enemy.hp < 1) {
-            //     stateAfterFightEnemy = stateAfterFightEnemy.filter((enemy) => enemy.id !== Enemy.id);
-            // } else {
+
             stateAfterFightEnemy[EnemyIndex] = Enemy;
-            // }
         }
     });
 
