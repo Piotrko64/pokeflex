@@ -15,14 +15,13 @@
 
 <div align="center">
 
-<img src="https://user-images.githubusercontent.com/77500425/161312332-1842468e-46e2-4dc6-8996-4b4cc28bc4fd.png" alt="html5" height="50"  align="center" title="HTML" />
-<img src="https://user-images.githubusercontent.com/77500425/161312398-ceb134e4-5c2f-41c6-b58c-ccb7329528ba.png" alt="css3" height="50"  align="center" title="CSS"/>
+
 <img src="https://user-images.githubusercontent.com/77500425/161312230-36d37ac5-8801-4313-a68c-c5695c429b70.png" alt="javascript" height="50" align="center" title="JS"/>
-<img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
+
 <img src="https://user-images.githubusercontent.com/77500425/161312615-f3961568-28bb-48fa-9d95-93ecd61337b3.png" alt="react"  height="50" align="center"/>
-<img src="https://user-images.githubusercontent.com/77500425/161314348-bd1a1db1-cf7d-4a7d-a870-25f357a2a03d.png" alt="Next.js" height="50"  align="center" title="NextJS"/>
-<img src="https://user-images.githubusercontent.com/77500425/161313295-a11c936d-a0b3-4bb6-84c1-9ea3c459c3b8.png" alt="Mongo"  height="50" align="center"/>
-<img src="https://user-images.githubusercontent.com/77500425/161312763-dd21dc88-2b1a-4a66-896b-8ce02e0c6a8c.png" alt="Node"  height="50" align="center"/>
+
+<img src="https://user-images.githubusercontent.com/77500425/170885426-9bc6ce1e-0dd3-4b5a-a7ef-dd87d72ab99c.png" alt="Styled Components" height="50"  align="center" title="Styled Components"/>
+
 
 </div>
 
