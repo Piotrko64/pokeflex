@@ -19,7 +19,7 @@ const Guide = styled.div`
 
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
-    const Component = useMemo(() => <MainComponentGuide />, []);
+
     function handleEscape(e) {
         if (e.key === "Escape") {
             setOpenGuide(false);
@@ -36,7 +36,7 @@ function App() {
                 <BsQuestionCircleFill />
             </Guide>
 
-            {openGuide && Component}
+            {openGuide && <MainComponentGuide />}
         </div>
     );
 }

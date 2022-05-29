@@ -2,7 +2,8 @@ import styled from "styled-components";
 import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
-import { useCallback, useEffect, useRef } from "react";
+import ReactDom from "react-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Blur = styled.div`
     backdrop-filter: blur(4px);
@@ -21,10 +22,11 @@ export default function MainComponentGuide() {
     function changeViewGuide(renderView) {
         setRenderView(renderView);
     }
-    return (
+    return ReactDom.createPortal(
         <Blur>
             <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
-            {renderView}
-        </Blur>
+            <AnimatePresence exitBeforeEnter>{renderView}</AnimatePresence>
+        </Blur>,
+        document.getElementById("guide")
     );
 }

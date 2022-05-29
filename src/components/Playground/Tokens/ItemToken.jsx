@@ -50,11 +50,13 @@ function ItemToken({ item, AI, noBattle }) {
             <motion.div
                 layout
                 animate={{ opacity: 1 }}
-                exit={{
-                    y: -50,
-                    opacity: 0,
-                    scale: 2,
-                }}
+                exit={
+                    !noBattle && {
+                        y: -50,
+                        opacity: 0,
+                        scale: 2,
+                    }
+                }
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 1 }}
             >
