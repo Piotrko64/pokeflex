@@ -2,7 +2,7 @@ import "atropos/css";
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
-import MainRouting from "./components/MainRouting";
+import MainRouting from "./components/Routing/MainRouting";
 import MainComponentGuide from "./components/Quide/MainComponentGuide";
 import { useDispatch } from "react-redux";
 import { addItemsFromLocalStorage } from "./_Actions/mainAction";

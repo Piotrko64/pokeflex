@@ -1,7 +1,6 @@
 import CompletePlayground from "../components/Playground/completePlayground";
 import quickGameSoundtrack from "../Audio/mainSoundtracks/Poke.mp3";
 import { useEffect } from "react";
-import { unmountComponentAtNode } from "react-dom";
 function QuickGame() {
     useEffect(() => {
         const main = new Audio(quickGameSoundtrack);
