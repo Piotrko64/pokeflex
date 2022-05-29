@@ -1,8 +1,8 @@
-# <p align="center"> ![POKEFLEX](https://user-images.githubusercontent.com/77500425/170885023-0861171b-fde6-4793-8b36-a78d4ddff0d5.png)</p>
+# <p align="center"> [POKEFLEX](https://github.com/Piotrko64/pokeflex/edit/master/README.md)</p>
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/164990221-e29646af-08bd-4f67-81ce-8cccb4bfad86.png" title="logo" alt="logo"/></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885023-0861171b-fde6-4793-8b36-a78d4ddff0d5.png" title="logo" alt="logo"/></p>
 
 <br />
 
