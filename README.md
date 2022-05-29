@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# <p align="center"> [POKEFLEX Card Game](https://github.com/Piotrko64/pokeflex/edit/master/README.md)</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
 
-## Available Scripts
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885023-0861171b-fde6-4793-8b36-a78d4ddff0d5.png" title="logo" alt="logo"/></p>
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+<p align="center">When I was younger I loved card games. I spend a lot of time on Hearstone or Gwent. Thanks to Javascript my dream is real! I create simple card game in pokemon world! Nowadays this game is only demo version without database. However, your awards for winning levels will be saving in local storage!</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center"> I don't have any money benefits from this project! This is project for passion and self develop :) Images of pokemons are displayed thanks links from [PokeApi](pokeapi.co)
+  </p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
 
-### `npm test`
+<div align="center">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<img src="https://user-images.githubusercontent.com/77500425/161312230-36d37ac5-8801-4313-a68c-c5695c429b70.png" alt="javascript" height="50" align="center" title="JS"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://user-images.githubusercontent.com/77500425/161312615-f3961568-28bb-48fa-9d95-93ecd61337b3.png" alt="react"  height="50" align="center"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://user-images.githubusercontent.com/77500425/170885426-9bc6ce1e-0dd3-4b5a-a7ef-dd87d72ab99c.png" alt="Styled Components" height="50"  align="center" title="Styled Components"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://user-images.githubusercontent.com/77500425/170885815-0f0c6abd-6470-4654-bdc8-d50235fc75c4.png" alt="Redux" height="50"  align="center" title="Redux"/>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
 
-## Learn More
+# Table of contents
+* [Instalation](#instalation)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [About project](#about)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Inspiration](#inspiration)
 
-### Code Splitting
+* [Major Updates](#Updates)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* [What have I learned from this project](#what-have-i-learned-from-this-project)
 
-### Analyzing the Bundle Size
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Instalation
+- Download files by **git clone _repository-name_**
+- Use **npm i**
+- Use **npm start**
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# About 
 
-### Deployment
+In this game you can create own pokemons crew, fights and gets new pokemons and tokens. This game isn't so easy how look on first glance. Every type have own unique ability.  Each pokemons have different stats which will be good depending on the situation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br />
 
-### `npm run build` fails to minify
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/><p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<br />
+
+In this section you can writing about project. For example about its destiny or how it works. You can also put screenshots like I am now.
+
+<br />
+
+# Inspiration
+
+My inspiration to create this project was [this README](https://github.com/Piotrko64/react-sound-architecture/edit/master/README.md)
+
+<br />
+
+# Updates
+
+### **v1.0.3** 05/05/2022
+
+> -   **Super function** is ready!'
+
+
+### **v1.0.1** 04/04/2022
+
+> -   Add *Formik* liblary
+> -   Writing example updates
+
+<br />
+
+# What have I learned from this project
+
+> - How to create interesting README files
+> - Present projects well
+
+
+
