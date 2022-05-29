@@ -22,7 +22,8 @@
 
 <img src="https://user-images.githubusercontent.com/77500425/170885426-9bc6ce1e-0dd3-4b5a-a7ef-dd87d72ab99c.png" alt="Styled Components" height="50"  align="center" title="Styled Components"/>
 
-<img src="https://user-images.githubusercontent.com/77500425/170885511-5423c082-5293-4581-99ce-d1e5d0f6671c.jpg" alt="Redux" height="50"  align="center" title="Redux"/>
+<img src="https://user-images.githubusercontent.com/77500425/170885815-0f0c6abd-6470-4654-bdc8-d50235fc75c4.png" alt="Redux" height="50"  align="center" title="Redux"/>
+
 
 
 
