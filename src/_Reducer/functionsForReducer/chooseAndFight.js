@@ -42,10 +42,11 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                     MeIndex = fi;
                 }
             });
-            console.log(Me);
+            console.log(Me, MeIndex, Enemy, EnemyIndex);
             if (!Me) {
                 Me = teamFriends[0];
                 MeIndex = 0;
+                console.log(Me);
             }
             if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
@@ -87,7 +88,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                         Me.hp += 5;
                         break;
                     case "Blocked":
-                        return;
+                        break;
                     default:
                         return;
                 }

@@ -84,7 +84,7 @@ export const allTokens = [
         name: "Conflagration",
         icon: <GiFireWave />,
         functionToken: conflagration,
-        desc: "Deal **7** points of damage to all enemies",
+        desc: "Deal **6** points of damage to all enemies",
     },
     {
         id: v4(),
@@ -92,6 +92,6 @@ export const allTokens = [
         name: "High Grass",
         icon: <GiHighGrass />,
         functionToken: highGrass,
-        desc: "All your grass pokemons are blocked but They get **+3** points revenge and defense",
+        desc: "All your grass pokemons are blocked but They get **+3** points **revenge** and **defense**",
     },
 ];
