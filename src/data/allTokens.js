@@ -1,7 +1,7 @@
 import lighter from "../functions/powerTokens/lighter";
 
 // Import Icons
-import { BsFillHeartFill } from "react-icons/bs";
+
 import {
     GiCat,
     GiWaterFountain,
@@ -10,6 +10,7 @@ import {
     GiDeadlyStrike,
     GiCirclingFish,
     GiFireWave,
+    GiHighGrass,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
@@ -23,6 +24,7 @@ import resurrection from "../functions/powerTokens/resurrection";
 import { v4 } from "uuid";
 import fishingRoad from "../functions/powerTokens/fishingRod";
 import conflagration from "../functions/powerTokens/conflagration";
+import highGrass from "../functions/powerTokens/highGrass";
 
 export const allTokens = [
     {
@@ -83,5 +85,13 @@ export const allTokens = [
         icon: <GiFireWave />,
         functionToken: conflagration,
         desc: "Deal **7** points of damage to all enemies",
+    },
+    {
+        id: v4(),
+        idAward: "HG4568GRa45s8",
+        name: "High Grass",
+        icon: <GiHighGrass />,
+        functionToken: highGrass,
+        desc: "All your grass pokemons are blocked but They get **+3** points revenge and defense",
     },
 ];

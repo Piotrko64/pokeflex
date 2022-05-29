@@ -45,6 +45,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             console.log(Me);
             if (!Me) {
                 Me = teamFriends[0];
+                MeIndex = 0;
             }
             if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
@@ -79,14 +80,13 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
                         break;
                     case "Normal":
-                        Me.hp += 1;
-                        Me.speed += 3;
+                        Enemy.type = "Blocked";
                         break;
                     case "Psychic":
                         Me.type = Enemy.type;
-                        Me.hp += 2;
+                        Me.hp += 5;
                         break;
-                    case "Block":
+                    case "Blocked":
                         return;
                     default:
                         return;

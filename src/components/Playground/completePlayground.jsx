@@ -47,13 +47,14 @@ function CompletePlayground() {
         handleComputerChoose(x);
         setTimeout(() => {
             const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
-            dispatch(computerMove(randomEnemy));
-            console.log(
-                randomEnemy,
-                allCoordinates,
-                allCoordinates.find((e) => e.id === randomEnemy)
-            );
-            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+            if (allCoordinates.find((e) => e.id === randomEnemy)) {
+                dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+                dispatch(computerMove(randomEnemy));
+            } else {
+                dispatch(animation(allCoordinates[0].coordinate));
+                dispatch(computerMove(allCoordinates[0].id));
+            }
+
             setTimeout(() => dispatch(noWhoAttack()), 400);
         }, 500);
     }
