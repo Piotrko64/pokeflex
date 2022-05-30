@@ -24,6 +24,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             Choosing = true;
         }
     });
+    console.log(whoAttack, whoAttackID);
     if (Choosing) {
         if (!computer) {
             pickPlay.play();
@@ -42,18 +43,21 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                     MeIndex = fi;
                 }
             });
-            console.log(Me, MeIndex, Enemy, EnemyIndex);
+
             if (!Me) {
                 Me = teamFriends[0];
                 MeIndex = 0;
-                console.log(Me);
+            }
+            if (!Enemy) {
+                Me = teamEnemy[0];
+                MeIndex = 0;
             }
             if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
             } else {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
             }
-
+            console.log(whoAttack, whoAttackID);
             // TYPE
             if (Me.type === "Turbo Fire") {
                 Enemy.hp = Math.max(0, Enemy.hp - 3) || 0;
@@ -103,7 +107,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             stateAfterFightEnemy[EnemyIndex] = Enemy;
         }
     });
-
+    console.log(whoAttack, whoAttackID, Enemy);
     return {
         ...state,
         enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
@@ -112,6 +116,6 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
         whoAttackID,
         whoIsAttack: "",
         whoIsAttackID: "",
-        yourTurn: !state.yourTurn,
+        yourTurn: computer ? true : false,
     };
 }
