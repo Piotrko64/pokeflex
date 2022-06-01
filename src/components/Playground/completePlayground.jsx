@@ -58,7 +58,6 @@ function CompletePlayground() {
             dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
             dispatch(computerMove(randomEnemy));
         } else {
-            console.log("else");
             findRandom();
         }
     }

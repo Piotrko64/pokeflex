@@ -1,7 +1,9 @@
 import { startPokemons, startTokens } from "../data/startItems";
-import { deleteFromTeam } from "./functionsForReducer/deleteFromTeam";
-import { addFromLocalStorage } from "./functionsForReducer/addFromLocalStorage";
-import { addToTeam } from "./functionsForReducer/addToTeam";
+import { deleteFromTeam } from "./functionsForReducer/YourItems/deleteFromTeam";
+import { addFromLocalStorage } from "./functionsForReducer/YourItems/addFromLocalStorage";
+import { addToTeam } from "./functionsForReducer/YourItems/addToTeam";
+import { addToTeamToken } from "./functionsForReducer/YourItems/addToTeamToken";
+import { deleteFromTeamToken } from "./functionsForReducer/YourItems/deleteFromTeamToken";
 
 const yourItems = {
     Pokemons: [...startPokemons],
@@ -16,8 +18,12 @@ const YourItemsReducer = (state = yourItems, action) => {
             return addFromLocalStorage(state);
         case "deleteFromTeam":
             return deleteFromTeam(state, action.payload);
+        case "deleteFromTeamToken":
+            return deleteFromTeamToken(state, action.payload);
         case "addToTeam":
             return addToTeam(state, action.payload);
+        case "addToTeamToken":
+            return addToTeamToken(state, action.payload);
         default:
             return state;
     }

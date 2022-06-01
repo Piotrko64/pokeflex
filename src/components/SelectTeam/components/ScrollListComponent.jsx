@@ -6,10 +6,28 @@ import { useEffect, useRef, useState } from "react";
 const ScrollList = styled.div`
     display: flex;
     cursor: grab;
+    justify-content: center;
 `;
 const Scroll = styled.div`
-    overflow-x: scroll;
+    overflow-x: hidden;
     cursor: grab;
+    padding: 5px;
+    background-color: #ffffff2e;
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #60606047;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 `;
 
 export default function ScrollListComponent({ children }) {

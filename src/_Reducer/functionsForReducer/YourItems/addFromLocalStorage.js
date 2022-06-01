@@ -1,11 +1,11 @@
-import { allTokens } from "../../data/allTokens";
-import { examplePokemons } from "../../data/examplePokemons";
+import { allTokens } from "../../../data/allTokens";
+import { examplePokemons } from "../../../data/examplePokemons";
 
 export function addFromLocalStorage(state) {
-    const localPokemons = JSON.parse(localStorage.getItem("pokemons"));
+    const localPokemons = JSON.parse(localStorage.getItem("pokemons")) || state.TeamFight;
 
     const arrayAllYourPokemons = [...state.Pokemons];
-    const localTokens = JSON.parse(localStorage.getItem("tokens"));
+    const localTokens = JSON.parse(localStorage.getItem("tokens")) || state.TokensFight;
     const arrayAllYourTokens = [...state.Tokens];
 
     localPokemons.forEach((local) =>

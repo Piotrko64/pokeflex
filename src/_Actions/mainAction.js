@@ -76,3 +76,16 @@ export const addToTeam = (pokemon) => {
         payload: pokemon,
     };
 };
+export const deleteFromTeamToken = (id) => {
+    return {
+        type: "deleteFromTeamToken",
+        payload: id,
+    };
+};
+
+export const addToTeamToken = (token) => {
+    return {
+        type: "addToTeamToken",
+        payload: token,
+    };
+};
