@@ -6,8 +6,9 @@ let whoAttack = "";
 let whoAttackID = "";
 export default function chooseAndFight(state, payload, tF, tE, computer) {
     // clone teamFriends and teamEnemy
-    const teamFriends = clone(tF);
-    const teamEnemy = clone(tE);
+    const teamFriends = clone(tF).filter((e) => e.hp >= 1);
+    const teamEnemy = clone(tE).filter((e) => e.hp >= 1);
+    console.log(teamEnemy, teamFriends);
 
     let Me;
     let Enemy;
@@ -24,7 +25,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             Choosing = true;
         }
     });
-    console.log(whoAttack, whoAttackID);
+
     if (Choosing) {
         if (!computer) {
             pickPlay.play();
@@ -43,21 +44,21 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                     MeIndex = fi;
                 }
             });
-
+            console.log(Me, Enemy);
             if (!Me) {
                 Me = teamFriends[0];
                 MeIndex = 0;
             }
             if (!Enemy) {
-                Me = teamEnemy[0];
-                MeIndex = 0;
+                Enemy = teamEnemy[0];
+                EnemyIndex = 0;
             }
             if (Me.hp >= Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
             } else {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
             }
-            console.log(whoAttack, whoAttackID);
+
             // TYPE
             if (Me.type === "Turbo Fire") {
                 Enemy.hp = Math.max(0, Enemy.hp - 3) || 0;
@@ -107,7 +108,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             stateAfterFightEnemy[EnemyIndex] = Enemy;
         }
     });
-    console.log(whoAttack, whoAttackID, Enemy);
+    console.log(whoAttack, whoAttackID, Enemy, EnemyIndex);
     return {
         ...state,
         enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
@@ -116,6 +117,6 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
         whoAttackID,
         whoIsAttack: "",
         whoIsAttackID: "",
-        yourTurn: computer ? true : false,
+        yourTurn: !computer && false,
     };
 }

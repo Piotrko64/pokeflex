@@ -25,18 +25,7 @@ export const examplePokemons = [
         defense: 1,
         revenge: 3,
     },
-    {
-        id: v4(),
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-        name: "Bulbasaur",
-        type: "Grass",
-        hp: 37,
-        attack: 6,
-        specialAttack: 7,
-        speed: 16,
-        defense: 3,
-        revenge: 2,
-    },
+
     {
         id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
@@ -48,6 +37,18 @@ export const examplePokemons = [
         speed: 12,
         defense: 4,
         revenge: 0,
+    },
+    {
+        id: v4(),
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+        name: "Bulbasaur",
+        type: "Grass",
+        hp: 37,
+        attack: 6,
+        specialAttack: 7,
+        speed: 16,
+        defense: 3,
+        revenge: 2,
     },
     {
         id: v4(),

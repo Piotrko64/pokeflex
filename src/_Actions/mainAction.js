@@ -22,10 +22,10 @@ export const computerMove = (id) => {
         payload: id,
     };
 };
-export const pushCoordinate = (id, coordinate) => {
+export const pushCoordinate = (id, coordinate, name) => {
     return {
         type: "pushCoordinate",
-        payload: { id, coordinate },
+        payload: { id, coordinate, name },
     };
 };
 

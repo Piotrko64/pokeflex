@@ -4,7 +4,7 @@ import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 const stateFight = {
-    myTeam: [examplePokemons[1], examplePokemons[5], examplePokemons[2]],
+    myTeam: [examplePokemons[3], examplePokemons[1], examplePokemons[5]],
     enemyTeam: [examplePokemons[2]],
     whoAttack: "",
     whoAttackID: "",
@@ -18,11 +18,13 @@ const stateFight = {
     yourTurn: true,
 };
 
-function pushNewCoordinate(state, id, coordinate) {
+function pushNewCoordinate(state, id, coordinate, name) {
+    console.log(id, name);
+    console.log(state.allCoordinates);
     let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
 
-    newCoordinate = [{ id, coordinate }, ...newCoordinate];
-
+    newCoordinate = [{ id, coordinate, name }, ...newCoordinate];
+    console.log(newCoordinate);
     return newCoordinate;
 }
 const FriendReducer = (state = stateFight, action) => {
@@ -39,12 +41,12 @@ const FriendReducer = (state = stateFight, action) => {
             return { ...state, whereIsEnemy: action.payload };
 
         case "noWhoAttack":
-            return { ...state, whoAttackID: "" };
+            return { ...state, whoAttackID: "", yourTurn: true };
 
         case "pushCoordinate":
-            const { id, coordinate } = action.payload;
+            const { id, coordinate, name } = action.payload;
 
-            return { ...state, allCoordinates: pushNewCoordinate(state, id, coordinate) };
+            return { ...state, allCoordinates: pushNewCoordinate(state, id, coordinate, name) };
         case "tokenPowerUse":
             return stateAfterToken(action.payload.fun, action.payload.id);
         case "tokenPowerAi":

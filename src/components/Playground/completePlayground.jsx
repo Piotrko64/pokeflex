@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Confetti from "react-confetti";
+import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -38,24 +38,36 @@ function CompletePlayground() {
 
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
+    useEffect(() => {
+        const main = new Audio(quickGameSoundtrack);
+        main.volume = 0.5;
+        main.loop = true;
+        main.play();
+        return () => {
+            main.pause();
+        };
+    }, []);
+
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
         dispatch(animation([]));
     }
-
+    function findRandom() {
+        const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
+        if (allCoordinates.find((e) => e.id === randomEnemy)) {
+            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+            dispatch(computerMove(randomEnemy));
+        } else {
+            console.log("else");
+            findRandom();
+        }
+    }
     function handleMoveComputer(x) {
         handleComputerChoose(x);
         setTimeout(() => {
-            const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
-            if (allCoordinates.find((e) => e.id === randomEnemy)) {
-                dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
-                dispatch(computerMove(randomEnemy));
-            } else {
-                dispatch(animation(allCoordinates[0].coordinate));
-                dispatch(computerMove(allCoordinates[0].id));
-            }
+            findRandom();
 
-            setTimeout(() => dispatch(noWhoAttack()), 400);
+            setTimeout(() => dispatch(noWhoAttack()), 200);
         }, 500);
     }
     useEffect(() => {

@@ -1,7 +1,13 @@
+import clone from "lodash.clone";
+
 export function chooseRandomEnemy(everyFriend, everyEnemy) {
-    const randomNumberFriend = Math.round(Math.random() * (everyFriend.length - 1));
+    const filterFriend = clone(everyFriend).filter((el) => el.hp > 0);
 
-    const randomNumberEnemy = Math.round(Math.random() * (everyEnemy.length - 1));
+    const filterEnemy = clone(everyEnemy).filter((el) => el.hp > 0);
 
-    return [everyFriend[randomNumberFriend].id, everyEnemy[randomNumberEnemy].id];
+    const randomNumberFriend = Math.round(Math.random() * (filterFriend.length - 1));
+
+    const randomNumberEnemy = Math.round(Math.random() * (filterEnemy.length - 1));
+
+    return [filterFriend[randomNumberFriend].id, filterEnemy[randomNumberEnemy].id];
 }
