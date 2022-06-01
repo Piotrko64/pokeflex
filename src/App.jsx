@@ -6,6 +6,7 @@ import MainRouting from "./components/Routing/MainRouting";
 import MainComponentGuide from "./components/Quide/MainComponentGuide";
 import { useDispatch } from "react-redux";
 import { addItemsFromLocalStorage } from "./_Actions/mainAction";
+import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 
 const Guide = styled.div`
     position: fixed;
@@ -35,7 +36,7 @@ function App() {
             <Guide onClick={() => setOpenGuide(!openGuide)}>
                 <BsQuestionCircleFill />
             </Guide>
-
+            <MainComponentVolume />
             {openGuide && <MainComponentGuide />}
         </div>
     );

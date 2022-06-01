@@ -26,7 +26,7 @@ function TokenAwards({ token }) {
 
         checkAllTokensAward.push(token.idAward);
 
-        localStorage.setItem("tokens", JSON.stringify([...new Set(checkAllTokensAward)]));
+        localStorage.setItem("tokensAward", JSON.stringify([...new Set(checkAllTokensAward)]));
     }, []);
     return (
         <Fragment>

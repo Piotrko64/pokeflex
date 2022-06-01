@@ -18,7 +18,7 @@ function PokemonAward({ pokemon }) {
         checkAllTokensAward.push(pokemon.idAward);
 
         console.log(checkAllTokensAward);
-        localStorage.setItem("pokemons", JSON.stringify([...new Set(checkAllTokensAward)]));
+        localStorage.setItem("pokemonsAward", JSON.stringify([...new Set(checkAllTokensAward)]));
     }, []);
     return (
         <Fragment>
