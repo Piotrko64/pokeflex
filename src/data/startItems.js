@@ -45,31 +45,6 @@ export const startPokemons = [
         defense: 3,
         revenge: 2,
     },
-    {
-        id: v4(),
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-        name: "Pikachu",
-        type: "Electro",
-        hp: 32,
-        attack: 4,
-        specialAttack: 8,
-        speed: 22,
-        defense: 1,
-        revenge: 3,
-    },
-
-    {
-        id: v4(),
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
-        name: "Eevee",
-        type: "Normal",
-        hp: 32,
-        attack: 6,
-        specialAttack: 8,
-        speed: 24,
-        defense: 2,
-        revenge: 2,
-    },
 ];
 
 export const startTokens = [

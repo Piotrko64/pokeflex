@@ -32,7 +32,6 @@ function Awards() {
     const findAwards = levels.find((el) => el.id === levelID);
     const awardToken = findAwards?.award?.tokens;
     const awardPokemon = findAwards?.award?.pokemons;
-    useEffect(() => {});
 
     return (
         <Fragment>

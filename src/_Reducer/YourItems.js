@@ -4,12 +4,13 @@ import { addFromLocalStorage } from "./functionsForReducer/YourItems/addFromLoca
 import { addToTeam } from "./functionsForReducer/YourItems/addToTeam";
 import { addToTeamToken } from "./functionsForReducer/YourItems/addToTeamToken";
 import { deleteFromTeamToken } from "./functionsForReducer/YourItems/deleteFromTeamToken";
+import findTokensLocal from "./helpers/findTokensLocal";
 
 const yourItems = {
     Pokemons: [...startPokemons],
     Tokens: [...startTokens],
-    TeamFight: JSON.parse(localStorage.getItem("teamFight")) || [...startPokemons.slice(0, 3)],
-    TokensFight: JSON.parse(localStorage.getItem("tokensFight")) || [...startTokens.slice(0, 3)],
+    TeamFight: JSON.parse(localStorage.getItem("pokemons")) || [...startPokemons.slice(0, 3)],
+    TokensFight: findTokensLocal(),
 };
 
 const YourItemsReducer = (state = yourItems, action) => {

@@ -12,8 +12,8 @@ const PokemonImageAward = styled.img`
 
 function PokemonAward({ pokemon }) {
     useEffect(() => {
-        const checkAllTokensAward = JSON.parse(localStorage.getItem("pokemons")) || [];
-        !checkAllTokensAward.length && localStorage.setItem("pokemons", "[]");
+        const checkAllTokensAward = JSON.parse(localStorage.getItem("pokemonsAward")) || [];
+        !checkAllTokensAward.length && localStorage.setItem("pokemonsAward", "[]");
 
         checkAllTokensAward.push(pokemon.idAward);
 

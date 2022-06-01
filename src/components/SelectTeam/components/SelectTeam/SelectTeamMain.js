@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { deleteFromTeam, deleteFromTeamToken } from "../../../../_Actions/mainAction";
 
 import CardPokemon from "../../../pokemon/CardPokemon";
+import ButtonsComponent from "../ButtonsComponent";
 import OneTokenScroll from "../ScrollTokens/OneTokenScroll";
 import TitleScroll from "../TitleScroll";
 
@@ -25,33 +26,28 @@ const OneTokenSelect = styled.div`
     justify-content: center;
     margin: 20px;
 `;
-const Button = styled.button`
-    padding: 10px;
-`;
+
 export default function SelectTeamMain() {
     const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.TeamFight);
     const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.TokensFight);
     const dispatch = useDispatch();
-
+    console.log(TokensTeamSelect);
     return (
         <FlexCenter>
             <TitleScroll title="Your Team" />
             <Row>
                 {PokemonsTeamSelect.map((el) => (
-                    <OneCardSelect key={el.id} onClick={() => dispatch(deleteFromTeam(el.id))}>
+                    <OneCardSelect key={el.name} onClick={() => dispatch(deleteFromTeam(el.name))}>
                         <CardPokemon value={el} versionMini />
                     </OneCardSelect>
                 ))}
             </Row>
             <Row>
                 {TokensTeamSelect.map((el) => (
-                    <OneTokenSelect key={el.id} onClick={() => dispatch(deleteFromTeamToken(el.id))}>
-                        <OneTokenScroll key={el} item={el} noBattle />
+                    <OneTokenSelect key={el.name} onClick={() => dispatch(deleteFromTeamToken(el.name))}>
+                        <OneTokenScroll item={el} noBattle />
                     </OneTokenSelect>
                 ))}
-            </Row>
-            <Row>
-                <Button> Save </Button> <Button> Back </Button>
             </Row>
         </FlexCenter>
     );

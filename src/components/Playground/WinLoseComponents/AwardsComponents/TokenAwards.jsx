@@ -21,12 +21,11 @@ const TokenAward = styled.div`
 
 function TokenAwards({ token }) {
     useEffect(() => {
-        const checkAllTokensAward = JSON.parse(localStorage.getItem("tokens")) || [];
-        !checkAllTokensAward.length && localStorage.setItem("tokens", "[]");
+        const checkAllTokensAward = JSON.parse(localStorage.getItem("tokensAward")) || [];
+        !checkAllTokensAward.length && localStorage.setItem("tokensAward", "[]");
 
         checkAllTokensAward.push(token.idAward);
 
-        console.log(checkAllTokensAward);
         localStorage.setItem("tokens", JSON.stringify([...new Set(checkAllTokensAward)]));
     }, []);
     return (

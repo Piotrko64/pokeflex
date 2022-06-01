@@ -9,7 +9,7 @@ export default function ListScrollTokens() {
     return (
         <ScrollListComponent>
             {Tokens.map((el) => (
-                <OneTokenScroll key={el} item={el} noBattle />
+                <OneTokenScroll key={el.id} item={el} noBattle scroll />
             ))}
         </ScrollListComponent>
     );

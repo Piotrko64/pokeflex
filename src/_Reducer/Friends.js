@@ -1,10 +1,11 @@
 import { allTokens } from "../data/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
+import { startPokemons } from "../data/startItems";
 import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 const stateFight = {
-    myTeam: [examplePokemons[3], examplePokemons[1], examplePokemons[5]],
+    myTeam: JSON.parse(localStorage.getItem("pokemons")) || startPokemons.slice(0, 3),
     enemyTeam: [examplePokemons[2]],
     whoAttack: "",
     whoAttackID: "",
@@ -19,8 +20,6 @@ const stateFight = {
 };
 
 function pushNewCoordinate(state, id, coordinate, name) {
-    console.log(id, name);
-    console.log(state.allCoordinates);
     let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
 
     newCoordinate = [{ id, coordinate, name }, ...newCoordinate];
