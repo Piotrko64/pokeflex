@@ -134,36 +134,36 @@ function Stats({ value, versionMini }) {
             <TableWithAll>
                 <ImportantStat versionMini={versionMini}>{name}</ImportantStat>
                 <GridStats>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat isOdd hp={hp}>
                             {hp}
                             <BsFillHeartFill />
                         </OneStat>
                     </div>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat df={defense}>
                             {defense} <BsFillShieldFill />
                         </OneStat>
                     </div>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat isOdd>
                             {attack}
                             <GiBroadsword />
                         </OneStat>
                     </div>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat speed={speed} hp={hp}>
                             {specialAttack}
                             <GiZeusSword />
                         </OneStat>
                     </div>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat isOdd isLastTwo>
                             {revenge}
                             <GiSpikes />
                         </OneStat>
                     </div>
-                    <div data-atropos-offset="5">
+                    <div data-atropos-offset="3">
                         <OneStat isLastTwo>
                             {speed}
                             <RiSpeedFill />
