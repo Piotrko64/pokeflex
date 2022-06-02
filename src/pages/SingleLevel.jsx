@@ -14,8 +14,8 @@ function SingleLevel() {
         const idLevel = levels.find((el) => el.id === idPathname);
         const enemyTeam = idLevel.enemyTeam;
         const enemyTokens = idLevel.enemyTokens;
+
         dispatch(setEnemyTeam(enemyTeam, enemyTokens));
-        console.log();
     }, []);
     return <CompletePlayground />;
 }
