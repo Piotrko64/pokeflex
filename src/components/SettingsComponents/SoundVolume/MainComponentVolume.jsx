@@ -1,7 +1,8 @@
 import React from "react";
 import { ImVolumeMedium } from "react-icons/im";
 import styled from "styled-components";
-
+import { useDispatch, useSelector } from "react-redux";
+import { changeVolume } from "../../../_Actions/mainAction";
 const Range = styled.input`
     transition: all 0.2s linear;
     opacity: 0;
@@ -126,13 +127,19 @@ const EntireComponent = styled.div`
 `;
 
 const MainComponentVolume = () => {
+    const dispatch = useDispatch();
+    const volume = useSelector((state) => state.SettingsReducer.Volume);
+    function handleChangeVolume(e) {
+        const { value } = e.target;
+        dispatch(changeVolume(value));
+    }
     return (
         <EntireComponent>
             <IconVolume>
                 <ImVolumeMedium />
             </IconVolume>
 
-            <Range type="range" />
+            <Range type="range" value={volume} onChange={handleChangeVolume} min="0" max="100" />
         </EntireComponent>
     );
 };

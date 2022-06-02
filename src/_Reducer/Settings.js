@@ -1,5 +1,5 @@
 const Settings = {
-    Volume: localStorage.getItem("volume") || 1,
+    Volume: localStorage.getItem("volume") || 50,
 };
 
 const SettingsReducer = (state = Settings, action) => {

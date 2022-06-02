@@ -1,13 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function useSountrack(music, volume) {
-    const main = new Audio(music);
-    main.volume = volume;
+export default function useSountrack(music, volumeMusic) {
+    const [audio] = useState(new Audio(music));
+
     useEffect(() => {
-        main.loop = true;
-        main.play();
+        audio.volume = volumeMusic / 100;
+    }, [volumeMusic]);
+
+    useEffect(() => {
+        audio.loop = true;
+        audio.volume = volumeMusic / 100;
+        audio.play();
+
         return () => {
-            main.pause();
+            audio.pause();
         };
     }, []);
 
