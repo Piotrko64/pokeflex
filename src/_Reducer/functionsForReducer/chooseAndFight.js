@@ -1,7 +1,8 @@
 import clone from "lodash.clone";
 import Hit from "../../Audio/Hit.wav";
 import pick from "../../Audio/PickingCart.wav";
-const pickPlay = new Audio(pick);
+import audioPlay from "../helpers/audioPlay";
+
 let whoAttack = "";
 let whoAttackID = "";
 export default function chooseAndFight(state, payload, tF, tE, computer) {
@@ -28,7 +29,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
     if (Choosing) {
         if (!computer) {
-            pickPlay.play();
+            audioPlay(pick);
         }
 
         return { ...state, whoAttack, whoAttackID };
@@ -98,8 +99,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                         return;
                 }
             }
-            const audio = new Audio(Hit);
-            audio.play();
+            audioPlay(Hit);
             Enemy.defense = Math.max(0, Enemy.defense - 1);
             Me.hp -= Enemy.revenge;
 
@@ -108,7 +108,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             stateAfterFightEnemy[EnemyIndex] = Enemy;
         }
     });
-    console.log(whoAttack, whoAttackID, Enemy, EnemyIndex);
+
     return {
         ...state,
         enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,

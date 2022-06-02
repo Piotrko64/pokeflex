@@ -11,6 +11,7 @@ import YourTurn from "./YourTurn";
 import { useEffect, useState } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
+import useSountrack from "../../hooks/useSoundtrack";
 
 const WholeField = styled.div`
     display: flex;
@@ -38,15 +39,7 @@ function CompletePlayground() {
 
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
-    useEffect(() => {
-        const main = new Audio(quickGameSoundtrack);
-        main.volume = 0.5;
-        main.loop = true;
-        main.play();
-        return () => {
-            main.pause();
-        };
-    }, []);
+    useSountrack(quickGameSoundtrack, 0.8);
 
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
