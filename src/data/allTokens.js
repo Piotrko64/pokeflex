@@ -11,6 +11,7 @@ import {
     GiCirclingFish,
     GiFireWave,
     GiHighGrass,
+    GiPunch,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 
@@ -25,6 +26,7 @@ import { v4 } from "uuid";
 import fishingRoad from "../functions/powerTokens/fishingRod";
 import conflagration from "../functions/powerTokens/conflagration";
 import highGrass from "../functions/powerTokens/highGrass";
+import punch from "../functions/powerTokens/punch";
 
 export const allTokens = [
     {
@@ -37,10 +39,11 @@ export const allTokens = [
     },
     {
         id: v4(),
+        idAward: "Electr444A4C546",
         name: "Electro Action",
         icon: <AiOutlineThunderbolt />,
         functionToken: electroAction,
-        desc: "Deal **7** points to the weakest enemy character. If you have at least one **Electro** character, deal **14** points to the strongest enemy character",
+        desc: "Deal **7** points to the weakest enemy character. If you have at least one **Electro** character, deal **16** points to the strongest enemy character",
     },
     {
         id: v4(),
@@ -93,5 +96,13 @@ export const allTokens = [
         icon: <GiHighGrass />,
         functionToken: highGrass,
         desc: "All your grass pokemons are blocked but They get **+3** points **revenge** and **defense**",
+    },
+    {
+        id: v4(),
+        idAward: "punch4352",
+        name: "Punch",
+        icon: <GiPunch />,
+        functionToken: punch,
+        desc: "Deal **14** damage random enemy pokemon",
     },
 ];

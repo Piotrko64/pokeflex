@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
+import MainComponentVolume from "../SettingsComponents/SoundVolume/MainComponentVolume";
 
 const WholeField = styled.div`
     display: flex;

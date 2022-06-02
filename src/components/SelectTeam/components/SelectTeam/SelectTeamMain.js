@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { deleteFromTeam, deleteFromTeamToken } from "../../../../_Actions/mainAction";
+import {
+    addItemsFromLocalStorage,
+    deleteFromTeam,
+    deleteFromTeamToken,
+} from "../../../../_Actions/mainAction";
 
 import CardPokemon from "../../../pokemon/CardPokemon";
 import ButtonsComponent from "../ButtonsComponent";
@@ -31,7 +36,9 @@ export default function SelectTeamMain() {
     const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.TeamFight);
     const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.TokensFight);
     const dispatch = useDispatch();
-    console.log(TokensTeamSelect);
+    useEffect(() => {
+        dispatch(addItemsFromLocalStorage());
+    }, []);
     return (
         <FlexCenter>
             <TitleScroll title="Your Team" />

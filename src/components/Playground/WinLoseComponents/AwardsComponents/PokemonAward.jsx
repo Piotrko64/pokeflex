@@ -1,14 +1,6 @@
-import styled from "styled-components";
-import Confetti from "react-confetti";
 import { Fragment, useEffect } from "react";
-import Tippy from "@tippyjs/react";
-import Tooltip from "../../../Tooltip/tooltip";
-import TooltipCard from "../../../Tooltip/tooltipCard";
-import CardPokemon from "../../../pokemon/CardPokemon";
 
-const PokemonImageAward = styled.img`
-    width: 200px;
-`;
+import CardPokemon from "../../../pokemon/CardPokemon";
 
 function PokemonAward({ pokemon }) {
     useEffect(() => {

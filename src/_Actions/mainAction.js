@@ -89,6 +89,12 @@ export const addToTeamToken = (token) => {
         payload: token,
     };
 };
+export const addNewToken = (token) => {
+    return {
+        type: "addNewToken",
+        payload: token,
+    };
+};
 
 export const changeVolume = (volume) => {
     return {

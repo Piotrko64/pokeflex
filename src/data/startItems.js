@@ -50,13 +50,6 @@ export const startPokemons = [
 export const startTokens = [
     {
         id: v4(),
-        name: "Electro Action",
-        icon: <AiOutlineThunderbolt />,
-        functionToken: electroAction,
-        desc: "Deal **7** points to the weakest enemy character. If you have at least one **Electro** character, deal **14** points to the strongest enemy character",
-    },
-    {
-        id: v4(),
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,

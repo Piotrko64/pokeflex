@@ -12,7 +12,7 @@ const Token = styled.div`
 export default function OneTokenScroll({ item, noBattle, scroll }) {
     const dispatch = useDispatch();
     const tokensFight = useSelector((state) => state.YourItemsReducer.TokensFight);
-    console.log(tokensFight);
+
     return (
         <Token
             onClick={() => dispatch(addToTeamToken(item))}

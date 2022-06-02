@@ -5,6 +5,7 @@ import { addToTeam } from "./functionsForReducer/YourItems/addToTeam";
 import { addToTeamToken } from "./functionsForReducer/YourItems/addToTeamToken";
 import { deleteFromTeamToken } from "./functionsForReducer/YourItems/deleteFromTeamToken";
 import findTokensLocal from "./helpers/findTokensLocal";
+import { addNewToken } from "./functionsForReducer/YourItems/addNewToken";
 
 const yourItems = {
     Pokemons: [...startPokemons],
@@ -25,6 +26,10 @@ const YourItemsReducer = (state = yourItems, action) => {
             return addToTeam(state, action.payload);
         case "addToTeamToken":
             return addToTeamToken(state, action.payload);
+        case "addNewToken":
+            return addNewToken(state, action.payload);
+        // case "addNewToken":
+        //     return addNewToken(state.action.payload);
         default:
             return state;
     }

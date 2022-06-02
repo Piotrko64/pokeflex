@@ -1,6 +1,7 @@
 import ChooseLevel from "../../pages/ChooseLevel";
 import MainPage from "../../pages/Main";
 import QuickGame from "../../pages/QuickGame";
+import SelectTeam from "../../pages/SelectTeam";
 import SingleLevel from "../../pages/SingleLevel";
 import MainComponentSelectTeam from "../SelectTeam/MainComponentSelectTeam";
 import AnimateRoute from "./AnimateRoute";
@@ -18,13 +19,14 @@ export const ListRouting = [
         path: "/ChooseLevel",
         element: <ChooseLevel />,
     },
-    {
-        path: "/SelectTeam",
-        element: <MainComponentSelectTeam />,
-    },
+
     {
         path: "/levels/:id",
         element: <SingleLevel />,
+    },
+    {
+        path: "SelectTeam",
+        element: <SelectTeam />,
     },
 ];
 

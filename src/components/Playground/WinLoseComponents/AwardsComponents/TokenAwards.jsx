@@ -3,6 +3,8 @@ import Confetti from "react-confetti";
 import { Fragment, useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import Tooltip from "../../../Tooltip/tooltip";
+import { useDispatch } from "react-redux";
+import { addItemsFromLocalStorage, addNewToken } from "../../../../_Actions/mainAction";
 
 const TokenAward = styled.div`
     border-radius: 50%;

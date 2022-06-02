@@ -61,6 +61,9 @@ function LeftSide() {
             <Link to="/ChooseLevel">
                 <Play color="#03942a">Select Level</Play>
             </Link>
+            <Link to="/SelectTeam">
+                <Play color="#03942a">Select Team</Play>
+            </Link>
         </AllLeft>
     );
 }
