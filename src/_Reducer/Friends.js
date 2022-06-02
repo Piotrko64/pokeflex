@@ -18,6 +18,7 @@ const stateFight = {
     myTokens: findTokensLocal(),
     enemyTokens: [allTokens[2]],
     yourTurn: true,
+    whoWin: false,
 };
 
 function pushNewCoordinate(state, id, coordinate, name) {
@@ -31,6 +32,8 @@ const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
         case "setEnemyTeam":
             return { ...state, enemyTeam: action.payload.team, enemyTokens: action.payload.tokens };
+        case "setYoutTeam":
+            return { ...state, myTeam: action.payload };
         case "setRandomPokemon":
             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
         case "choose":
@@ -61,6 +64,8 @@ const FriendReducer = (state = stateFight, action) => {
                 myTeam: newStateFriends,
                 grave: [...state.grave, action.payload],
             };
+        case "setWhoWin":
+            return { ...state, whoWin: action.payload };
         default:
             return state;
     }

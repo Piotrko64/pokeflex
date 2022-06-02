@@ -1,3 +1,20 @@
+export const setEnemyTeam = (team, tokens) => {
+    return {
+        type: "setEnemyTeam",
+        payload: {
+            team,
+            tokens,
+        },
+    };
+};
+export const setMyTeam = (team) => {
+    return {
+        type: "setMyTeam",
+        payload: {
+            team,
+        },
+    };
+};
 export const choose = (id) => {
     return {
         type: "choose",
@@ -48,15 +65,7 @@ export const moveToGrave = (pokemon) => {
         payload: pokemon,
     };
 };
-export const setEnemyTeam = (team, tokens) => {
-    return {
-        type: "setEnemyTeam",
-        payload: {
-            team,
-            tokens,
-        },
-    };
-};
+
 export const addItemsFromLocalStorage = () => {
     return {
         type: "addItemsFromLocalStorage",
@@ -100,5 +109,12 @@ export const changeVolume = (volume) => {
     return {
         type: "changeVolume",
         payload: volume,
+    };
+};
+
+export const setWhoWin = (Win) => {
+    return {
+        type: "setWhoWin",
+        payload: Win,
     };
 };

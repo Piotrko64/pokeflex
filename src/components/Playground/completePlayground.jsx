@@ -4,15 +4,15 @@ import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../_Actions/mainAction";
+import { animation, computerMove, noWhoAttack, setWhoWin, tokenPowerAi } from "../../_Actions/mainAction";
 
 import GroundForCards from "./groundFriends";
 import YourTurn from "./YourTurn";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
-import MainComponentVolume from "../SettingsComponents/SoundVolume/MainComponentVolume";
+import UseBeginFight from "../../hooks/fightHooks/useBeginFight";
 
 const WholeField = styled.div`
     display: flex;
@@ -25,10 +25,11 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground() {
-    const [endGame, setEndGame] = useState(null);
     const dispatch = useDispatch();
 
     const All = useSelector((state) => state.FriendsTeam);
+
+    const Win = useSelector((state) => state.FriendsTeam.whoWin);
 
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
 
@@ -42,6 +43,8 @@ function CompletePlayground() {
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
     useSountrack(quickGameSoundtrack, volume);
+
+    // UseBeginFight();
 
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
@@ -65,8 +68,20 @@ function CompletePlayground() {
         }, 500);
     }
     useEffect(() => {
+        if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
+            dispatch(setWhoWin("remis"));
+        } else if (FriendsTeam.length === 0) {
+            dispatch(setWhoWin("lose"));
+        } else if (EnemyTeam.length === 0) {
+            dispatch(setWhoWin("win"));
+        }
+    }, [FriendsTeam.length, EnemyTeam.length]);
+    useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
+                if (!EnemyTeam.filter((e) => e.hp > 1).length) {
+                    return;
+                }
                 if (EnemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
                     const randomNumberTokens = Math.round(Math.random() * (EnemyTokens.length - 1));
                     const randomToken = EnemyTokens[randomNumberTokens];
@@ -81,16 +96,6 @@ function CompletePlayground() {
         }
     }, [yourTurn]);
 
-    useEffect(() => {
-        if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
-            setEndGame("remis");
-        } else if (FriendsTeam.length === 0) {
-            setEndGame("lose");
-        } else if (EnemyTeam.length === 0) {
-            setEndGame("win");
-        }
-    }, [FriendsTeam.length, EnemyTeam.length]);
-
     return (
         <>
             <WholeField>
@@ -98,7 +103,7 @@ function CompletePlayground() {
                 <YourTurn turn={yourTurn} />
                 <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />
             </WholeField>
-            {endGame && <WinLose value={endGame} />}
+            {Win && <WinLose value={Win} />}
         </>
     );
 }

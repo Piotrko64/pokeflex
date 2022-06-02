@@ -5,6 +5,8 @@ import WinSound from "../../../Audio/winLose/Win.wav";
 import LoseSound from "../../../Audio/winLose/Lose.wav";
 import RemisSound from "../../../Audio/winLose/Scream.wav";
 import Awards from "./AwardsComponents/Awards";
+import { useDispatch, useSelector } from "react-redux";
+import { setEnemyTeam } from "../../../_Actions/mainAction";
 
 const winPlay = new Audio(WinSound);
 const losePlay = new Audio(LoseSound);
@@ -41,7 +43,7 @@ const Score = styled.div`
     letter-spacing: 5px;
     font-size: 112px;
 `;
-const Win = styled.div`
+const WinComponent = styled.div`
     background: linear-gradient(180deg, rgba(209, 37, 37, 1) 0%, rgba(255, 219, 60, 1) 89%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -57,10 +59,14 @@ const Remis = styled.div`
     -webkit-text-fill-color: transparent;
 `;
 
-function WinLose({ value }) {
+function WinLose() {
+    const dispatch = useDispatch();
+    const Win = useSelector((state) => state.FriendsTeam.whoWin);
+
     useEffect(() => {
+        dispatch(setEnemyTeam([], []));
         (() => {
-            switch (value) {
+            switch (Win) {
                 case "win":
                     winPlay.play();
                     break;
@@ -77,7 +83,7 @@ function WinLose({ value }) {
     }, []);
     return (
         <Blur>
-            {value === "win" && (
+            {Win === "win" && (
                 <Confetti
                     width={window.innerWidth}
                     height={window.innerHeight}
@@ -89,9 +95,9 @@ function WinLose({ value }) {
             <TableScore>
                 <Score>
                     {(() => {
-                        switch (value) {
+                        switch (Win) {
                             case "win":
-                                return <Win>YOU WIN!!!</Win>;
+                                return <WinComponent>YOU WIN!!!</WinComponent>;
                             case "lose":
                                 return <Lose>You lose</Lose>;
                             case "remis":
@@ -101,7 +107,7 @@ function WinLose({ value }) {
                         }
                     })()}
                 </Score>
-                {value === "win" && <Awards />}
+                {Win === "win" && <Awards />}
             </TableScore>
         </Blur>
     );
