@@ -62,7 +62,13 @@ In this game you can create own pokemons crew, fights and gets new pokemons and 
 
 <br />
 
- Each pokemons have different stats which will be good depending on the situation. Even in fight you can look at guide.
+## Game mechanics
+
+In order to win the game, you have to defeat all enemy pokemons. It is simple.
+
+### Example of pokemon
+
+ Each pokemons have different stats which will be good depending on the situation. For example: SQUIRTLE has a lot hp and defense. If an enemy pokemon attacks your pokemon that has 0 defense points, the enemy pokemon activates a bonus depending on its type. Fortunately, SQUIRTLE is safe in this matter until it has 0 points of defense. Remember that the attacked pokemon always loses 1 defense point. The water type is an unusual type because when it attacks an opponent with no defense points, all your other pokemons get +1 hp. Remember that even in combat, you can consult the guide to see what the stats and picks do
 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/> <p>
