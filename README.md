@@ -38,9 +38,7 @@
 
 * [Inspiration](#inspiration)
 
-* [Major Updates](#Updates)
 
-* [What have I learned from this project](#what-have-i-learned-from-this-project)
 
 <br />
 
@@ -55,43 +53,34 @@
 
 # About 
 
-In this game you can create own pokemons crew, fights and gets new pokemons and tokens. This game isn't so easy how look on first glance. Every type have own unique ability.  Each pokemons have different stats which will be good depending on the situation
+In this game you can create own pokemons crew, fights and gets new pokemons and tokens. This game isn't so easy how look on first glance. Every type have own unique ability. 
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/><p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/171719784-3ac199a6-62c4-476b-9249-4032cf3cc38d.gif"/><p>
 
 
 <br />
 
-In this section you can writing about project. For example about its destiny or how it works. You can also put screenshots like I am now.
+## Game mechanics
+
+In order to win the game, you have to defeat all enemy pokemons. It is simple.
+
+### Example of pokemon
+
+ Each pokemons have different stats which will be good depending on the situation. For example: SQUIRTLE has a lot hp and defense. If an enemy pokemon attacks your pokemon that has 0 defense points, the enemy pokemon activates a bonus depending on its type. Fortunately, SQUIRTLE is safe in this matter until it has 0 points of defense. Remember that the attacked pokemon always loses 1 defense point. The water type is an unusual type because when it attacks an opponent with no defense points, all your other pokemons get +1 hp. Remember that even in combat, you can consult the guide to see what the stats and picks do
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/> <p>
 
 <br />
 
 # Inspiration
 
-My inspiration to create this project was [this README](https://github.com/Piotrko64/react-sound-architecture/edit/master/README.md)
+My inspiration to create this project was games: Hearstone and Gwent.
 
 <br />
 
-# Updates
-
-### **v1.0.3** 05/05/2022
-
-> -   **Super function** is ready!'
-
-
-### **v1.0.1** 04/04/2022
-
-> -   Add *Formik* liblary
-> -   Writing example updates
-
-<br />
-
-# What have I learned from this project
-
-> - How to create interesting README files
-> - Present projects well
 
 
 
