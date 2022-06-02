@@ -45,7 +45,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                     MeIndex = fi;
                 }
             });
-            console.log(Me, Enemy);
+
             if (!Me) {
                 Me = teamFriends[0];
                 MeIndex = 0;
@@ -54,7 +54,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                 Enemy = teamEnemy[0];
                 EnemyIndex = 0;
             }
-            if (Me.hp >= Me.speed) {
+            if (Me.hp > Me.speed) {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
             } else {
                 Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
