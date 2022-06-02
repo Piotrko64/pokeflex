@@ -59,12 +59,14 @@ In this game you can create own pokemons crew, fights and gets new pokemons and 
 
 <br />
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/><p>
+<p align="center"><img src="https://user-images.githubusercontent.com/77500425/170885787-6468bb1b-b4cc-4331-850e-26e813155078.png"/> <p>
 
 
 <br />
 
 In this section you can writing about project. For example about its destiny or how it works. You can also put screenshots like I am now.
+
+<p align="center"> ![ezgif-4-a75a1b5763](https://user-images.githubusercontent.com/77500425/171719784-3ac199a6-62c4-476b-9249-4032cf3cc38d.gif)<p>
 
 <br />
 
