@@ -1,4 +1,16 @@
-import lighter from "../functions/powerTokens/lighter";
+import { v4 } from "uuid";
+// function for roken
+import electroAction from "../dataTokens/powerTokens/electroaction";
+import uninvitedGuest from "../dataTokens/powerTokens/uninvitedguest";
+import fountain from "../dataTokens/powerTokens/fountain";
+import sacrifice from "../dataTokens/powerTokens/sacrifice";
+import resurrection from "../dataTokens/powerTokens/resurrection";
+
+import fishingRoad from "../dataTokens/powerTokens/fishingRod";
+import conflagration from "../dataTokens/powerTokens/conflagration";
+import highGrass from "../dataTokens/powerTokens/highGrass";
+import punch from "../dataTokens/powerTokens/punch";
+import lighter from "../dataTokens/powerTokens/lighter";
 
 // Import Icons
 
@@ -14,19 +26,6 @@ import {
     GiPunch,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
-
-// function for roken
-import electroAction from "../functions/powerTokens/electroaction";
-import uninvitedGuest from "../functions/powerTokens/uninvitedguest";
-import fountain from "../functions/powerTokens/fountain";
-import sacrifice from "../functions/powerTokens/sacrifice";
-import resurrection from "../functions/powerTokens/resurrection";
-
-import { v4 } from "uuid";
-import fishingRoad from "../functions/powerTokens/fishingRod";
-import conflagration from "../functions/powerTokens/conflagration";
-import highGrass from "../functions/powerTokens/highGrass";
-import punch from "../functions/powerTokens/punch";
 
 export const allTokens = [
     {

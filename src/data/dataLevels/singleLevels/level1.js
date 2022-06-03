@@ -1,6 +1,6 @@
 import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
-import { allTokens } from "../../allTokens";
+import { allTokens } from "../../dataTokens/allTokens";
 
 const Gyarados = {
     id: v4(),

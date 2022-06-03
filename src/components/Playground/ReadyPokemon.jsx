@@ -78,12 +78,11 @@ function ReadyPokemon(props) {
         newHpChange && setArrayHp((el) => [...el, newHpChange]);
 
         setHpChange(props.value.hp);
-    }, [props.value.hp]);
-    useEffect(() => {
         if (props.value.hp < 1) {
             dispatch(moveToGrave(props.value));
         }
     }, [props.value.hp]);
+
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
             <motion.div

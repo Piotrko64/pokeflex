@@ -1,4 +1,4 @@
-import { allTokens } from "../../../data/allTokens";
+import { allTokens } from "../../../data/dataTokens/allTokens";
 import { examplePokemons } from "../../../data/examplePokemons";
 
 export function addFromLocalStorage(state) {

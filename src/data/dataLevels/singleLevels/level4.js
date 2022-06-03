@@ -1,6 +1,5 @@
-import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
-import { allTokens } from "../../allTokens";
+
 import { examplePokemons } from "../../../data/examplePokemons";
 const Turtwig = {
     id: v4(),
@@ -42,19 +41,6 @@ const Turtwig2 = {
     revenge: 2,
 };
 
-// const Torterra = {
-//     id: v4(),
-
-//     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
-//     name: "Torterra",
-//     type: "Grass",
-//     hp: 75,
-//     attack: 9,
-//     specialAttack: 12,
-//     speed: 51,
-//     defense: 8,
-//     revenge: 4,
-// };
 export const level4 = {
     id: "level4normal1",
     name: "level 4",

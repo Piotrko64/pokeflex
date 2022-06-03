@@ -1,6 +1,5 @@
 import ScrollListComponent from "../ScrollListComponent";
-import { allTokens } from "../../../../data/allTokens";
-import ItemToken from "../../../Playground/Tokens/ItemToken";
+
 import OneTokenScroll from "./OneTokenScroll";
 import { useSelector } from "react-redux";
 

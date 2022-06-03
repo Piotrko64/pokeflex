@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { allTokens } from "../../../../data/allTokens";
+import { allTokens } from "../../../../data/dataTokens/allTokens";
+
 import ItemToken from "../../../Playground/Tokens/ItemToken";
-import OneTokenScroll from "../../../SelectTeam/components/ScrollTokens/OneTokenScroll";
+
 const FlexWrap = styled.div`
     display: flex;
     justify-content: center;

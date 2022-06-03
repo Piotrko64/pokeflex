@@ -1,13 +1,8 @@
 import { v4 } from "uuid";
 import { GiWaterFountain, GiBlackHandShield, GiLighter } from "react-icons/gi";
-import { AiOutlineThunderbolt } from "react-icons/ai";
-import electroAction from "../functions/powerTokens/electroaction";
 
-import fountain from "../functions/powerTokens/fountain";
-
-import resurrection from "../functions/powerTokens/resurrection";
-import lighter from "../functions/powerTokens/lighter";
-
+import fountain from "./dataTokens/powerTokens/fountain";
+import resurrection from "./dataTokens/powerTokens/resurrection";
 export const startPokemons = [
     {
         id: v4(),

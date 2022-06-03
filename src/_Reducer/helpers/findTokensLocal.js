@@ -1,4 +1,4 @@
-import { allTokens } from "../../data/allTokens";
+import { allTokens } from "../../data/dataTokens/allTokens";
 import { startTokens } from "../../data/startItems";
 
 export default function findTokensLocal() {

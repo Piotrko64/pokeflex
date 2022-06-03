@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
+import { allTokens } from "../../dataTokens/allTokens";
 
-import { allTokens } from "../../allTokens";
 const Turtwig = {
     id: v4(),
 

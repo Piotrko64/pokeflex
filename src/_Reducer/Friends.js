@@ -1,4 +1,4 @@
-import { allTokens } from "../data/allTokens";
+import { allTokens } from "../data/dataTokens/allTokens";
 import { examplePokemons } from "../data/examplePokemons";
 import { startPokemons, startTokens } from "../data/startItems";
 import chooseAndFight from "./functionsForReducer/chooseAndFight";

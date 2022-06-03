@@ -1,4 +1,4 @@
-import { allTokens } from "../../data/allTokens";
+import { allTokens } from "../allTokens";
 import clone from "lodash.clone";
 
 export default function lighter(state, AI) {

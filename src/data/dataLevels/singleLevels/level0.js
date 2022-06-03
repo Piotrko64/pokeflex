@@ -1,6 +1,7 @@
 import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
-import { allTokens } from "../../allTokens";
+import { allTokens } from "../../dataTokens/allTokens";
+
 import { examplePokemons } from "../../examplePokemons";
 
 const Raichu = {
