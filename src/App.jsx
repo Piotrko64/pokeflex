@@ -1,5 +1,5 @@
 import "atropos/css";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import MainRouting from "./components/Routing/MainRouting";
@@ -7,6 +7,7 @@ import MainComponentGuide from "./components/Quide/MainComponentGuide";
 import { useDispatch } from "react-redux";
 import { addItemsFromLocalStorage } from "./_Actions/mainAction";
 import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
+import useKeyboardGuide from "./hooks/keyboardUsing/useKeyboardGuide";
 
 const Guide = styled.div`
     position: fixed;
@@ -21,17 +22,14 @@ const Guide = styled.div`
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
 
-    function handleEscape(e) {
-        if (e.key === "Escape") {
-            setOpenGuide(false);
-        } else if (e.key === "p") {
-            setOpenGuide(true);
-        }
-    }
+    useKeyboardGuide(setOpenGuide);
+
     const dispatch = useDispatch();
+
     dispatch(addItemsFromLocalStorage());
+
     return (
-        <div onKeyDown={handleEscape} tabIndex="-1">
+        <div>
             <MainRouting />
             <Guide onClick={() => setOpenGuide(!openGuide)}>
                 <BsQuestionCircleFill />

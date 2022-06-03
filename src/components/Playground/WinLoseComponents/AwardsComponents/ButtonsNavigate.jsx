@@ -11,7 +11,7 @@ const Content = styled.div`
 `;
 
 const Button = styled.button`
-    padding: 5px;
+    padding: 5px 10px;
     font-family: "Koulen", cursive;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -22,6 +22,10 @@ const Button = styled.button`
     background: ${(props) => props.color};
     margin: 0 10px;
     cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
 `;
 
 const ListButtons = [
@@ -45,6 +49,9 @@ const ButtonsNavigate = () => {
                     <Button color={el.color}>{el.text}</Button>
                 </Link>
             ))}
+            <Button color="#6b07ce" onClick={() => window.location.reload()}>
+                Play Again
+            </Button>
         </Content>
     );
 };

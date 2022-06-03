@@ -23,7 +23,7 @@ export default function MainComponentGuide() {
         setRenderView(renderView);
     }
     return ReactDom.createPortal(
-        <Blur tabIndex={-1}>
+        <Blur>
             <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
             <AnimatePresence exitBeforeEnter>{renderView}</AnimatePresence>
         </Blur>,

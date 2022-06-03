@@ -73,7 +73,7 @@ function CompletePlayground() {
         }, 500);
     }
     useEffect(() => {
-        if (Win !== "") {
+        if (Win) {
             return;
         }
         if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
