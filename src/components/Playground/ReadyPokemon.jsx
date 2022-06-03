@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
 import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
@@ -98,6 +98,7 @@ function ReadyPokemon(props) {
                 }}
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0 }}
+                className="flex"
             >
                 <CardPokemon value={props.value} versionMini />
             </motion.div>

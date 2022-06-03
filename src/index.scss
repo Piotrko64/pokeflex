@@ -47,19 +47,20 @@ code {
 a {
     text-decoration: none;
 }
-.gridForCards {
-    display: grid;
+// .gridForCards {
+//     display: grid;
 
-    grid-template-rows: repeat(2, 280px);
-    grid-template-columns: 40px;
-    grid-auto-flow: column;
-    max-width: 750px;
-    place-items: center;
-}
+//     grid-template-rows: repeat(2, 280px);
+//     grid-template-columns: 40px;
+//     grid-auto-flow: column;
+//     max-width: 750px;
+//     place-items: center;
+// }
 .flex {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: none !important;
 }
 //  CSS TRANSITION GROUP
 //  ANIMATION STATS
