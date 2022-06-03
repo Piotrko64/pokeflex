@@ -73,6 +73,9 @@ function CompletePlayground() {
         }, 500);
     }
     useEffect(() => {
+        if (Win !== "") {
+            return;
+        }
         if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
             audioPlay(RemisSound);
             dispatch(setWhoWin("remis"));
@@ -83,9 +86,8 @@ function CompletePlayground() {
             audioPlay(WinSound);
             dispatch(setWhoWin("win"));
         }
-        return async () => {
-            await setWhoWin("");
-            console.log(Win);
+        return () => {
+            setWhoWin("");
         };
     }, [FriendsTeam.length, EnemyTeam.length]);
     useEffect(() => {
