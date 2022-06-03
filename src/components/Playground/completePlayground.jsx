@@ -47,8 +47,8 @@ function CompletePlayground() {
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
-    useSountrack(quickGameSoundtrack, volume);
 
+    useSountrack(quickGameSoundtrack, volume);
     UseBeginFight();
 
     function handleComputerChoose(x) {
