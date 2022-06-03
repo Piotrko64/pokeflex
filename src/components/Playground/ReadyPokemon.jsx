@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import CardPokemon from "../pokemon/CardPokemon";
+import CardPokemon from "../CardPokemon/CardPokemon";
 import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,11 +8,12 @@ import { motion } from "framer-motion";
 
 import blockSound from "../../Audio/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
+import clone from "lodash.clone";
 const blockPlay = new Audio(blockSound);
 
 const Pokemon = styled.div`
     z-index: 9;
-    transition: all 0.18s ease-in-out;
+    transition: all 0.2s ease-in-out;
     position: relative;
 `;
 
@@ -64,6 +65,10 @@ function ReadyPokemon(props) {
             pokemonRef.current.style.transform = `translateX(${coordinateX}px) translateY(${coordinateY}px)`;
 
             setTimeout(() => {
+                if (!pokemonRef) {
+                    return;
+                }
+
                 pokemonRef.current.style.zIndex = `9`;
                 pokemonRef.current.style.transform = `translateX(0px) translateY(0px)`;
             }, 200);
@@ -94,7 +99,6 @@ function ReadyPokemon(props) {
                 }}
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0 }}
-                className="flex"
             >
                 <CardPokemon value={props.value} versionMini />
             </motion.div>

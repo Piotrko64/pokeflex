@@ -8,8 +8,6 @@ export default function setRandomEnemyQG() {
     const randomPoke = () => examplePokemons[Math.round(Math.random() * (examplePokemons.length - 1))];
     const randomToken = () => filterArr[Math.round(Math.random() * (filterArr.length - 1))];
 
-    console.log(randomPoke);
-
     let arrEnemy = [];
     const arrEnemyTokens = [];
 
@@ -31,6 +29,6 @@ export default function setRandomEnemyQG() {
             specialAttack: (el.specialAttack += 4),
         }));
     }
-    console.log(arrEnemyTokens);
+
     return [arrEnemy, arrEnemyTokens];
 }

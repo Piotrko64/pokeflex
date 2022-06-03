@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
 
-import CardPokemon from "../../../pokemon/CardPokemon";
+import CardPokemon from "../../../CardPokemon/CardPokemon";
 
 function PokemonAward({ pokemon }) {
     useEffect(() => {

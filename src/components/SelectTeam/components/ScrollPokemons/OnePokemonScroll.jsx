@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { addToTeam } from "../../../../_Actions/mainAction";
-import CardPokemon from "../../../pokemon/CardPokemon";
+import CardPokemon from "../../../CardPokemon/CardPokemon";
 
 const Card = styled.div`
     padding: 0 10px;

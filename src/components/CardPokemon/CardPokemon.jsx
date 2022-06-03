@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 const Card = styled.div`
     height: 100%;
-    width: 100%;
+
     max-width: ${(props) => (props.versionMini ? "175px" : "320px")};
+    margin: auto;
     background: black;
     display: flex;
     justify-content: flex-end;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { examplePokemons } from "../../../../data/examplePokemons";
-import CardPokemon from "../../../pokemon/CardPokemon";
+import CardPokemon from "../../../CardPokemon/CardPokemon";
 const FlexWrap = styled.div`
     display: flex;
     justify-content: center;

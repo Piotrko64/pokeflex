@@ -7,8 +7,8 @@ import {
     deleteFromTeamToken,
 } from "../../../../_Actions/mainAction";
 
-import CardPokemon from "../../../pokemon/CardPokemon";
-import ButtonsComponent from "../ButtonsComponent";
+import CardPokemon from "../../../CardPokemon/CardPokemon";
+
 import OneTokenScroll from "../ScrollTokens/OneTokenScroll";
 import TitleScroll from "../TitleScroll";
 
