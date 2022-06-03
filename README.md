@@ -84,7 +84,9 @@ My inspiration to create this project was games: Hearstone and Gwent.
 
 # Music
 
-<p align="center">Project was created with associate **SOUND ARCHITECTURE** which created soundtrack and sound effects to this game</p>
+<br />
+
+<p align="center">Project was created with associate *s* which created soundtrack and sound effects to this game</p>
 
 <p align="center"><img src="https://soundarchitecture.netlify.app/static/media/logosawhite.75a96919.webp"/> <p>
 
