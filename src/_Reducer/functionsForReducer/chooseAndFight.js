@@ -1,6 +1,6 @@
 import clone from "lodash.clone";
-import Hit from "../../Audio/Hit.wav";
-import pick from "../../Audio/PickingCart.wav";
+import Hit from "../../Audio/actions/Hit.wav";
+import pick from "../../Audio/actions/PickingCart.wav";
 import audioPlay from "../helpers/audioPlay";
 
 let whoAttack = "";

@@ -1,31 +1,40 @@
 import styled from "styled-components";
 
-const CircleTurn = styled.div`
-    text-align: center;
+const Flip = styled.div`
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px #000000;
+    height: 70px;
+    width: 170px;
     border-radius: 10px;
-    padding: 10px;
-    min-height: 25px;
-
-    background-color: transparent;
-    font-size: 1.2rem;
-    border: 2px solid white;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: all 2s ease;
+    align-items: center;
+    background-color: white;
+    transform: ${(props) => (!props.turn ? "rotateX(180deg)" : "rotateX(0deg)")};
 `;
-const FlipInner = styled.div`
-    transform: rotateY(180deg);
+
+const Front = styled.div`
+    text-align: center;
+    position: absolute;
+    font-family: "Koulen", cursive;
+    color: black;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
 `;
-const Front = styled.div``;
-const Back = styled.div`
-    transform: rotateY(180deg);
+const Back = styled(Front)`
+    transform: rotateX(180deg);
 `;
 function YourTurn({ turn }) {
     return (
-        <CircleTurn>
-            <FlipInner>{turn ? <Front>Your turn</Front> : <Back>Enemy turn</Back>}</FlipInner>
-        </CircleTurn>
+        <Flip turn={turn}>
+            <Front>Your turn</Front> <Back>Enemy turn</Back>
+        </Flip>
     );
 }
 export default YourTurn;

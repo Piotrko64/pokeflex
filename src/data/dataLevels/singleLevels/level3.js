@@ -3,6 +3,8 @@ import { allTokens } from "../../dataTokens/allTokens";
 
 import { examplePokemons } from "../../examplePokemons";
 
+import Tribe from "../../../Audio/mainSoundtracks/Tribe.wav";
+
 const Charizard = {
     id: v4(),
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
@@ -26,4 +28,5 @@ export const level3 = {
         pokemons: examplePokemons.find((e) => e.name === "Cyndaquil"),
         tokens: allTokens.find((e) => e.name === "Lighter"),
     },
+    music: Tribe,
 };

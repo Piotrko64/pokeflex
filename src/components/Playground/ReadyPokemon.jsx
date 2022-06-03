@@ -6,10 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-import blockSound from "../../Audio/blockAction.wav";
+import blockSound from "../../Audio/actions/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
-import clone from "lodash.clone";
-const blockPlay = new Audio(blockSound);
+import audioPlay from "../../_Reducer/helpers/audioPlay";
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -43,7 +42,7 @@ function ReadyPokemon(props) {
 
             dispatch(animation([x, y]));
         } else {
-            blockPlay.play();
+            audioPlay(blockSound);
         }
     }
     useEffect(() => {

@@ -16,7 +16,7 @@ import { useEffect } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
-import UseBeginFight from "../../hooks/fightHooks/useBeginFight";
+import useBeginFight from "../../hooks/fightHooks/useBeginFight";
 import audioPlay from "../../_Reducer/helpers/audioPlay";
 
 const WholeField = styled.div`
@@ -29,7 +29,7 @@ const WholeField = styled.div`
     min-height: 100vh;
 `;
 
-function CompletePlayground() {
+function CompletePlayground({ music }) {
     const dispatch = useDispatch();
 
     const All = useSelector((state) => state.FriendsTeam);
@@ -48,8 +48,11 @@ function CompletePlayground() {
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
 
-    useSountrack(quickGameSoundtrack, volume);
-    UseBeginFight();
+    const setMusic = useSountrack(music || quickGameSoundtrack, volume);
+    useEffect(() => {
+        setMusic(music);
+    }, [music]);
+    useBeginFight();
 
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
