@@ -62,12 +62,14 @@ export const allTokens = [
         id: v4(),
         name: "Sacrifice",
         icon: <GiDeadlyStrike />,
+        badForAI: true,
         functionToken: sacrifice,
         desc: "Take your Pokemon to the ***grave*** with the lightest special attack. Your Pokemon with the strongest **special attack** gains that Pokemon's **health** and **+25 speed**",
     },
     {
         id: v4(),
         name: "Resurrection",
+        badForAI: true,
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
         desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **11hp**",
@@ -91,6 +93,7 @@ export const allTokens = [
     {
         id: v4(),
         idAward: "HG4568GRa45s8",
+        badForAI: true,
         name: "High Grass",
         icon: <GiHighGrass />,
         functionToken: highGrass,
