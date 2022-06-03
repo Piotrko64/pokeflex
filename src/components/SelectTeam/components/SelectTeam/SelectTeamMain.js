@@ -24,12 +24,12 @@ const Row = styled.div`
 const OneCardSelect = styled.div`
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 10px;
 `;
 const OneTokenSelect = styled.div`
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 10px;
 `;
 
 export default function SelectTeamMain() {

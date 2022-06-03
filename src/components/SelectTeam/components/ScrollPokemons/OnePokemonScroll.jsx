@@ -4,7 +4,7 @@ import { addToTeam } from "../../../../_Actions/mainAction";
 import CardPokemon from "../../../pokemon/CardPokemon";
 
 const Card = styled.div`
-    padding: 0 20px;
+    padding: 0 10px;
     transition: all 0.3s linear;
     transform: scale(0.85);
     filter: ${(props) => props.choose && "grayscale(1)"};

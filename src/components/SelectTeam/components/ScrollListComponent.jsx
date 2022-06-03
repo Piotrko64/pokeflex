@@ -11,7 +11,7 @@ const ScrollList = styled.div`
 const Scroll = styled.div`
     overflow-x: hidden;
     cursor: grab;
-    padding: 5px;
+
     background-color: #ffffff2e;
     &::-webkit-scrollbar {
         width: 10px;
