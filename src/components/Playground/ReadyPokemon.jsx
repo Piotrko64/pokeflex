@@ -14,6 +14,7 @@ const Pokemon = styled.div`
     z-index: 9;
     transition: all 0.2s ease-in-out;
     position: relative;
+    margin: 0;
 `;
 
 function ReadyPokemon(props) {
@@ -98,7 +99,7 @@ function ReadyPokemon(props) {
                 }}
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0 }}
-                className="flex"
+                className={props.value.id === whoAttackID && "flex"}
             >
                 <CardPokemon value={props.value} versionMini />
             </motion.div>

@@ -7,7 +7,7 @@ const List = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 600px;
+    width: clamp(350px, 25vw, 600px);
     height: 62px;
 `;
 

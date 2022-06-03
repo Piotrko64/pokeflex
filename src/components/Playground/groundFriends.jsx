@@ -8,7 +8,8 @@ import ListTokens from "./Tokens/ListTokens";
 
 const PlayGround = styled.div`
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     flex-direction: ${(props) => (!props.AI ? "column" : "column-reverse")};
 `;
 const GridForCards = styled.div`
