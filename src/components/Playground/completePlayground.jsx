@@ -48,9 +48,10 @@ function CompletePlayground({ music }) {
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
 
-    const setMusic = useSountrack(music || quickGameSoundtrack, volume);
+    const setMusic = useSountrack(music, volume);
+
     useEffect(() => {
-        setMusic(music);
+        setMusic(music || quickGameSoundtrack);
     }, [music]);
     useBeginFight();
 

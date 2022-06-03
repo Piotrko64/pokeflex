@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Flip = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px #000000;
-    height: 70px;
-    width: 170px;
+    width: clamp(135px, 12vw, 175px);
+    aspect-ratio: 2.5;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.8s;

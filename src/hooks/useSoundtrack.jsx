@@ -15,7 +15,7 @@ export default function useSountrack(music, volumeMusic) {
     useEffect(() => {
         audio.loop = true;
         audio.volume = volumeMusic;
-        console.log(audio);
+
         audio.play();
 
         return () => {
