@@ -6,16 +6,17 @@ export default function highGrass(state, AI) {
     let thisTeam;
     thisTeam = AI ? newState.enemyTeam : newState.myTeam;
     const newStateTeam = {
-        [AI ? "enemyTeam" : "myTeam"]: thisTeam.map(
-            (el) =>
-                el.type === "Grass" && {
-                    ...el,
-                    type: "Blocked",
-                    defense: el.defense + VALUE_DEFENSE,
-                    revenge: el.revenge + VALUE_REVENGE,
-                }
+        [AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) =>
+            el.type === "Grass"
+                ? {
+                      ...el,
+                      type: "Blocked",
+                      defense: el.defense + VALUE_DEFENSE,
+                      revenge: el.revenge + VALUE_REVENGE,
+                  }
+                : el
         ),
     };
-    console.log({ ...state, newStateTeam });
+
     return { ...state, ...newStateTeam };
 }

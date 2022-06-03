@@ -59,7 +59,7 @@ function ReadyPokemon(props) {
             const coordinateX = +whereIsEnemy[0] - +pokemonRef.current.getBoundingClientRect().x;
 
             const coordinateY = +whereIsEnemy[1] - +pokemonRef.current.getBoundingClientRect().y;
-            console.log(whereIsEnemy[0], pokemonRef.current.getBoundingClientRect().x);
+
             pokemonRef.current.style.zIndex = `999`;
             pokemonRef.current.style.transform = `translateX(${coordinateX}px) translateY(${coordinateY}px)`;
 

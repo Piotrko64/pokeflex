@@ -39,7 +39,6 @@ function Awards() {
             <AwardsSection>Your Awards</AwardsSection>
 
             <ListAwards token={awardToken} pokemon={awardPokemon} />
-            <ButtonsNavigate />
         </Fragment>
     );
 }

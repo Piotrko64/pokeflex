@@ -44,7 +44,7 @@ function CompletePlayground() {
     const volume = useSelector((state) => state.SettingsReducer.Volume);
     useSountrack(quickGameSoundtrack, volume);
 
-    // UseBeginFight();
+    UseBeginFight();
 
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
@@ -68,6 +68,9 @@ function CompletePlayground() {
         }, 500);
     }
     useEffect(() => {
+        if (Win) {
+            return;
+        }
         if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
             dispatch(setWhoWin("remis"));
         } else if (FriendsTeam.length === 0) {

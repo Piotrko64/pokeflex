@@ -5,15 +5,12 @@ import { setMyTeam, setWhoWin } from "../../_Actions/mainAction";
 const UseBeginFight = () => {
     const dispatch = useDispatch();
     const actualTeam = useSelector((state) => state.YourItemsReducer.TeamFight);
-
-    const w = useSelector((state) => state.FriendsTeam.whoWin);
+    const actualTokens = useSelector((state) => state.YourItemsReducer.TokensFight);
 
     useEffect(() => {
-        // dispatch(setWhoWin(""));
-        // dispatch(setMyTeam(actualTeam));
-        // setTimeout(() => {
-        //     console.log(w);
-        // }, 2000);
+        dispatch(setWhoWin(""));
+
+        dispatch(setMyTeam(actualTeam, actualTokens));
     }, []);
     return;
 };

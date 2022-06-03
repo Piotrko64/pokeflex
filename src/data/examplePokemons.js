@@ -147,7 +147,7 @@ export const examplePokemons = [
         attack: 6,
         specialAttack: 6,
         speed: 15,
-        defense: 5,
+        defense: 1,
         revenge: 2,
     },
 ];

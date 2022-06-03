@@ -7,12 +7,10 @@ export const setEnemyTeam = (team, tokens) => {
         },
     };
 };
-export const setMyTeam = (team) => {
+export const setMyTeam = (team, tokens) => {
     return {
         type: "setMyTeam",
-        payload: {
-            team,
-        },
+        payload: { team, tokens },
     };
 };
 export const choose = (id) => {

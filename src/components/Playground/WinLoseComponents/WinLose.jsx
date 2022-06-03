@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Confetti from "react-confetti";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import WinSound from "../../../Audio/winLose/Win.wav";
 import LoseSound from "../../../Audio/winLose/Lose.wav";
 import RemisSound from "../../../Audio/winLose/Scream.wav";
 import Awards from "./AwardsComponents/Awards";
 import { useDispatch, useSelector } from "react-redux";
-import { setEnemyTeam } from "../../../_Actions/mainAction";
+import { setEnemyTeam, setWhoWin } from "../../../_Actions/mainAction";
+import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
 
 const winPlay = new Audio(WinSound);
 const losePlay = new Audio(LoseSound);
@@ -59,14 +60,12 @@ const Remis = styled.div`
     -webkit-text-fill-color: transparent;
 `;
 
-function WinLose() {
-    const dispatch = useDispatch();
-    const Win = useSelector((state) => state.FriendsTeam.whoWin);
+function WinLose({ value }) {
+    const [endgame] = useState(value);
 
     useEffect(() => {
-        dispatch(setEnemyTeam([], []));
         (() => {
-            switch (Win) {
+            switch (endgame) {
                 case "win":
                     winPlay.play();
                     break;
@@ -83,7 +82,7 @@ function WinLose() {
     }, []);
     return (
         <Blur>
-            {Win === "win" && (
+            {endgame === "win" && (
                 <Confetti
                     width={window.innerWidth}
                     height={window.innerHeight}
@@ -95,7 +94,7 @@ function WinLose() {
             <TableScore>
                 <Score>
                     {(() => {
-                        switch (Win) {
+                        switch (endgame) {
                             case "win":
                                 return <WinComponent>YOU WIN!!!</WinComponent>;
                             case "lose":
@@ -107,7 +106,8 @@ function WinLose() {
                         }
                     })()}
                 </Score>
-                {Win === "win" && <Awards />}
+                {endgame === "win" && <Awards />}
+                <ButtonsNavigate />
             </TableScore>
         </Blur>
     );
