@@ -31,12 +31,18 @@ function pushNewCoordinate(state, id, coordinate, name) {
 const FriendReducer = (state = stateFight, action) => {
     switch (action.type) {
         case "setEnemyTeam":
-            return { ...state, enemyTeam: action.payload.team, enemyTokens: action.payload.tokens };
+            return {
+                ...state,
+                enemyTeam: action.payload.team,
+                enemyTokens: action.payload.tokens,
+                whoWin: "",
+            };
         case "setMyTeam":
             return {
                 ...state,
                 myTeam: action.payload.team,
                 myTokens: action.payload.tokens,
+                whoWin: "",
             };
         case "setRandomPokemon":
             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);

@@ -86,11 +86,11 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
                         break;
                     case "Normal":
-                        Enemy.type = "Blocked";
+                        Me.speed += 4;
+                        Enemy.speed -= 4;
                         break;
                     case "Psychic":
-                        Me.type = Enemy.type;
-                        Me.hp += 5;
+                        Enemy.type = "Blocked";
                         break;
                     case "Blocked":
                         break;

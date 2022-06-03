@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import Confetti from "react-confetti";
 import { useEffect, useState } from "react";
-import WinSound from "../../../Audio/winLose/Win.wav";
-import LoseSound from "../../../Audio/winLose/Lose.wav";
-import RemisSound from "../../../Audio/winLose/Scream.wav";
-import Awards from "./AwardsComponents/Awards";
-import { useDispatch, useSelector } from "react-redux";
-import { setEnemyTeam, setWhoWin } from "../../../_Actions/mainAction";
-import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
 
-const winPlay = new Audio(WinSound);
-const losePlay = new Audio(LoseSound);
-const remisPlay = new Audio(RemisSound);
+import Awards from "./AwardsComponents/Awards";
+
+import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
+import audioPlay, { audioPause } from "../../../_Reducer/helpers/audioPlay";
 
 const Blur = styled.div`
     position: fixed;
@@ -63,23 +57,6 @@ const Remis = styled.div`
 function WinLose({ value }) {
     const [endgame] = useState(value);
 
-    useEffect(() => {
-        (() => {
-            switch (endgame) {
-                case "win":
-                    winPlay.play();
-                    break;
-                case "lose":
-                    losePlay.play();
-                    break;
-                case "remis":
-                    remisPlay.play();
-                    break;
-                default:
-                    break;
-            }
-        })();
-    }, []);
     return (
         <Blur>
             {endgame === "win" && (

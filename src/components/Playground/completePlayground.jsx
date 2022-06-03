@@ -6,6 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { animation, computerMove, noWhoAttack, setWhoWin, tokenPowerAi } from "../../_Actions/mainAction";
 
+import WinSound from "../../Audio/winLose/Win.wav";
+import LoseSound from "../../Audio/winLose/Lose.wav";
+import RemisSound from "../../Audio/winLose/Scream.wav";
+
 import GroundForCards from "./groundFriends";
 import YourTurn from "./YourTurn";
 import { useEffect } from "react";
@@ -13,6 +17,7 @@ import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy"
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
 import UseBeginFight from "../../hooks/fightHooks/useBeginFight";
+import audioPlay from "../../_Reducer/helpers/audioPlay";
 
 const WholeField = styled.div`
     display: flex;
@@ -68,16 +73,20 @@ function CompletePlayground() {
         }, 500);
     }
     useEffect(() => {
-        if (Win) {
-            return;
-        }
         if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
+            audioPlay(RemisSound);
             dispatch(setWhoWin("remis"));
         } else if (FriendsTeam.length === 0) {
+            audioPlay(LoseSound);
             dispatch(setWhoWin("lose"));
         } else if (EnemyTeam.length === 0) {
+            audioPlay(WinSound);
             dispatch(setWhoWin("win"));
         }
+        return async () => {
+            await setWhoWin("");
+            console.log(Win);
+        };
     }, [FriendsTeam.length, EnemyTeam.length]);
     useEffect(() => {
         if (!yourTurn) {

@@ -1,4 +1,4 @@
-import FriendReducer from "./Friends";
+import FriendReducer from "./StateFight";
 import CoordinatesReducer from "./Movecss";
 import { combineReducers } from "redux";
 import YourItemsReducer from "./YourItems";
