@@ -5,8 +5,8 @@ const CircleTurn = styled.div`
     border-radius: 10px;
     padding: 10px;
     min-height: 25px;
-    color: black;
-    background: white;
+
+    background-color: transparent;
     font-size: 1.2rem;
     border: 2px solid white;
     display: flex;
@@ -14,8 +14,18 @@ const CircleTurn = styled.div`
     justify-content: center;
     transition: all 2s ease;
 `;
-
+const FlipInner = styled.div`
+    transform: rotateY(180deg);
+`;
+const Front = styled.div``;
+const Back = styled.div`
+    transform: rotateY(180deg);
+`;
 function YourTurn({ turn }) {
-    return <CircleTurn>{turn ? "Your turn" : "Enemy turn"}</CircleTurn>;
+    return (
+        <CircleTurn>
+            <FlipInner>{turn ? <Front>Your turn</Front> : <Back>Enemy turn</Back>}</FlipInner>
+        </CircleTurn>
+    );
 }
 export default YourTurn;
