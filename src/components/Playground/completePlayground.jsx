@@ -59,7 +59,7 @@ function CompletePlayground({ music }) {
         dispatch(computerMove(x));
         dispatch(animation([]));
     }
-    function findRandom() {
+    async function findRandom() {
         const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
         if (allCoordinates.find((e) => e.id === randomEnemy)) {
             dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
@@ -70,10 +70,10 @@ function CompletePlayground({ music }) {
     }
     function handleMoveComputer(x) {
         handleComputerChoose(x);
-        setTimeout(() => {
-            findRandom();
+        setTimeout(async () => {
+            await findRandom();
 
-            setTimeout(() => dispatch(noWhoAttack()), 200);
+            dispatch(noWhoAttack());
         }, 500);
     }
     useEffect(() => {

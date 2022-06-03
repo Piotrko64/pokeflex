@@ -54,7 +54,19 @@ function ReadyPokemon(props) {
                 props.value.name
             )
         );
-    }, []);
+        setTimeout(() => {
+            dispatch(
+                pushCoordinate(
+                    props.value.id,
+                    [
+                        pokemonRef.current.getBoundingClientRect().x,
+                        pokemonRef.current.getBoundingClientRect().y,
+                    ],
+                    props.value.name
+                )
+            );
+        }, 500);
+    }, [All.myTeam.length, All.enemyTeam.length]);
     useEffect(() => {
         if (props.value.id === whoAttackID) {
             const coordinateX = +whereIsEnemy[0] - +pokemonRef.current.getBoundingClientRect().x;
@@ -99,7 +111,6 @@ function ReadyPokemon(props) {
                 }}
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0 }}
-                className={props.value.id === whoAttackID && "flex"}
             >
                 <CardPokemon value={props.value} versionMini />
             </motion.div>
