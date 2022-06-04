@@ -55,7 +55,7 @@ function ReadyPokemon(props) {
             )
         );
         setTimeout(() => {
-            if (!pokemonRef) {
+            if (!pokemonRef.current) {
                 return;
             }
             dispatch(

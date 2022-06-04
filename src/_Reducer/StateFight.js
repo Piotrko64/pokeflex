@@ -1,13 +1,11 @@
-import { allTokens } from "../data/dataTokens/allTokens";
-import { examplePokemons } from "../data/examplePokemons";
-import { startPokemons, startTokens } from "../data/startItems";
+import { startPokemons } from "../data/startItems";
 import chooseAndFight from "./functionsForReducer/chooseAndFight";
 import stateAfterToken from "./functionsForReducer/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
 import findTokensLocal from "./helpers/findTokensLocal";
 const stateFight = {
     myTeam: JSON.parse(localStorage.getItem("pokemons")) || startPokemons.slice(0, 3),
-    enemyTeam: [examplePokemons[2]],
+    enemyTeam: false,
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -16,7 +14,7 @@ const stateFight = {
     allCoordinates: [],
     grave: [],
     myTokens: findTokensLocal(),
-    enemyTokens: [allTokens[2]],
+    enemyTokens: [],
     yourTurn: true,
     whoWin: false,
 };
@@ -78,6 +76,10 @@ const FriendReducer = (state = stateFight, action) => {
             return {
                 ...state,
                 whoWin: action.payload,
+                enemyTeam: [],
+                myTeam: [],
+                myTokens: [],
+                enemyTokens: [],
                 yourTurn: true,
                 whoAttack: "",
                 whoAttackID: "",

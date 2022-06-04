@@ -23,9 +23,7 @@ function GroundForCards({ pokemons, tokens, AI }) {
         <PlayGround AI={AI}>
             <GridForCards>
                 <AnimatePresence>
-                    {pokemons.map((el, i) => (
-                        <ReadyPokemon value={el} key={el.id} />
-                    ))}
+                    {pokemons && pokemons.map((el, i) => <ReadyPokemon value={el} key={el.id} />)}
                 </AnimatePresence>
             </GridForCards>
 

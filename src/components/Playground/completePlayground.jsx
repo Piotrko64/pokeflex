@@ -59,6 +59,7 @@ function CompletePlayground({ music }) {
     useEffect(() => {
         setMusic(music || quickGameSoundtrack);
     }, [music]);
+
     useBeginFight();
 
     function handleComputerChoose(x) {
