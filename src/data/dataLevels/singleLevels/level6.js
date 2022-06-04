@@ -42,8 +42,7 @@ const Mime = {
 export const level6 = {
     id: "level6normal1",
     name: "level 6",
-    color: `background: rgb(144,144,144)
-background: linear-gradient(150deg, rgba(144,144,144,1) 3%, rgba(191,44,179,1) 46%, rgba(63,39,74,1) 94%);`,
+    color: `linear-gradient(150deg, rgba(144,144,144,1) 3%, rgba(191,44,179,1) 46%, rgba(63,39,74,1) 94%);`,
     enemyTeam: [Mime, Machamp],
     enemyTokens: [punchMachampToken, findTokenByName("Punch")],
     award: {
