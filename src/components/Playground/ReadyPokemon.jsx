@@ -55,6 +55,9 @@ function ReadyPokemon(props) {
             )
         );
         setTimeout(() => {
+            if (!pokemonRef) {
+                return;
+            }
             dispatch(
                 pushCoordinate(
                     props.value.id,

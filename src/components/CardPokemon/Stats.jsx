@@ -28,8 +28,10 @@ const OneStat = styled.div`
     padding: ${(props) => (props.versionMini ? "0 30px" : "0 20px")};
     font-family: "Koulen", cursive;
     color: ${(props) => {
-        if (props.hp < 1 || props.df < 1) return "#ff7070";
+        if (props.df === 0) return "#ff7070";
         if (props.hp <= props.speed) return "#ffba1f";
+        if (props.hp < 8) return "#ff7070";
+        if (props.rv === 0) return "#8f8f8f";
     }};
 `;
 const rotate = keyframes`
@@ -122,13 +124,16 @@ const Psychic = styled.div`
     background: rgb(199, 28, 63);
     background: radial-gradient(circle, rgba(199, 28, 63, 1) 35%, rgba(24, 51, 187, 1) 96%);
 `;
+const Rock = styled.div`
+    background: rgb(135, 135, 135);
+    background: linear-gradient(90deg, rgba(135, 135, 135, 1) 0%, rgba(25, 30, 36, 1) 100%);
+`;
 
 ////
 
 function Stats({ value, versionMini }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
-    // const arrayStats = [{ icon: <BsFillHeartFill />, stat: {hp}
-    // }]
+
     return (
         <>
             <TableWithAll>
@@ -158,7 +163,7 @@ function Stats({ value, versionMini }) {
                         </OneStat>
                     </div>
                     <div data-atropos-offset="3">
-                        <OneStat isOdd isLastTwo>
+                        <OneStat isOdd isLastTwo rv={revenge}>
                             {revenge}
                             <GiSpikes />
                         </OneStat>
@@ -211,6 +216,8 @@ function Stats({ value, versionMini }) {
                                 );
                             case "Normal":
                                 return <Normal>{type}</Normal>;
+                            case "Rock":
+                                return <Rock>{type}</Rock>;
                             case "Blocked":
                                 return (
                                     <>

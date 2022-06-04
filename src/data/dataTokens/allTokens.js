@@ -24,8 +24,10 @@ import {
     GiFireWave,
     GiHighGrass,
     GiPunch,
+    GiShieldcomb,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import shieldStone from "./powerTokens/shieldStone";
 
 export const allTokens = [
     {
@@ -56,7 +58,7 @@ export const allTokens = [
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,
-        desc: "Give your strongest pokemon **+13** hp and change its type to **Water**",
+        desc: "Give your strongest pokemon **+14** hp and change its type to **Water**",
     },
     {
         id: v4(),
@@ -107,4 +109,16 @@ export const allTokens = [
         functionToken: punch,
         desc: "Deal **14** damage random enemy pokemon",
     },
+    {
+        id: v4(),
+        badForAI: true,
+        name: "Shield Stone",
+        icon: <GiShieldcomb />,
+        functionToken: shieldStone,
+        desc: "Give your stronger pokemon **+13 hp** and **+3 defense**",
+    },
 ];
+
+export function findTokenByName(name) {
+    return { ...allTokens.find((el) => el.name === name), id: v4() };
+}

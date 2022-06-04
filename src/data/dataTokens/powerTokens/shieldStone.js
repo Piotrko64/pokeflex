@@ -1,20 +1,22 @@
 import clone from "lodash.clone";
 
-const VALUE_DEFENSE = 3;
-const VALUE_REVENGE = 3;
+const VALUE_HP = 12;
+const VALUE_DEFENSE = 1;
 
-export default function highGrass(state, AI) {
+export default function shieldStone(state, AI) {
     const newState = clone(state);
-    let thisTeam;
-    thisTeam = AI ? newState.enemyTeam : newState.myTeam;
+
+    let thisTeam = AI ? newState.enemyTeam : newState.myTeam;
+    const strongerPokemonID = [...thisTeam].sort((a, b) => b.hp - a.hp)[0].id;
+
     const newStateTeam = {
         [AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) =>
-            el.type === "Grass"
+            el.id === strongerPokemonID
                 ? {
                       ...el,
-                      type: "Blocked",
+
                       defense: el.defense + VALUE_DEFENSE,
-                      revenge: el.revenge + VALUE_REVENGE,
+                      hp: el.hp + VALUE_HP,
                   }
                 : el
         ),

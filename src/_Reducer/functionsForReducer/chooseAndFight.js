@@ -1,6 +1,7 @@
 import clone from "lodash.clone";
 import Hit from "../../Audio/actions/Hit.wav";
 import pick from "../../Audio/actions/PickingCart.wav";
+import { findTokenByName } from "../../data/dataTokens/allTokens";
 import audioPlay from "../../functions/audioPlay";
 
 let whoAttack = "";
@@ -10,6 +11,8 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
     const teamFriends = clone(tF).filter((e) => e.hp >= 1);
     const teamEnemy = clone(tE).filter((e) => e.hp >= 1);
 
+    const tokens = clone(computer ? state.enemyTokens : state.myTokens);
+
     let Me;
     let Enemy;
     let MeIndex;
@@ -17,6 +20,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
     let EnemyIndex;
     let stateAfterFightEnemy = clone(teamEnemy);
     let stateAfterFightFriends = clone(teamFriends);
+    let stateAfterFightTokens = clone(tokens);
 
     teamFriends.forEach((e) => {
         if (e.id === payload) {
@@ -92,6 +96,11 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                     case "Psychic":
                         Enemy.type = "Blocked";
                         break;
+                    case "Rock":
+                        if (tokens.length <= 3) {
+                            stateAfterFightTokens = [...tokens, findTokenByName("Shield Stone")];
+                        }
+                        break;
                     case "Blocked":
                         break;
                     default:
@@ -107,20 +116,13 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             stateAfterFightEnemy[EnemyIndex] = Enemy;
         }
     });
-    console.log({
-        ...state,
-        enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
-        myTeam: computer ? stateAfterFightEnemy : stateAfterFightFriends,
-        whoAttack: "",
-        whoAttackID,
-        whoIsAttack: "",
-        whoIsAttackID: "",
-        yourTurn: !computer && false,
-    });
+
     return {
         ...state,
         enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
         myTeam: computer ? stateAfterFightEnemy : stateAfterFightFriends,
+        enemyTokens: computer ? stateAfterFightTokens : state.enemyTokens,
+        myTokens: computer ? state.myTokens : stateAfterFightTokens,
         whoAttack: "",
         whoAttackID,
         whoIsAttack: "",

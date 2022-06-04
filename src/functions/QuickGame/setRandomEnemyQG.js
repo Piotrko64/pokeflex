@@ -26,7 +26,7 @@ export default function setRandomEnemyQG() {
         arrEnemy = arrEnemy.map((el) => ({
             ...el,
             speed: (el.speed += 35),
-            specialAttack: (el.specialAttack += 4),
+            specialAttack: (el.specialAttack += 7),
         }));
     }
 

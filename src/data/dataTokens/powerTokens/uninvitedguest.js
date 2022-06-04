@@ -1,10 +1,11 @@
+import { v4 } from "uuid";
+
 export default function uninvitedGuest(state, AI) {
     const Meowth = {
-        id: "44Meowth520221905",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
         name: "Meowth",
         type: "Normal",
-        hp: 12,
+        hp: 15,
         attack: 3,
         specialAttack: 5,
         speed: 7,
@@ -12,7 +13,7 @@ export default function uninvitedGuest(state, AI) {
         revenge: 4,
     };
     if (AI) {
-        return { ...state, enemyTeam: [...state.enemyTeam, { ...Meowth }] };
+        return { ...state, enemyTeam: [...state.enemyTeam, { ...Meowth, id: v4() }] };
     }
     return { ...state, myTeam: [...state.myTeam, { ...Meowth }] };
 }
