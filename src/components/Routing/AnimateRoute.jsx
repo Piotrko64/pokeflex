@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import MainComponentLayout from "../Layout/MainComponentLayout";
+import MainComponentLayoutRouting from "./MainComponentLayoutRouting";
 export default function AnimateRoute({ children }) {
     return (
-        <MainComponentLayout>
+        <MainComponentLayoutRouting>
             <motion.div
                 initial={{ opacity: 0 }}
                 exit={{ opacity: 0, y: -50, transition: { duration: 0.2 } }}
@@ -11,6 +11,6 @@ export default function AnimateRoute({ children }) {
             >
                 {children}
             </motion.div>
-        </MainComponentLayout>
+        </MainComponentLayoutRouting>
     );
 }
