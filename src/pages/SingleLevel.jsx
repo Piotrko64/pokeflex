@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import CompletePlayground from "../components/Playground/CompletePlayground";
 import levels from "../data/dataLevels/levelsMainList";
-import { setEnemyTeam } from "../_Actions/mainAction";
+import { setEnemyTeam } from "../_Actions/stateFightActions";
 
 function SingleLevel() {
     const route = useLocation();

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { tokenPowerUse } from "../../../_Actions/mainAction";
+import { tokenPowerUse } from "../../../_Actions/stateFightActions";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
