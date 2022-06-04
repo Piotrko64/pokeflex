@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ListObjectsToRender from "./DataToRender";
 const AllGuides = styled.div`
@@ -17,7 +16,7 @@ const OneGuide = styled.div`
     border-left: none;
     transition: all 0.2s ease;
     cursor: pointer;
-    backdrop-filter: blur(50px);
+
     background: ${(props) => (props.choose ? "white" : "transparent")};
     &:nth-child(1) {
         border-top-left-radius: 15px;

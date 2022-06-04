@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TiArrowBack } from "react-icons/ti";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const Back = styled.div`
     border-radius: 10px;
     background: white;
@@ -16,11 +16,23 @@ const Back = styled.div`
 `;
 
 const BackButton = () => {
-    const navigate = useNavigate();
+    const navigation = useNavigate();
+    const location = useLocation();
+
+    const path = location.pathname;
+
+    function navigateFn() {
+        if (path === "/ChooseLevel") {
+            navigation("/");
+        } else navigation(-1);
+    }
+
     return (
-        <Back onClick={() => navigate(-1)}>
-            <TiArrowBack />
-        </Back>
+        path !== "/" && (
+            <Back onClick={navigateFn}>
+                <TiArrowBack />
+            </Back>
+        )
     );
 };
 

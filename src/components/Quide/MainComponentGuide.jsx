@@ -14,6 +14,7 @@ const Blur = styled.div`
     top: 0;
     width: 100%;
     z-index: 99;
+    overflow-y: scroll;
 `;
 
 export default function MainComponentGuide() {
