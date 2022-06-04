@@ -97,7 +97,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                         Enemy.type = "Blocked";
                         break;
                     case "Rock":
-                        if (tokens.length <= 3) {
+                        if (tokens.length <= 2) {
                             stateAfterFightTokens = [...tokens, findTokenByName("Shield Stone")];
                         }
                         break;
