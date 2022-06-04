@@ -2,28 +2,18 @@ import styled from "styled-components";
 
 import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
-import { useSelector, useDispatch } from "react-redux";
-
-import {
-    animation,
-    computerMove,
-    noWhoAttack,
-    setWhoWin,
-    tokenPowerAi,
-} from "../../_Actions/stateFightActions";
-
-import WinSound from "../../Audio/winLose/Win.wav";
-import LoseSound from "../../Audio/winLose/Lose.wav";
-import RemisSound from "../../Audio/winLose/Scream.wav";
+import { useSelector } from "react-redux";
 
 import GroundForCards from "./GroundCards";
 import YourTurn from "./YourTurn";
 import { useEffect, useMemo } from "react";
-import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
+
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
 import useBeginFight from "../../hooks/fightHooks/useBeginFight";
-import audioPlay from "../../functions/audioPlay";
+
+import useShowWinner from "../../hooks/fightHooks/completePlayground/useShowWinner";
+import useTurnEnemy from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
 
 const WholeField = styled.div`
     display: flex;
@@ -36,10 +26,6 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground({ music }) {
-    const dispatch = useDispatch();
-
-    const All = useSelector((state) => state.FriendsTeam);
-
     const Win = useSelector((state) => state.FriendsTeam.whoWin);
 
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
@@ -49,8 +35,6 @@ function CompletePlayground({ music }) {
 
     const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
     const EnemyTokens = useSelector((state) => state.FriendsTeam.enemyTokens);
-
-    const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
 
@@ -63,65 +47,8 @@ function CompletePlayground({ music }) {
     }, [music]);
 
     useBeginFight();
-
-    function handleComputerChoose(x) {
-        dispatch(computerMove(x));
-        dispatch(animation([]));
-    }
-    async function findRandom() {
-        const randomEnemy = chooseRandomEnemy(FriendsTeam, EnemyTeam)[0];
-        if (allCoordinates.find((e) => e.id === randomEnemy)) {
-            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
-            dispatch(computerMove(randomEnemy));
-        } else {
-            findRandom();
-        }
-    }
-    function handleMoveComputer(x) {
-        handleComputerChoose(x);
-        setTimeout(async () => {
-            await findRandom();
-
-            dispatch(noWhoAttack());
-        }, 500);
-    }
-    useEffect(() => {
-        if (Win) {
-            return;
-        }
-        if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
-            audioPlay(RemisSound);
-            dispatch(setWhoWin("remis"));
-        } else if (FriendsTeam.length === 0) {
-            audioPlay(LoseSound);
-            dispatch(setWhoWin("lose"));
-        } else if (EnemyTeam.length === 0) {
-            audioPlay(WinSound);
-            dispatch(setWhoWin("win"));
-        }
-        return () => {
-            setWhoWin("");
-        };
-    }, [FriendsTeam.length, EnemyTeam.length]);
-    useEffect(() => {
-        if (!yourTurn) {
-            setTimeout(() => {
-                if (!EnemyTeam.filter((e) => e.hp > 1).length) {
-                    return;
-                }
-                if (EnemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
-                    const randomNumberTokens = Math.round(Math.random() * (EnemyTokens.length - 1));
-                    const randomToken = EnemyTokens[randomNumberTokens];
-
-                    dispatch(tokenPowerAi(randomToken.functionToken(All, true), randomToken.id));
-                } else if (chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]) {
-                    setTimeout(() => handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]), 400);
-                } else {
-                    handleMoveComputer(FriendsTeam[0].id, EnemyTeam[0].id);
-                }
-            }, 1000);
-        }
-    }, [yourTurn]);
+    useShowWinner();
+    useTurnEnemy();
 
     const GroundForFriends = useMemo(
         () => <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />,
