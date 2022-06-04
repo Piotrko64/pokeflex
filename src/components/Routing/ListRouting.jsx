@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import { AnimateList } from "./ListRoutingData";

@@ -36,7 +36,7 @@ function Awards() {
 
     return (
         <Fragment>
-            <AwardsSection>Your Awards</AwardsSection>
+            {awardToken && awardPokemon && <AwardsSection>Your Awards</AwardsSection>}
 
             <ListAwards token={awardToken} pokemon={awardPokemon} />
         </Fragment>

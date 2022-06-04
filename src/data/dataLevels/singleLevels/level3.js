@@ -25,7 +25,6 @@ export const level3 = {
     enemyTeam: [Charizard],
     enemyTokens: [allTokens.find((e) => e.name === "Conflagration")],
     award: {
-        pokemons: examplePokemons.find((e) => e.name === "Cyndaquil"),
         tokens: allTokens.find((e) => e.name === "Lighter"),
     },
     music: Tribe,

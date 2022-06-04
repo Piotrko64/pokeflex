@@ -18,7 +18,7 @@ import RemisSound from "../../Audio/winLose/Scream.wav";
 
 import GroundForCards from "./GroundCards";
 import YourTurn from "./YourTurn";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
@@ -55,6 +55,8 @@ function CompletePlayground({ music }) {
     const volume = useSelector((state) => state.SettingsReducer.Volume);
 
     const setMusic = useSountrack(music, volume);
+
+    const YourTurnMemo = useMemo(() => <YourTurn turn={yourTurn} />, [yourTurn]);
 
     useEffect(() => {
         setMusic(music || quickGameSoundtrack);
@@ -121,12 +123,21 @@ function CompletePlayground({ music }) {
         }
     }, [yourTurn]);
 
+    const GroundForFriends = useMemo(
+        () => <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />,
+        [FriendsTeam, FriendsTokens]
+    );
+    const GroundForEnemy = useMemo(
+        () => <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />,
+        [EnemyTeam, EnemyTokens]
+    );
+
     return (
         <>
             <WholeField>
-                <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />
-                <YourTurn turn={yourTurn} />
-                <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />
+                {GroundForFriends}
+                {YourTurnMemo}
+                {GroundForEnemy}
             </WholeField>
             {Win && <WinLose value={Win} />}
         </>

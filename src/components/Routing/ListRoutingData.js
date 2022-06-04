@@ -3,6 +3,7 @@ import MainPage from "../../pages/Main";
 import QuickGame from "../../pages/QuickGame";
 import SelectTeam from "../../pages/SelectTeam";
 import SingleLevel from "../../pages/SingleLevel";
+import MainComponentLayout from "../Layout/MainComponentLayout";
 import MainComponentSelectTeam from "../SelectTeam/MainComponentSelectTeam";
 import AnimateRoute from "./AnimateRoute";
 

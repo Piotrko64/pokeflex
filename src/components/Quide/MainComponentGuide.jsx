@@ -8,8 +8,8 @@ import { AnimatePresence, motion } from "framer-motion";
 const Blur = styled.div`
     backdrop-filter: blur(4px);
     background-color: #52525273;
-    height: 100%;
-    min-height: 100vh;
+    overflow: auto;
+    height: 100vh;
     position: absolute;
     top: 0;
     width: 100%;

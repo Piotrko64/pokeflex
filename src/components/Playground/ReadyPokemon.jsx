@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
 import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/stateFightActions";
@@ -17,8 +17,8 @@ const Pokemon = styled.div`
     margin: 15px;
 `;
 
-function ReadyPokemon(props) {
-    const [hpChange, setHpChange] = useState(props.value.hp);
+function ReadyPokemon({ value }) {
+    const [hpChange, setHpChange] = useState(value.hp);
     const [arrayHp, setArrayHp] = useState([]);
 
     const pokemonRef = useRef(null);
@@ -37,7 +37,7 @@ function ReadyPokemon(props) {
 
     function handleClick() {
         if (yourTurn) {
-            dispatch(choose(props.value.id));
+            dispatch(choose(value.id));
 
             const { x, y } = pokemonRef.current.getBoundingClientRect();
 
@@ -49,9 +49,9 @@ function ReadyPokemon(props) {
     useEffect(() => {
         dispatch(
             pushCoordinate(
-                props.value.id,
+                value.id,
                 [pokemonRef.current.getBoundingClientRect().x, pokemonRef.current.getBoundingClientRect().y],
-                props.value.name
+                value.name
             )
         );
         setTimeout(() => {
@@ -60,18 +60,18 @@ function ReadyPokemon(props) {
             }
             dispatch(
                 pushCoordinate(
-                    props.value.id,
+                    value.id,
                     [
                         pokemonRef.current.getBoundingClientRect().x,
                         pokemonRef.current.getBoundingClientRect().y,
                     ],
-                    props.value.name
+                    value.name
                 )
             );
         }, 500);
     }, [All.myTeam.length, All.enemyTeam.length]);
     useEffect(() => {
-        if (props.value.id === whoAttackID) {
+        if (value.id === whoAttackID) {
             const coordinateX = +whereIsEnemy[0] - +pokemonRef.current.getBoundingClientRect().x;
 
             const coordinateY = +whereIsEnemy[1] - +pokemonRef.current.getBoundingClientRect().y;
@@ -91,17 +91,17 @@ function ReadyPokemon(props) {
     }, [whereIsEnemy]);
 
     useEffect(() => {
-        const { hp } = props.value;
+        const { hp } = value;
 
         const newHpChange = -(hpChange - hp);
 
         newHpChange && setArrayHp((el) => [...el, newHpChange]);
 
-        setHpChange(props.value.hp);
-        if (props.value.hp < 1) {
-            dispatch(moveToGrave(props.value));
+        setHpChange(value.hp);
+        if (value.hp < 1) {
+            dispatch(moveToGrave(value));
         }
-    }, [props.value.hp]);
+    }, [value.hp]);
 
     return (
         <Pokemon onClick={handleClick} ref={pokemonRef}>
@@ -115,7 +115,7 @@ function ReadyPokemon(props) {
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 0 }}
             >
-                <CardPokemon value={props.value} versionMini />
+                <CardPokemon value={value} versionMini />
             </motion.div>
             <>
                 <ListAnimHP listHp={arrayHp} deleteHpChange={deleteHpChange} />

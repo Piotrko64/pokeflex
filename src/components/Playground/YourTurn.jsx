@@ -31,6 +31,7 @@ const Back = styled(Front)`
     transform: rotateX(180deg);
     color: red;
 `;
+
 function YourTurn({ turn }) {
     return (
         <Flip turn={turn}>

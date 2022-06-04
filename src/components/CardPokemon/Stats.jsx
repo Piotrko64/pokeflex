@@ -28,7 +28,7 @@ const OneStat = styled.div`
     padding: ${(props) => (props.versionMini ? "0 30px" : "0 20px")};
     font-family: "Koulen", cursive;
     color: ${(props) => {
-        if (props.df === 0) return "#cccccc";
+        if (props.df === 0) return "#c65101";
         if (props.hpLessThanSpeed) return "#ffba1f";
         if (props.hp < 8) return "#ff7070";
         if (props.rv === 0) return "#8f8f8f";

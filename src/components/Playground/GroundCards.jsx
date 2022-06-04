@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 
@@ -23,7 +23,7 @@ function GroundForCards({ pokemons, tokens, AI }) {
         <PlayGround AI={AI}>
             <GridForCards>
                 <AnimatePresence>
-                    {pokemons && pokemons.map((el, i) => <ReadyPokemon value={el} key={el.id} />)}
+                    {pokemons && pokemons.map((el) => <ReadyPokemon value={el} key={el.id} />)}
                 </AnimatePresence>
             </GridForCards>
 

@@ -58,6 +58,7 @@ const MainComponentVolume = () => {
         }
         dispatch(changeVolume(0.75));
     }
+
     return (
         <EntireComponent>
             <IconVolume onClick={silentVolume}>

@@ -6,6 +6,8 @@ const FlexWrap = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 90%;
+    margin: auto;
 `;
 const OneCard = styled.div`
     margin: 20px;
@@ -14,7 +16,7 @@ function AllPokemonsGuide() {
     return (
         <FlexWrap>
             {examplePokemons.map((el) => (
-                <OneCard>
+                <OneCard key={el.id}>
                     <CardPokemon value={el} versionMini />
                 </OneCard>
             ))}
