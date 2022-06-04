@@ -1,6 +1,6 @@
 import clone from "lodash.clone";
 
-const VALUE_HP = 12;
+const VALUE_HP = 10;
 const VALUE_DEFENSE = 1;
 
 export default function shieldStone(state, AI) {

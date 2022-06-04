@@ -189,4 +189,34 @@ export const examplePokemons = [
         defense: 3,
         revenge: 1,
     },
+    {
+        id: v4(),
+        idAward: "Geodud546",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png",
+        name: "Geodude",
+        type: "Rock",
+        hp: 35,
+        attack: 5,
+        specialAttack: 8,
+        speed: 19,
+        defense: 2,
+        revenge: 2,
+    },
+    {
+        id: v4(),
+        idAward: "MAMaeij4",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
+        name: "Machamp",
+        type: "Rock",
+        hp: 40,
+        attack: 8,
+        specialAttack: 8,
+        speed: 15,
+        defense: 1,
+        revenge: 0,
+    },
 ];
+
+export function findPokemonByName(name) {
+    return { ...examplePokemons.find((el) => el.name === name), id: v4() };
+}

@@ -63,6 +63,7 @@ export const allTokens = [
     {
         id: v4(),
         name: "Sacrifice",
+        idAward: "Sa45Cri",
         icon: <GiDeadlyStrike />,
         badForAI: true,
         functionToken: sacrifice,
@@ -115,7 +116,7 @@ export const allTokens = [
         name: "Shield Stone",
         icon: <GiShieldcomb />,
         functionToken: shieldStone,
-        desc: "Give your stronger pokemon **+13 hp** and **+3 defense**",
+        desc: "Give your stronger pokemon **+10 hp** and **+1 defense**",
     },
 ];
 
