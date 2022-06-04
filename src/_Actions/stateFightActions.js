@@ -63,3 +63,10 @@ export const moveToGrave = (pokemon) => {
         payload: pokemon,
     };
 };
+
+export const setWhoWin = (Win) => {
+    return {
+        type: "setWhoWin",
+        payload: Win,
+    };
+};

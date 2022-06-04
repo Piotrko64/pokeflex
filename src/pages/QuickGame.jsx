@@ -1,4 +1,4 @@
-import CompletePlayground from "../components/Playground/completePlayground";
+import CompletePlayground from "../components/Playground/CompletePlayground";
 import UseQuickGameEnemy from "../hooks/fightHooks/useQuickGameEnemy";
 
 function QuickGame() {

@@ -20,7 +20,7 @@ const Front = styled.div`
     text-align: center;
     position: absolute;
     font-family: "Koulen", cursive;
-    color: black;
+    color: green;
     backface-visibility: hidden;
     display: flex;
     justify-content: center;
@@ -29,6 +29,7 @@ const Front = styled.div`
 `;
 const Back = styled(Front)`
     transform: rotateX(180deg);
+    color: red;
 `;
 function YourTurn({ turn }) {
     return (

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setMyTeam, setWhoWin } from "../../_Actions/mainAction";
+import { setMyTeam, setWhoWin } from "../../_Actions/stateFightActions";
 
 const useBeginFight = () => {
     const dispatch = useDispatch();

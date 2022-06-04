@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
-import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/mainAction";
+import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/stateFightActions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
 import blockSound from "../../Audio/actions/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
-import audioPlay from "../../_Reducer/helpers/audioPlay";
+import audioPlay from "../../functions/audioPlay";
 
 const Pokemon = styled.div`
     z-index: 9;
     transition: all 0.2s ease-in-out;
     position: relative;
-    margin: 0;
+    margin: 15px;
 `;
 
 function ReadyPokemon(props) {

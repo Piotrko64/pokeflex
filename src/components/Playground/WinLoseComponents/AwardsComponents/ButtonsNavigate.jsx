@@ -45,7 +45,7 @@ const ButtonsNavigate = () => {
     return (
         <Content>
             {ListButtons.map((el) => (
-                <Link to={el.pathTo}>
+                <Link to={el.pathTo} className="flex">
                     <Button color={el.color}>{el.text}</Button>
                 </Link>
             ))}

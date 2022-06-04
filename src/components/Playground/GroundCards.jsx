@@ -13,9 +13,8 @@ const PlayGround = styled.div`
     flex-direction: ${(props) => (!props.AI ? "column" : "column-reverse")};
 `;
 const GridForCards = styled.div`
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: clamp(180px, 15vw, 290px);
+    display: flex;
+    justify-content: space-around;
 `;
 const Tokens = styled.div``;
 

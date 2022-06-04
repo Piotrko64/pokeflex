@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { addToTeamToken } from "../../../../_Actions/mainAction";
+import { addToTeamToken } from "../../../../_Actions/yourItemsActions";
 import ItemToken from "../../../Playground/Tokens/ItemToken";
 
 const Token = styled.div`

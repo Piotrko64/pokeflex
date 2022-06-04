@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import Confetti from "react-confetti";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Awards from "./AwardsComponents/Awards";
 
 import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
-import audioPlay, { audioPause } from "../../../_Reducer/helpers/audioPlay";
-import UseBeginFight from "../../../hooks/fightHooks/useBeginFight";
 
 const Blur = styled.div`
     position: fixed;

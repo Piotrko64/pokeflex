@@ -4,20 +4,26 @@ import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { animation, computerMove, noWhoAttack, setWhoWin, tokenPowerAi } from "../../_Actions/mainAction";
+import {
+    animation,
+    computerMove,
+    noWhoAttack,
+    setWhoWin,
+    tokenPowerAi,
+} from "../../_Actions/stateFightActions";
 
 import WinSound from "../../Audio/winLose/Win.wav";
 import LoseSound from "../../Audio/winLose/Lose.wav";
 import RemisSound from "../../Audio/winLose/Scream.wav";
 
-import GroundForCards from "./groundFriends";
+import GroundForCards from "./GroundCards";
 import YourTurn from "./YourTurn";
 import { useEffect } from "react";
 import { chooseRandomEnemy } from "../../functions/computerAI/chooseRandomEnemy";
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
 import useBeginFight from "../../hooks/fightHooks/useBeginFight";
-import audioPlay from "../../_Reducer/helpers/audioPlay";
+import audioPlay from "../../functions/audioPlay";
 
 const WholeField = styled.div`
     display: flex;

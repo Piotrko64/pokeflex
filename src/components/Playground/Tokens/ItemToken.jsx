@@ -9,7 +9,7 @@ import Tooltip from "../../Tooltip/tooltip";
 import { motion } from "framer-motion";
 
 const Item = styled.button`
-    border: 2px solid white;
+    border: 2.5px solid white;
     font-size: 28px;
     color: white;
     border-radius: 50%;
