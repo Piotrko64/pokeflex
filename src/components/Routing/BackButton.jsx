@@ -26,6 +26,8 @@ const BackButton = () => {
             navigation("/");
         } else if (path.includes("levels")) {
             navigation("/ChooseLevel");
+        } else if (path.includes("SelectTeam")) {
+            navigation("/");
         } else navigation(-1);
     }
 
