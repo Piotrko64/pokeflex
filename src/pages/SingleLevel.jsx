@@ -8,17 +8,21 @@ import { setEnemyTeam } from "../_Actions/stateFightActions";
 function SingleLevel() {
     const route = useLocation();
     const dispatch = useDispatch();
+
     const [music, setMusic] = useState("");
+
     useEffect(() => {
         const idPathname = route.pathname.split("/")[2];
 
         const Level = levels.find((el) => el.id === idPathname);
         const enemyTeam = Level.enemyTeam;
         const enemyTokens = Level.enemyTokens;
+
         setMusic(Level.music);
 
         dispatch(setEnemyTeam(enemyTeam, enemyTokens));
     }, []);
+
     return <CompletePlayground music={music} />;
 }
 

@@ -1,9 +1,7 @@
 import { v4 } from "uuid";
 import { allTokens } from "../../dataTokens/allTokens";
 
-import { examplePokemons } from "../../examplePokemons";
-
-import Tribe from "../../../Audio/mainSoundtracks/Tribe.wav";
+import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
 const Charizard = {
     id: v4(),

@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import { allTokens } from "../../dataTokens/allTokens";
 
-import Tribe from "../../../Audio/mainSoundtracks/Tribe.wav";
+import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
 // const Turtwig = {
 //     id: v4(),

@@ -3,7 +3,7 @@ import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { findPokemonByName } from "../../examplePokemons";
-import Tribe from "../../../Audio/mainSoundtracks/Tribe.wav";
+import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 const punchMachampToken = {
     id: v4(),
     name: "Punch of Machamp",

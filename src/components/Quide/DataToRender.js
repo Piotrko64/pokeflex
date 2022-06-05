@@ -1,6 +1,6 @@
 import AllPokemonsGuide from "./singleInstructions/pokemons/AllPokemonsGuide";
 import AllTokensGuide from "./singleInstructions/tokens/AllTokensGuide";
-import GeneralGuide from "./singleInstructions/GeneralGuide";
+import GeneralGuide from "./singleInstructions/general/GeneralGuide";
 import { motion } from "framer-motion";
 const ListObjectsToRender = [
     {
