@@ -1,4 +1,4 @@
-# <p align="center"> [POKEFLEX Card Game](https://poke-flex.netlify.app]) </p>
+# <p align="center"> [POKEFLEX Card Game](https://poke-flex.netlify.app) </p>
 
 <br />
 
