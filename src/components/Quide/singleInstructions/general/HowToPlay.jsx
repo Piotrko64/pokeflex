@@ -7,6 +7,7 @@ const Center = styled.div`
     max-width: 1500px;
     margin: auto;
     padding: 10px;
+    flex-direction: column;
 `;
 
 const HowToPlay = () => {
@@ -14,11 +15,10 @@ const HowToPlay = () => {
         <Center>
             <h1>How play?</h1>
             <p>
-                Aby wygrać musisz pokonać wszystkie wrogie pokemony (górna część planszy). Pokemon zostaje
-                pokonany i wykluczony z walki gdy jego hp osiągnie 0. Żeby zaatakować wystarczy że klikniesz
-                swojego pokemona (dolna część planszy) a następnie wybierzesz przeciwnika. Jego zdrowie
-                zostanie zmniejszone o ilość twojego ataku. Gra kończy się gdy jedna ze stron nie będzie miała
-                pokemonów.
+                To win you must defeat all enemy Pokémon (top of the board). Pokémon are defeated and
+                eliminated from the battle when its HP reaches 0. To attack, simply click your Pokémon (bottom
+                part of the board) and then select an opponent. Their health will be reduced by the amount of
+                your attack. The game ends when one of the sides has no Pokémon.
             </p>
         </Center>
     );

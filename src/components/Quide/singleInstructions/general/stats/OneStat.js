@@ -1,11 +1,25 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-const OneStat = ({ stats }) => {
-    const { icon, description, name } = stats;
+import styled from "styled-components";
+
+const Title = styled.h1`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > svg {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+`;
+
+const OneStat = ({ stat }) => {
+    const { logo, description, name } = stat;
     return (
         <>
-            <h2>{icon + name + icon}</h2>
+            <Title>
+                {logo} {name} {logo}
+            </Title>
             <p>
                 <ReactMarkdown>{description}</ReactMarkdown>
             </p>
