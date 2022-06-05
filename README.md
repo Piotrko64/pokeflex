@@ -1,4 +1,4 @@
-# <p align="center"> [POKEFLEX Card Game]([https://github.com/Piotrko64/pokeflex/edit/master/README.md](https://poke-flex.netlify.app))</p>
+# <p align="center"> [POKEFLEX Card Game](https://github.com/Piotrko64/pokeflex/edit/master/README.md](https://poke-flex.netlify.app) </p>
 
 <br />
 
