@@ -22,13 +22,9 @@ const BackButton = () => {
     const path = location.pathname;
 
     function navigateFn() {
-        if (path === "/ChooseLevel") {
-            navigation("/");
-        } else if (path.includes("levels")) {
+        if (path.includes("levels")) {
             navigation("/ChooseLevel");
-        } else if (path.includes("SelectTeam")) {
-            navigation("/");
-        } else navigation(-1);
+        } else navigation("/");
     }
 
     return (
