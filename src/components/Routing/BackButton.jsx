@@ -24,6 +24,8 @@ const BackButton = () => {
     function navigateFn() {
         if (path === "/ChooseLevel") {
             navigation("/");
+        } else if (path.includes("levels")) {
+            navigation("/ChooseLevel");
         } else navigation(-1);
     }
 

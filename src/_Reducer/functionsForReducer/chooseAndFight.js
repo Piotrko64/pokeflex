@@ -65,7 +65,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
             // TYPE
             if (Me.type === "Turbo Fire") {
-                Enemy.hp = Math.max(0, Enemy.hp - 3) || 0;
+                Enemy.hp = Math.max(0, Enemy.hp - 3);
                 Me.type = "Fire";
             } else if (Enemy.defense === 0) {
                 switch (Me.type) {
@@ -90,8 +90,9 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
                         break;
                     case "Normal":
-                        Me.speed += 4;
-                        Enemy.speed -= 4;
+                        Me.speed = Math.max(0, Me.speed - 4);
+                        Enemy.speed = Math.max(0, Enemy.speed - 4);
+
                         break;
                     case "Psychic":
                         Enemy.type = "Blocked";

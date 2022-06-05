@@ -81,7 +81,7 @@ export const examplePokemons = [
         name: "Torterra",
         type: "Grass",
         hp: 36,
-        attack: 9,
+        attack: 6,
         specialAttack: 11,
         speed: 20,
         defense: 8,

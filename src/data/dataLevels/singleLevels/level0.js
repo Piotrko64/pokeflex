@@ -9,9 +9,9 @@ const Raichu = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
     name: "Raichu",
     type: "Electro",
-    hp: 2,
-    attack: 9,
-    specialAttack: 13,
+    hp: 8,
+    attack: 75,
+    specialAttack: 15,
     speed: 36,
     defense: 1,
     revenge: 4,
@@ -34,6 +34,5 @@ export const level0 = {
     ],
     award: {
         pokemons: examplePokemons.find((e) => e.name === "Pikachu"),
-        tokens: allTokens.find((e) => e.name === "Electro Action"),
     },
 };
