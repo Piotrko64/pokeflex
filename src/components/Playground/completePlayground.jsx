@@ -10,8 +10,8 @@ import { useEffect, useMemo } from "react";
 
 import WinLose from "./WinLoseComponents/WinLose";
 import useSountrack from "../../hooks/useSoundtrack";
-import useBeginFight from "../../hooks/fightHooks/useBeginFight";
 
+import useBeginFight from "../../hooks/fightHooks/completePlayground/useBeginFight";
 import useShowWinner from "../../hooks/fightHooks/completePlayground/useShowWinner";
 import useTurnEnemy from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
 

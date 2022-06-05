@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
-import { animation, choose, moveToGrave, pushCoordinate } from "../../_Actions/stateFightActions";
+import { animation, choose, moveToGrave } from "../../_Actions/stateFightActions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import blockSound from "../../Audio/actions/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
 import audioPlay from "../../functions/audioPlay";
+import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordinates";
+import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -24,12 +26,11 @@ function ReadyPokemon({ value }) {
     const pokemonRef = useRef(null);
 
     const dispatch = useDispatch();
-    const All = useSelector((state) => state.FriendsTeam);
-    const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
 
     const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
 
-    const whereIsEnemy = useSelector((state) => state.FriendsTeam.whereIsEnemy);
+    usePushCoordinates(value, pokemonRef);
+    useYourAttack(value, pokemonRef);
 
     function deleteHpChange() {
         setArrayHp((ar) => ar.filter((_, i) => i !== 0));
@@ -46,49 +47,6 @@ function ReadyPokemon({ value }) {
             audioPlay(blockSound);
         }
     }
-    useEffect(() => {
-        dispatch(
-            pushCoordinate(
-                value.id,
-                [pokemonRef.current.getBoundingClientRect().x, pokemonRef.current.getBoundingClientRect().y],
-                value.name
-            )
-        );
-        setTimeout(() => {
-            if (!pokemonRef.current) {
-                return;
-            }
-            dispatch(
-                pushCoordinate(
-                    value.id,
-                    [
-                        pokemonRef.current.getBoundingClientRect().x,
-                        pokemonRef.current.getBoundingClientRect().y,
-                    ],
-                    value.name
-                )
-            );
-        }, 500);
-    }, [All.myTeam.length, All.enemyTeam.length]);
-    useEffect(() => {
-        if (value.id === whoAttackID) {
-            const coordinateX = +whereIsEnemy[0] - +pokemonRef.current.getBoundingClientRect().x;
-
-            const coordinateY = +whereIsEnemy[1] - +pokemonRef.current.getBoundingClientRect().y;
-
-            pokemonRef.current.style.zIndex = `999`;
-            pokemonRef.current.style.transform = `translateX(${coordinateX}px) translateY(${coordinateY}px)`;
-
-            setTimeout(() => {
-                if (!pokemonRef) {
-                    return;
-                }
-
-                pokemonRef.current.style.zIndex = `9`;
-                pokemonRef.current.style.transform = `translateX(0px) translateY(0px)`;
-            }, 200);
-        }
-    }, [whereIsEnemy]);
 
     useEffect(() => {
         const { hp } = value;
