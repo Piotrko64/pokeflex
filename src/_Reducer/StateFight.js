@@ -1,7 +1,7 @@
 import { startPokemons } from "../data/startItems";
-import chooseAndFight from "./functionsForReducer/chooseAndFight";
-import stateAfterToken from "./functionsForReducer/stateAfterToken";
-import stateAfterTokenAI from "./functionsForReducer/stateAfterTokenAI";
+import chooseAndFight from "./functionsForReducer/StateFights/chooseAndFight";
+import stateAfterToken from "./functionsForReducer/StateFights/stateAfterToken";
+import stateAfterTokenAI from "./functionsForReducer/StateFights/stateAfterTokenAI";
 import findTokensLocal from "./helpers/findTokensLocal";
 const stateFight = {
     myTeam: JSON.parse(localStorage.getItem("pokemons")) || startPokemons.slice(0, 3),
@@ -92,15 +92,5 @@ const FriendReducer = (state = stateFight, action) => {
             return state;
     }
 };
-
-// const friendReducerSlice = createSlice({
-//     name: "fight",
-//     initialState: stateFight,
-//     reducers: {
-//         choose: (state, action) => {
-//             chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
-//         },
-//     },
-// });
 
 export default FriendReducer;

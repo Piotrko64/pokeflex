@@ -1,5 +1,5 @@
-import tokenSound from "../../Audio/tokens/Token.wav";
-import audioPlay from "../../functions/audioPlay";
+import tokenSound from "../../../Audio/tokens/Token.wav";
+import audioPlay from "../../../functions/audioPlay";
 
 export default function stateAfterToken(state, id) {
     let newStateTokens = [...state.myTokens].filter((el) => el.id !== id);
