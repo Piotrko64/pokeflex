@@ -15,15 +15,6 @@ const SliceSettings = createSlice({
     },
 });
 
-const SettingsReducer = (state = Settings, action) => {
-    switch (action.type) {
-        case "changeVolume":
-            localStorage.setItem("volume", action.payload);
-            return { ...state, Volume: action.payload };
-
-        default:
-            return state;
-    }
-};
-
+const SettingsReducer = SliceSettings.reducer;
+export const { changeVolume } = SliceSettings.actions;
 export default SettingsReducer;
