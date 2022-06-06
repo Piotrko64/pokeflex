@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const Settings = {
-    Volume: localStorage.getItem("volume") || 0.75,
-};
-
+const Settings = { Volume: localStorage.getItem("volume") || 0.75 };
 const SliceSettings = createSlice({
     name: "Settings",
     initialState: Settings,
@@ -14,16 +10,6 @@ const SliceSettings = createSlice({
         },
     },
 });
-
-const SettingsReducer = (state = Settings, action) => {
-    switch (action.type) {
-        case "changeVolume":
-            localStorage.setItem("volume", action.payload);
-            return { ...state, Volume: action.payload };
-
-        default:
-            return state;
-    }
-};
-
+const SettingsReducer = SliceSettings.reducer;
+export const { changeVolume } = SliceSettings.actions;
 export default SettingsReducer;

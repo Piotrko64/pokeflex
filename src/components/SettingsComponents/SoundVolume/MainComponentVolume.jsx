@@ -2,8 +2,9 @@ import React from "react";
 import { ImVolumeMedium, ImVolumeMute2 } from "react-icons/im";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { changeVolume } from "../../../_Actions/settingsActions";
+
 import RangeComponent from "./RangeComponent";
+import { changeVolume } from "../../../_Reducer/Settings";
 const RangeDiv = styled.div`
     display: flex;
     justify-content: center;
