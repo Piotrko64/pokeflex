@@ -5,7 +5,7 @@ import {
     addItemsFromLocalStorage,
     deleteFromTeam,
     deleteFromTeamToken,
-} from "../../../../_Actions/yourItemsActions";
+} from "../../../../_Reducer/YourItems";
 
 import CardPokemon from "../../../CardPokemon/CardPokemon";
 

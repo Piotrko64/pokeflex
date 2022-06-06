@@ -1,7 +1,7 @@
 import { allTokens } from "../../../data/dataTokens/allTokens";
 import { examplePokemons } from "../../../data/examplePokemons";
 
-export function addFromLocalStorage(state) {
+export function addFromLocalStorageFn(state) {
     const localPokemons = JSON.parse(localStorage.getItem("pokemonsAward"));
 
     const arrayAllYourPokemons = [...state.Pokemons];

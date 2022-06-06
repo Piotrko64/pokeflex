@@ -1,5 +1,5 @@
 import clone from "lodash.clone";
-export function addToTeamToken(state, token) {
+export function addToTeamTokenFn(state, token) {
     let newStateTokenFight = clone(state.TokensFight);
     if (newStateTokenFight.find((el) => el.name === token.name)) {
         return state;
