@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { addItemsFromLocalStorage } from "./_Actions/yourItemsActions";
 import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 import useKeyboardGuide from "./hooks/keyboardUsing/useKeyboardGuide";
-import { useLocation } from "react-router-dom";
 
 const Guide = styled.div`
     position: fixed;
