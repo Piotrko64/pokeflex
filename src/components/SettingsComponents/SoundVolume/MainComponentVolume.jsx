@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import RangeComponent from "./RangeComponent";
 import { changeVolume } from "../../../_Reducer/Settings";
-
 const RangeDiv = styled.div`
     display: flex;
     justify-content: center;
