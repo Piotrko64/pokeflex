@@ -28,8 +28,7 @@ const YourItemsReducer = (state = yourItems, action) => {
             return addToTeamToken(state, action.payload);
         case "addNewToken":
             return addNewToken(state, action.payload);
-        // case "addNewToken":
-        //     return addNewToken(state.action.payload);
+
         default:
             return state;
     }
