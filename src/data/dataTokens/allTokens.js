@@ -28,8 +28,18 @@ import {
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import shieldStone from "./powerTokens/shieldStone";
+import blizzard from "./powerTokens/blizzard";
+import { BsSnow } from "react-icons/bs";
 
 export const allTokens = [
+    {
+        id: v4(),
+        idAward: "Bilzisa456",
+        name: "Blizzard",
+        icon: <BsSnow />,
+        functionToken: blizzard,
+        desc: "Reduce all enemy **hp** by **2** points and **speed** by **6** points",
+    },
     {
         id: v4(),
         idAward: "Lighter44-fireChar7878",
@@ -58,7 +68,7 @@ export const allTokens = [
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,
-        desc: "Give your strongest pokemon **+14** hp and change its type to **Water**",
+        desc: "Give your strongest pokemon **+16** hp and change its type to **Water**",
     },
     {
         id: v4(),

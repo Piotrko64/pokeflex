@@ -103,6 +103,11 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                             stateAfterFightTokens = [...tokens, findTokenByName("Shield Stone")];
                         }
                         break;
+                    case "Ice":
+                        if (!tokens.find((e) => e.name === "Blizzard")) {
+                            stateAfterFightTokens = [...tokens, findTokenByName("Blizzard")];
+                        }
+                        break;
                     case "Blocked":
                         break;
                     default:

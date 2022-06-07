@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { GiWaterFountain, GiBlackHandShield, GiLighter } from "react-icons/gi";
+import { GiWaterFountain, GiBlackHandShield } from "react-icons/gi";
 
 import fountain from "./dataTokens/powerTokens/fountain";
 import resurrection from "./dataTokens/powerTokens/resurrection";
@@ -8,7 +8,7 @@ export const startPokemons = [
         id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
-        type: "Water",
+        type: "Ice",
         hp: 42,
         attack: 6,
         specialAttack: 7,

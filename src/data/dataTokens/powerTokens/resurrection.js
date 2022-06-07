@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 
-const NEW_HP = 11;
+const NEW_HP = 13;
 
 export default function resurrection(state, AI) {
     const newState = JSON.parse(JSON.stringify(state));

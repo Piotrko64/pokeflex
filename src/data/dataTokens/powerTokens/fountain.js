@@ -1,4 +1,4 @@
-const MORE_HP = 14;
+const MORE_HP = 16;
 
 export default function fountain(state, AI) {
     const newState = JSON.parse(JSON.stringify(state));

@@ -24,7 +24,7 @@ const allPokemons = [
         specialAttack: 8,
         speed: 22,
         defense: 1,
-        revenge: 3,
+        revenge: 4,
     },
 
     {
@@ -226,6 +226,18 @@ const allPokemons = [
         speed: 20,
         defense: 3,
         revenge: 1,
+    },
+    {
+        idAward: "AMswinub8j4",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/220.png",
+        name: "Swinub",
+        type: "Ice",
+        hp: 35,
+        attack: 6,
+        specialAttack: 8,
+        speed: 19,
+        defense: 3,
+        revenge: 3,
     },
 ];
 

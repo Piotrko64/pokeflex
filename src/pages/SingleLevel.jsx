@@ -21,6 +21,7 @@ function SingleLevel() {
         setMusic(Level.music);
 
         dispatch(setEnemyTeam([enemyTeam, enemyTokens]));
+        console.log(enemyTeam, enemyTokens);
     }, []);
 
     return <CompletePlayground music={music} />;
