@@ -9,6 +9,6 @@ export function addToTeamTokenFn(state, token) {
     } else {
         newStateTokenFight.push(token);
     }
-
+    console.log({ ...state, TokensFight: newStateTokenFight });
     return { ...state, TokensFight: newStateTokenFight };
 }

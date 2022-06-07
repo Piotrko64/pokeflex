@@ -1,6 +1,4 @@
-import styled from "styled-components";
-import Confetti from "react-confetti";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 
 import TokenAwards from "./TokenAwards";
 import PokemonAward from "./PokemonAward";

@@ -1,15 +1,15 @@
 import tokenSound from "../../../Audio/tokens/Token2.wav";
 import audioPlay from "../../../functions/audioPlay";
 
-export default function stateAfterTokenAI(state, id) {
-    let newStateTokens = [...state.enemyTokens].filter((el) => el.id !== id);
+export default function stateAfterTokenAI(fn, id) {
+    let newStateTokens = [...fn.enemyTokens].filter((el) => el.id !== id);
     audioPlay(tokenSound);
     return {
-        ...state,
-        myTeam: state.myTeam,
-        enemyTeam: state.enemyTeam,
+        ...fn,
+        myTeam: fn.myTeam,
+        enemyTeam: fn.enemyTeam,
         enemyTokens: newStateTokens,
-        yourTurn: !state.yourTurn,
+        yourTurn: !fn.yourTurn,
         whoAttackID: "",
     };
 }

@@ -1,6 +1,3 @@
-import { render } from "react-dom";
-import styled from "styled-components";
-import ListScrollTokens from "../ScrollTokens/ListScrollTokens";
 import TitleScroll from "../TitleScroll";
 import ListScrollPoke from "./ListScrollPoke";
 

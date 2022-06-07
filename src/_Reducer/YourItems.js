@@ -6,7 +6,7 @@ import { addToTeamTokenFn } from "./functionsForReducer/YourItems/addToTeamToken
 import { deleteFromTeamTokenFn } from "./functionsForReducer/YourItems/deleteFromTeamToken";
 import findTokensLocal from "./helpers/findTokensLocal";
 import { addNewTokenFn } from "./functionsForReducer/YourItems/addNewToken";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const yourItems = {
     Pokemons: [...startPokemons],
@@ -20,22 +20,22 @@ const SliceYourItems = createSlice({
     initialState: yourItems,
     reducers: {
         addItemsFromLocalStorage: (state) => {
-            return addFromLocalStorageFn(state);
+            return addFromLocalStorageFn(current(state));
         },
         deleteFromTeam: (state, action) => {
-            return deleteFromTeamFn(state, action.payload);
+            return deleteFromTeamFn(current(state), action.payload);
         },
         deleteFromTeamToken: (state, action) => {
-            deleteFromTeamTokenFn(state, action.payload);
+            return deleteFromTeamTokenFn(current(state), action.payload);
         },
         addToTeam: (state, action) => {
-            return addToTeamFn(state, action.payload);
+            return addToTeamFn(current(state), action.payload);
         },
         addToTeamToken: (state, action) => {
-            addToTeamTokenFn(state, action.payload);
+            return addToTeamTokenFn(current(state), action.payload);
         },
         addNewToken: (state, action) => {
-            return addNewTokenFn(state, action.payload);
+            return addNewTokenFn(current(state), action.payload);
         },
     },
 });

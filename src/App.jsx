@@ -18,6 +18,7 @@ const Guide = styled.div`
     font-size: 3rem;
     z-index: 100;
     cursor: pointer;
+    z-index: 10000;
 `;
 
 function App() {

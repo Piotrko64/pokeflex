@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEnemy";
-import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Actions/stateFightActions";
+import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
 
 const UseTurnEnemy = () => {
     const All = useSelector((state) => state.FriendsTeam);
@@ -47,7 +47,7 @@ const UseTurnEnemy = () => {
                     const randomNumberTokens = Math.round(Math.random() * (EnemyTokens.length - 1));
                     const randomToken = EnemyTokens[randomNumberTokens];
 
-                    dispatch(tokenPowerAi(randomToken.functionToken(All, true), randomToken.id));
+                    dispatch(tokenPowerAi([randomToken.functionToken(All, true), randomToken.id]));
                 } else if (chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]) {
                     setTimeout(() => handleMoveComputer(chooseRandomEnemy(FriendsTeam, EnemyTeam)[1]), 400);
                 } else {

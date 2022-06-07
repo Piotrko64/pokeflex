@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Confetti from "react-confetti";
-import { Fragment, useEffect } from "react";
+
+import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import levels from "../../../../data/dataLevels/levelsMainList";
 import ListAwards from "./ListAwards";
-import ButtonsNavigate from "./ButtonsNavigate";
 
 const AwardsSection = styled.div`
     color: black;
@@ -36,7 +35,7 @@ function Awards() {
 
     return (
         <Fragment>
-            {awardToken && awardPokemon && <AwardsSection>Your Awards</AwardsSection>}
+            {(awardToken || awardPokemon) && <AwardsSection>Your Awards</AwardsSection>}
 
             <ListAwards token={awardToken} pokemon={awardPokemon} />
         </Fragment>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ListButtons } from "./ListNavigateButtons";
 
 const Content = styled.div`
     display: flex;
@@ -16,30 +17,18 @@ const Button = styled.button`
     font-size: 1.5rem;
     border-radius: 10px;
     border: none;
-    min-width: 100px;
+    height: min-height;
+    width: clamp(140px, 12vw, 220px);
     text-align: center;
     color: white;
     background: ${(props) => props.color};
-    margin: 0 10px;
+    margin: 10px 10px;
     cursor: pointer;
     transition: all 0.2s ease;
     &:hover {
         transform: scale(1.1);
     }
 `;
-
-const ListButtons = [
-    {
-        text: "Levels",
-        pathTo: "/ChooseLevel",
-        color: "rgba(209, 37, 37, 1)",
-    },
-    {
-        text: "Home",
-        pathTo: "/",
-        color: "#8e00c4",
-    },
-];
 
 const ButtonsNavigate = () => {
     return (
@@ -49,7 +38,7 @@ const ButtonsNavigate = () => {
                     <Button color={el.color}>{el.text}</Button>
                 </Link>
             ))}
-            <Button color="#6b07ce" onClick={() => window.location.reload()}>
+            <Button color="#e76700" onClick={() => window.location.reload()}>
                 Play Again
             </Button>
         </Content>

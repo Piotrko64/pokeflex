@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 
-export const examplePokemons = [
+const allPokemons = [
     {
         id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
@@ -215,7 +215,21 @@ export const examplePokemons = [
         defense: 1,
         revenge: 0,
     },
+    {
+        idAward: "AMArceglaceonsae78j4",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/471.png",
+        name: "Glaceon",
+        type: "Ice",
+        hp: 45,
+        attack: 5,
+        specialAttack: 9,
+        speed: 20,
+        defense: 3,
+        revenge: 1,
+    },
 ];
+
+export const examplePokemons = allPokemons.map((e) => ({ ...e, id: v4() }));
 
 export function findPokemonByName(name) {
     return { ...examplePokemons.find((el) => el.name === name), id: v4() };

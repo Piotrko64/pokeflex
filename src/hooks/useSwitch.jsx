@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // 'listObjectRender must be array objects with propert 'name' and 'render''
 

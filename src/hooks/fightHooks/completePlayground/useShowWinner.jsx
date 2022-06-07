@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import audioPlay from "../../../functions/audioPlay";
-import { setWhoWin } from "../../../_Actions/stateFightActions";
 
 import WinSound from "../../../Audio/winLose/Win.wav";
 import LoseSound from "../../../Audio/winLose/Lose.wav";
 import RemisSound from "../../../Audio/winLose/Scream.wav";
 import { useEffect } from "react";
+import { setWhoWin } from "../../../_Reducer/StateFight";
 
 const UseShowWinner = () => {
     const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
     const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
+    const s = useSelector((state) => state.FriendsTeam);
 
     const Win = useSelector((state) => state.FriendsTeam.whoWin);
 

@@ -1,5 +1,7 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { startPokemons } from "../data/startItems";
 import chooseAndFight from "./functionsForReducer/StateFights/chooseAndFight";
+import pushNewCoordinateFn from "./functionsForReducer/StateFights/pushNewCoordinate";
 import stateAfterToken from "./functionsForReducer/StateFights/stateAfterToken";
 import stateAfterTokenAI from "./functionsForReducer/StateFights/stateAfterTokenAI";
 import findTokensLocal from "./helpers/findTokensLocal";
@@ -19,50 +21,53 @@ const stateFight = {
     whoWin: false,
 };
 
-function pushNewCoordinate(state, id, coordinate, name) {
-    let newCoordinate = [...state.allCoordinates].filter((el) => el.id !== id);
-
-    newCoordinate = [{ id, coordinate, name }, ...newCoordinate];
-
-    return newCoordinate;
-}
-const FriendReducer = (state = stateFight, action) => {
-    switch (action.type) {
-        case "setEnemyTeam":
+const SliceStateFight = createSlice({
+    name: "Settings",
+    initialState: stateFight,
+    reducers: {
+        setEnemyTeam: (state, action) => {
             return {
                 ...state,
-                enemyTeam: action.payload.team,
-                enemyTokens: action.payload.tokens,
+                enemyTeam: action.payload[0],
+                enemyTokens: action.payload[1],
                 whoWin: "",
             };
-        case "setMyTeam":
+        },
+        setMyTeam: (state, action) => {
             return {
                 ...state,
-                myTeam: action.payload.team,
-                myTokens: action.payload.tokens,
+                myTeam: action.payload[0],
+                myTokens: action.payload[1],
                 whoWin: "",
             };
-        case "setRandomPokemon":
+        },
+        setRandomPokemon: (state, action) => {
             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
-        case "choose":
+        },
+        choose: (state, action) => {
             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
-        case "computerMove":
+        },
+        computerMove: (state, action) => {
             return chooseAndFight(state, action.payload, state.enemyTeam, state.myTeam, true);
-        case "animation":
+        },
+        animation: (state, action) => {
             return { ...state, whereIsEnemy: action.payload };
-
-        case "noWhoAttack":
+        },
+        noWhoAttack: (state) => {
             return { ...state, whoAttackID: "", yourTurn: true };
+        },
+        pushCoordinate: (state, action) => {
+            const [id, coordinate, name] = action.payload;
 
-        case "pushCoordinate":
-            const { id, coordinate, name } = action.payload;
-
-            return { ...state, allCoordinates: pushNewCoordinate(state, id, coordinate, name) };
-        case "tokenPowerUse":
-            return stateAfterToken(action.payload.fun, action.payload.id);
-        case "tokenPowerAi":
-            return stateAfterTokenAI(action.payload.fun, action.payload.id);
-        case "moveToGrave":
+            return { ...state, allCoordinates: pushNewCoordinateFn(state, id, coordinate, name) };
+        },
+        tokenPowerUse: (_, action) => {
+            return stateAfterToken(action.payload[0], action.payload[1]);
+        },
+        tokenPowerAi: (_, action) => {
+            return stateAfterTokenAI(action.payload[0], action.payload[1]);
+        },
+        moveToGrave: (state, action) => {
             let newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
             let newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
 
@@ -72,7 +77,8 @@ const FriendReducer = (state = stateFight, action) => {
                 myTeam: newStateFriends,
                 grave: [...state.grave, action.payload],
             };
-        case "setWhoWin":
+        },
+        setWhoWin: (state, action) => {
             return {
                 ...state,
                 whoWin: action.payload,
@@ -88,9 +94,93 @@ const FriendReducer = (state = stateFight, action) => {
                 whereIsEnemy: [],
                 grave: [],
             };
-        default:
-            return state;
-    }
-};
+        },
+    },
+});
 
-export default FriendReducer;
+const StateFightsReducer = SliceStateFight.reducer;
+export const {
+    setEnemyTeam,
+    setMyTeam,
+    setRandomPokemon,
+    choose,
+    computerMove,
+    animation,
+    noWhoAttack,
+    pushCoordinate,
+    tokenPowerUse,
+    tokenPowerAi,
+    moveToGrave,
+    setWhoWin,
+} = SliceStateFight.actions;
+
+export default StateFightsReducer;
+
+// const FriendReducer = (state = stateFight, action) => {
+//     switch (action.type) {
+//         case "setEnemyTeam":
+//             return {
+//                 ...state,
+//                 enemyTeam: action.payload.team,
+//                 enemyTokens: action.payload.tokens,
+//                 whoWin: "",
+//             };
+//         case "setMyTeam":
+//             return {
+//                 ...state,
+//                 myTeam: action.payload.team,
+//                 myTokens: action.payload.tokens,
+//                 whoWin: "",
+//             };
+//         case "setRandomPokemon":
+//             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
+//         case "choose":
+//             return chooseAndFight(state, action.payload, state.myTeam, state.enemyTeam, false);
+//         case "computerMove":
+//             return chooseAndFight(state, action.payload, state.enemyTeam, state.myTeam, true);
+//         case "animation":
+//             return { ...state, whereIsEnemy: action.payload };
+
+//         case "noWhoAttack":
+//             return { ...state, whoAttackID: "", yourTurn: true };
+
+//         case "pushCoordinate":
+//             const { id, coordinate, name } = action.payload;
+
+//             return { ...state, allCoordinates: pushNewCoordinateFn(state, id, coordinate, name) };
+//         case "tokenPowerUse":
+//             return stateAfterToken(action.payload.fun, action.payload.id);
+//         case "tokenPowerAi":
+//             return stateAfterTokenAI(action.payload.fun, action.payload.id);
+//         case "moveToGrave":
+//             let newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
+//             let newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
+
+//             return {
+//                 ...state,
+//                 enemyTeam: newStateEnemy,
+//                 myTeam: newStateFriends,
+//                 grave: [...state.grave, action.payload],
+//             };
+//         case "setWhoWin":
+//             return {
+//                 ...state,
+//                 whoWin: action.payload,
+//                 enemyTeam: [],
+//                 myTeam: [],
+//                 myTokens: [],
+//                 enemyTokens: [],
+//                 yourTurn: true,
+//                 whoAttack: "",
+//                 whoAttackID: "",
+//                 whoIsAttack: "",
+//                 whoIsAttackID: "",
+//                 whereIsEnemy: [],
+//                 grave: [],
+//             };
+//         default:
+//             return state;
+//     }
+// };
+
+// export default FriendReducer;

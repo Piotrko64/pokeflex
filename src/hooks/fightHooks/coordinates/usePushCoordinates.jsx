@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { pushCoordinate } from "../../../_Actions/stateFightActions";
+import { pushCoordinate } from "../../../_Reducer/StateFight";
 
 const UsePushCoordinates = (value, pokemonRef) => {
     const AllMyTeam = useSelector((state) => state.FriendsTeam.myTeam);
@@ -21,14 +21,14 @@ const UsePushCoordinates = (value, pokemonRef) => {
                 return;
             }
             dispatch(
-                pushCoordinate(
+                pushCoordinate([
                     value.id,
                     [
                         pokemonRef.current.getBoundingClientRect().x,
                         pokemonRef.current.getBoundingClientRect().y,
                     ],
-                    value.name
-                )
+                    value.name,
+                ])
             );
         }, 500);
     }, [AllMyTeam.length, AllEnemyTeam.length]);

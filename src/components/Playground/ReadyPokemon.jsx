@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
-import { animation, choose, moveToGrave } from "../../_Actions/stateFightActions";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
@@ -11,6 +11,7 @@ import ListAnimHP from "../animOneStatComponents/ListAnimHp";
 import audioPlay from "../../functions/audioPlay";
 import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordinates";
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
+import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";
 
 const Pokemon = styled.div`
     z-index: 9;

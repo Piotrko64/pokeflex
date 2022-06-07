@@ -32,7 +32,7 @@ const EntireComponent = styled.div`
     border-radius: 5px;
     transition: all 0.2s ease-in;
     padding-right: 10px;
-
+    z-index: 10000;
     &:hover ${RangeDiv} {
         opacity: 1;
         transform: translateX(0px);
@@ -48,6 +48,7 @@ const EntireComponent = styled.div`
 const MainComponentVolume = () => {
     const dispatch = useDispatch();
     const volume = useSelector((state) => state.SettingsReducer.Volume);
+
     function handleChangeVolume(e) {
         const { value } = e.target;
 

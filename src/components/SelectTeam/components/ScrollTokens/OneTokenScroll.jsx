@@ -20,7 +20,7 @@ export default function OneTokenScroll({ item, noBattle, scroll }) {
             choose={tokensFight.find((e) => e.name === item.name)}
             scroll={scroll}
         >
-            <ItemToken item={item} noBattle={noBattle} />
+            <ItemToken item={item} noBattle />
         </Token>
     );
 }

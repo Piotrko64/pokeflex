@@ -3,7 +3,7 @@ import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
 import ReactDom from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const Blur = styled.div`
     backdrop-filter: blur(4px);
@@ -13,7 +13,7 @@ const Blur = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 99;
+    z-index: 10000;
     overflow-y: scroll;
 `;
 

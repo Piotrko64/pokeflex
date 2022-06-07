@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import CompletePlayground from "../components/Playground/CompletePlayground";
 import levels from "../data/dataLevels/levelsMainList";
-import { setEnemyTeam } from "../_Actions/stateFightActions";
+import { setEnemyTeam } from "../_Reducer/StateFight";
 
 function SingleLevel() {
     const route = useLocation();
@@ -20,7 +20,7 @@ function SingleLevel() {
 
         setMusic(Level.music);
 
-        dispatch(setEnemyTeam(enemyTeam, enemyTokens));
+        dispatch(setEnemyTeam([enemyTeam, enemyTokens]));
     }, []);
 
     return <CompletePlayground music={music} />;
