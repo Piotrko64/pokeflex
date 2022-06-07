@@ -44,7 +44,7 @@ export default function ScrollListComponent({ children }) {
                 drag="x"
                 initial={{ x: 0 }}
                 whileTap={{ cursor: "grab" }}
-                dragConstraints={{ right: 0, left: -width }}
+                dragConstraints={{ right: width, left: -width }}
                 ref={carousel}
             >
                 {children}

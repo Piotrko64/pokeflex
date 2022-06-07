@@ -123,7 +123,18 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             stateAfterFightEnemy[EnemyIndex] = Enemy;
         }
     });
-
+    console.log({
+        ...state,
+        enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
+        myTeam: computer ? stateAfterFightEnemy : stateAfterFightFriends,
+        enemyTokens: computer ? stateAfterFightTokens : state.enemyTokens,
+        myTokens: computer ? state.myTokens : stateAfterFightTokens,
+        whoAttack: "",
+        whoAttackID,
+        whoIsAttack: "",
+        whoIsAttackID: "",
+        yourTurn: !computer && false,
+    });
     return {
         ...state,
         enemyTeam: computer ? stateAfterFightFriends : stateAfterFightEnemy,
