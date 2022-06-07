@@ -27,25 +27,24 @@ const Grotle = {
     defense: 8,
     revenge: 2,
 };
-const Turtwig2 = {
+const swinub1 = {
     id: v4(),
-
-    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
-    name: "Turtwig",
-    type: "Grass",
-    hp: 34,
-    attack: 4,
-    specialAttack: 7,
-    speed: 24,
-    defense: 4,
-    revenge: 2,
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/220.png",
+    name: "Swinub",
+    type: "Ice",
+    hp: 19,
+    attack: 6,
+    specialAttack: 8,
+    speed: 18,
+    defense: 3,
+    revenge: 3,
 };
 
 export const level4 = {
     id: "level4normal1",
     name: "level 4",
     color: "green",
-    enemyTeam: [Turtwig, Grotle, Turtwig2],
+    enemyTeam: [Turtwig, Grotle, swinub1],
     enemyTokens: [],
     award: {
         pokemons: examplePokemons.find((e) => e.name === "Turtwig"),

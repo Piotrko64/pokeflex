@@ -12,7 +12,13 @@ const OneLevelDiv = styled.div`
     font-size: 22px;
     cursor: pointer;
     color: white;
-    margin-bottom: 10px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.97);
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.97);
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
 `;
 
 function OneLevel({ value }) {

@@ -32,10 +32,6 @@ const ButtonsComponent = () => {
     return (
         <Flex>
             <Button onClick={() => saveInLocalStorage()}> Save and back </Button>
-
-            <Link to="/">
-                <Button> Back to home </Button>
-            </Link>
         </Flex>
     );
 };

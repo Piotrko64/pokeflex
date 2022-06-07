@@ -5,8 +5,8 @@ import OneLevel from "./OneLevel";
 const ListLevel = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+    flex-wrap: wrap;
 `;
 const ChooseLevelPage = styled.div`
     display: flex;

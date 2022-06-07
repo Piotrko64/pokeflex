@@ -32,7 +32,7 @@ const Torterra = {
 export const level5 = {
     id: "level5normal1",
     name: "level 5",
-    color: "green",
+    color: "#2B951B",
     enemyTeam: [Torterra],
     enemyTokens: [allTokens.find((el) => el.name === "High Grass")],
     award: {
