@@ -5,6 +5,7 @@ const ToolTipComponent = styled.div`
     padding: 5px;
     text-align: justify;
     max-width: 200px;
+    z-index: 99999999;
     h2 {
         margin: 0 auto;
         text-align: center;

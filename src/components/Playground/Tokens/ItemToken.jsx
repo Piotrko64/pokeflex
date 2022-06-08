@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { tokenPowerUse } from "../../../_Reducer/StateFight";
 
 const Item = styled.button`
-    border: 2.5px solid white;
+    border: 2px solid white;
     font-size: 28px;
     color: white;
     border-radius: 50%;
@@ -39,11 +39,10 @@ function ItemToken({ item, AI, noBattle }) {
         if (noBattle) {
             return;
         }
-
         if (AI || !All.myTokens.find((e) => e.id === id) || !yourTurn) {
             return;
         }
-        dispatch(tokenPowerUse([fun, id]));
+        dispatch(tokenPowerUse(fun, id));
     }
 
     return (

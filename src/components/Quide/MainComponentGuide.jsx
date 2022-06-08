@@ -6,6 +6,7 @@ import ReactDom from "react-dom";
 import { AnimatePresence } from "framer-motion";
 
 import { AiOutlineClose } from "react-icons/ai";
+import Tippy from "@tippyjs/react";
 
 const Blur = styled.div`
     backdrop-filter: blur(6px);
@@ -15,7 +16,7 @@ const Blur = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 999;
     overflow-y: scroll;
 `;
 
@@ -36,10 +37,11 @@ export default function MainComponentGuide({ setOpen }) {
     }
     return ReactDom.createPortal(
         <Blur>
-            <Close onClick={setOpen}>
-                <AiOutlineClose />
-            </Close>
-
+            <Tippy content="Press Esc">
+                <Close onClick={setOpen}>
+                    <AiOutlineClose />
+                </Close>
+            </Tippy>
             <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
             <AnimatePresence exitBeforeEnter>{renderView}</AnimatePresence>
         </Blur>,

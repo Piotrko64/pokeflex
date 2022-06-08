@@ -25,13 +25,19 @@ const ButtonsComponent = () => {
     const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.TeamFight);
     const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.TokensFight);
     function saveInLocalStorage() {
+        if (!PokemonsTeamSelect.length) {
+            return;
+        }
         localStorage.setItem("tokens", JSON.stringify(TokensTeamSelect));
         localStorage.setItem("pokemons", JSON.stringify(PokemonsTeamSelect));
         navigate("/");
     }
     return (
         <Flex>
-            <Button onClick={() => saveInLocalStorage()}> Save and back to home </Button>
+            <Button onClick={() => saveInLocalStorage()}>
+                {" "}
+                {PokemonsTeamSelect.length ? "Save and back to home" : "Please select Pokemons!"}
+            </Button>
         </Flex>
     );
 };

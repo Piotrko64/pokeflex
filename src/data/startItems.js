@@ -48,13 +48,13 @@ export const startTokens = [
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,
-        desc: "Give your strongest pokemon **+13** hp and change its type to **Water**",
+        desc: "Give your strongest pokemon **+16** hp and change its type to **Water**",
     },
     {
         id: v4(),
         name: "Resurrection",
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
-        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **11hp**",
+        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **13hp**",
     },
 ];

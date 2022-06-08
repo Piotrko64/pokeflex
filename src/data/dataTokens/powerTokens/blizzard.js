@@ -7,7 +7,7 @@ export default function blizzard(state, AI) {
     const newState = clone(state);
 
     let thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
-
+    thisTeam = thisTeam.filter((el) => el.hp > 0);
     const newStateTeam = {
         [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) => ({
             ...el,

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
 const Title = styled.div`
@@ -28,7 +29,9 @@ const OneType = ({ value }) => {
     return (
         <>
             <Title color={color}>{name}</Title>
-            <Describe>{description}</Describe>
+            <Describe>
+                <ReactMarkdown>{description}</ReactMarkdown>
+            </Describe>
         </>
     );
 };

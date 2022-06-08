@@ -12,6 +12,17 @@ import CardPokemon from "../../../CardPokemon/CardPokemon";
 import OneTokenScroll from "../ScrollTokens/OneTokenScroll";
 import TitleScroll from "../TitleScroll";
 
+const Alert = styled.div`
+    background: "";
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+`;
+
 const FlexCenter = styled.div`
     display: flex;
     justify-content: center;
@@ -48,6 +59,9 @@ export default function SelectTeamMain() {
                         <CardPokemon value={el} versionMini />
                     </OneCardSelect>
                 ))}
+                {!PokemonsTeamSelect.length && (
+                    <Alert>You must gather your party before venturing forth</Alert>
+                )}
             </Row>
             <Row>
                 {TokensTeamSelect.map((el) => (
