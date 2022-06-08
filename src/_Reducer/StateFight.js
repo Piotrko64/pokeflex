@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { startPokemons } from "../data/startItems";
 import chooseAndFight from "./functionsForReducer/StateFights/chooseAndFight";
 import pushNewCoordinateFn from "./functionsForReducer/StateFights/pushNewCoordinate";
