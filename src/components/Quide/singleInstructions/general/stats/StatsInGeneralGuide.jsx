@@ -3,15 +3,23 @@ import styled from "styled-components";
 import dataForStats from "./dataForStats";
 import OneStat from "./OneStat";
 
-const ListStats = styled.div``;
+const ListStats = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+`;
 
 const StatsInGeneralGuide = () => {
     return (
-        <ListStats>
-            {dataForStats.map((el) => (
-                <OneStat stat={el} key={el.name} />
-            ))}
-        </ListStats>
+        <>
+            <h1>Stats</h1>
+            <ListStats>
+                {dataForStats.map((el) => (
+                    <OneStat stat={el} key={el.name} />
+                ))}
+            </ListStats>
+        </>
     );
 };
 

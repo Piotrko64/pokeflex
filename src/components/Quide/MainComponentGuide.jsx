@@ -4,13 +4,12 @@ import ListObjectsToRender from "./DataToRender";
 import useSwitch from "../../hooks/useSwitch";
 import ReactDom from "react-dom";
 import { AnimatePresence } from "framer-motion";
-import { GiCardboardBoxClosed } from "react-icons/gi";
+
 import { AiOutlineClose } from "react-icons/ai";
-import Tippy from "@tippyjs/react";
 
 const Blur = styled.div`
-    backdrop-filter: blur(4px);
-    background-color: #52525273;
+    backdrop-filter: blur(6px);
+    background-color: #0000004f;
     overflow: auto;
     height: 100vh;
     position: absolute;

@@ -8,6 +8,7 @@ import { level4 } from "./singleLevels/level4";
 import { level5 } from "./singleLevels/level5";
 import { level6 } from "./singleLevels/level6";
 import { level7 } from "./singleLevels/level7";
+import { level8 } from "./singleLevels/level8";
 import { rocklevel1 } from "./singleLevels/rocklevel1";
 import { rocklevel2 } from "./singleLevels/rocklevel2";
 import { rocklevel3 } from "./singleLevels/rocklevel3";
@@ -26,6 +27,7 @@ const levels = [
     rocklevel2,
     rocklevel3,
     level7,
+    level8,
     icelevel1,
 ];
 

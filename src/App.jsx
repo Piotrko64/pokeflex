@@ -21,6 +21,7 @@ const Guide = styled.div`
     z-index: 100;
     cursor: pointer;
     z-index: 10001;
+    visibility: ${(props) => (props.show ? "hidden" : "")};
 `;
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
         <Fragment>
             <MainRouting />
             <Tippy content={'Press "Q" to open'}>
-                <Guide onClick={() => setOpenGuide(!openGuide)}>
+                <Guide onClick={() => setOpenGuide(!openGuide)} show={openGuide}>
                     <BsQuestionCircleFill />
                 </Guide>
             </Tippy>

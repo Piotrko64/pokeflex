@@ -8,6 +8,7 @@ const HPplus = styled.div`
     top: 0;
     z-index: 1000;
     text-shadow: 0px 0px 20px #ce0000;
+    z-index: 99999;
 `;
 const HPminus = styled(HPplus)`
     color: #2c8a00;

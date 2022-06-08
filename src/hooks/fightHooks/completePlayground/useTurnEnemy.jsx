@@ -15,7 +15,7 @@ const UseTurnEnemy = () => {
     const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
 
     const dispatch = useDispatch();
-
+    console.log(All);
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
         dispatch(animation([]));

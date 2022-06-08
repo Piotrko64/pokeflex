@@ -1,3 +1,4 @@
+import Atropos from "atropos";
 import React from "react";
 import styled from "styled-components";
 import { examplePokemons } from "../../../../data/examplePokemons";

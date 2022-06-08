@@ -25,11 +25,13 @@ import {
     GiHighGrass,
     GiPunch,
     GiShieldcomb,
+    GiExtraTime,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import shieldStone from "./powerTokens/shieldStone";
 import blizzard from "./powerTokens/blizzard";
 import { BsSnow } from "react-icons/bs";
+import slow from "./powerTokens/slow";
 
 export const allTokens = [
     {
@@ -62,6 +64,14 @@ export const allTokens = [
         icon: <GiCat />,
         functionToken: uninvitedGuest,
         desc: "Summon ***Meowth*** to your side",
+    },
+    {
+        id: v4(),
+        name: "Slow",
+        badForAI: true,
+        icon: <GiExtraTime />,
+        functionToken: slow,
+        desc: "All pokemons gain **7** hp and your pokemons get **7** points speed and **1** points of revenge",
     },
     {
         id: v4(),
