@@ -27,11 +27,11 @@ const ButtonsComponent = () => {
     function saveInLocalStorage() {
         localStorage.setItem("tokens", JSON.stringify(TokensTeamSelect));
         localStorage.setItem("pokemons", JSON.stringify(PokemonsTeamSelect));
-        navigate(-1);
+        navigate("/");
     }
     return (
         <Flex>
-            <Button onClick={() => saveInLocalStorage()}> Save and back </Button>
+            <Button onClick={() => saveInLocalStorage()}> Save and back to home </Button>
         </Flex>
     );
 };

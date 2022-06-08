@@ -2,6 +2,7 @@ import AllPokemonsGuide from "./singleInstructions/pokemons/AllPokemonsGuide";
 import AllTokensGuide from "./singleInstructions/tokens/AllTokensGuide";
 import GeneralGuide from "./singleInstructions/general/GeneralGuide";
 import { motion } from "framer-motion";
+import TypesMainComponent from "./singleInstructions/types/TypesMainComponent";
 const ListObjectsToRender = [
     {
         name: "General",
@@ -17,7 +18,7 @@ const ListObjectsToRender = [
     },
     {
         name: "Types",
-        render: "Types",
+        render: <TypesMainComponent />,
     },
 ];
 export default ListObjectsToRender.map((el) => ({

@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Center = styled.div`
+    background: white;
+    color: black;
     display: flex;
     justify-content: center;
-    max-width: 1500px;
-    margin: auto;
+
+    margin: 10px auto;
     padding: 10px;
     flex-direction: column;
 `;

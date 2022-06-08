@@ -6,7 +6,7 @@ export default function useKeyboardGuide(fn) {
         if (key === "Escape") {
             fn(false);
         } else if (key === "p" || key === "q") {
-            fn(true);
+            fn((e) => !e);
         }
     }
 

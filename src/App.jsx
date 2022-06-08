@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 import useKeyboardGuide from "./hooks/keyboardUsing/useKeyboardGuide";
 import { addItemsFromLocalStorage } from "./_Reducer/YourItems";
+import Tooltip from "./components/Tooltip/tooltip";
+import Tippy from "@tippyjs/react";
 
 const Guide = styled.div`
     position: fixed;
@@ -18,7 +20,7 @@ const Guide = styled.div`
     font-size: 3rem;
     z-index: 100;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 10001;
 `;
 
 function App() {
@@ -33,11 +35,13 @@ function App() {
     return (
         <Fragment>
             <MainRouting />
-            <Guide onClick={() => setOpenGuide(!openGuide)}>
-                <BsQuestionCircleFill />
-            </Guide>
+            <Tippy content={'Press "Q" to open'}>
+                <Guide onClick={() => setOpenGuide(!openGuide)}>
+                    <BsQuestionCircleFill />
+                </Guide>
+            </Tippy>
             <MainComponentVolume />
-            {openGuide && <MainComponentGuide />}
+            {openGuide && <MainComponentGuide setOpen={() => setOpenGuide(false)} />}
         </Fragment>
     );
 }

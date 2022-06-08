@@ -8,7 +8,7 @@ export const startPokemons = [
         id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
-        type: "Ice",
+        type: "Water",
         hp: 42,
         attack: 6,
         specialAttack: 7,
