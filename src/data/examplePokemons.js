@@ -127,6 +127,7 @@ const allPokemons = [
     },
     {
         id: v4(),
+        idAward: "EEvesesf78",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
         name: "Eevee",
         type: "Normal",
