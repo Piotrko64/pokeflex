@@ -1,3 +1,4 @@
+import { electrolevel1 } from "./singleLevels/electrolevel1";
 import { icelevel1 } from "./singleLevels/icelevel1";
 import { level0 } from "./singleLevels/level0";
 import { level1 } from "./singleLevels/level1";
@@ -13,8 +14,10 @@ import { rocklevel3 } from "./singleLevels/rocklevel3";
 
 const levels = [
     level0,
+    electrolevel1,
     level1,
     level2,
+
     level3,
     level4,
     level5,
