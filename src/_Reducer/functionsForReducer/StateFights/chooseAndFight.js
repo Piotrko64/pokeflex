@@ -91,7 +91,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
                         break;
                     case "Normal":
-                        Me.speed = Math.max(0, Me.speed - 4);
+                        Me.speed = Math.max(0, Me.speed + 4);
                         Enemy.speed = Math.max(0, Enemy.speed - 4);
 
                         break;

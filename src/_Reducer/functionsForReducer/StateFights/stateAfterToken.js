@@ -2,6 +2,7 @@ import tokenSound from "../../../Audio/tokens/Token.wav";
 import audioPlay from "../../../functions/audioPlay";
 
 export default function stateAfterToken(fn, id) {
+    console.log(fn);
     let newStateTokens = [...fn.myTokens].filter((el) => el.id !== id);
     audioPlay(tokenSound);
     console.log({ ...fn, myTokens: newStateTokens, whoAttackID: "", yourTurn: !fn.yourTurn });

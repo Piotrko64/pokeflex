@@ -42,7 +42,7 @@ function ItemToken({ item, AI, noBattle }) {
         if (AI || !All.myTokens.find((e) => e.id === id) || !yourTurn) {
             return;
         }
-        dispatch(tokenPowerUse(fun, id));
+        dispatch(tokenPowerUse([fun, id]));
     }
 
     return (
@@ -60,7 +60,13 @@ function ItemToken({ item, AI, noBattle }) {
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 1 }}
             >
-                <Item onClick={() => handleUseToken(item.functionToken(All), item.id)}>{item.icon}</Item>
+                <Item
+                    onClick={() => {
+                        handleUseToken(item.functionToken(All), item.id);
+                    }}
+                >
+                    {item.icon}
+                </Item>
             </motion.div>
         </Tippy>
     );

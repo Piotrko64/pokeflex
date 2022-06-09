@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.de299b86.css",
-    "main.js": "/static/js/main.9f1d184b.js",
+    "main.js": "/static/js/main.612f7d82.js",
     "static/media/Chill.mp3": "/static/media/Chill.707eab0491843e206725.mp3",
     "static/media/Scream.wav": "/static/media/Scream.115151c9a7f9b0811ef0.wav",
     "static/media/Lose.wav": "/static/media/Lose.c3beab362a37d72e8336.wav",
@@ -15,10 +15,10 @@
     "static/media/Token2.wav": "/static/media/Token2.c2b6e3515c149df39988.wav",
     "index.html": "/index.html",
     "main.de299b86.css.map": "/static/css/main.de299b86.css.map",
-    "main.9f1d184b.js.map": "/static/js/main.9f1d184b.js.map"
+    "main.612f7d82.js.map": "/static/js/main.612f7d82.js.map"
   },
   "entrypoints": [
     "static/css/main.de299b86.css",
-    "static/js/main.9f1d184b.js"
+    "static/js/main.612f7d82.js"
   ]
 }

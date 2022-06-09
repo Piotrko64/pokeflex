@@ -62,6 +62,7 @@ const SliceStateFight = createSlice({
             return { ...state, allCoordinates: pushNewCoordinateFn(state, id, coordinate, name) };
         },
         tokenPowerUse: (_, action) => {
+            console.log(action.payload[0], action.payload[1]);
             return stateAfterToken(action.payload[0], action.payload[1]);
         },
         tokenPowerAi: (_, action) => {
