@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 import useKeyboardGuide from "./hooks/keyboardUsing/useKeyboardGuide";
 import { addItemsFromLocalStorage } from "./_Reducer/YourItems";
-import Tooltip from "./components/Tooltip/tooltip";
+
 import Tippy from "@tippyjs/react";
 
 const Guide = styled.div`
