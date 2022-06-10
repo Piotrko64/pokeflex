@@ -22,21 +22,20 @@ const Button = styled.button`
 `;
 const ButtonsComponent = () => {
     let navigate = useNavigate();
-    const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.TeamFight);
-    const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.TokensFight);
+    const pokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.teamFight);
+    const tokensTeamSelect = useSelector((state) => state.YourItemsReducer.tokensFight);
     function saveInLocalStorage() {
-        if (!PokemonsTeamSelect.length) {
+        if (!pokemonsTeamSelect.length) {
             return;
         }
-        localStorage.setItem("tokens", JSON.stringify(TokensTeamSelect));
-        localStorage.setItem("pokemons", JSON.stringify(PokemonsTeamSelect));
+        localStorage.setItem("tokens", JSON.stringify(tokensTeamSelect));
+        localStorage.setItem("pokemons", JSON.stringify(pokemonsTeamSelect));
         navigate("/");
     }
     return (
         <Flex>
             <Button onClick={() => saveInLocalStorage()}>
-                {" "}
-                {PokemonsTeamSelect.length ? "Save and back to home" : "Please select Pokemons!"}
+                {pokemonsTeamSelect.length ? "Save and back to home" : "Please select Pokemons!"}
             </Button>
         </Flex>
     );

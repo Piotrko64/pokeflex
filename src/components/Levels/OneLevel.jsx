@@ -1,6 +1,6 @@
 import { BsCheckLg } from "react-icons/bs";
 import styled from "styled-components";
-import checkWin from "../../functions/levels/checkLevelWin";
+import useIsLevelWon from "../../hooks/levels/useIsLevelWon";
 
 const OneLevelDiv = styled.div`
     display: flex;
@@ -32,10 +32,11 @@ const Check = styled.div`
 `;
 
 function OneLevel({ value }) {
+    const isWin = useIsLevelWon(value.award);
     return (
         <OneLevelDiv color={value.color}>
-            {value.name}{" "}
-            {checkWin(value.award) && (
+            {value.name}
+            {isWin && (
                 <Check>
                     <BsCheckLg />
                 </Check>

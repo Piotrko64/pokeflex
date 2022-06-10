@@ -5,15 +5,14 @@ import { setMyTeam, setWhoWin } from "../../../_Reducer/StateFight";
 
 const useBeginFight = () => {
     const dispatch = useDispatch();
-    const actualTeam = useSelector((state) => state.YourItemsReducer.TeamFight);
-    const actualTokens = useSelector((state) => state.YourItemsReducer.TokensFight);
+    const actualTeam = useSelector((state) => state.YourItemsReducer.teamFight);
+    const actualTokens = useSelector((state) => state.YourItemsReducer.tokensFight);
 
     useEffect(() => {
         dispatch(setWhoWin(""));
 
         dispatch(setMyTeam([actualTeam, actualTokens]));
     }, []);
-    return;
 };
 
 export default useBeginFight;

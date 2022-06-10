@@ -111,57 +111,25 @@ function Stats({ value, versionMini }) {
                     {(() => {
                         switch (type) {
                             case "Electro":
-                                return (
-                                    <>
-                                        <Electro>{type}</Electro>
-                                    </>
-                                );
+                                return <Electro>{type}</Electro>;
                             case "Fire":
-                                return (
-                                    <>
-                                        <Fire>{type}</Fire>
-                                    </>
-                                );
+                                return <Fire>{type}</Fire>;
                             case "Turbo Fire":
-                                return (
-                                    <>
-                                        <TurboFire>{type}</TurboFire>
-                                    </>
-                                );
+                                return <TurboFire>{type}</TurboFire>;
                             case "Grass":
-                                return (
-                                    <>
-                                        <Grass>{type}</Grass>
-                                    </>
-                                );
+                                return <Grass>{type}</Grass>;
                             case "Water":
-                                return (
-                                    <>
-                                        <Water>{type}</Water>
-                                    </>
-                                );
+                                return <Water>{type}</Water>;
                             case "Psychic":
-                                return (
-                                    <>
-                                        <Psychic>{type}</Psychic>
-                                    </>
-                                );
+                                return <Psychic>{type}</Psychic>;
                             case "Normal":
                                 return <Normal>{type}</Normal>;
                             case "Rock":
                                 return <Rock>{type}</Rock>;
                             case "Ice":
-                                return (
-                                    <>
-                                        <Ice>{type}</Ice>
-                                    </>
-                                );
+                                return <Ice>{type}</Ice>;
                             case "Blocked":
-                                return (
-                                    <>
-                                        <Blocked>Blocked</Blocked>
-                                    </>
-                                );
+                                return <Blocked>Blocked</Blocked>;
                             default:
                                 return <Normal>Normal</Normal>;
                         }

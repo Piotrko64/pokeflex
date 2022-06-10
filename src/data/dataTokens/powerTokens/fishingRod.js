@@ -12,7 +12,7 @@ const Magikarp = {
     revenge: 2,
 };
 
-export default function fishingRoad(state, AI) {
+export default function fishingRod(state, AI) {
     let newState = AI
         ? [{ ...Magikarp, id: v4() }, ...state.enemyTeam, { ...Magikarp, id: v4() }]
         : [{ ...Magikarp, id: v4() }, ...state.myTeam, { ...Magikarp, id: v4() }];

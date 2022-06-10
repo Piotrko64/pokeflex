@@ -1,6 +1,6 @@
 import clone from "lodash.clone";
 export function addToTeamTokenFn(state, token) {
-    let newStateTokenFight = clone(state.TokensFight);
+    let newStateTokenFight = clone(state.tokensFight);
     if (newStateTokenFight.find((el) => el.name === token.name)) {
         return state;
     }
@@ -9,6 +9,6 @@ export function addToTeamTokenFn(state, token) {
     } else {
         newStateTokenFight.push(token);
     }
-    console.log({ ...state, TokensFight: newStateTokenFight });
-    return { ...state, TokensFight: newStateTokenFight };
+    console.log({ ...state, tokensFight: newStateTokenFight });
+    return { ...state, tokensFight: newStateTokenFight };
 }

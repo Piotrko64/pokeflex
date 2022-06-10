@@ -9,10 +9,10 @@ import { addNewTokenFn } from "./functionsForReducer/YourItems/addNewToken";
 import { createSlice, current } from "@reduxjs/toolkit";
 
 const yourItems = {
-    Pokemons: [...startPokemons],
-    Tokens: [...startTokens],
-    TeamFight: JSON.parse(localStorage.getItem("pokemons")) || [...startPokemons.slice(0, 3)],
-    TokensFight: findTokensLocal(),
+    pokemons: [...startPokemons],
+    tokens: [...startTokens],
+    teamFight: JSON.parse(localStorage.getItem("pokemons")) || [...startPokemons.slice(0, 3)],
+    tokensFight: findTokensLocal(),
 };
 
 const SliceYourItems = createSlice({

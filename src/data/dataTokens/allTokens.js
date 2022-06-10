@@ -100,7 +100,7 @@ export const allTokens = [
     {
         id: v4(),
         idAward: "FR22twoMagiCarp",
-        name: "Fishing Road",
+        name: "Fishing Rod",
         icon: <GiCirclingFish />,
         functionToken: fishingRoad,
         desc: "Summon two **Magikarp**",

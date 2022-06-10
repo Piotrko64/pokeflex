@@ -1,8 +1,8 @@
 import clone from "lodash.clone";
 
 export function addNewTokenFn(state, token) {
-    const newStateAllTokens = clone(state.Tokens);
+    const newStateAllTokens = clone(state.tokens);
     newStateAllTokens.push(token);
 
-    return { ...state, Tokens: newStateAllTokens };
+    return { ...state, tokens: newStateAllTokens };
 }

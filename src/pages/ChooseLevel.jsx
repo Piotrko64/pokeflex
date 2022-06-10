@@ -1,7 +1,7 @@
-import ChooseLevelMainPage from "../components/Levels/ChooseLevelPageMain";
+import ChooseLevelPageMain from "../components/Levels/ChooseLevelPageMain";
 
 function ChooseLevel() {
-    return <ChooseLevelMainPage />;
+    return <ChooseLevelPageMain />;
 }
 
 export default ChooseLevel;

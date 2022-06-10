@@ -6,13 +6,11 @@ export default function useKeyboardGuide(fn) {
         if (key === "Escape") {
             fn(false);
         } else if (key === "p" || key === "q") {
-            fn((e) => !e);
+            fn((state) => !state);
         }
     }
 
     useEffect(() => {
         document.addEventListener("keydown", handleEscape);
     }, []);
-
-    return;
 }

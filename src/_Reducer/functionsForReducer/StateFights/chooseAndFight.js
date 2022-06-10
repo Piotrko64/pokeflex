@@ -79,10 +79,9 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                         break;
 
                     case "Water":
-                        // IT WORKS
-                        stateAfterFightFriends = [...stateAfterFightFriends].map((e) => ({
-                            ...e,
-                            hp: e.hp + 1,
+                        stateAfterFightFriends = [...stateAfterFightFriends].map((el) => ({
+                            ...el,
+                            hp: el.hp + 1,
                         }));
 
                         break;
@@ -105,7 +104,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                         }
                         break;
                     case "Ice":
-                        if (!tokens.find((e) => e.name === "Blizzard")) {
+                        if (!tokens.find((el) => el.name === "Blizzard")) {
                             stateAfterFightTokens = [...tokens, findTokenByName("Blizzard")];
                         }
                         break;
@@ -135,6 +134,6 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
         whoAttackID,
         whoIsAttack: "",
         whoIsAttackID: "",
-        yourTurn: !computer && false,
+        yourTurn: !state.yourTurn,
     };
 }

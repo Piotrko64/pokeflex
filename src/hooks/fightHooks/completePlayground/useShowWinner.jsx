@@ -8,32 +8,31 @@ import { useEffect } from "react";
 import { setWhoWin } from "../../../_Reducer/StateFight";
 
 const UseShowWinner = () => {
-    const FriendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
-    const EnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
+    const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
 
-    const Win = useSelector((state) => state.StateFightsReducer.whoWin);
+    const win = useSelector((state) => state.StateFightsReducer.whoWin);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (Win) {
+        if (win) {
             return;
         }
-        if (FriendsTeam.length === 0 && EnemyTeam.length === 0) {
+        if (friendsTeam.length === 0 && enemyTeam.length === 0) {
             audioPlay(RemisSound);
             dispatch(setWhoWin("remis"));
-        } else if (FriendsTeam.length === 0) {
+        } else if (friendsTeam.length === 0) {
             audioPlay(LoseSound);
             dispatch(setWhoWin("lose"));
-        } else if (EnemyTeam.length === 0) {
+        } else if (enemyTeam.length === 0) {
             audioPlay(WinSound);
             dispatch(setWhoWin("win"));
         }
         return () => {
             setWhoWin("");
         };
-    }, [FriendsTeam.length, EnemyTeam.length]);
-    return;
+    }, [friendsTeam.length, enemyTeam.length]);
 };
 
 export default UseShowWinner;

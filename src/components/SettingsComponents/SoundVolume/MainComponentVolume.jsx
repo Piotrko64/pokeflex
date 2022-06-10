@@ -47,7 +47,7 @@ const EntireComponent = styled.div`
 
 const MainComponentVolume = () => {
     const dispatch = useDispatch();
-    const volume = useSelector((state) => state.SettingsReducer.Volume);
+    const volume = useSelector((state) => state.SettingsReducer.volume);
 
     function handleChangeVolume(e) {
         const { value } = e.target;

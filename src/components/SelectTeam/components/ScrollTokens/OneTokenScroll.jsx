@@ -10,9 +10,9 @@ const Token = styled.div`
     filter: ${(props) => props.choose && props.scroll && "contrast(0.2)"};
 `;
 
-export default function OneTokenScroll({ item, noBattle, scroll }) {
+export default function OneTokenScroll({ item, scroll }) {
     const dispatch = useDispatch();
-    const tokensFight = useSelector((state) => state.YourItemsReducer.TokensFight);
+    const tokensFight = useSelector((state) => state.YourItemsReducer.tokensFight);
 
     return (
         <Token

@@ -1,6 +1,6 @@
 import clone from "lodash.clone";
 export function addToTeamFn(state, pokemon) {
-    let newStateTeamFight = clone(state.TeamFight);
+    let newStateTeamFight = clone(state.teamFight);
     if (newStateTeamFight.find((el) => el.name === pokemon.name)) {
         return state;
     }
@@ -10,5 +10,5 @@ export function addToTeamFn(state, pokemon) {
         newStateTeamFight.push(pokemon);
     }
 
-    return { ...state, TeamFight: newStateTeamFight };
+    return { ...state, teamFight: newStateTeamFight };
 }

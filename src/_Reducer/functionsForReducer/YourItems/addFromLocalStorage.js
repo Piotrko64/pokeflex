@@ -4,9 +4,9 @@ import { examplePokemons } from "../../../data/examplePokemons";
 export function addFromLocalStorageFn(state) {
     const localPokemons = JSON.parse(localStorage.getItem("pokemonsAward"));
 
-    const arrayAllYourPokemons = [...state.Pokemons];
+    const arrayAllYourPokemons = [...state.pokemons];
     const localTokens = JSON.parse(localStorage.getItem("tokensAward"));
-    const arrayAllYourTokens = [...state.Tokens];
+    const arrayAllYourTokens = [...state.tokens];
 
     localPokemons?.forEach((local) =>
         examplePokemons.forEach((ex) => {
@@ -23,5 +23,5 @@ export function addFromLocalStorageFn(state) {
         })
     );
 
-    return { ...state, Pokemons: arrayAllYourPokemons, Tokens: arrayAllYourTokens };
+    return { ...state, pokemons: arrayAllYourPokemons, tokens: arrayAllYourTokens };
 }

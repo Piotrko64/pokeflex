@@ -13,7 +13,7 @@ const Card = styled.div`
 
 export default function OnePokemonScroll({ value }) {
     const dispatch = useDispatch();
-    const teamFight = useSelector((state) => state.YourItemsReducer.TeamFight);
+    const teamFight = useSelector((state) => state.YourItemsReducer.teamFight);
 
     return (
         <Card

@@ -10,7 +10,6 @@ const UseQuickGameEnemy = () => {
     useEffect(() => {
         dispatch(setEnemyTeam([enemy[0], enemy[1]]));
     }, []);
-    return;
 };
 
 export default UseQuickGameEnemy;

@@ -44,8 +44,8 @@ const OneTokenSelect = styled.div`
 `;
 
 export default function SelectTeamMain() {
-    const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.TeamFight);
-    const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.TokensFight);
+    const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.teamFight);
+    const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.tokensFight);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());

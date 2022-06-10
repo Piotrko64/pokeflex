@@ -14,12 +14,13 @@ export default function resurrection(state, AI) {
         }
 
         return { ...state };
-    }
-    const newStateMyTeam = [...newState.myTeam];
+    } else {
+        const newStateMyTeam = [...newState.myTeam];
 
-    if (grave.length) {
-        return { ...state, myTeam: [...newStateMyTeam, pokemonFromGrave] };
-    }
+        if (grave.length) {
+            return { ...state, myTeam: [...newStateMyTeam, pokemonFromGrave] };
+        }
 
-    return { ...state };
+        return { ...state };
+    }
 }

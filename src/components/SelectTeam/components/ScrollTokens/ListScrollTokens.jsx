@@ -4,11 +4,11 @@ import OneTokenScroll from "./OneTokenScroll";
 import { useSelector } from "react-redux";
 
 export default function ListScrollTokens() {
-    const Tokens = useSelector((state) => state.YourItemsReducer.Tokens);
+    const tokens = useSelector((state) => state.YourItemsReducer.tokens);
 
     return (
         <ScrollListComponent>
-            {Tokens.map((el) => (
+            {tokens.map((el) => (
                 <OneTokenScroll key={el.id} item={el} noBattle scroll />
             ))}
         </ScrollListComponent>

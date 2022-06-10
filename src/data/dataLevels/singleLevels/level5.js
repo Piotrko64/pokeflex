@@ -3,20 +3,6 @@ import { allTokens } from "../../dataTokens/allTokens";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
-// const Turtwig = {
-//     id: v4(),
-
-//     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
-//     name: "Turtwig",
-//     type: "Grass",
-//     hp: 28,
-//     attack: 4,
-//     specialAttack: 7,
-//     speed: 27,
-//     defense: 4,
-//     revenge: 2,
-// };
-
 const Torterra = {
     id: v4(),
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",

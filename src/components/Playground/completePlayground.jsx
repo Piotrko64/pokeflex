@@ -4,7 +4,7 @@ import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
 import { useSelector } from "react-redux";
 
-import GroundForCards from "./GroundCards";
+import GroundForCards from "./GroundForCards";
 import YourTurn from "./YourTurn";
 import { useEffect, useMemo } from "react";
 
@@ -26,17 +26,17 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground({ music }) {
-    const Win = useSelector((state) => state.StateFightsReducer.whoWin);
+    const win = useSelector((state) => state.StateFightsReducer.whoWin);
 
     const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
 
-    const FriendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
-    const FriendsTokens = useSelector((state) => state.StateFightsReducer.myTokens);
+    const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const friendsTokens = useSelector((state) => state.StateFightsReducer.myTokens);
 
-    const EnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
-    const EnemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
+    const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
+    const enemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
 
-    const volume = useSelector((state) => state.SettingsReducer.Volume);
+    const volume = useSelector((state) => state.SettingsReducer.volume);
 
     const setMusic = useSountrack(music, volume);
 
@@ -51,12 +51,12 @@ function CompletePlayground({ music }) {
     useTurnEnemy();
 
     const GroundForFriends = useMemo(
-        () => <GroundForCards pokemons={FriendsTeam} tokens={FriendsTokens} />,
-        [FriendsTeam, FriendsTokens]
+        () => <GroundForCards pokemons={friendsTeam} tokens={friendsTokens} />,
+        [friendsTeam, friendsTokens]
     );
     const GroundForEnemy = useMemo(
-        () => <GroundForCards pokemons={EnemyTeam} tokens={EnemyTokens} AI={true} />,
-        [EnemyTeam, EnemyTokens]
+        () => <GroundForCards pokemons={enemyTeam} tokens={enemyTokens} AI={true} />,
+        [enemyTeam, enemyTokens]
     );
 
     return (
@@ -66,7 +66,7 @@ function CompletePlayground({ music }) {
                 {YourTurnMemo}
                 {GroundForEnemy}
             </WholeField>
-            {Win && <WinLose value={Win} />}
+            {win && <WinLose value={win} />}
         </>
     );
 }

@@ -23,7 +23,7 @@ const BackButton = () => {
 
     const path = location.pathname;
 
-    const yourTeam = useSelector((state) => state.YourItemsReducer.TeamFight);
+    const yourTeam = useSelector((state) => state.YourItemsReducer.teamFight);
 
     function navigateFn() {
         if (path.includes("levels")) {

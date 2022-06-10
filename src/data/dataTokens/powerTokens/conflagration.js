@@ -5,7 +5,7 @@ export default function conflagration(state, AI) {
     let newStateEnemyTeam = AI
         ? newState.myTeam.map((el) => ({ ...el, hp: el.hp - VALUE_DAMAGE }))
         : newState.enemyTeam.map((el) => ({ ...el, hp: el.hp - VALUE_DAMAGE }));
-    console.log({ ...state, enemyTeam: newStateEnemyTeam });
+
     if (!AI) {
         return { ...state, enemyTeam: newStateEnemyTeam };
     }

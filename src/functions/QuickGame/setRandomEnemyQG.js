@@ -20,19 +20,19 @@ export default function setRandomEnemyQG() {
     }
 
     if (arrEnemy.length <= 2) {
-        arrEnemy = arrEnemy.map((el) => ({
+        arrEnemy = arrEnemy.map(({ hp, defense, specialAttack, ...el }) => ({
             ...el,
-            hp: (el.hp += 20),
-            defense: (el.defense += 2),
-            specialAttack: (el.specialAttack += 6),
+            hp: hp + 20,
+            defense: defense + 2,
+            specialAttack: specialAttack + 6,
         }));
     }
     if (arrEnemy.length <= 1) {
-        arrEnemy = arrEnemy.map((el) => ({
+        arrEnemy = arrEnemy.map(({ revenge, speed, attack, ...el }) => ({
             ...el,
-            revenge: (el.revenge += 4),
-            speed: (el.speed += 30),
-            attack: (el.attack += 4),
+            revenge: revenge + 4,
+            speed: speed + 30,
+            attack: attack + 4,
         }));
     }
 
