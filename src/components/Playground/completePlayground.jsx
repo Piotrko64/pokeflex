@@ -26,15 +26,15 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground({ music }) {
-    const Win = useSelector((state) => state.FriendsTeam.whoWin);
+    const Win = useSelector((state) => state.StateFightsReducer.whoWin);
 
-    const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
+    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
 
-    const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
-    const FriendsTokens = useSelector((state) => state.FriendsTeam.myTokens);
+    const FriendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const FriendsTokens = useSelector((state) => state.StateFightsReducer.myTokens);
 
-    const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
-    const EnemyTokens = useSelector((state) => state.FriendsTeam.enemyTokens);
+    const EnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
+    const EnemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
 
     const volume = useSelector((state) => state.SettingsReducer.Volume);
 

@@ -31,7 +31,7 @@ const Img = styled.img`
     filter: ${(props) => (props.choose ? "drop-shadow(0px 0px 95px red)" : "")};
 `;
 function CardPokemon({ value, versionMini }) {
-    const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
+    const whoAttackID = useSelector((state) => state.StateFightsReducer.whoAttackID);
 
     return (
         // <Atropos className="atropos">

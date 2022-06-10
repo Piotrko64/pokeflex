@@ -33,8 +33,8 @@ const Item = styled.button`
 
 function ItemToken({ item, AI, noBattle }) {
     const dispatch = useDispatch();
-    const All = useSelector((state) => state.FriendsTeam);
-    const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
+    const All = useSelector((state) => state.StateFightsReducer);
+    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
     function handleUseToken(fun, id) {
         if (noBattle) {
             return;

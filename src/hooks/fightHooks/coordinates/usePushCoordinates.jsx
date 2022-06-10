@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { pushCoordinate } from "../../../_Reducer/StateFight";
 
 const UsePushCoordinates = (value, pokemonRef) => {
-    const AllMyTeam = useSelector((state) => state.FriendsTeam.myTeam);
-    const AllEnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
+    const AllMyTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const AllEnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
 
     const dispatch = useDispatch();
 

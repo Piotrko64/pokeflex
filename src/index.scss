@@ -47,15 +47,7 @@ code {
 a {
     text-decoration: none;
 }
-// .gridForCards {
-//     display: grid;
 
-//     grid-template-rows: repeat(2, 280px);
-//     grid-template-columns: 40px;
-//     grid-auto-flow: column;
-//     max-width: 750px;
-//     place-items: center;
-// }
 .flex {
     display: flex;
     justify-content: center;
@@ -65,43 +57,4 @@ a {
 }
 .zIndex {
     z-index: 999999999;
-}
-//  CSS TRANSITION GROUP
-//  ANIMATION STATS
-// animation HP
-.animHP-enter {
-    opacity: 2;
-    transform: scale(0.7);
-}
-.animHP-enter-active {
-    opacity: 0;
-    transform: translateX(-250px);
-    transition: all 1500ms ease-in-out;
-}
-.animHP-exit {
-    opacity: 1;
-}
-.animHP-exit-active {
-    opacity: 0;
-    transform: translateX(200px);
-    transition: opacity 1000ms, transform 1000ms;
-}
-
-// ANIMATION DEAD
-.dead-enter {
-    opacity: 2;
-    transform: scale(0.7);
-}
-.dead-enter-active {
-    opacity: 0;
-    transform: translateX(-250px);
-    transition: all 1500ms ease-in-out;
-}
-.dead-exit {
-    opacity: 1;
-}
-.dead-exit-active {
-    opacity: 0;
-    transform: translateX(200px);
-    transition: opacity 1000ms, transform 1000ms;
 }

@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const UseYourAttack = (value, pokemonRef) => {
-    const whoAttackID = useSelector((state) => state.FriendsTeam.whoAttackID);
-    const whereIsEnemy = useSelector((state) => state.FriendsTeam.whereIsEnemy);
+    const whoAttackID = useSelector((state) => state.StateFightsReducer.whoAttackID);
+    const whereIsEnemy = useSelector((state) => state.StateFightsReducer.whereIsEnemy);
     useEffect(() => {
         if (value.id === whoAttackID) {
             const coordinateX = +whereIsEnemy[0] - +pokemonRef.current.getBoundingClientRect().x;

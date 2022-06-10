@@ -4,9 +4,8 @@ import SettingsReducer from "./Settings";
 import StateFightsReducer from "./StateFight";
 
 const allReducers = combineReducers({
-    FriendsTeam: StateFightsReducer,
-
-    YourItemsReducer: YourItemsReducer,
-    SettingsReducer: SettingsReducer,
+    StateFightsReducer,
+    YourItemsReducer,
+    SettingsReducer,
 });
 export default allReducers;

@@ -1,4 +1,3 @@
-import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
 import { allTokens } from "../../dataTokens/allTokens";
 
@@ -9,9 +8,9 @@ const Raichu = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
     name: "Raichu",
     type: "Electro",
-    hp: 8,
-    attack: 75,
-    specialAttack: 15,
+    hp: 55,
+    attack: 5,
+    specialAttack: 10,
     speed: 36,
     defense: 1,
     revenge: 4,

@@ -8,10 +8,10 @@ import { useEffect } from "react";
 import { setWhoWin } from "../../../_Reducer/StateFight";
 
 const UseShowWinner = () => {
-    const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
-    const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
+    const FriendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const EnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
 
-    const Win = useSelector((state) => state.FriendsTeam.whoWin);
+    const Win = useSelector((state) => state.StateFightsReducer.whoWin);
 
     const dispatch = useDispatch();
 

@@ -4,18 +4,18 @@ import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEne
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
 
 const UseTurnEnemy = () => {
-    const All = useSelector((state) => state.FriendsTeam);
+    const All = useSelector((state) => state.StateFightsReducer);
 
-    const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
-    const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
+    const FriendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
+    const EnemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
 
-    const EnemyTokens = useSelector((state) => state.FriendsTeam.enemyTokens);
+    const EnemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
 
-    const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
-    const allCoordinates = useSelector((state) => state.FriendsTeam.allCoordinates);
+    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
+    const allCoordinates = useSelector((state) => state.StateFightsReducer.allCoordinates);
 
     const dispatch = useDispatch();
-    console.log(All);
+
     function handleComputerChoose(x) {
         dispatch(computerMove(x));
         dispatch(animation([]));

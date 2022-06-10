@@ -28,7 +28,7 @@ function ReadyPokemon({ value }) {
 
     const dispatch = useDispatch();
 
-    const yourTurn = useSelector((state) => state.FriendsTeam.yourTurn);
+    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
 
     usePushCoordinates(value, pokemonRef);
     useYourAttack(value, pokemonRef);
