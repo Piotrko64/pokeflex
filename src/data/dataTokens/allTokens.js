@@ -6,7 +6,7 @@ import fountain from "../dataTokens/powerTokens/fountain";
 import sacrifice from "../dataTokens/powerTokens/sacrifice";
 import resurrection from "../dataTokens/powerTokens/resurrection";
 
-import fishingRoad from "../dataTokens/powerTokens/fishingRod";
+import fishingRod from "../dataTokens/powerTokens/fishingRod";
 import conflagration from "../dataTokens/powerTokens/conflagration";
 import highGrass from "../dataTokens/powerTokens/highGrass";
 import punch from "../dataTokens/powerTokens/punch";
@@ -102,7 +102,7 @@ export const allTokens = [
         idAward: "FR22twoMagiCarp",
         name: "Fishing Rod",
         icon: <GiCirclingFish />,
-        functionToken: fishingRoad,
+        functionToken: fishingRod,
         desc: "Summon two **Magikarp**",
     },
     {
@@ -141,5 +141,5 @@ export const allTokens = [
 ];
 
 export function findTokenByName(name) {
-    return { ...allTokens.find((el) => el.name === name), id: v4() };
+    return { ...allTokens.find((el) => el.name === name), id: v4() } || allTokens[3];
 }

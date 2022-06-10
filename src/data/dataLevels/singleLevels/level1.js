@@ -1,4 +1,3 @@
-import { GiCirclingFish } from "react-icons/gi";
 import { v4 } from "uuid";
 import { allTokens } from "../../dataTokens/allTokens";
 

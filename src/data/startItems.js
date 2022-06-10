@@ -1,8 +1,9 @@
 import { v4 } from "uuid";
-import { GiWaterFountain, GiBlackHandShield } from "react-icons/gi";
+import { GiWaterFountain, GiBlackHandShield, GiCirclingFish } from "react-icons/gi";
 
 import fountain from "./dataTokens/powerTokens/fountain";
 import resurrection from "./dataTokens/powerTokens/resurrection";
+import fishingRod from "./dataTokens/powerTokens/fishingRod";
 export const startPokemons = [
     {
         id: v4(),
@@ -56,5 +57,13 @@ export const startTokens = [
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
         desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **13hp**",
+    },
+    {
+        id: v4(),
+        idAward: "FR22twoMagiCarp",
+        name: "Fishing Rod",
+        icon: <GiCirclingFish />,
+        functionToken: fishingRod,
+        desc: "Summon two **Magikarp**",
     },
 ];

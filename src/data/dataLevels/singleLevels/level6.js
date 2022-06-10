@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
+import { findTokenByName } from "../../dataTokens/allTokens";
 
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { GiPunchBlast } from "react-icons/gi";
