@@ -9,14 +9,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import Tippy from "@tippyjs/react";
 
 const Blur = styled.div`
-    backdrop-filter: blur(6px);
-    background-color: #0000004f;
+    background-color: #000000b5;
+    @supports (backdrop-filter: blur(6px)) {
+        & {
+            backdrop-filter: blur(6px);
+            background-color: #0000004f;
+        }
+    }
+
     overflow: auto;
     height: 100vh;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 10000;
     overflow-y: scroll;
 `;
 
@@ -32,9 +38,6 @@ const Close = styled.div`
 export default function MainComponentGuide({ setOpen }) {
     const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "General", "General");
 
-    function changeViewGuide(renderView) {
-        setRenderView(renderView);
-    }
     return ReactDom.createPortal(
         <Blur>
             <Tippy content="Press Esc">
@@ -42,7 +45,7 @@ export default function MainComponentGuide({ setOpen }) {
                     <AiOutlineClose />
                 </Close>
             </Tippy>
-            <RoutingGuide changeViewGuide={changeViewGuide} nameView={nameView} />
+            <RoutingGuide changeViewGuide={setRenderView} nameView={nameView} />
             <AnimatePresence exitBeforeEnter>{renderView}</AnimatePresence>
         </Blur>,
         document.getElementById("guide")
