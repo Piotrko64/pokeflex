@@ -22,7 +22,7 @@ const Blur = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 9999;
     overflow-y: scroll;
 `;
 
