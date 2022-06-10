@@ -5,8 +5,8 @@ export default function checkWin(award) {
     const localTokens = JSON.parse(localStorage.getItem("tokensAward"));
 
     if (
-        localPokemons.find((el) => el === pokemons?.idAward) ||
-        localTokens.find((el) => el === tokens?.idAward)
+        localPokemons?.find((el) => el === pokemons?.idAward) ||
+        localTokens?.find((el) => el === tokens?.idAward)
     ) {
         return true;
     }
