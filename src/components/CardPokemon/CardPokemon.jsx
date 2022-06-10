@@ -14,16 +14,17 @@ const Card = styled.div`
     border-radius: 25px;
     flex-direction: column;
     font-size: ${(props) => (props.versionMini ? "14px" : "28px")};
-    width: ${(props) => (props.versionMini ? "180px" : "")};
+    width: ${(props) => props.versionMini && "180px"};
     overflow: hidden;
-    transform: ${(props) => (props.choose ? "scale(1.1)" : "")};
+    transform: ${(props) => props.choose && "scale(1.1)"};
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "0px 0px 46px -1px transparent")};
     &:hover {
-        box-shadow: 0px 0px 46px -1px rgba(255, 255, 255, 1);
+        box-shadow: ${(props) =>
+            props.choose ? "0px 0px 46px -1px red" : "0px 0px 46px -1px rgba(255, 255, 255, 1)"};
         transform: scale(1.05);
     }
+    box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "0px 0px 46px -1px transparent")};
 `;
 const Img = styled.img`
     height: ${(props) => (props.versionMini ? "110px" : "240px")};

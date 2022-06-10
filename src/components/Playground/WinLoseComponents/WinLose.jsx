@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import Awards from "./AwardsComponents/Awards";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
 
 const Blur = styled.div`
@@ -67,24 +69,43 @@ function WinLose({ value }) {
                     recycle={false}
                 />
             )}
-            <TableScore>
-                <Score>
-                    {(() => {
-                        switch (endgame) {
-                            case "win":
-                                return <WinComponent>YOU WIN!!!</WinComponent>;
-                            case "lose":
-                                return <Lose>You lose</Lose>;
-                            case "remis":
-                                return <Remis>REMIS!!!</Remis>;
-                            default:
-                                break;
-                        }
-                    })()}
-                </Score>
-                {endgame === "win" && <Awards />}
-                <ButtonsNavigate />
-            </TableScore>
+            <AnimatePresence>
+                <motion.div
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{
+                        opacity: 0,
+                    }}
+                    transition={{
+                        duration: 0.25,
+                        type: "spring",
+                        damping: 20,
+                        stiffness: 200,
+                        bounce: 0.35,
+                        delay: 0.25,
+                    }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                >
+                    <TableScore>
+                        <Score>
+                            {(() => {
+                                switch (endgame) {
+                                    case "win":
+                                        return <WinComponent>YOU WIN!!!</WinComponent>;
+                                    case "lose":
+                                        return <Lose>You lose</Lose>;
+                                    case "remis":
+                                        return <Remis>REMIS!!!</Remis>;
+                                    default:
+                                        break;
+                                }
+                            })()}
+                        </Score>
+
+                        {endgame === "win" && <Awards />}
+                        <ButtonsNavigate />
+                    </TableScore>
+                </motion.div>
+            </AnimatePresence>
         </Blur>
     );
 }

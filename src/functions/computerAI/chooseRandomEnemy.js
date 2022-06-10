@@ -11,6 +11,6 @@ export function chooseRandomEnemy(everyFriend, everyEnemy) {
     const randomNumberFriend = Math.round(Math.random() * (filterFriend.length - 1));
 
     const randomNumberEnemy = Math.round(Math.random() * (filterEnemy.length - 1));
-
+    console.log([filterFriend[randomNumberFriend]?.id, filterEnemy[randomNumberEnemy]?.id]);
     return [filterFriend[randomNumberFriend]?.id, filterEnemy[randomNumberEnemy]?.id];
 }
