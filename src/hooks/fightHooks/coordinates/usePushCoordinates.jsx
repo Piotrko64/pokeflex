@@ -30,7 +30,7 @@ const UsePushCoordinates = (value, pokemonRef) => {
                     value.name,
                 ])
             );
-        }, 500);
+        }, 1000);
     }, [AllMyTeam.length, AllEnemyTeam.length]);
 };
 
