@@ -45,7 +45,7 @@ export const icelevel1 = {
     color: `background: rgb(2,67,113);
 background: linear-gradient(150deg, rgba(2,67,113,1) 14%, rgba(142,151,186,1) 66%, rgba(0,170,255,1) 78%);`,
     enemyTeam: [swinub1, Glaceon, swinub2],
-    enemyTokens: [findTokenByName("Fountain"), findTokenByName("Fishing Road")],
+    enemyTokens: [findTokenByName("Fountain"), findTokenByName("Fishing Rod")],
     award: {
         pokemons: findPokemonByName("Swinub"),
     },
