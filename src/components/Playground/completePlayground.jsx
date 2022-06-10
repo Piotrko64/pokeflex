@@ -14,7 +14,6 @@ import useSountrack from "../../hooks/useSoundtrack";
 import useBeginFight from "../../hooks/fightHooks/completePlayground/useBeginFight";
 import useShowWinner from "../../hooks/fightHooks/completePlayground/useShowWinner";
 import useTurnEnemy from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
-import { motion } from "framer-motion";
 
 const WholeField = styled.div`
     display: flex;

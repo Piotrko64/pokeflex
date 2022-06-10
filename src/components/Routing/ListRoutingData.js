@@ -1,5 +1,5 @@
 import ChooseLevel from "../../pages/ChooseLevel";
-import MainPage from "../../pages/Main";
+import MainPage from "../../pages/MainPage";
 import QuickGame from "../../pages/QuickGame";
 import SelectTeam from "../../pages/SelectTeam";
 import SingleLevel from "../../pages/SingleLevel";

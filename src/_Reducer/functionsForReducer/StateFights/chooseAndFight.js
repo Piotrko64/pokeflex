@@ -9,7 +9,6 @@ import audioPlay from "../../../functions/audioPlay";
 let whoAttack = "";
 let whoAttackID = "";
 export default function chooseAndFight(state, payload, tF, tE, computer) {
-    // clone teamFriends and teamEnemy
     const teamFriends = clone(tF).filter((e) => e.hp >= 1);
     const teamEnemy = clone(tE).filter((e) => e.hp >= 1);
 
