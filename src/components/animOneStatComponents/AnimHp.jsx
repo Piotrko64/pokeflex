@@ -21,7 +21,7 @@ function MotionValue({ value }) {
             layout
             animate={{ opacity: 0, x: -150 }}
             exit={{}}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.1 }}
             initial={{ opacity: 1.5, x: -20 }}
         >
             {value}

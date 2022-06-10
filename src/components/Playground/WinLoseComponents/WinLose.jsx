@@ -73,15 +73,16 @@ function WinLose({ value }) {
                 <motion.div
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{
+                        scale: 0,
                         opacity: 0,
                     }}
                     transition={{
-                        duration: 0.25,
+                        duration: 0.45,
                         type: "spring",
-                        damping: 20,
-                        stiffness: 200,
-                        bounce: 0.35,
-                        delay: 0.25,
+                        damping: 3,
+                        mass: 0.75,
+                        stiffness: 50,
+                        delay: 0.2,
                     }}
                     initial={{ opacity: 0, scale: 0.5 }}
                 >

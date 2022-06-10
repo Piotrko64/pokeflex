@@ -6,8 +6,8 @@ export default function stateAfterTokenAI(fn, id) {
     audioPlay(tokenSound);
     return {
         ...fn,
-        myTeam: fn.myTeam,
-        enemyTeam: fn.enemyTeam,
+        myTeam: fn.myTeam.filter(({ hp }) => hp > 0),
+        enemyTeam: fn.enemyTeam.filter(({ hp }) => hp > 0),
         enemyTokens: newStateTokens,
         yourTurn: !fn.yourTurn,
         whoAttackID: "",
