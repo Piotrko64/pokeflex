@@ -13,7 +13,6 @@ export default function sacrifice(state, AI) {
     ].hp;
     const idWeakestSpecialAttack = strongestSPThisTeamSort[thisTeam.length - 1].id;
 
-    console.log(idWeakestSpecialAttack, hpWeakestSpecialAttack);
     const newStateTeam = {
         [AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) => {
             if (el.id === strongestSPThisTeamSort[0].id)

@@ -5,7 +5,7 @@ export default function fountain(state, AI) {
     // AI move
     if (AI) {
         const newStateMyTeam = [...newState.enemyTeam];
-        let thisFriendPokemon = newStateMyTeam.enemyTeam.sort((a, b) => {
+        let thisFriendPokemon = newStateMyTeam.sort((a, b) => {
             return b.hp - a.hp;
         })[0];
         thisFriendPokemon = { ...thisFriendPokemon, type: "Water", hp: thisFriendPokemon.hp + MORE_HP };
