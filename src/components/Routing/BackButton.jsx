@@ -14,7 +14,7 @@ const Back = styled.div`
     left: 10px;
     font-size: 1.5rem;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 999;
 `;
 
 const BackButton = () => {
