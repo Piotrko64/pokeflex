@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { TiArrowBack } from "react-icons/ti";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Back = styled.div`
     border-radius: 10px;
     background: white;
@@ -22,9 +23,13 @@ const BackButton = () => {
 
     const path = location.pathname;
 
+    const yourTeam = useSelector((state) => state.YourItemsReducer.TeamFight);
+
     function navigateFn() {
         if (path.includes("levels")) {
             navigation("/ChooseLevel");
+        } else if (path.includes("SelectTeam") && !yourTeam.length) {
+            alert("Please choose at least one pokemon");
         } else navigation("/");
     }
 
