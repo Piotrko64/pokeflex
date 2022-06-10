@@ -10,7 +10,6 @@ import { setWhoWin } from "../../../_Reducer/StateFight";
 const UseShowWinner = () => {
     const FriendsTeam = useSelector((state) => state.FriendsTeam.myTeam);
     const EnemyTeam = useSelector((state) => state.FriendsTeam.enemyTeam);
-    const s = useSelector((state) => state.FriendsTeam);
 
     const Win = useSelector((state) => state.FriendsTeam.whoWin);
 

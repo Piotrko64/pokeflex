@@ -1,4 +1,6 @@
+import { BsCheckLg } from "react-icons/bs";
 import styled from "styled-components";
+import checkWin from "../../functions/levels/checkLevelWin";
 
 const OneLevelDiv = styled.div`
     display: flex;
@@ -22,8 +24,24 @@ const OneLevelDiv = styled.div`
     }
 `;
 
+const Check = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+`;
+
 function OneLevel({ value }) {
-    return <OneLevelDiv color={value.color}>{value.name}</OneLevelDiv>;
+    return (
+        <OneLevelDiv color={value.color}>
+            {value.name}{" "}
+            {checkWin(value.award) && (
+                <Check>
+                    <BsCheckLg />
+                </Check>
+            )}
+        </OneLevelDiv>
+    );
 }
 
 export default OneLevel;

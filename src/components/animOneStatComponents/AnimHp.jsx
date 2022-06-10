@@ -22,7 +22,7 @@ function MotionValue({ value }) {
             animate={{ opacity: 0, x: -150 }}
             exit={{}}
             transition={{ duration: 1 }}
-            initial={{ opacity: 1.5 }}
+            initial={{ opacity: 1.5, x: -20 }}
         >
             {value}
         </motion.div>
@@ -39,7 +39,7 @@ function AnimHP({ value, deleteHpChange }) {
         !!value &&
         (value < 0 ? (
             <HPplus>
-                <MotionValue value={value} />
+                <MotionValue value={-value} />
             </HPplus>
         ) : (
             <HPminus>
