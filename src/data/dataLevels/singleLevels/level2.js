@@ -34,7 +34,7 @@ export const level2 = {
     color: "linear-gradient(180deg, rgba(254,33,206,1) 0%, rgba(47,0,195,1) 89%)",
     enemyTeam: [Mime1, Mime2],
     enemyTokens: [
-        allTokens.find((e) => e.name === "Fishing Road"),
+        allTokens.find((e) => e.name === "Fishing Rod"),
         allTokens.find((e) => e.name === "Fountain"),
         allTokens.find((e) => e.name === "Univinted Guest"),
         allTokens.find((e) => e.name === "Lighter"),

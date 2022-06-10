@@ -35,7 +35,7 @@ background: radial-gradient(circle, rgba(0,0,0,1) 3%, rgba(44,73,191,1) 46%, rgb
     enemyTokens: [
         findTokenByName("Blizzard"),
         findTokenByName("Shield Stone"),
-        findTokenByName("Fishing Road"),
+        findTokenByName("Fishing Rod"),
     ],
     award: {
         tokens: findTokenByName("Blizzard"),
