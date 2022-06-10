@@ -18,6 +18,6 @@ export default function fishingRoad(state, AI) {
         : [{ ...Magikarp, id: v4() }, ...state.myTeam, { ...Magikarp, id: v4() }];
 
     newState = AI ? { enemyTeam: newState } : { myTeam: newState };
-    console.log(newState);
+
     return { ...state, ...newState };
 }

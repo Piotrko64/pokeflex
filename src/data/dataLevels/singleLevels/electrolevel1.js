@@ -1,6 +1,5 @@
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
-import { findPokemonByName } from "../../examplePokemons";
 
 const Pikachu = {
     id: v4(),
