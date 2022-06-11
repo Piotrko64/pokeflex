@@ -41,7 +41,7 @@ const UseTurnEnemy = () => {
     return useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                if (!enemyTeam.some((e) => e.hp > 0).length) {
+                if (!enemyTeam.some((e) => e.hp > 0)) {
                     return;
                 }
                 if (enemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {

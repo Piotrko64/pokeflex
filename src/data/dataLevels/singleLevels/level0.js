@@ -8,7 +8,7 @@ const Raichu = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
     name: "Raichu",
     type: "Electro",
-    hp: 5,
+    hp: 7,
     attack: 5,
     specialAttack: 10,
     speed: 36,
