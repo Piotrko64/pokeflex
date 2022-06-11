@@ -23,7 +23,7 @@ const UseTurnEnemy = () => {
     async function findRandom() {
         const randomEnemy = chooseRandomEnemy(friendsTeam, enemyTeam)[0];
         console.log(allCoordinates, randomEnemy);
-        if (allCoordinates.find((e) => e.id === randomEnemy)) {
+        if (allCoordinates.some((e) => e.id === randomEnemy)) {
             dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
             dispatch(computerMove(randomEnemy));
         } else {
@@ -41,7 +41,7 @@ const UseTurnEnemy = () => {
     return useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                if (!enemyTeam.filter((e) => e.hp > 1).length) {
+                if (!enemyTeam.some((e) => e.hp > 0).length) {
                     return;
                 }
                 if (enemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
@@ -52,6 +52,7 @@ const UseTurnEnemy = () => {
                 } else if (chooseRandomEnemy(friendsTeam, enemyTeam)[1]) {
                     setTimeout(() => handleMoveComputer(chooseRandomEnemy(friendsTeam, enemyTeam)[1]), 400);
                 } else {
+                    console.log("else");
                     handleMoveComputer(friendsTeam[0].id);
                 }
             }, 1000);
