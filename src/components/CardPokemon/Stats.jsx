@@ -3,7 +3,19 @@ import { BsFillHeartFill, BsFillShieldFill } from "react-icons/bs";
 import { GiBroadsword, GiZeusSword, GiSpikes } from "react-icons/gi";
 import { RiSpeedFill } from "react-icons/ri";
 
-import { Blocked, Electro, Fire, Grass, Ice, Normal, Psychic, Rock, TurboFire, Water } from "./StylingStats";
+import {
+    Blocked,
+    Electro,
+    Fire,
+    Grass,
+    Ice,
+    Normal,
+    Psychic,
+    Rock,
+    TurboElectro,
+    TurboFire,
+    Water,
+} from "./StylingStats";
 const TableWithAll = styled.div`
     display: flex;
     justify-content: space-around;
@@ -112,6 +124,8 @@ function Stats({ value, versionMini }) {
                         switch (type) {
                             case "Electro":
                                 return <Electro>{type}</Electro>;
+                            case "Turbo Electro":
+                                return <TurboElectro>{type}</TurboElectro>;
                             case "Fire":
                                 return <Fire>{type}</Fire>;
                             case "Turbo Fire":

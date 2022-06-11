@@ -10,7 +10,15 @@ export const Electro = styled.div`
         rgba(255, 224, 180, 1) 100%
     );
 `;
-
+export const TurboElectro = styled.div`
+    background: rgb(215, 167, 91);
+    background: radial-gradient(
+        circle,
+        rgba(215, 167, 91, 1) 0%,
+        rgba(179, 122, 44, 1) 46%,
+        rgba(213, 164, 95, 1) 100%
+    );
+`;
 export const Fire = styled.div`
     background-color: rgba(255, 0, 0, 1);
     background-image: linear-gradient(

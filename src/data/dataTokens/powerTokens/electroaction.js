@@ -9,7 +9,7 @@ export default function electroAction(state, AI) {
         const newStateFriendsTeam = [...newState.myTeam];
         let thisEnemy;
         let thisAttack;
-        if (newState.enemyTeam.find((el) => el.type === "Electro")) {
+        if (newState.enemyTeam.some(({ type }) => type === "Electro" || type === "Turbo Electro")) {
             thisEnemy = newStateFriendsTeam.sort((a, b) => {
                 return b.hp - a.hp;
             })[0];

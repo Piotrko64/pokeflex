@@ -13,6 +13,13 @@ const dataTypes = [
     );`,
     },
     {
+        name: "Turbo Electro",
+        description:
+            "The attacked pokemon loses as many speed points as your pokemon has revenge. Then your pokemon gets **+1** revenge",
+        color: `background: rgb(215,167,91);
+background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46%, rgba(213,164,95,1) 100%);`,
+    },
+    {
         name: "Water",
         description:
             "If you attack enemy pokemon who have 0 points of defense Your pokemon's gain 1 point hp with exception pokemon who attacked",

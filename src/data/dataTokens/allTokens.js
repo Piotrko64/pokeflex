@@ -26,12 +26,15 @@ import {
     GiPunch,
     GiShieldcomb,
     GiExtraTime,
+    GiPunchBlast,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import shieldStone from "./powerTokens/shieldStone";
 import blizzard from "./powerTokens/blizzard";
-import { BsSnow } from "react-icons/bs";
+import { BsBatteryFull, BsSnow } from "react-icons/bs";
 import slow from "./powerTokens/slow";
+import charging from "./powerTokens/charging";
+import punchMachamp from "./powerTokens/punchMachamp";
 
 export const allTokens = [
     {
@@ -56,7 +59,7 @@ export const allTokens = [
         name: "Electro Action",
         icon: <AiOutlineThunderbolt />,
         functionToken: electroAction,
-        desc: "Deal **7** points to the weakest enemy character. If you have at least one **Electro** character, deal **16** points to the strongest enemy character",
+        desc: "Deal **7** points to the weakest enemy character. If you have at least one **Electro** or **Turbo Electro** character, deal **16** points to the strongest enemy character",
     },
     {
         id: v4(),
@@ -72,6 +75,14 @@ export const allTokens = [
         icon: <GiExtraTime />,
         functionToken: slow,
         desc: "All pokemons gain **7** hp and your pokemons get **7** points speed and **1** points of revenge",
+    },
+    {
+        name: "Charging",
+        idAward: "EleCHC546",
+        badForAI: true,
+        icon: <BsBatteryFull />,
+        functionToken: charging,
+        desc: "Your  Electro pokemon with most hp change  type on **Turbo Electro** and gain **+1** defense and **+9** hp",
     },
     {
         id: v4(),
@@ -129,6 +140,16 @@ export const allTokens = [
         icon: <GiPunch />,
         functionToken: punch,
         desc: "Deal **14** damage random enemy pokemon",
+    },
+    {
+        id: v4(),
+        name: "Punch Machamp",
+        badForAI: true,
+        icon: <GiPunchBlast />,
+
+        functionToken: punchMachamp,
+        desc: `Deal **30** points damage of strongest enemy and **block** him. 
+     **What a blow!**`,
     },
     {
         id: v4(),

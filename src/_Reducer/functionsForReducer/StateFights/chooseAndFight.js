@@ -59,15 +59,18 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
                 EnemyIndex = 0;
             }
             if (Me.hp > Me.speed) {
-                Enemy.hp = Math.max(0, Enemy.hp - Me.attack) || 0;
+                Enemy.hp = Math.max(0, Enemy.hp - Me.attack);
             } else {
-                Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack) || 0;
+                Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack);
             }
 
             // TYPE
             if (Me.type === "Turbo Fire") {
                 Enemy.hp = Math.max(0, Enemy.hp - 3);
                 Me.type = "Fire";
+            } else if (Me.type === "Turbo Electro") {
+                Enemy.speed = Math.max(0, Enemy.speed - Me.revenge);
+                Me.revenge++;
             } else if (Enemy.defense === 0) {
                 switch (Me.type) {
                     case "Electro":
