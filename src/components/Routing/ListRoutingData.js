@@ -28,6 +28,14 @@ export const ListRouting = [
         path: "SelectTeam",
         element: <SelectTeam />,
     },
+    {
+        path: "*",
+        element: <MainPage />,
+    },
+    {
+        path: "/levels/*",
+        element: <MainPage />,
+    },
 ];
 
 export const AnimateList = ListRouting.map((el) => ({

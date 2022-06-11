@@ -77,10 +77,9 @@ function WinLose({ value }) {
             )}
             <AnimatePresence>
                 <motion.div
-                    animate={{ opacity: 1, scale: 1 }}
+                    animate={{ scale: 1 }}
                     exit={{
                         scale: 0,
-                        opacity: 0,
                     }}
                     transition={{
                         duration: 0.45,
@@ -90,7 +89,7 @@ function WinLose({ value }) {
                         stiffness: 50,
                         delay: 0.2,
                     }}
-                    initial={{ opacity: 0, scale: 0.5 }}
+                    initial={{ scale: 0 }}
                 >
                     <TableScore>
                         <Score>
