@@ -65,21 +65,22 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
             }
 
             // TYPE
-            if (Me.type === "Turbo Fire") {
-                Enemy.hp = Math.max(0, Enemy.hp - 3);
-                Me.type = "Fire";
-            } else if (Me.type === "Turbo Electro") {
-                Enemy.speed = Math.max(0, Enemy.speed - Me.revenge);
-                Me.revenge++;
-            } else if (Enemy.defense === 0) {
+            if (Enemy.defense === 0) {
                 switch (Me.type) {
                     case "Electro":
+                        Me.revenge++;
+                        break;
+                    case "Turbo Electro":
+                        Enemy.speed = Math.max(0, Enemy.speed - Me.revenge);
                         Me.revenge++;
                         break;
                     case "Fire":
                         Me.type = "Turbo Fire";
                         break;
-
+                    case "Turbo Fire":
+                        Enemy.hp = Math.max(0, Enemy.hp - 3);
+                        Me.type = "Fire";
+                        break;
                     case "Water":
                         stateAfterFightFriends = [...stateAfterFightFriends].map((el) => ({
                             ...el,

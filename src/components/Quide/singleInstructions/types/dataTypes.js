@@ -1,8 +1,7 @@
 const dataTypes = [
     {
         name: "Electro",
-        description:
-            "Your pokemon gain 1 points of revenge if you attack enemy pokemon who have 0 points of defense",
+        description: "Your pokemon gain 1 points of revenge",
         color: `background-color: rgba(255, 224, 143, 1);
     background-image: linear-gradient(
         141deg,
@@ -21,15 +20,13 @@ background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46
     },
     {
         name: "Water",
-        description:
-            "If you attack enemy pokemon who have 0 points of defense Your pokemon's gain 1 point hp with exception pokemon who attacked",
+        description: "Your pokemon's gain 1 point hp with exception pokemon who attacked",
         color: `background: rgb(37, 186, 209);
     background: linear-gradient(180deg, rgba(37, 186, 209, 1) 24%, rgba(44, 34, 221, 1) 84%);`,
     },
     {
         name: "Grass",
-        description:
-            "If you attack enemy pokemon who have 0 points of defense your hp will not be reduced by revenge points",
+        description: "Your hp will not be reduced by revenge points",
         color: `background: rgb(58, 172, 47);
     background: linear-gradient(
         106deg,
@@ -41,8 +38,7 @@ background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46
     },
     {
         name: "Fire",
-        description:
-            "If you attack enemy pokemon who have 0 points of defense your type change on 'Turbo Fire' ",
+        description: "Your type change on 'Turbo Fire' ",
         color: `background-color: rgba(255, 0, 0, 1);
     background-image: linear-gradient(
         181deg,
@@ -66,21 +62,19 @@ background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46
     },
     {
         name: "Normal",
-        description:
-            "If you attack enemy pokemon who have 0 points of defense you gain **4** points of speed and enemy loses **4** points of speed",
+        description: "You gain **4** points of speed and enemy loses **4** points of speed",
         color: `background: rgb(107, 39, 70);
     background: linear-gradient(90deg, rgba(107, 39, 70, 1) 0%, rgba(45, 80, 117, 1) 100%);`,
     },
     {
         name: "Psychic",
-        description: "If you attack enemy pokemon who have 0 points of defense block him",
+        description: "Block the attacked pokemon",
         color: `background: rgb(199, 28, 63);
     background: radial-gradient(circle, rgba(199, 28, 63, 1) 35%, rgba(24, 51, 187, 1) 96%);`,
     },
     {
         name: "Ice",
-        description:
-            "If you attack enemy pokemon who have 0 points and you don't have **Blizzard** token you get **Blizzard** token",
+        description: "If you don't have **Blizzard** token you get **Blizzard** token",
         color: `background: rgb(41, 55, 186);
     background: radial-gradient(
         circle,
@@ -92,8 +86,7 @@ background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46
 
     {
         name: "Rock",
-        description:
-            "If you attack enemy pokemon who have 0 points and you don't have 2 or more tokens you get **Shield Stone** token",
+        description: "If you don't have 2 or more tokens you get **Shield Stone** token",
         color: ` background: rgb(135, 135, 135);
     background: linear-gradient(90deg, rgba(135, 135, 135, 1) 0%, rgba(25, 30, 36, 1) 100%);
 `,

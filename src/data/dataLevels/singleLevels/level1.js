@@ -37,6 +37,6 @@ export const level1 = {
         allTokens.find((e) => e.name === "Fountain"),
     ],
     award: {
-        tokens: allTokens.find((e) => e.name === "Fishing Road"),
+        tokens: allTokens.find((e) => e.name === "Fishing Rod"),
     },
 };
