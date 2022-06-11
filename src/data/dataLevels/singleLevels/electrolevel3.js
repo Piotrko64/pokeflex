@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
-
+import { findPokemonByName } from "../../examplePokemons";
 const Raichu = {
     id: v4(),
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
@@ -53,6 +53,6 @@ background: radial-gradient(circle, rgba(207,142,39,1) 0%, rgba(150,118,75,1) 46
         findTokenByName("Charging"),
     ],
     award: {
-        pokemons: findTokenByName("Pachirisu"),
+        pokemons: findPokemonByName("Pachirisu"),
     },
 };
