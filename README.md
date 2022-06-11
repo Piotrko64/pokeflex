@@ -9,7 +9,7 @@
 <p align="center">When I was younger I loved card games. I spend a lot of time on Hearstone or Gwent. Thanks to Javascript my dream is real! I create simple card game in pokemon world! Nowadays this game is only demo version without database. However, your awards for winning levels will be saving in local storage!</p>
 
 <p align="center"> [POKEFLEX Card Game](https://poke-flex.netlify.app) </p>
-
+# <p align="center"> [POKEFLEX Card Game](https://poke-flex.netlify.app) </p>
 <p align="center"> I don't have any money benefits from this project! This is project for passion and self develop :) Images of pokemons are displayed thanks links from [PokeApi](pokeapi.co)
   </p>
 
