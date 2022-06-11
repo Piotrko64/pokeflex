@@ -10,7 +10,7 @@
 
 
 
-<p align="center"> I don't have any money benefits from this project! This is project for passion and self develop :) Images of pokemons are displayed thanks links from [PokeApi]("pokeapi.co")
+<p align="center"> I don't have any money benefits from this project! This is project for passion and self develop :) Images of pokemons are displayed thanks links from PokeApi(pokeapi.co)
   </p>
 
 <br />
