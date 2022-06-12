@@ -208,7 +208,7 @@ const allPokemons = [
         name: "Lapras",
         type: "Water",
         hp: 60,
-        attack: 4,
+        attack: 3,
         specialAttack: 6,
         speed: 20,
         defense: 5,
