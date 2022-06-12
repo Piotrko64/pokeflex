@@ -8,6 +8,11 @@ export default function stateAfterTokenAI(fn, id) {
         ...fn,
         myTeam: fn.myTeam.filter(({ hp }) => hp > 0),
         enemyTeam: fn.enemyTeam.filter(({ hp }) => hp > 0),
+        grave: [
+            ...fn.grave,
+            ...fn.myTeam.filter(({ hp }) => hp <= 0),
+            ...fn.enemyTeam.filter(({ hp }) => hp <= 0),
+        ],
         enemyTokens: newStateTokens,
         yourTurn: !fn.yourTurn,
         whoAttackID: "",

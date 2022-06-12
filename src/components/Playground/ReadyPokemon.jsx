@@ -57,7 +57,8 @@ function ReadyPokemon({ value }) {
         newHpChange && setArrayHp((el) => [...el, newHpChange]);
 
         setHpChange(value.hp);
-        if (value.hp < 1) {
+
+        if (value.hp <= 0) {
             dispatch(moveToGrave(value));
         }
     }, [value.hp]);

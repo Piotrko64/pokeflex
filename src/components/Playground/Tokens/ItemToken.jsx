@@ -33,13 +33,13 @@ const Item = styled.button`
 
 function ItemToken({ item, AI, noBattle }) {
     const dispatch = useDispatch();
-    const All = useSelector((state) => state.StateFightsReducer);
+    const all = useSelector((state) => state.StateFightsReducer);
     const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
     function handleUseToken(fun, id) {
         if (noBattle) {
             return;
         }
-        if (AI || !All.myTokens.find((e) => e.id === id) || !yourTurn) {
+        if (AI || !all.myTokens.find((e) => e.id === id) || !yourTurn) {
             return;
         }
         dispatch(tokenPowerUse([fun, id]));
@@ -62,7 +62,7 @@ function ItemToken({ item, AI, noBattle }) {
             >
                 <Item
                     onClick={() => {
-                        handleUseToken(item.functionToken(All), item.id);
+                        handleUseToken(item.functionToken(all), item.id);
                     }}
                 >
                     {item.icon}

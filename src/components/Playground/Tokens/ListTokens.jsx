@@ -15,9 +15,9 @@ function ListTokens({ list, AI }) {
     return (
         <List>
             <AnimatePresence>
-                {list.map((el, i) => (
-                    <ItemToken item={el} key={el.id} AI={AI} />
-                ))}
+                {list.map((el) => {
+                    return <ItemToken item={el} key={el.id} AI={AI} />;
+                })}
             </AnimatePresence>
         </List>
     );
