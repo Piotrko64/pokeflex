@@ -1,6 +1,7 @@
 import clone from "lodash.clone";
 import Hit from "../../../Audio/actions/Hit.wav";
 import pick from "../../../Audio/actions/PickingCart.wav";
+import block from "../../../Audio/actions/blockAction.wav";
 
 import { findTokenByName } from "../../../data/dataTokens/allTokens";
 
@@ -39,6 +40,10 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
         return { ...state, whoAttack, whoAttackID };
     }
 
+    if (!state.whoAttackID) {
+        audioPlay(block);
+        return { ...state };
+    }
     teamEnemy.forEach((e, i) => {
         if (e.id === payload) {
             Enemy = { ...e };

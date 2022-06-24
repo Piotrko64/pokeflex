@@ -9,7 +9,9 @@ export default function charging(state, AI) {
     let thisTeam = AI ? newState.enemyTeam : newState.myTeam;
     const strongerElectroPokemonID = [...thisTeam]
         .filter(({ type }) => type === "Electro")
-        .sort((a, b) => b.hp - a.hp)[0].id;
+        .sort((a, b) => b.hp - a.hp)[0]?.id;
+
+    if (!strongerElectroPokemonID) return state;
 
     const newStateTeam = {
         [AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) =>

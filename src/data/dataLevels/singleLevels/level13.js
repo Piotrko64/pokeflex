@@ -1,6 +1,8 @@
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
+import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
+
 export const level13 = {
     id: "level13Normal",
     name: "level 13",
@@ -11,4 +13,5 @@ background: linear-gradient(209deg, rgba(105,123,159,1) 47%, rgba(81,193,57,1) 1
     award: {
         tokens: findTokenByName("Robber"),
     },
+    music: Tribe,
 };
