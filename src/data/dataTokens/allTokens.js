@@ -27,6 +27,8 @@ import {
     GiShieldcomb,
     GiExtraTime,
     GiPunchBlast,
+    GiFallingLeaf,
+    GiRobber,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import shieldStone from "./powerTokens/shieldStone";
@@ -35,6 +37,8 @@ import { BsBatteryFull, BsSnow } from "react-icons/bs";
 import slow from "./powerTokens/slow";
 import charging from "./powerTokens/charging";
 import punchMachamp from "./powerTokens/punchMachamp";
+
+import robber from "./powerTokens/robber";
 
 export const allTokens = [
     {
@@ -158,6 +162,14 @@ export const allTokens = [
         icon: <GiShieldcomb />,
         functionToken: shieldStone,
         desc: "Give your stronger pokemon **+10 hp** and **+1 defense**",
+    },
+    {
+        id: v4(),
+
+        name: "Robber",
+        icon: <GiRobber />,
+        functionToken: robber,
+        desc: "Deal 3 damage random enemy and destroy his random token",
     },
 ];
 

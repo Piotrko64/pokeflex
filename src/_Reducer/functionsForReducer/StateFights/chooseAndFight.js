@@ -38,6 +38,7 @@ export default function chooseAndFight(state, payload, tF, tE, computer) {
 
         return { ...state, whoAttack, whoAttackID };
     }
+
     teamEnemy.forEach((e, i) => {
         if (e.id === payload) {
             Enemy = { ...e };
