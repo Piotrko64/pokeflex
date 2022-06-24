@@ -165,11 +165,11 @@ export const allTokens = [
     },
     {
         id: v4(),
-
+        idAward: "robsadw",
         name: "Robber",
         icon: <GiRobber />,
         functionToken: robber,
-        desc: "Deal 3 damage random enemy and destroy his random token",
+        desc: "Deal 3 damage random enemy and destroy his random token. If enemy don't have any tokens deal 13 damage",
     },
 ];
 
