@@ -8,6 +8,7 @@ import { level10 } from "./singleLevels/level10";
 import { level11 } from "./singleLevels/level11";
 import { level12 } from "./singleLevels/level12";
 import { level13 } from "./singleLevels/level13";
+import { level14 } from "./singleLevels/level14";
 import { level2 } from "./singleLevels/level2";
 import { level3 } from "./singleLevels/level3";
 import { level4 } from "./singleLevels/level4";
@@ -42,6 +43,7 @@ const levels = [
     level11,
     level12,
     level13,
+    level14,
 ];
 
 export default levels;
