@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ListButtons } from "./ListNavigateButtons";
-
+import { useNavigate } from "react-router-dom";
 const Content = styled.div`
     display: flex;
     justify-content: center;
@@ -31,6 +31,7 @@ const Button = styled.button`
 `;
 
 const ButtonsNavigate = () => {
+    const navigate = useNavigate();
     return (
         <Content>
             {ListButtons.map((el) => (
@@ -38,7 +39,7 @@ const ButtonsNavigate = () => {
                     <Button color={el.color}>{el.text}</Button>
                 </Link>
             ))}
-            <Button color="#e76700" onClick={() => window.location.reload()}>
+            <Button color="#e76700" onClick={() => navigate(0)}>
                 Play Again
             </Button>
         </Content>
