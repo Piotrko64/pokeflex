@@ -20,10 +20,10 @@ const Machamp = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png",
     name: "Machamp",
     type: "Rock",
-    hp: 62,
+    hp: 48,
     attack: 10,
     specialAttack: 12,
-    speed: 31,
+    speed: 26,
     defense: 2,
     revenge: 2,
 };
