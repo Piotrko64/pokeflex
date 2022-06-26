@@ -13,7 +13,7 @@ background: linear-gradient(209deg, rgba(80,145,163,1) 47%, rgba(62,66,99,1) 100
         findPokemonByName("Gyarados"),
         findPokemonByName("Raichu"),
     ],
-    enemyTokens: [findTokenByName("Punch"), findTokenByName("Slow"), findTokenByName("Fountain")],
+    enemyTokens: [findTokenByName("Slow"), findTokenByName("Fountain")],
     award: {
         pokemons: findPokemonByName("Onix"),
     },
