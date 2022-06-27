@@ -1,16 +1,17 @@
+import { arrayTokenInterface } from "../../types/pokemonTokenData/tokenInterface";
 import { v4 } from "uuid";
 // function for roken
-import electroAction from "../dataTokens/powerTokens/electroaction";
-import uninvitedGuest from "../dataTokens/powerTokens/uninvitedguest";
-import fountain from "../dataTokens/powerTokens/fountain";
-import sacrifice from "../dataTokens/powerTokens/sacrifice";
-import resurrection from "../dataTokens/powerTokens/resurrection";
+import electroAction from "./powerTokens/electroaction";
+import uninvitedGuest from "./powerTokens/uninvitedguest";
+import fountain from "./powerTokens/fountain";
+import sacrifice from "./powerTokens/sacrifice";
+import resurrection from "./powerTokens/resurrection";
 
-import fishingRod from "../dataTokens/powerTokens/fishingRod";
-import conflagration from "../dataTokens/powerTokens/conflagration";
-import highGrass from "../dataTokens/powerTokens/highGrass";
-import punch from "../dataTokens/powerTokens/punch";
-import lighter from "../dataTokens/powerTokens/lighter";
+import fishingRod from "./powerTokens/fishingRod";
+import conflagration from "./powerTokens/conflagration";
+import highGrass from "./powerTokens/highGrass";
+import punch from "./powerTokens/punch";
+import lighter from "./powerTokens/lighter";
 
 // Import Icons
 
@@ -27,7 +28,6 @@ import {
     GiShieldcomb,
     GiExtraTime,
     GiPunchBlast,
-    GiFallingLeaf,
     GiRobber,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
@@ -40,7 +40,7 @@ import punchMachamp from "./powerTokens/punchMachamp";
 
 import robber from "./powerTokens/robber";
 
-export const allTokens = [
+export const allTokens: arrayTokenInterface = [
     {
         id: v4(),
         idAward: "Bilzisa456",
@@ -171,8 +171,8 @@ export const allTokens = [
         functionToken: robber,
         desc: "Deal 3 damage random enemy and destroy his random token. If enemy don't have any tokens deal 13 damage",
     },
-];
+].map((token) => ({ ...token, id: v4() }));
 
-export function findTokenByName(name) {
+export function findTokenByName(name: string) {
     return { ...allTokens.find((el) => el.name === name), id: v4() } || allTokens[3];
 }
