@@ -15,7 +15,7 @@ const HPminus = styled(HPplus)`
     text-shadow: 0px 0px 14px #2c8a00;
 `;
 
-function MotionValue({ value }) {
+function MotionValue({ value }: any) {
     return (
         <motion.div
             layout
@@ -29,22 +29,19 @@ function MotionValue({ value }) {
     );
 }
 
-export function AnimHP({ value, deleteHpChange }) {
+export function AnimHP({ value, deleteHpChange }: { value: number; deleteHpChange: any }) {
     useEffect(() => {
         setTimeout(() => {
             deleteHpChange();
         }, 750);
     }, []);
-    return (
-        !!value &&
-        (value < 0 ? (
-            <HPplus>
-                <MotionValue value={-value} />
-            </HPplus>
-        ) : (
-            <HPminus>
-                <MotionValue value={value} />
-            </HPminus>
-        ))
+    return value < 0 ? (
+        <HPplus>
+            <MotionValue value={-value} />
+        </HPplus>
+    ) : (
+        <HPminus>
+            <MotionValue value={value} />
+        </HPminus>
     );
 }

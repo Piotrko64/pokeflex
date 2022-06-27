@@ -26,7 +26,7 @@ function GroundForCards({
 }: {
     pokemons: arrayPokemonInterface;
     tokens: arrayTokenInterface;
-    AI: boolean;
+    AI?: boolean;
 }) {
     return (
         <PlayGround AI={AI}>

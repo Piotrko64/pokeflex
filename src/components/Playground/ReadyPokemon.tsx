@@ -13,6 +13,7 @@ import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordi
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
+import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -21,11 +22,11 @@ const Pokemon = styled.div`
     margin: 15px;
 `;
 
-function ReadyPokemon({ value }) {
-    const [hpChange, setHpChange] = useState(value.hp);
-    const [arrayHp, setArrayHp] = useState([]);
+function ReadyPokemon({ value }: { value: pokemonInterface }) {
+    const [hpChange, setHpChange] = useState<any>(value.hp);
+    const [arrayHp, setArrayHp] = useState<Array<number>>([]);
 
-    const pokemonRef = useRef(null);
+    const pokemonRef = useRef<HTMLDivElement>(null);
 
     const dispatch = useDispatch();
 
@@ -34,7 +35,7 @@ function ReadyPokemon({ value }) {
     usePushCoordinates(value, pokemonRef);
     useYourAttack(value, pokemonRef);
 
-    function deleteHpChange() {
+    function deleteHpChange(): void {
         setArrayHp((ar) => ar.filter((_, i) => i !== 0));
     }
 
@@ -42,7 +43,7 @@ function ReadyPokemon({ value }) {
         if (yourTurn) {
             dispatch(choose(value.id));
 
-            const { x, y } = pokemonRef.current.getBoundingClientRect();
+            const { x, y } = pokemonRef.current?.getBoundingClientRect()!;
 
             dispatch(animation([x, y]));
         } else {
@@ -78,9 +79,8 @@ function ReadyPokemon({ value }) {
             >
                 <CardPokemon value={value} versionMini />
             </motion.div>
-            <>
-                <ListAnimHP listHp={arrayHp} deleteHpChange={deleteHpChange} />
-            </>
+
+            <ListAnimHP listHp={arrayHp} deleteHpChange={deleteHpChange} />
         </Pokemon>
     );
 }

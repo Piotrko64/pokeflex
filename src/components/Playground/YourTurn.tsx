@@ -14,7 +14,7 @@ const Flip = styled.div`
     align-items: center;
 
     -moz-backface-visibility: hidden;
-    transform: ${(props) => (!props.turn ? "rotateX(180deg)" : "rotateX(0deg)")};
+    transform: ${(props: { turn: boolean }) => (!props.turn ? "rotateX(180deg)" : "rotateX(0deg)")};
 `;
 
 const Front = styled.div`
@@ -37,7 +37,7 @@ const Back = styled(Front)`
     color: red;
 `;
 
-function YourTurn({ turn }) {
+function YourTurn({ turn = true }: { turn: boolean }) {
     return (
         <Flip turn={turn}>
             <Front>Your turn</Front> <Back>Enemy turn</Back>

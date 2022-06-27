@@ -27,7 +27,7 @@ const WholeField = styled.div`
 `;
 
 function CompletePlayground({ music = quickGameSoundtrack }) {
-    const { win, yourTurn, friendsTeam, friendsTokens, enemyTeam, enemyTokens } = useSelectorStateFight();
+    const { whoWin, yourTurn, myTeam, myTokens, enemyTeam, enemyTokens } = useSelectorStateFight();
 
     const { volume } = UseSelectorSettings();
 
@@ -44,8 +44,8 @@ function CompletePlayground({ music = quickGameSoundtrack }) {
     useTurnEnemy();
 
     const GroundForFriends = useMemo(
-        () => <GroundForCards pokemons={friendsTeam} tokens={friendsTokens} />,
-        [friendsTeam, friendsTokens]
+        () => <GroundForCards pokemons={myTeam} tokens={myTokens} />,
+        [myTeam, myTokens]
     );
     const GroundForEnemy = useMemo(
         () => <GroundForCards pokemons={enemyTeam} tokens={enemyTokens} AI={true} />,
@@ -59,7 +59,7 @@ function CompletePlayground({ music = quickGameSoundtrack }) {
                 {YourTurnMemo}
                 {GroundForEnemy}
             </WholeField>
-            {win && <WinLose value={win} />}
+            {whoWin && <WinLose value={whoWin} />}
         </>
     );
 }
