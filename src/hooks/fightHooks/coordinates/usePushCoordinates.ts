@@ -14,8 +14,8 @@ const UsePushCoordinates = (value: pokemonInterface, pokemonRef: RefObject<HTMLD
             pushCoordinate({
                 id: value.id,
                 coordinate: [
-                    pokemonRef.current!.getBoundingClientRect().x,
-                    pokemonRef.current!.getBoundingClientRect().y,
+                    pokemonRef.current?.getBoundingClientRect().x,
+                    pokemonRef.current?.getBoundingClientRect().y,
                 ],
                 name: value.name,
             })
@@ -28,8 +28,8 @@ const UsePushCoordinates = (value: pokemonInterface, pokemonRef: RefObject<HTMLD
                 pushCoordinate([
                     value.id,
                     [
-                        pokemonRef.current!.getBoundingClientRect().x,
-                        pokemonRef.current!.getBoundingClientRect().y,
+                        pokemonRef.current?.getBoundingClientRect().x,
+                        pokemonRef.current?.getBoundingClientRect().y,
                     ],
                     value.name,
                 ])

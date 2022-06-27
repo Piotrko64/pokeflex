@@ -58,7 +58,7 @@ const SliceStateFight = createSlice({
             return { ...state, whoAttackID: "", yourTurn: true };
         },
         pushCoordinate: (state, action) => {
-            const [id, coordinate, name] = action.payload;
+            const { id, coordinate, name } = action.payload;
 
             return { ...state, allCoordinates: pushNewCoordinateFn(state, id, coordinate, name) };
         },

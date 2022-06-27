@@ -10,7 +10,7 @@ export default function setRandomEnemyQG() {
 
     let arrEnemy = [];
     const arrEnemyTokens = [];
-    const amountEnemy = (amount) => arrEnemy.length <= amount;
+    const amountEnemy = (amount: number) => arrEnemy.length <= amount;
 
     for (let i = 1; i <= randomAmount; i++) {
         arrEnemy.push({ ...randomPoke(), id: v4() });

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import UseSelectorYourItems from "../../../_Reducer/selectors/useSelectorYourItems";
 
 const Flex = styled.div`
     display: flex;
@@ -22,20 +23,20 @@ const Button = styled.button`
 `;
 const ButtonsComponent = () => {
     let navigate = useNavigate();
-    const pokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.teamFight);
-    const tokensTeamSelect = useSelector((state) => state.YourItemsReducer.tokensFight);
+    const { teamFight, tokensFight } = UseSelectorYourItems();
+
     function saveInLocalStorage() {
-        if (!pokemonsTeamSelect.length) {
+        if (!teamFight.length) {
             return;
         }
-        localStorage.setItem("tokens", JSON.stringify(tokensTeamSelect));
-        localStorage.setItem("pokemons", JSON.stringify(pokemonsTeamSelect));
+        localStorage.setItem("tokens", JSON.stringify(tokensFight));
+        localStorage.setItem("pokemons", JSON.stringify(teamFight));
         navigate("/");
     }
     return (
         <Flex>
             <Button onClick={() => saveInLocalStorage()}>
-                {pokemonsTeamSelect.length ? "Save and back to home" : "Please select Pokemons!"}
+                {teamFight.length ? "Save and back to home" : "Please select Pokemons!"}
             </Button>
         </Flex>
     );

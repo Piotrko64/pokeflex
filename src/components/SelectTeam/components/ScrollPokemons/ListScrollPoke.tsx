@@ -1,12 +1,13 @@
 import OnePokemonScroll from "./OnePokemonScroll";
 import ScrollListComponent from "../ScrollListComponent";
 import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
+import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
 
 export default function ListScrollPoke() {
-    const { PokemonsTeam } = UseSelectorYourItems();
+    const { pokemons } = UseSelectorYourItems();
     return (
         <ScrollListComponent>
-            {PokemonsTeam.map((el) => (
+            {pokemons.map((el: pokemonInterface) => (
                 <OnePokemonScroll key={el.id} value={el} />
             ))}
         </ScrollListComponent>

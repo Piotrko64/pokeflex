@@ -7,10 +7,11 @@ export interface levelInterface {
     color: string;
     enemyTeam: any;
     enemyTokens: any;
-    award: {
-        tokens?: any;
-        pokemons?: any;
-    };
+    award: awardsType;
     music?: HTMLAudioElement;
 }
+export type awardsType = {
+    tokens?: any;
+    pokemons?: any;
+};
 export type arrayLevelInterface = Array<levelInterface>;

@@ -46,7 +46,7 @@ const OneTokenSelect = styled.div`
 
 export default function SelectTeamMain() {
     const dispatch = useDispatch();
-    const { PokemonsTeamSelect, TokensTeamSelect } = UseSelectorYourItems();
+    const { teamFight, tokensFight } = UseSelectorYourItems();
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());
     }, []);
@@ -54,17 +54,15 @@ export default function SelectTeamMain() {
         <FlexCenter>
             <TitleScroll title="Your Team" />
             <Row>
-                {PokemonsTeamSelect.map((el) => (
+                {teamFight.map((el) => (
                     <OneCardSelect key={el.name} onClick={() => dispatch(deleteFromTeam(el.name))}>
                         <CardPokemon value={el} versionMini />
                     </OneCardSelect>
                 ))}
-                {!PokemonsTeamSelect.length && (
-                    <Alert>You must gather your party before venturing forth</Alert>
-                )}
+                {!teamFight.length && <Alert>You must gather your party before venturing forth</Alert>}
             </Row>
             <Row>
-                {TokensTeamSelect.map((el) => (
+                {tokensFight.map((el) => (
                     <OneTokenSelect key={el.name} onClick={() => dispatch(deleteFromTeamToken(el.name))}>
                         <OneTokenScroll item={el} noBattle />
                     </OneTokenSelect>
