@@ -38,7 +38,7 @@ export const useTurnEnemy = () => {
             dispatch(noWhoAttack());
         }, 500);
     }
-    return useEffect(() => {
+    useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
                 if (!enemyTeam.some((e) => e.hp > 0)) {

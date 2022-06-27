@@ -11,12 +11,9 @@ const useIsLevelWon = (award) => {
         .map((el) => el.idAward)
         .filter(Boolean);
 
-    if (
-        arrayPokemonsIdAward?.some((el) => el === pokemons?.idAward) ||
-        arrayTokensIdAward?.some((el) => el === tokens?.idAward)
-    ) {
-        return true;
-    }
+    const isPokemonAward = arrayPokemonsIdAward?.some((el) => el === pokemons?.idAward);
+    const isTokensAward = arrayTokensIdAward?.some((el) => el === tokens?.idAward);
+    if (isPokemonAward || isTokensAward) return true;
 };
 
 export default useIsLevelWon;

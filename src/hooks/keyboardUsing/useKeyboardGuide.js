@@ -12,5 +12,6 @@ export function useKeyboardGuide(fn) {
 
     useEffect(() => {
         document.addEventListener("keydown", handleEscape);
+        return () => document.removeEventListener("keydown", handleEscape);
     }, []);
 }
