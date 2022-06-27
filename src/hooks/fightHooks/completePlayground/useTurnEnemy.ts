@@ -1,36 +1,31 @@
+import { oneCoordinate } from "./../../../types/_Reducer/stateFight";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEnemy";
+import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
 
 export const useTurnEnemy = () => {
-    const all = useSelector((state) => state.StateFightsReducer);
-
-    const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
-    const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
-
-    const enemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
-
-    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
-    const allCoordinates = useSelector((state) => state.StateFightsReducer.allCoordinates);
+    const { all, myTeam, enemyTeam, allCoordinates, enemyTokens, yourTurn } = useSelectorStateFight();
 
     const dispatch = useDispatch();
 
-    function handleComputerChoose(x) {
+    function handleComputerChoose(x: string) {
         dispatch(computerMove(x));
         dispatch(animation([]));
     }
     async function findRandom() {
-        const randomEnemy = chooseRandomEnemy(friendsTeam, enemyTeam)[0];
+        const randomEnemy = chooseRandomEnemy(myTeam, enemyTeam)[0];
         console.log(allCoordinates, randomEnemy);
-        if (allCoordinates.some((e) => e.id === randomEnemy)) {
-            dispatch(animation(allCoordinates.find((e) => e.id === randomEnemy).coordinate));
+        if (allCoordinates.some((e: oneCoordinate) => e.id === randomEnemy)) {
+            dispatch(animation(allCoordinates.find((e: oneCoordinate) => e.id === randomEnemy).coordinate));
             dispatch(computerMove(randomEnemy));
         } else {
             findRandom();
         }
     }
-    function handleMoveComputer(x) {
+    function handleMoveComputer(x: string) {
         handleComputerChoose(x);
         setTimeout(async () => {
             await findRandom();
@@ -41,7 +36,7 @@ export const useTurnEnemy = () => {
     useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                if (!enemyTeam.some((e) => e.hp > 0)) {
+                if (!enemyTeam.some((e: pokemonInterface) => e.hp > 0)) {
                     return;
                 }
                 if (enemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
@@ -49,11 +44,11 @@ export const useTurnEnemy = () => {
                     const randomToken = enemyTokens[randomNumberTokens];
 
                     dispatch(tokenPowerAi([randomToken.functionToken(all, true), randomToken.id]));
-                } else if (chooseRandomEnemy(friendsTeam, enemyTeam)[1]) {
-                    setTimeout(() => handleMoveComputer(chooseRandomEnemy(friendsTeam, enemyTeam)[1]), 400);
+                } else if (chooseRandomEnemy(myTeam, enemyTeam)[1]) {
+                    setTimeout(() => handleMoveComputer(chooseRandomEnemy(myTeam, enemyTeam)[1]), 400);
                 } else {
                     console.log("else");
-                    handleMoveComputer(friendsTeam[0].id);
+                    handleMoveComputer(myTeam[0].id);
                 }
             }, 1000);
         }

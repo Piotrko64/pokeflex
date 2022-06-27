@@ -19,7 +19,7 @@ const ToolTipComponent = styled.div`
     }
 `;
 
-function Tooltip({ title, desc }) {
+function Tooltip({ title, desc }: { title: string; desc: string }) {
     return (
         <ToolTipComponent>
             <h2>{title}</h2>

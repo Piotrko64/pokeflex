@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, RefObject, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import CardPokemon from "../CardPokemon/CardPokemon";
 
@@ -26,7 +26,7 @@ function ReadyPokemon({ value }: { value: pokemonInterface }) {
     const [hpChange, setHpChange] = useState<any>(value.hp);
     const [arrayHp, setArrayHp] = useState<Array<number>>([]);
 
-    const pokemonRef = useRef<HTMLDivElement>(null);
+    const pokemonRef = useRef<HTMLDivElement>(null)!;
 
     const dispatch = useDispatch();
 

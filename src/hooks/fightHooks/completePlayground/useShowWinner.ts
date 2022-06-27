@@ -6,23 +6,21 @@ import LoseSound from "../../../Audio/winLose/Lose.wav";
 import RemisSound from "../../../Audio/winLose/Scream.wav";
 import { useEffect } from "react";
 import { setWhoWin } from "../../../_Reducer/StateFight";
+import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
 
 export const useShowWinner = () => {
-    const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
-    const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
-
-    const win = useSelector((state) => state.StateFightsReducer.whoWin);
+    const { whoWin, myTeam, enemyTeam } = useSelectorStateFight();
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (win) {
+        if (whoWin) {
             return;
         }
-        if (friendsTeam.length === 0 && enemyTeam.length === 0) {
+        if (myTeam.length === 0 && enemyTeam.length === 0) {
             audioPlay(RemisSound);
             dispatch(setWhoWin("remis"));
-        } else if (friendsTeam.length === 0) {
+        } else if (myTeam.length === 0) {
             audioPlay(LoseSound);
             dispatch(setWhoWin("lose"));
         } else if (enemyTeam.length === 0) {
@@ -32,5 +30,5 @@ export const useShowWinner = () => {
         return () => {
             setWhoWin("");
         };
-    }, [friendsTeam.length, enemyTeam.length]);
+    }, [myTeam.length, enemyTeam.length]);
 };
