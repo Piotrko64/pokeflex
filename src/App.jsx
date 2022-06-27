@@ -1,5 +1,5 @@
 import "atropos/css";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import MainRouting from "./components/Routing/MainRouting";
@@ -26,12 +26,13 @@ const Guide = styled.div`
 
 function App() {
     const [openGuide, setOpenGuide] = useState(false);
+    const dispatch = useDispatch();
 
     useKeyboardGuide(setOpenGuide);
 
-    const dispatch = useDispatch();
-
-    dispatch(addItemsFromLocalStorage());
+    useEffect(() => {
+        dispatch(addItemsFromLocalStorage());
+    }, []);
 
     return (
         <Fragment>

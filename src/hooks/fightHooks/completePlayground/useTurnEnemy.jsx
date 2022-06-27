@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEnemy";
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
 
-const UseTurnEnemy = () => {
+export const useTurnEnemy = () => {
     const all = useSelector((state) => state.StateFightsReducer);
 
     const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
@@ -59,5 +59,3 @@ const UseTurnEnemy = () => {
         }
     }, [yourTurn]);
 };
-
-export default UseTurnEnemy;

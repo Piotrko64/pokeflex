@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import setRandomEnemyQG from "../../functions/QuickGame/setRandomEnemyQG";
 import { setEnemyTeam } from "../../_Reducer/StateFight";
 
-const UseQuickGameEnemy = () => {
+export const useQuickGameEnemy = () => {
     const dispatch = useDispatch();
     const enemy = setRandomEnemyQG();
 
@@ -11,5 +11,3 @@ const UseQuickGameEnemy = () => {
         dispatch(setEnemyTeam([enemy[0], enemy[1]]));
     }, []);
 };
-
-export default UseQuickGameEnemy;

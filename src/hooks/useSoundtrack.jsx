@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-export default function useSoundtrack(music, volumeMusic) {
+export function useSoundtrack(music, volumeMusic) {
     const [audio, setAudio] = useState(new Audio(music));
     function changeAudio(e) {
         setAudio(new Audio(e));

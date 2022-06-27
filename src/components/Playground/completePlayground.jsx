@@ -9,11 +9,11 @@ import YourTurn from "./YourTurn";
 import { useEffect, useMemo } from "react";
 
 import WinLose from "./WinLoseComponents/WinLose";
-import useSountrack from "../../hooks/useSoundtrack";
+import { useSoundtrack } from "../../hooks/useSoundtrack";
 
-import useBeginFight from "../../hooks/fightHooks/completePlayground/useBeginFight";
-import useShowWinner from "../../hooks/fightHooks/completePlayground/useShowWinner";
-import useTurnEnemy from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
+import { useBeginFight } from "../../hooks/fightHooks/completePlayground/useBeginFight";
+import { useShowWinner } from "../../hooks/fightHooks/completePlayground/useShowWinner";
+import { useTurnEnemy } from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
 
 const WholeField = styled.div`
     display: flex;
@@ -38,7 +38,7 @@ function CompletePlayground({ music }) {
 
     const volume = useSelector((state) => state.SettingsReducer.volume);
 
-    const setMusic = useSountrack(music, volume);
+    const setMusic = useSoundtrack(music, volume);
 
     const YourTurnMemo = useMemo(() => <YourTurn turn={yourTurn} />, [yourTurn]);
 

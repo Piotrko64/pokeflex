@@ -7,7 +7,7 @@ import RemisSound from "../../../Audio/winLose/Scream.wav";
 import { useEffect } from "react";
 import { setWhoWin } from "../../../_Reducer/StateFight";
 
-const UseShowWinner = () => {
+export const useShowWinner = () => {
     const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
     const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
 
@@ -34,5 +34,3 @@ const UseShowWinner = () => {
         };
     }, [friendsTeam.length, enemyTeam.length]);
 };
-
-export default UseShowWinner;

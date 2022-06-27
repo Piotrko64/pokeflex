@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { setMyTeam, setWhoWin } from "../../../_Reducer/StateFight";
 
-const useBeginFight = () => {
+export const useBeginFight = () => {
     const dispatch = useDispatch();
     const actualTeam = useSelector((state) => state.YourItemsReducer.teamFight);
     const actualTokens = useSelector((state) => state.YourItemsReducer.tokensFight);
@@ -14,5 +14,3 @@ const useBeginFight = () => {
         dispatch(setMyTeam([actualTeam, actualTokens]));
     }, []);
 };
-
-export default useBeginFight;
