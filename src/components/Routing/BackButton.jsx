@@ -17,7 +17,7 @@ const Back = styled.div`
     z-index: 999;
 `;
 
-const BackButton = () => {
+export const BackButton = () => {
     const navigation = useNavigate();
     const location = useLocation();
 
@@ -41,5 +41,3 @@ const BackButton = () => {
         )
     );
 };
-
-export default BackButton;

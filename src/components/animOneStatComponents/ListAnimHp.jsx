@@ -1,4 +1,4 @@
-import AnimHP from "./AnimHp";
+import { AnimHP } from "./AnimHp";
 
 function ListAnimHP({ listHp, deleteHpChange }) {
     return (

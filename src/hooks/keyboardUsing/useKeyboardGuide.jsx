@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useKeyboardGuide(fn) {
+export function useKeyboardGuide(fn) {
     function handleEscape(e) {
         const { key } = e;
         if (key === "Escape") {

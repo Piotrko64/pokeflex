@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import BackButton from "./BackButton";
+import { BackButton } from "./BackButton";
 
 const MainComponentLayoutRouting = ({ children }) => {
     return (

@@ -29,7 +29,7 @@ function MotionValue({ value }) {
     );
 }
 
-function AnimHP({ value, deleteHpChange }) {
+export function AnimHP({ value, deleteHpChange }) {
     useEffect(() => {
         setTimeout(() => {
             deleteHpChange();
@@ -48,4 +48,3 @@ function AnimHP({ value, deleteHpChange }) {
         ))
     );
 }
-export default AnimHP;

@@ -7,7 +7,7 @@ import MainComponentGuide from "./components/Quide/MainComponentGuide";
 import { useDispatch } from "react-redux";
 
 import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
-import useKeyboardGuide from "./hooks/keyboardUsing/useKeyboardGuide";
+import { useKeyboardGuide } from "./hooks/keyboardUsing/useKeyboardGuide";
 import { addItemsFromLocalStorage } from "./_Reducer/YourItems";
 
 import Tippy from "@tippyjs/react";

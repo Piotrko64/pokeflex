@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import RoutingGuide from "./Routing";
 import ListObjectsToRender from "./DataToRender";
-import useSwitch from "../../hooks/useSwitch";
+import { useSwitch } from "../../hooks/useSwitch";
 import ReactDom from "react-dom";
 import { AnimatePresence } from "framer-motion";
 

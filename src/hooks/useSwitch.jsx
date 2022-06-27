@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // 'listObjectRender must be array objects with propert 'name' and 'render''
 
-export default function useSwitch(listObjectsRender, actualRender, defaultRender) {
+export function useSwitch(listObjectsRender, actualRender, defaultRender) {
     const [actualValue, setActualValue] = useState(actualRender);
 
     function changeRender(value) {
