@@ -4,7 +4,7 @@ import { addFromLocalStorageFn } from "./functionsForReducer/YourItems/addFromLo
 import { addToTeamFn } from "./functionsForReducer/YourItems/addToTeam";
 import { addToTeamTokenFn } from "./functionsForReducer/YourItems/addToTeamToken";
 import { deleteFromTeamTokenFn } from "./functionsForReducer/YourItems/deleteFromTeamToken";
-import findTokensLocal from "./helpers/findTokensLocal";
+import { findTokensLocal } from "./helpers/findTokensLocal";
 import { addNewTokenFn } from "./functionsForReducer/YourItems/addNewToken";
 import { createSlice, current } from "@reduxjs/toolkit";
 

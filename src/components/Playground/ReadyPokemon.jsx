@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import blockSound from "../../Audio/actions/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
-import audioPlay from "../../functions/audioPlay";
+import { audioPlay } from "../../functions/audioPlay";
 import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordinates";
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";

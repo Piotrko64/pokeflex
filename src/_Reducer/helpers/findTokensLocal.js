@@ -1,7 +1,7 @@
 import { allTokens } from "../../data/dataTokens/allTokens";
 import { startTokens } from "../../data/startItems";
 
-export default function findTokensLocal() {
+export function findTokensLocal() {
     const idTokens = JSON.parse(localStorage.getItem("tokens"))?.map((e) => e.name);
     let arrayTokens = [];
 
