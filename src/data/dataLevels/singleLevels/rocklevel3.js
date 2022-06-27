@@ -9,7 +9,6 @@ const punchMachampToken = {
     name: "Punch of Machamp",
 
     icon: <GiPunchBlast />,
-
     functionToken: punchMachamp,
     desc: `Deal **30** points damage of strongest enemy and **block** him. 
      **What a blow!**`,
