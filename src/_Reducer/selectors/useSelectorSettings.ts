@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const UseSelectorSettings = () => {
-    const volume = useSelector((state) => state.SettingsReducer.volume);
+    const volume = useSelector((state: any) => state.SettingsReducer.volume);
     return { volume };
 };
 

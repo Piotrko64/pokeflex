@@ -40,7 +40,7 @@ export const startPokemons: arrayPokemonInterface = [
         defense: 3,
         revenge: 2,
     },
-];
+].map((el) => ({ ...el, id: v4() }));
 
 export const startTokens: arrayTokenInterface = [
     {
