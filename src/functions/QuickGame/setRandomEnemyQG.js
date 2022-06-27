@@ -10,6 +10,7 @@ export default function setRandomEnemyQG() {
 
     let arrEnemy = [];
     const arrEnemyTokens = [];
+    const amountEnemy = (amount) => arrEnemy.length <= amount;
 
     for (let i = 1; i <= randomAmount; i++) {
         arrEnemy.push({ ...randomPoke(), id: v4() });
@@ -19,22 +20,33 @@ export default function setRandomEnemyQG() {
         arrEnemyTokens.push({ ...randomToken(), id: v4() });
     }
 
-    if (arrEnemy.length <= 2) {
-        arrEnemy = arrEnemy.map(({ hp, defense, specialAttack, ...el }) => ({
+    arrEnemy = arrEnemy.map(({ ...el }) => {
+        const { hp, defense, specialAttack, revenge, speed, attack } = el;
+        const twoEnemy = () => {
+            if (amountEnemy(2)) {
+                return {
+                    hp: hp + 20,
+                    defense: defense + 2,
+                    specialAttack: specialAttack + 6,
+                };
+            }
+        };
+        const oneEnemy = () => {
+            if (amountEnemy(1)) {
+                return {
+                    revenge: revenge + 4,
+                    speed: speed + 30,
+                    attack: attack + 4,
+                };
+            }
+        };
+
+        return {
             ...el,
-            hp: hp + 20,
-            defense: defense + 2,
-            specialAttack: specialAttack + 6,
-        }));
-    }
-    if (arrEnemy.length <= 1) {
-        arrEnemy = arrEnemy.map(({ revenge, speed, attack, ...el }) => ({
-            ...el,
-            revenge: revenge + 4,
-            speed: speed + 30,
-            attack: attack + 4,
-        }));
-    }
+            ...twoEnemy(),
+            ...oneEnemy(),
+        };
+    });
 
     return [arrEnemy, arrEnemyTokens];
 }
