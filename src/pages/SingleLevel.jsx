@@ -19,8 +19,8 @@ function SingleLevel() {
             navigate("/ChooseLevel");
             return;
         }
-        const enemyTeam = level.enemyTeam;
-        const enemyTokens = level.enemyTokens;
+        const {enemyTeam, enemyTokens } = level;
+       
 
         setMusic(level.music);
 
