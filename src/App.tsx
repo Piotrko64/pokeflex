@@ -21,11 +21,11 @@ const Guide = styled.div`
     z-index: 100;
     cursor: pointer;
     z-index: 10001;
-    visibility: ${(props) => (props.show ? "hidden" : "")};
+    visibility: ${(props: { show: boolean }) => (props.show ? "hidden" : "")};
 `;
 
 function App() {
-    const [openGuide, setOpenGuide] = useState(false);
+    const [openGuide, setOpenGuide] = useState<boolean>(false);
     const dispatch = useDispatch();
 
     useKeyboardGuide(setOpenGuide);

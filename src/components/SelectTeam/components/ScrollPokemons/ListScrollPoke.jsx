@@ -1,10 +1,9 @@
 import OnePokemonScroll from "./OnePokemonScroll";
-
 import ScrollListComponent from "../ScrollListComponent";
-import { useSelector } from "react-redux";
+import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 
 export default function ListScrollPoke() {
-    const PokemonsTeam = useSelector((state) => state.YourItemsReducer.pokemons);
+    const { PokemonsTeam } = UseSelectorYourItems();
     return (
         <ScrollListComponent>
             {PokemonsTeam.map((el) => (

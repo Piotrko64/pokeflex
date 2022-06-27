@@ -1,10 +1,9 @@
 import ScrollListComponent from "../ScrollListComponent";
-
 import OneTokenScroll from "./OneTokenScroll";
-import { useSelector } from "react-redux";
+import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 
 export default function ListScrollTokens() {
-    const tokens = useSelector((state) => state.YourItemsReducer.tokens);
+    const { tokens } = UseSelectorYourItems();
 
     return (
         <ScrollListComponent>

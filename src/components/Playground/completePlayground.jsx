@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 import quickGameSoundtrack from "../../Audio/mainSoundtracks/Chill.mp3";
 
-import { useSelector } from "react-redux";
-
 import GroundForCards from "./GroundForCards";
 import YourTurn from "./YourTurn";
 import { useEffect, useMemo } from "react";
@@ -14,6 +12,9 @@ import { useSoundtrack } from "../../hooks/useSoundtrack";
 import { useBeginFight } from "../../hooks/fightHooks/completePlayground/useBeginFight";
 import { useShowWinner } from "../../hooks/fightHooks/completePlayground/useShowWinner";
 import { useTurnEnemy } from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
+import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
+import UseSelectorSettings from "../../_Reducer/selectors/useSelectorSettings";
+import { stateFightInterface } from "../../types/_Reducer/stateFight";
 
 const WholeField = styled.div`
     display: flex;
@@ -25,25 +26,17 @@ const WholeField = styled.div`
     min-height: 100vh;
 `;
 
-function CompletePlayground({ music }) {
-    const win = useSelector((state) => state.StateFightsReducer.whoWin);
+function CompletePlayground({ music = quickGameSoundtrack }) {
+    const { win, yourTurn, friendsTeam, friendsTokens, enemyTeam, enemyTokens } = useSelectorStateFight();
 
-    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
-
-    const friendsTeam = useSelector((state) => state.StateFightsReducer.myTeam);
-    const friendsTokens = useSelector((state) => state.StateFightsReducer.myTokens);
-
-    const enemyTeam = useSelector((state) => state.StateFightsReducer.enemyTeam);
-    const enemyTokens = useSelector((state) => state.StateFightsReducer.enemyTokens);
-
-    const volume = useSelector((state) => state.SettingsReducer.volume);
+    const { volume } = UseSelectorSettings();
 
     const setMusic = useSoundtrack(music, volume);
 
     const YourTurnMemo = useMemo(() => <YourTurn turn={yourTurn} />, [yourTurn]);
 
     useEffect(() => {
-        setMusic(music || quickGameSoundtrack);
+        setMusic(music);
     }, [music]);
 
     useBeginFight();

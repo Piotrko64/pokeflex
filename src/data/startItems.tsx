@@ -1,12 +1,13 @@
+import { arrayTokenInterface } from "../types/pokemonTokenData/tokenInterface";
+import { arrayPokemonInterface } from "../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
-import { GiWaterFountain, GiBlackHandShield} from "react-icons/gi";
+import { GiWaterFountain, GiBlackHandShield } from "react-icons/gi";
 
 import fountain from "./dataTokens/powerTokens/fountain";
 import resurrection from "./dataTokens/powerTokens/resurrection";
 
-export const startPokemons = [
+export const startPokemons: arrayPokemonInterface = [
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
         type: "Water",
@@ -18,7 +19,6 @@ export const startPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",
         type: "Fire",
@@ -30,7 +30,6 @@ export const startPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         name: "Bulbasaur",
         type: "Grass",
@@ -43,19 +42,17 @@ export const startPokemons = [
     },
 ];
 
-export const startTokens = [
+export const startTokens: arrayTokenInterface = [
     {
-        id: v4(),
         name: "Fountain",
         icon: <GiWaterFountain />,
         functionToken: fountain,
         desc: "Give your strongest pokemon **+16** hp and change its type to **Water**",
     },
     {
-        id: v4(),
         name: "Resurrection",
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
         desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **13hp**",
     },
-];
+].map((el) => ({ ...el, id: v4() }));

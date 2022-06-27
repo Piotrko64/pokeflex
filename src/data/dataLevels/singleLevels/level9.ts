@@ -1,4 +1,5 @@
 import { v4 } from "uuid";
+import { levelInterface } from "../../../types/levels/levelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -15,7 +16,7 @@ const swinub = {
     revenge: 3,
 };
 
-export const level9 = {
+export const level9: levelInterface = {
     id: "level9HARDD1",
     name: "level 9",
     color: `background: rgb(207,142,39);

@@ -12,6 +12,7 @@ import { audioPlay } from "../../functions/audioPlay";
 import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordinates";
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";
+import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -28,7 +29,7 @@ function ReadyPokemon({ value }) {
 
     const dispatch = useDispatch();
 
-    const yourTurn = useSelector((state) => state.StateFightsReducer.yourTurn);
+    const { yourTurn } = useSelectorStateFight();
 
     usePushCoordinates(value, pokemonRef);
     useYourAttack(value, pokemonRef);

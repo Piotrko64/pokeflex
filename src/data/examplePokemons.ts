@@ -1,8 +1,8 @@
+import { arrayPokemonInterface } from "../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
 
-const allPokemons = [
+const allPokemons: arrayPokemonInterface = [
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",
         type: "Fire",
@@ -14,7 +14,6 @@ const allPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         idAward: "Pika34535345",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
         name: "Pikachu",
@@ -28,7 +27,6 @@ const allPokemons = [
     },
 
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
         type: "Water",
@@ -62,7 +60,6 @@ const allPokemons = [
         revenge: 2,
     },
     {
-        id: v4(),
         idAward: "THMAgikarpod",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
         name: "Magikarp",
@@ -87,7 +84,6 @@ const allPokemons = [
         revenge: 4,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
         name: "Raichu",
         type: "Turbo Electro",
@@ -123,7 +119,6 @@ const allPokemons = [
         revenge: 5,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
         name: "Charizard",
         type: "Turbo Fire",
@@ -135,7 +130,6 @@ const allPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
         name: "Torterra",
         type: "Grass",
@@ -147,7 +141,6 @@ const allPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         idAward: "Cynwdqweaquil456Normq45al",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/155.png",
         name: "Cyndaquil",
@@ -160,7 +153,6 @@ const allPokemons = [
         revenge: 3,
     },
     {
-        id: v4(),
         idAward: "Superspearowforme",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
         name: "Spearow",
@@ -173,7 +165,6 @@ const allPokemons = [
         revenge: 6,
     },
     {
-        id: v4(),
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
         name: "Snorlax",
         type: "Normal",
@@ -185,7 +176,6 @@ const allPokemons = [
         revenge: 1,
     },
     {
-        id: v4(),
         idAward: "54Tur234twig",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
         name: "Turtwig",
@@ -198,7 +188,6 @@ const allPokemons = [
         revenge: 1,
     },
     {
-        id: v4(),
         idAward: "EEvesesf78",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
         name: "Eevee",
@@ -211,7 +200,6 @@ const allPokemons = [
         revenge: 2,
     },
     {
-        id: v4(),
         idAward: "MRMIMe45648normalPS",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
         name: "Mr mime",
@@ -224,7 +212,6 @@ const allPokemons = [
         revenge: 2,
     },
     {
-        id: v4(),
         idAward: "fl546ar4556eon",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/136.png",
         name: "Flareon",
@@ -237,7 +224,6 @@ const allPokemons = [
         revenge: 2,
     },
     {
-        id: v4(),
         idAward: "Lapras456seo456n",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
         name: "Lapras",
@@ -250,7 +236,6 @@ const allPokemons = [
         revenge: 0,
     },
     {
-        id: v4(),
         idAward: "ONii342XXyeo456n",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
         name: "Onix",
@@ -263,7 +248,6 @@ const allPokemons = [
         revenge: 1,
     },
     {
-        id: v4(),
         idAward: "Geodud546",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png",
         name: "Geodude",
@@ -315,6 +299,6 @@ const allPokemons = [
 
 export const examplePokemons = allPokemons.map((e) => ({ ...e, id: v4() }));
 
-export function findPokemonByName(name) {
+export function findPokemonByName(name: string) {
     return { ...examplePokemons.find((el) => el.name === name), id: v4() };
 }

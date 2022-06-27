@@ -1,4 +1,5 @@
 import { v4 } from "uuid";
+import { levelInterface } from "../../../types/levels/levelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 
 const Pikachu = {
@@ -27,7 +28,7 @@ const Raichu = {
     revenge: 2,
 };
 
-export const electrolevel1 = {
+export const electrolevel1: levelInterface = {
     id: "electrolevel1normal",
     name: "electro level 1",
     color: `linear-gradient(

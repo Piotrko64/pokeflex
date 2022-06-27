@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 import {
     addItemsFromLocalStorage,
     deleteFromTeam,
@@ -44,9 +45,8 @@ const OneTokenSelect = styled.div`
 `;
 
 export default function SelectTeamMain() {
-    const PokemonsTeamSelect = useSelector((state) => state.YourItemsReducer.teamFight);
-    const TokensTeamSelect = useSelector((state) => state.YourItemsReducer.tokensFight);
     const dispatch = useDispatch();
+    const { PokemonsTeamSelect, TokensTeamSelect } = UseSelectorYourItems();
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());
     }, []);

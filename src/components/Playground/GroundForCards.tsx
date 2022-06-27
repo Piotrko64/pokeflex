@@ -4,12 +4,14 @@ import { AnimatePresence } from "framer-motion";
 import ReadyPokemon from "./ReadyPokemon";
 
 import ListTokens from "./Tokens/ListTokens";
+import { arrayPokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { arrayTokenInterface } from "../../types/pokemonTokenData/tokenInterface";
 
 const PlayGround = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: ${(props) => (!props.AI ? "column" : "column-reverse")};
+    flex-direction: ${(props: { AI: boolean }) => (!props.AI ? "column" : "column-reverse")};
 `;
 const GridForCards = styled.div`
     display: flex;
@@ -17,7 +19,15 @@ const GridForCards = styled.div`
 `;
 const Tokens = styled.div``;
 
-function GroundForCards({ pokemons, tokens, AI }) {
+function GroundForCards({
+    pokemons,
+    tokens,
+    AI = false,
+}: {
+    pokemons: arrayPokemonInterface;
+    tokens: arrayTokenInterface;
+    AI: boolean;
+}) {
     return (
         <PlayGround AI={AI}>
             <GridForCards>
