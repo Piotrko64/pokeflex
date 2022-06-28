@@ -6,9 +6,9 @@ import { pushNewCoordinateFn } from "./functionsForReducer/StateFights/pushNewCo
 import { stateAfterToken } from "./functionsForReducer/StateFights/stateAfterToken";
 import { stateAfterTokenAI } from "./functionsForReducer/StateFights/stateAfterTokenAI";
 import { findTokensLocal } from "./helpers/findTokensLocal";
-const stateFight: any = {
+const stateFight: stateFightInterface = {
     myTeam: JSON.parse(localStorage.getItem("pokemons")!) || startPokemons.slice(0, 3),
-    enemyTeam: false,
+    enemyTeam: [],
     whoAttack: "",
     whoAttackID: "",
     whoIsAttack: "",
@@ -34,7 +34,7 @@ const SliceStateFight = createSlice({
                 whoWin: "",
             };
         },
-        setMyTeam: (state, action) => {
+        setMyTeam: (state, action): any => {
             return {
                 ...state,
                 myTeam: action.payload[0],

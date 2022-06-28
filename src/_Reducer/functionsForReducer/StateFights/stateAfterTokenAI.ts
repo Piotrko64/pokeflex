@@ -1,15 +1,12 @@
-import tokenSound from "../../../Audio/tokens/Token.wav";
+import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import tokenSound from "../../../Audio/tokens/Token2.wav";
 import { audioPlay } from "../../../functions/audioPlay";
 
-export function stateAfterToken(fn, id) {
-    let newStateTokens = [...fn.myTokens].filter((el) => el.id !== id);
+export function stateAfterTokenAI(fn: stateFightInterface, id: string) {
+    let newStateTokens = [...fn.enemyTokens].filter((el) => el.id !== id);
     audioPlay(tokenSound);
-
     return {
         ...fn,
-        myTokens: newStateTokens,
-        whoAttackID: "",
-        yourTurn: !fn.yourTurn,
         myTeam: fn.myTeam.filter(({ hp }) => hp > 0),
         enemyTeam: fn.enemyTeam.filter(({ hp }) => hp > 0),
         grave: [
@@ -17,5 +14,8 @@ export function stateAfterToken(fn, id) {
             ...fn.myTeam.filter(({ hp }) => hp <= 0),
             ...fn.enemyTeam.filter(({ hp }) => hp <= 0),
         ],
+        enemyTokens: newStateTokens,
+        yourTurn: !fn.yourTurn,
+        whoAttackID: "",
     };
 }
