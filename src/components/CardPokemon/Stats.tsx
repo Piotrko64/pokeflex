@@ -16,6 +16,8 @@ import {
     TurboFire,
     Water,
 } from "./StylingStats";
+import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { cardStyleInt } from "../../types/pokemonTokenData/cardStyle";
 const TableWithAll = styled.div`
     display: flex;
     justify-content: space-around;
@@ -31,20 +33,20 @@ const GridStats = styled.div`
 
     width: 90%;
 `;
-const OneStat = styled.div`
+const OneStat = styled.div<Partial<cardStyleInt>>`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-right: ${(props) => (props.isOdd ? "2px solid white" : "")};
-    border-bottom: ${(props) => (props.isLastTwo ? "" : "2px solid white")};
+    border-right: ${({ isOdd }) => (isOdd ? "2px solid white" : "")};
+    border-bottom: ${({ isLastTwo }) => (isLastTwo ? "" : "2px solid white")};
     color: white;
-    padding: ${(props) => (props.versionMini ? "0 30px" : "0 20px")};
+    padding: ${({ versionMini }) => (versionMini ? "0 30px" : "0 20px")};
     font-family: "Koulen", cursive;
-    color: ${(props) => {
-        if (props.df === 0) return "#c65101";
-        if (props.hpLessThanSpeed) return "#ffba1f";
-        if (props.hp < 8) return "#ff7070";
-        if (props.rv === 0) return "#8f8f8f";
+    color: ${({ df, hpLessThanSpeed, hp, rv }) => {
+        if (df === 0) return "#c65101";
+        if (hpLessThanSpeed) return "#ffba1f";
+        if ((hp as number) < 8) return "#ff7070";
+        if (rv === 0) return "#8f8f8f";
     }};
 `;
 const rotate = keyframes`
@@ -61,8 +63,8 @@ const rotate = keyframes`
         background-position: 0% 0%;
     }
 `;
-const ImportantStat = styled.div`
-    font-size: ${(props) => (props.versionMini ? "20px" : "35px")};
+const ImportantStat = styled.div<Partial<cardStyleInt>>`
+    font-size: ${({ versionMini }) => (versionMini ? "20px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
     width: 100%;
@@ -75,7 +77,7 @@ const ImportantStat = styled.div`
 
 ////
 
-function Stats({ value, versionMini }) {
+function Stats({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
 
     return (

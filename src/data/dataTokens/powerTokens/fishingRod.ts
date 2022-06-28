@@ -1,4 +1,6 @@
+import { arrayPokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
+import { stateFightInterface } from "../../../types/_Reducer/stateFight";
 
 const Magikarp = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
@@ -12,8 +14,11 @@ const Magikarp = {
     revenge: 2,
 };
 
-export default function fishingRod(state, AI) {
-    let newState = AI
+export default function fishingRod(state: stateFightInterface, AI: boolean): stateFightInterface {
+    let newState:
+        | { enemyTeam: arrayPokemonInterface }
+        | { myTeam: arrayPokemonInterface }
+        | arrayPokemonInterface = AI
         ? [{ ...Magikarp, id: v4() }, ...state.enemyTeam, { ...Magikarp, id: v4() }]
         : [{ ...Magikarp, id: v4() }, ...state.myTeam, { ...Magikarp, id: v4() }];
 

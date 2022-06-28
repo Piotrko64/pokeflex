@@ -5,7 +5,7 @@ type emptyOrString = "" | string;
 
 export interface stateFightInterface {
     myTeam: arrayPokemonInterface;
-    enemyTeam: boolean;
+    enemyTeam: arrayPokemonInterface;
     whoAttack: emptyOrString;
     whoAttackID: emptyOrString;
     whoIsAttack: emptyOrString;

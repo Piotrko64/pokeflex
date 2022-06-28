@@ -1,4 +1,3 @@
-import { IconType } from "react-icons";
 import { ReactElement } from "react-markdown/lib/react-markdown";
 
 export interface oneTokenInterface {

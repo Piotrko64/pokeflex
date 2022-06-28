@@ -1,14 +1,17 @@
+import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+
 const SMALL_ATTACK = 7;
 const STRONGER_ATTACK = 16;
 
-export default function electroAction(state, AI) {
-    const newState = JSON.parse(JSON.stringify(state));
+export default function electroAction(state: stateFightInterface, AI: boolean): stateFightInterface {
+    const newState: stateFightInterface = JSON.parse(JSON.stringify(state));
 
     // AI move
     if (AI) {
         const newStateFriendsTeam = [...newState.myTeam];
-        let thisEnemy;
-        let thisAttack;
+        let thisEnemy: pokemonInterface;
+        let thisAttack: number;
         if (newState.enemyTeam.some(({ type }) => type === "Electro" || type === "Turbo Electro")) {
             thisEnemy = newStateFriendsTeam.sort((a, b) => {
                 return b.hp - a.hp;
@@ -30,8 +33,8 @@ export default function electroAction(state, AI) {
         // your move
 
         const newStateEnemyTeam = [...newState.enemyTeam];
-        let thisEnemy;
-        let thisAttack;
+        let thisEnemy: pokemonInterface;
+        let thisAttack: number;
         if (newState.myTeam.find(({ type }) => type === "Electro" || type === "Turbo Electro")) {
             thisEnemy = newStateEnemyTeam.sort((a, b) => {
                 return b.hp - a.hp;

@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { stateFightInterface } from "../../types/_Reducer/stateFight";
 
 export const useSelectorStateFight = () => {
     const all = useSelector((state: any) => state.StateFightsReducer);
 
     const whoWin = useSelector((state: any) => state.StateFightsReducer.whoWin);
+
+    const whoAttackID = useSelector((state: any) => state.StateFightsReducer.whoAttackID);
 
     const yourTurn = useSelector((state: any) => state.StateFightsReducer.yourTurn);
 
@@ -23,6 +24,7 @@ export const useSelectorStateFight = () => {
         myTokens,
         enemyTeam,
         enemyTokens,
+        whoAttackID,
         allCoordinates,
     };
 };
