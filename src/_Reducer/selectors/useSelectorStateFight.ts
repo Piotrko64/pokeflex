@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 export const useSelectorStateFight = () => {
     const all = useSelector((state: allStateReducer) => state.StateFightsReducer);
 
+    const grave = useSelector((state: allStateReducer) => state.StateFightsReducer.grave);
+
     const whoWin = useSelector((state: allStateReducer) => state.StateFightsReducer.whoWin);
 
     const whoAttackID = useSelector((state: allStateReducer) => state.StateFightsReducer.whoAttackID);
@@ -19,6 +21,7 @@ export const useSelectorStateFight = () => {
     const allCoordinates = useSelector((state: allStateReducer) => state.StateFightsReducer.allCoordinates);
     return {
         all,
+        grave,
         whoWin,
         yourTurn,
         myTeam,

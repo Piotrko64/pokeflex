@@ -9,12 +9,13 @@ import { setWhoWin } from "../../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
 
 export const useShowWinner = () => {
-    const { whoWin, myTeam, enemyTeam } = useSelectorStateFight();
+    const { whoWin, myTeam, enemyTeam, whoAttackID } = useSelectorStateFight();
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (whoWin) {
+        console.log();
+        if (whoWin || !whoAttackID) {
             return;
         }
         if (myTeam.length === 0 && enemyTeam.length === 0) {

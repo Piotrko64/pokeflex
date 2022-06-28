@@ -42,13 +42,13 @@ function CompletePlayground({ music = quickGameSoundtrack }) {
     useBeginFight();
     useShowWinner();
     useTurnEnemy();
-
+    console.log(enemyTeam);
     const GroundForFriends = useMemo(
         () => <GroundForCards pokemons={myTeam} tokens={myTokens} />,
         [myTeam, myTokens]
     );
     const GroundForEnemy = useMemo(
-        () => <GroundForCards pokemons={enemyTeam} tokens={enemyTokens} AI={true} />,
+        () => enemyTeam && <GroundForCards pokemons={enemyTeam} tokens={enemyTokens} AI={true} />,
         [enemyTeam, enemyTokens]
     );
 

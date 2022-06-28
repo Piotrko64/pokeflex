@@ -23,7 +23,7 @@ function SingleLevel() {
         const { enemyTeam, enemyTokens } = level;
 
         setMusic(level.music);
-
+        console.log("aaaaaaaa", level);
         dispatch(setEnemyTeam([enemyTeam, enemyTokens]));
     }, []);
 
