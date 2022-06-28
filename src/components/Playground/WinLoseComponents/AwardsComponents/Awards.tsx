@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import levels from "../../../../data/dataLevels/levels";
 import ListAwards from "./ListAwards";
+import { levelInterface } from "../../../../types/levels/levelInterface";
 
 const AwardsSection = styled.div`
     color: black;
@@ -29,7 +30,7 @@ const AwardsSection = styled.div`
 function Awards() {
     const location = useLocation();
     const levelID = location.pathname.split("/")[2];
-    const findAwards = levels.find((el) => el.id === levelID);
+    const findAwards = levels.find((el: levelInterface) => el.id === levelID);
     const awardToken = findAwards?.award?.tokens;
     const awardPokemon = findAwards?.award?.pokemons;
 
