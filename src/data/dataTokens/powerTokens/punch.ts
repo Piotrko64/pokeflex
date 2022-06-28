@@ -1,12 +1,15 @@
+import { arrayPokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import clone from "lodash.clone";
+import { stateFightInterface } from "../../../types/_Reducer/stateFight";
 
 const VALUE_PUNCH = 14;
 
-export default function punch(state, AI) {
+export default function punch(state: stateFightInterface, AI: boolean): stateFightInterface {
     const newState = clone(state);
-    let thisTeam;
+    let thisTeam: arrayPokemonInterface;
     thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
-    const randomThisTeam = Math.round(Math.random() * [thisTeam.length - 1]);
+    const lengthTeamMinusOne: number = thisTeam.length - 1;
+    const randomThisTeam = Math.round(Math.random() * lengthTeamMinusOne);
     const newStateTeam = {
         [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el, i) =>
             i === randomThisTeam

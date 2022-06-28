@@ -1,10 +1,11 @@
 import clone from "lodash.clone";
+import { stateFightInterface } from "../../../types/_Reducer/stateFight";
 
 const VALUE_HP = 7;
 const VALUE_SPEED = 7;
 const VALUE_REVENGE = 1;
 
-export default function slow(state, AI) {
+export default function slow(state: stateFightInterface, AI: boolean): stateFightInterface {
     const newState = clone(state);
 
     let yourTeam = AI ? newState.enemyTeam : newState.myTeam;

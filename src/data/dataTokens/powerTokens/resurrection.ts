@@ -1,8 +1,9 @@
 import { v4 } from "uuid";
+import { stateFightInterface } from "../../../types/_Reducer/stateFight";
 
 const NEW_HP = 13;
 
-export default function resurrection(state, AI) {
+export default function resurrection(state: stateFightInterface, AI: boolean): stateFightInterface {
     const newState = JSON.parse(JSON.stringify(state));
     const { grave } = state;
     console.log(grave);

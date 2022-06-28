@@ -1,15 +1,16 @@
+import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
 import clone from "lodash.clone";
 
 let VALUE_DAMAGE = 3;
 const MORE_DAMAGE = 13;
 
-export default function robber(state, AI) {
+export default function robber(state: stateFightInterface, AI: boolean): stateFightInterface {
     const newState = clone(state);
 
     let thisToken = !AI ? newState.enemyTokens : newState.myTokens;
     let thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
 
-    const randomThisTeam = Math.round(Math.random() * [thisTeam.length - 1]);
+    const randomThisTeam = Math.round(Math.random() * (thisTeam.length - 1));
     VALUE_DAMAGE = thisToken.length === 0 ? MORE_DAMAGE : VALUE_DAMAGE;
     const newStateTeam = {
         [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el, i) =>
@@ -22,7 +23,7 @@ export default function robber(state, AI) {
         ),
     };
 
-    const randomThisToken = Math.round(Math.random() * [thisToken.length - 1]);
+    const randomThisToken = Math.round(Math.random() * (thisToken.length - 1));
     const cloneTokens = clone(thisToken);
     cloneTokens.splice(randomThisToken, 1);
     const newStateToken = {
