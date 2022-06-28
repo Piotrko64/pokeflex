@@ -1,7 +1,7 @@
-import React from "react";
 import ReactMarkdown from "react-markdown";
 
 import styled from "styled-components";
+import { oneStatType } from "../../../../../types/Stats/oneStatType";
 
 const Title = styled.h2`
     display: flex;
@@ -34,7 +34,7 @@ const Column = styled.div`
     flex-direction: column;
 `;
 
-const OneStat = ({ stat }) => {
+const OneStat = ({ stat }: { stat: oneStatType }) => {
     const { logo, description, name } = stat;
     return (
         <Flex>
