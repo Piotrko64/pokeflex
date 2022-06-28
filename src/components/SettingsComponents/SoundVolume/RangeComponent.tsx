@@ -93,12 +93,8 @@ const Range = styled.input`
         background: #dedede;
     }
 `;
-const RangeComponent = ({ volume, changeFn }) => {
-    return (
-        <>
-            <Range type="range" value={volume * 100} onChange={changeFn} min="0" max="100" step={1} />
-        </>
-    );
+const RangeComponent = ({ volume, changeFn }: { volume: number; changeFn: any }) => {
+    return <Range type="range" value={volume * 100} onChange={changeFn} min="0" max="100" step={1} />;
 };
 
 export default RangeComponent;

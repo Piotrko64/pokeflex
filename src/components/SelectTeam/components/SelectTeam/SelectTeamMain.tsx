@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
+import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
 import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 import {
     addItemsFromLocalStorage,
@@ -54,7 +56,7 @@ export default function SelectTeamMain() {
         <FlexCenter>
             <TitleScroll title="Your Team" />
             <Row>
-                {teamFight.map((el) => (
+                {teamFight.map((el: pokemonInterface) => (
                     <OneCardSelect key={el.name} onClick={() => dispatch(deleteFromTeam(el.name))}>
                         <CardPokemon value={el} versionMini />
                     </OneCardSelect>
@@ -62,7 +64,7 @@ export default function SelectTeamMain() {
                 {!teamFight.length && <Alert>You must gather your party before venturing forth</Alert>}
             </Row>
             <Row>
-                {tokensFight.map((el) => (
+                {tokensFight.map((el: oneTokenInterface) => (
                     <OneTokenSelect key={el.name} onClick={() => dispatch(deleteFromTeamToken(el.name))}>
                         <OneTokenScroll item={el} noBattle />
                     </OneTokenSelect>

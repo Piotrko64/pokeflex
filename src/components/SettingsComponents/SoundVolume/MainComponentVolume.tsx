@@ -1,10 +1,10 @@
-import React from "react";
 import { ImVolumeMedium, ImVolumeMute2 } from "react-icons/im";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import RangeComponent from "./RangeComponent";
 import { changeVolume } from "../../../_Reducer/Settings";
+import UseSelectorSettings from "../../../_Reducer/selectors/useSelectorSettings";
 const RangeDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -47,10 +47,10 @@ const EntireComponent = styled.div`
 
 const MainComponentVolume = () => {
     const dispatch = useDispatch();
-    const volume = useSelector((state) => state.SettingsReducer.volume);
+    const { volume } = UseSelectorSettings();
 
-    function handleChangeVolume(e) {
-        const { value } = e.target;
+    function handleChangeVolume(e: Event): void {
+        const value: number = Number((e.target as HTMLInputElement).value);
 
         dispatch(changeVolume(value / 100));
     }

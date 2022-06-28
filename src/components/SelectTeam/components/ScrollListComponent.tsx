@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+
 const ScrollList = styled.div`
     display: flex;
     cursor: grab;
@@ -29,12 +30,12 @@ const Scroll = styled.div`
     }
 `;
 
-export default function ScrollListComponent({ children }) {
+export default function ScrollListComponent({ children }: { children: JSX.Element }) {
     const [width, setWidth] = useState(0);
 
-    const carousel = useRef();
+    const carousel = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+        setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
     }, []);
     return (
         <Scroll>
