@@ -1,3 +1,4 @@
+import { JsxChild } from "typescript";
 import { objectRender } from "./../types/hooks/switch";
 import { useState } from "react";
 
@@ -18,8 +19,8 @@ export function useSwitch(
         listObjectsRender.find((el) => el.name === actualValue) ||
         listObjectsRender.find((el) => el.name === defaultRender)!;
 
-    const toRender = findObject.render;
-    const nameRender = findObject.name;
+    const toRender = findObject.render as any;
+    const nameRender: string = findObject.name;
 
     return [toRender, changeRender, nameRender];
 }

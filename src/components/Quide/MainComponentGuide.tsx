@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 
 import { AiOutlineClose } from "react-icons/ai";
 import Tippy from "@tippyjs/react";
+import { objectRender } from "../../types/hooks/switch";
 
 const Blur = styled.div`
     background-color: #000000b5;
@@ -35,7 +36,7 @@ const Close = styled.div`
     z-index: 99;
 `;
 
-export default function MainComponentGuide({ setOpen }) {
+export default function MainComponentGuide({ setOpen }: { setOpen: () => void }) {
     const [renderView, setRenderView, nameView] = useSwitch(ListObjectsToRender, "General", "General");
 
     return ReactDom.createPortal(
@@ -48,6 +49,6 @@ export default function MainComponentGuide({ setOpen }) {
             <RoutingGuide changeViewGuide={setRenderView} nameView={nameView} />
             <AnimatePresence exitBeforeEnter>{renderView}</AnimatePresence>
         </Blur>,
-        document.getElementById("guide")
+        document.getElementById("guide")!
     );
 }

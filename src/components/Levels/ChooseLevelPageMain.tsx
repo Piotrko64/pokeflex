@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import levels from "../../data/dataLevels/levels";
+import { levelInterface } from "../../types/levels/levelInterface";
 import OneLevel from "./OneLevel";
 const ListLevel = styled.div`
     display: flex;
@@ -20,7 +21,7 @@ function ChooseLevelPageMain() {
         <ChooseLevelPage>
             <h1> Choose level!</h1>
             <ListLevel>
-                {levels.map((el) => (
+                {levels.map((el: levelInterface) => (
                     <Link to={`/levels/${el.id}`} key={el.name}>
                         <OneLevel value={el} />
                     </Link>

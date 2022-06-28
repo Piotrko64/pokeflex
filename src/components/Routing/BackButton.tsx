@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { TiArrowBack } from "react-icons/ti";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import UseSelectorYourItems from "../../_Reducer/selectors/useSelectorYourItems";
 const Back = styled.div`
     border-radius: 10px;
     background: white;
@@ -15,6 +16,7 @@ const Back = styled.div`
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 999;
+    display: ${({ path }: { path: boolean }) => path && "none"};
 `;
 
 export const BackButton = () => {
@@ -23,21 +25,19 @@ export const BackButton = () => {
 
     const path = location.pathname;
 
-    const yourTeam = useSelector((state) => state.YourItemsReducer.teamFight);
+    const { teamFight } = UseSelectorYourItems();
 
     function navigateFn() {
         if (path.includes("levels")) {
             navigation("/ChooseLevel");
-        } else if (path.includes("SelectTeam") && !yourTeam.length) {
+        } else if (path.includes("SelectTeam") && !teamFight.length) {
             alert("Please choose at least one pokemon");
         } else navigation("/");
     }
 
     return (
-        path !== "/" && (
-            <Back onClick={navigateFn}>
-                <TiArrowBack />
-            </Back>
-        )
+        <Back onClick={navigateFn} path={path === "/"}>
+            <TiArrowBack />
+        </Back>
     );
 };

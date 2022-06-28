@@ -10,14 +10,14 @@ const OneGuide = styled.div`
     justify-content: center;
     align-items: center;
     border: 2px solid white;
-    color: ${(props) => (props.choose ? "black" : "white")};
+    color: ${(props: { choose: boolean }) => (props.choose ? "black" : "white")};
     padding: 10px;
     font-size: 1.5rem;
     border-left: none;
     transition: all 0.2s ease;
     cursor: pointer;
 
-    background: ${(props) => (props.choose ? "white" : "transparent")};
+    background: ${({ choose }) => (choose ? "white" : "transparent")};
     &:nth-child(1) {
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
@@ -28,7 +28,13 @@ const OneGuide = styled.div`
         border-bottom-right-radius: 15px;
     }
 `;
-export default function Routing({ changeViewGuide, nameView }) {
+export default function Routing({
+    changeViewGuide,
+    nameView,
+}: {
+    changeViewGuide: (e: string) => void;
+    nameView: string;
+}) {
     return (
         <AllGuides>
             {ListObjectsToRender.map((el) => (
