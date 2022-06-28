@@ -23,12 +23,14 @@ const TokenAward = styled.div`
 function TokenAwards({ token }: { token: oneTokenInterface }) {
     useEffect(() => {
         const checkAllTokensAward = JSON.parse(localStorage.getItem("tokensAward")!) || [];
+
         !checkAllTokensAward.length && localStorage.setItem("tokensAward", "[]");
 
         checkAllTokensAward.push(token.idAward);
 
         localStorage.setItem("tokensAward", JSON.stringify([...new Set(checkAllTokensAward)]));
     }, []);
+
     return (
         <Fragment>
             <Tippy content={<Tooltip title={token.name} desc={token.desc} />}>
