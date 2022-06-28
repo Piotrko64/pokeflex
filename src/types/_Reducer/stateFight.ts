@@ -1,4 +1,4 @@
-import { arrayTokenInterface, oneTokenInterface } from "../pokemonTokenData/tokenInterface";
+import { arrayTokenInterface } from "../pokemonTokenData/tokenInterface";
 import { arrayPokemonInterface } from "./../pokemonTokenData/pokemonInterface";
 
 type emptyOrString = "" | string;

@@ -27,7 +27,5 @@ export default function lighter(state: stateFightInterface, AI: boolean): stateF
     newStateTeam = AI ? { enemyTeam: newStateTeam } : { myTeam: newStateTeam };
     newStateTokens = AI ? { enemyTokens: newStateTokens } : { myTokens: newStateTokens };
 
-    const stateToReturn = { ...state, ...newStateTeam, ...newStateTokens };
-
-    return stateToReturn;
+    return { ...state, ...newStateTeam, ...newStateTokens };
 }

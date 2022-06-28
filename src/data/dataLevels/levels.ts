@@ -1,4 +1,4 @@
-import { arrayLevelInterface, levelInterface } from "./../../types/levels/levelInterface";
+import { levelInterface } from "./../../types/levels/levelInterface";
 import { electrolevel1 } from "./singleLevels/electrolevel1";
 import { electrolevel2 } from "./singleLevels/electrolevel2";
 import { electrolevel3 } from "./singleLevels/electrolevel3";

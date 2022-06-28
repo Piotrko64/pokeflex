@@ -1,4 +1,3 @@
-import { JsxChild } from "typescript";
 import { objectRender } from "./../types/hooks/switch";
 import { useState } from "react";
 
