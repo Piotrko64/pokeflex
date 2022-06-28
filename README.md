@@ -16,7 +16,7 @@
 <br />
 
 <div align="center">
-
+<img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
 
 <img src="https://user-images.githubusercontent.com/77500425/161312230-36d37ac5-8801-4313-a68c-c5695c429b70.png" alt="javascript" height="50" align="center" title="JS"/>
 
