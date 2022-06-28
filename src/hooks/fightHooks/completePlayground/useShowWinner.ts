@@ -14,7 +14,6 @@ export const useShowWinner = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log();
         if (whoWin || !whoAttackID) {
             return;
         }

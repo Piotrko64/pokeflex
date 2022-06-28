@@ -1,6 +1,6 @@
 import { useSelectorStateFight } from "./../../../_Reducer/selectors/useSelectorStateFight";
-import { MutableRefObject, Ref, RefObject, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { RefObject, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { pushCoordinate } from "../../../_Reducer/StateFight";
 import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 

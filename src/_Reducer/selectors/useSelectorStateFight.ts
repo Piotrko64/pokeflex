@@ -6,6 +6,8 @@ export const useSelectorStateFight = () => {
 
     const grave = useSelector((state: allStateReducer) => state.StateFightsReducer.grave);
 
+    const whereIsEnemy = useSelector((state: allStateReducer) => state.StateFightsReducer.whereIsEnemy);
+
     const whoWin = useSelector((state: allStateReducer) => state.StateFightsReducer.whoWin);
 
     const whoAttackID = useSelector((state: allStateReducer) => state.StateFightsReducer.whoAttackID);
@@ -30,5 +32,6 @@ export const useSelectorStateFight = () => {
         enemyTokens,
         whoAttackID,
         allCoordinates,
+        whereIsEnemy,
     };
 };
