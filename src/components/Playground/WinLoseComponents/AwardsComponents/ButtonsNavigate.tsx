@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ListButtons } from "./ListNavigateButtons";
-import { useNavigate } from "react-router-dom";
+
 const Content = styled.div`
     display: flex;
     justify-content: center;

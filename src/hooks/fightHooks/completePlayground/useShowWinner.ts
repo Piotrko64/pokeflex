@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { audioPlay } from "../../../functions/audioPlay";
 
 import WinSound from "../../../Audio/winLose/Win.wav";

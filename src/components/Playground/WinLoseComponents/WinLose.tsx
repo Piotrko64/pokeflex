@@ -7,7 +7,6 @@ import Awards from "./AwardsComponents/Awards";
 import { AnimatePresence, motion } from "framer-motion";
 
 import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
-import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 
 const Blur = styled.div`
     position: fixed;
