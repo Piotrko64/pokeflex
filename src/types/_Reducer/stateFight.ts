@@ -16,6 +16,6 @@ export interface stateFightInterface {
     myTokens: arrayTokenInterface;
     enemyTokens: arrayTokenInterface;
     yourTurn: boolean;
-    whoWin: string | boolean;
+    whoWin: string | false;
 }
 export type oneCoordinate = { id: string; name: string; coordinate: [number, number] };

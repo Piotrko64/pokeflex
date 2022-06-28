@@ -7,6 +7,7 @@ import Awards from "./AwardsComponents/Awards";
 import { AnimatePresence, motion } from "framer-motion";
 
 import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
+import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 
 const Blur = styled.div`
     position: fixed;
@@ -61,8 +62,8 @@ const Remis = styled.div`
     -webkit-text-fill-color: transparent;
 `;
 
-function WinLose({ value }) {
-    const [endgame] = useState(value);
+function WinLose({ value }: { value: false | string }) {
+    const [endgame] = useState<false | string>(value);
 
     return (
         <Blur>
