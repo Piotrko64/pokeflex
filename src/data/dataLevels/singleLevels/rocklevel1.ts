@@ -1,3 +1,4 @@
+import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
 
@@ -35,6 +36,6 @@ background: linear-gradient(137deg, rgba(135,135,135,1) 0%, rgba(25,30,36,1) 100
     enemyTeam: [Onix, Geodude],
     enemyTokens: [findTokenByName("Punch"), findTokenByName("Shield Stone")],
     award: {
-        tokens: findTokenByName("Sacrifice"),
+        tokens: findTokenByName("Sacrifice") as oneTokenInterface,
     },
 };

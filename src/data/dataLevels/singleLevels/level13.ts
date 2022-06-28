@@ -2,6 +2,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
+import { oneTokenInterface } from "../../../types/pokemonTokenData/tokenInterface";
 
 export const level13 = {
     id: "level13Normal",
@@ -11,7 +12,7 @@ background: linear-gradient(209deg, rgba(105,123,159,1) 47%, rgba(81,193,57,1) 1
     enemyTeam: [findPokemonByName("Chikorita"), findPokemonByName("Machamp"), findPokemonByName("Snorlax")],
     enemyTokens: [findTokenByName("Robber"), findTokenByName("Punch Machamp")],
     award: {
-        tokens: findTokenByName("Robber"),
+        tokens: findTokenByName("Robber") as oneTokenInterface,
     },
     music: Tribe,
 };

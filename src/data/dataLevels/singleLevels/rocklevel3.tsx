@@ -4,6 +4,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { findPokemonByName } from "../../examplePokemons";
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
+import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 const punchMachampToken = {
     id: v4(),
     name: "Punch of Machamp",
@@ -71,7 +72,7 @@ background: linear-gradient(90deg, rgba(74,74,74,1) 23%, rgba(150,150,150,1) 64%
     enemyTeam: [Geodude3, Machamp, Geodude, Geodude2],
     enemyTokens: [findTokenByName("Sacrifice"), punchMachampToken],
     award: {
-        pokemons: findPokemonByName("Machamp"),
+        pokemons: findPokemonByName("Machamp") as pokemonInterface,
     },
     music: Tribe,
 };

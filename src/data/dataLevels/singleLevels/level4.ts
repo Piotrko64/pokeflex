@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 
-import { examplePokemons } from "../../../data/examplePokemons";
+import { examplePokemons } from "../../examplePokemons";
 const Turtwig = {
     id: v4(),
 

@@ -1,3 +1,4 @@
+import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
 
@@ -61,6 +62,6 @@ background: radial-gradient(circle, rgba(207,142,39,1) 0%, rgba(150,118,75,1) 46
     enemyTeam: [Pichu2, Pikachu, Raichu, Pichu],
     enemyTokens: [findTokenByName("Electro Action"), findTokenByName("Slow"), findTokenByName("Charging")],
     award: {
-        tokens: findTokenByName("Charging"),
+        tokens: findTokenByName("Charging") as oneTokenInterface,
     },
 };

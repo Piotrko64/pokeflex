@@ -1,3 +1,4 @@
+import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -14,6 +15,6 @@ background: linear-gradient(209deg, rgba(80,145,163,1) 47%, rgba(62,66,99,1) 100
     ],
     enemyTokens: [findTokenByName("Slow"), findTokenByName("Fountain")],
     award: {
-        pokemons: findPokemonByName("Onix"),
+        pokemons: findPokemonByName("Onix") as pokemonInterface,
     },
 };

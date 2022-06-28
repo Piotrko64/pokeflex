@@ -1,3 +1,4 @@
+import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -14,6 +15,6 @@ background: linear-gradient(180deg, rgba(102,131,189,1) 0%, rgba(81,193,57,1) 10
     ],
     enemyTokens: [findTokenByName("Robber")],
     award: {
-        pokemons: findPokemonByName("Chikorita"),
+        pokemons: findPokemonByName("Chikorita") as pokemonInterface,
     },
 };

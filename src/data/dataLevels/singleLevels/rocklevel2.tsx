@@ -1,5 +1,7 @@
 import { GiPunchBlast } from "react-icons/gi";
 import { v4 } from "uuid";
+import { levelInterface } from "../../../types/levels/levelInterface";
+import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { findPokemonByName } from "../../examplePokemons";
@@ -28,7 +30,7 @@ const Machamp = {
     revenge: 2,
 };
 
-export const rocklevel2 = {
+export const rocklevel2: levelInterface = {
     id: "rocklevel2normal",
     name: "rock level 2",
     color: `background: rgb(47,42,43);
@@ -36,6 +38,6 @@ background: radial-gradient(circle, rgba(47,42,43,1) 27%, rgba(86,87,93,1) 96%);
     enemyTeam: [Machamp],
     enemyTokens: [findTokenByName("Punch"), punchMachampToken],
     award: {
-        pokemons: findPokemonByName("Geodude"),
+        pokemons: findPokemonByName("Geodude") as pokemonInterface,
     },
 };

@@ -31,8 +31,8 @@ function Awards() {
     const location = useLocation();
     const levelID = location.pathname.split("/")[2];
     const findAwards = levels.find((el: levelInterface) => el.id === levelID);
-    const awardToken = findAwards?.award?.tokens;
-    const awardPokemon = findAwards?.award?.pokemons;
+    const awardToken = findAwards?.award.tokens!;
+    const awardPokemon = findAwards?.award.pokemons!;
 
     return (
         <Fragment>
