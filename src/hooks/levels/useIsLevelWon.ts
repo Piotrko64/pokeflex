@@ -10,8 +10,8 @@ const useIsLevelWon = (award: awardsType) => {
     const allTokens = UseSelectorYourItems().tokens;
     const allTokensIdAward = allTokens.map((el: oneTokenInterface) => el.idAward).filter(Boolean);
 
-    const isPokemonAward = allPokemonsIdAward?.some((el: pokemonInterface) => el === pokemons?.idAward);
-    const isTokensAward = allTokensIdAward?.some((el: oneTokenInterface) => el === tokens?.idAward);
+    const isPokemonAward: boolean = allPokemonsIdAward.some((el) => el === pokemons?.idAward);
+    const isTokensAward = allTokensIdAward?.some((el) => el === tokens?.idAward);
     if (isPokemonAward || isTokensAward) return true;
 };
 

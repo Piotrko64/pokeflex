@@ -22,7 +22,7 @@ import { rocklevel1 } from "./singleLevels/rocklevel1";
 import { rocklevel2 } from "./singleLevels/rocklevel2";
 import { rocklevel3 } from "./singleLevels/rocklevel3";
 
-const levels: arrayLevelInterface = [
+const levels: any = [
     level0,
     electrolevel1,
     level1,

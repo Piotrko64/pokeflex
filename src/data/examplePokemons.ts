@@ -1,3 +1,4 @@
+import { pokemonInterface } from "./../types/pokemonTokenData/pokemonInterface";
 import { arrayPokemonInterface } from "../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
 

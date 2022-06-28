@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { JsxChild } from "typescript";
 
 const ScrollList = styled.div`
     display: flex;

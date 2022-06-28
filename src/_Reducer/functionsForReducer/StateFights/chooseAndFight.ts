@@ -1,3 +1,6 @@
+import { arrayTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
+import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import { arrayPokemonInterface, pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import clone from "lodash.clone";
 import Hit from "../../../Audio/actions/Hit.wav";
 import pick from "../../../Audio/actions/PickingCart.wav";
@@ -9,20 +12,26 @@ import { audioPlay } from "../../../functions/audioPlay";
 
 let whoAttack = "";
 let whoAttackID = "";
-export function chooseAndFight(state, payload, tF, tE, computer) {
+export function chooseAndFight(
+    state: stateFightInterface,
+    payload: string,
+    tF: arrayPokemonInterface,
+    tE: arrayPokemonInterface,
+    computer?: boolean
+) {
     const teamFriends = clone(tF).filter((e) => e.hp >= 1);
     const teamEnemy = clone(tE).filter((e) => e.hp >= 1);
 
-    const tokens = clone(computer ? state.enemyTokens : state.myTokens);
+    const tokens: arrayTokenInterface = clone(computer ? state.enemyTokens : state.myTokens);
 
-    let Me;
+    let Me: pokemonInterface;
     let Enemy;
-    let MeIndex;
+    let MeIndex: number;
     let Choosing = false;
     let EnemyIndex;
-    let stateAfterFightEnemy = clone(teamEnemy);
-    let stateAfterFightFriends = clone(teamFriends);
-    let stateAfterFightTokens = clone(tokens);
+    let stateAfterFightEnemy: arrayPokemonInterface = clone(teamEnemy);
+    let stateAfterFightFriends: arrayPokemonInterface = clone(teamFriends);
+    let stateAfterFightTokens: arrayTokenInterface = clone(tokens);
 
     teamFriends.forEach((e) => {
         if (e.id === payload) {
@@ -109,12 +118,18 @@ export function chooseAndFight(state, payload, tF, tE, computer) {
                         break;
                     case "Rock":
                         if (tokens.length <= 2) {
-                            stateAfterFightTokens = [...tokens, findTokenByName("Shield Stone")];
+                            stateAfterFightTokens = [
+                                ...tokens,
+                                findTokenByName("Shield Stone"),
+                            ] as arrayTokenInterface;
                         }
                         break;
                     case "Ice":
                         if (!tokens.find((el) => el.name === "Blizzard")) {
-                            stateAfterFightTokens = [...tokens, findTokenByName("Blizzard")];
+                            stateAfterFightTokens = [
+                                ...tokens,
+                                findTokenByName("Blizzard"),
+                            ] as arrayTokenInterface;
                         }
                         break;
                     case "Blocked":

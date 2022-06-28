@@ -11,7 +11,7 @@ export interface levelInterface {
     music?: HTMLAudioElement;
 }
 export type awardsType = {
-    tokens?: any;
-    pokemons?: any;
+    tokens?: oneTokenInterface;
+    pokemons?: pokemonInterface;
 };
 export type arrayLevelInterface = Array<levelInterface>;

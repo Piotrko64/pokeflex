@@ -19,7 +19,7 @@ export const useTurnEnemy = () => {
         const randomEnemy = chooseRandomEnemy(myTeam, enemyTeam)[0];
         console.log(allCoordinates, randomEnemy);
         if (allCoordinates.some((e: oneCoordinate) => e.id === randomEnemy)) {
-            dispatch(animation(allCoordinates.find((e: oneCoordinate) => e.id === randomEnemy).coordinate));
+            dispatch(animation(allCoordinates.find((e: oneCoordinate) => e.id === randomEnemy)!.coordinate));
             dispatch(computerMove(randomEnemy));
         } else {
             findRandom();
@@ -48,7 +48,7 @@ export const useTurnEnemy = () => {
                     setTimeout(() => handleMoveComputer(chooseRandomEnemy(myTeam, enemyTeam)[1]), 400);
                 } else {
                     console.log("else");
-                    handleMoveComputer(myTeam[0].id);
+                    handleMoveComputer(myTeam[0].id!);
                 }
             }, 1000);
         }

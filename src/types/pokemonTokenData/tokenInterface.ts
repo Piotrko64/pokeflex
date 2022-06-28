@@ -6,7 +6,7 @@ export interface oneTokenInterface {
     badForAI?: boolean;
     name: string;
     icon: ReactElement;
-    functionToken?: any;
+    functionToken: any;
     desc: string;
 }
 export type arrayTokenInterface = Array<oneTokenInterface>;

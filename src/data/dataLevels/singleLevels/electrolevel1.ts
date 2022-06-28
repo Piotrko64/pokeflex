@@ -1,3 +1,4 @@
+import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
 import { v4 } from "uuid";
 import { levelInterface } from "../../../types/levels/levelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
@@ -47,6 +48,6 @@ export const electrolevel1: levelInterface = {
         findTokenByName("Electro Action"),
     ],
     award: {
-        tokens: findTokenByName("Electro Action"),
+        tokens: findTokenByName("Electro Action") as oneTokenInterface,
     },
 };

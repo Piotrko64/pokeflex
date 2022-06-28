@@ -15,7 +15,7 @@ function SingleLevel() {
     useEffect(() => {
         const idPathname = route.pathname.split("/")[2];
 
-        const level: levelInterface = levels.find((el) => el.id === idPathname)!;
+        const level: levelInterface = levels.find((el: levelInterface) => el.id === idPathname)!;
         if (!level) {
             navigate("/ChooseLevel");
             return;

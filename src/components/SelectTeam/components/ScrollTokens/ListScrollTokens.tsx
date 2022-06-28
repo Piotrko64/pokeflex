@@ -8,9 +8,11 @@ export default function ListScrollTokens() {
 
     return (
         <ScrollListComponent>
-            {tokens.map((el: oneTokenInterface) => (
-                <OneTokenScroll key={el.id} item={el} noBattle scroll />
-            ))}
+            <>
+                {tokens.map((el: oneTokenInterface) => (
+                    <OneTokenScroll key={el.id} item={el} noBattle scroll />
+                ))}
+            </>
         </ScrollListComponent>
     );
 }

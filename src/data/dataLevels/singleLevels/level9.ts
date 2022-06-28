@@ -1,3 +1,4 @@
+import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
 import { levelInterface } from "../../../types/levels/levelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
@@ -34,6 +35,6 @@ background: linear-gradient(137deg, rgba(207,142,39,1) 0%, rgba(65,65,65,1) 46%,
         findTokenByName("Charging"),
     ],
     award: {
-        pokemons: findPokemonByName("Pichu"),
+        pokemons: findPokemonByName("Pichu") as pokemonInterface,
     },
 };

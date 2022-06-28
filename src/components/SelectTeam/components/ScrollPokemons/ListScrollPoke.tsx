@@ -7,9 +7,11 @@ export default function ListScrollPoke() {
     const { pokemons } = UseSelectorYourItems();
     return (
         <ScrollListComponent>
-            {pokemons.map((el: pokemonInterface) => (
-                <OnePokemonScroll key={el.id} value={el} />
-            ))}
+            <>
+                {pokemons.map((el: pokemonInterface) => (
+                    <OnePokemonScroll key={el.id} value={el} />
+                ))}
+            </>
         </ScrollListComponent>
     );
 }

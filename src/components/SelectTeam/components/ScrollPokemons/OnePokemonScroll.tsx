@@ -20,7 +20,7 @@ export default function OnePokemonScroll({ value }: { value: pokemonInterface })
     return (
         <Card
             onClick={() => dispatch(addToTeam(value))}
-            choose={teamFight.find((e: pokemonInterface) => e.name === value.name)}
+            choose={teamFight.some((e: pokemonInterface) => e.name === value.name)}
         >
             <CardPokemon value={value} versionMini />
         </Card>

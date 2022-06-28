@@ -174,5 +174,6 @@ export const allTokens: arrayTokenInterface = [
 ].map((token) => ({ ...token, id: v4() }));
 
 export function findTokenByName(name: string) {
-    return { ...allTokens.find((el) => el.name === name), id: v4() } || allTokens[3];
+    const findToken = { ...allTokens.find((el) => el.name === name) };
+    return findToken === {} ? allTokens[0] : findToken;
 }

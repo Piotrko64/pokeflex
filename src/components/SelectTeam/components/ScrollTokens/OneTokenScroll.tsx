@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
-import { useSelectorStateFight } from "../../../../_Reducer/selectors/useSelectorStateFight";
+
 import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeamToken } from "../../../../_Reducer/YourItems";
 
@@ -28,7 +28,7 @@ export default function OneTokenScroll({
     return (
         <Token
             onClick={() => dispatch(addToTeamToken(item))}
-            choose={tokensFight.find((e: oneTokenInterface) => e.name === item.name)}
+            choose={tokensFight.some((e: oneTokenInterface) => e.name === item.name)}
             scroll={scroll}
         >
             <ItemToken item={item} noBattle />
