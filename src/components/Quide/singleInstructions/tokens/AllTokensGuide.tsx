@@ -16,7 +16,7 @@ const OneToken = styled.div`
     margin: 20px;
 `;
 
-function AllTokensGuide() {
+export function AllTokensGuide() {
     return (
         <FlexWrap>
             {allTokens.map((el) => (
@@ -27,5 +27,3 @@ function AllTokensGuide() {
         </FlexWrap>
     );
 }
-
-export default AllTokensGuide;

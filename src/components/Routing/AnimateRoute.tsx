@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Props } from "react-confetti";
-import MainComponentLayoutRouting from "./MainComponentLayoutRouting";
+import { MainComponentLayoutRouting } from "./MainComponentLayoutRouting";
 export default function AnimateRoute({ children }: Props) {
     return (
         <MainComponentLayoutRouting>

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
-import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
+import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeam } from "../../../../_Reducer/YourItems";
 
 import { CardPokemon } from "../../../CardPokemon/CardPokemon";
@@ -13,9 +13,9 @@ const Card = styled.div`
     filter: ${(props: { choose: boolean }) => props.choose && "grayscale(1)"};
 `;
 
-export default function OnePokemonScroll({ value }: { value: pokemonInterface }) {
+export function OnePokemonScroll({ value }: { value: pokemonInterface }) {
     const dispatch = useDispatch();
-    const { teamFight } = UseSelectorYourItems();
+    const { teamFight } = useSelectorYourItems();
 
     return (
         <Card

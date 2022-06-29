@@ -7,7 +7,7 @@ const Describe = styled.h3`
     text-align: center;
 `;
 
-const TypesMainComponent = () => {
+export const TypesMainComponent = () => {
     return (
         <>
             <Describe> Type abilities activate only when the attacked opponent has 0 defense </Describe>
@@ -17,5 +17,3 @@ const TypesMainComponent = () => {
         </>
     );
 };
-
-export default TypesMainComponent;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { TiArrowBack } from "react-icons/ti";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import UseSelectorYourItems from "../../_Reducer/selectors/useSelectorYourItems";
+import { useSelectorYourItems } from "../../_Reducer/selectors/useSelectorYourItems";
 const Back = styled.div`
     border-radius: 10px;
     background: white;
@@ -25,7 +25,7 @@ export const BackButton = () => {
 
     const path = location.pathname;
 
-    const { teamFight } = UseSelectorYourItems();
+    const { teamFight } = useSelectorYourItems();
 
     function navigateFn() {
         if (path.includes("levels")) {

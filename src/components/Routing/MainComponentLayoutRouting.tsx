@@ -3,7 +3,7 @@ import { Props } from "react-confetti";
 
 import { BackButton } from "./BackButton";
 
-const MainComponentLayoutRouting = ({ children }: Props) => {
+export const MainComponentLayoutRouting = ({ children }: Props) => {
     return (
         <Fragment>
             <BackButton />
@@ -12,5 +12,3 @@ const MainComponentLayoutRouting = ({ children }: Props) => {
         </Fragment>
     );
 };
-
-export default MainComponentLayoutRouting;

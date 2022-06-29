@@ -11,7 +11,7 @@ const FlexWrap = styled.div`
 const OneCard = styled.div`
     margin: 20px;
 `;
-function AllPokemonsGuide() {
+export function AllPokemonsGuide() {
     return (
         <FlexWrap>
             {examplePokemons.map((el) => (
@@ -22,5 +22,3 @@ function AllPokemonsGuide() {
         </FlexWrap>
     );
 }
-
-export default AllPokemonsGuide;

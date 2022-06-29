@@ -31,6 +31,7 @@ const Button = styled.button`
 
 export const ButtonsNavigate = () => {
     const navigate = useNavigate();
+
     return (
         <Content>
             {ListButtons.map((el) => (

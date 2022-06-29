@@ -16,7 +16,7 @@ const PokemonImgGuide = styled.img`
     margin: auto;
 `;
 
-function GeneralGuide() {
+export function GeneralGuide() {
     return (
         <General>
             <PokemonImgGuide src={pokemonImg} alt="" />
@@ -26,5 +26,3 @@ function GeneralGuide() {
         </General>
     );
 }
-
-export default GeneralGuide;

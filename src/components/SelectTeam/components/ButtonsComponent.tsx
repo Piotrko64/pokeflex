@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import UseSelectorYourItems from "../../../_Reducer/selectors/useSelectorYourItems";
+import { useSelectorYourItems } from "../../../_Reducer/selectors/useSelectorYourItems";
 
 const Flex = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ const Button = styled.button`
 `;
 const ButtonsComponent = () => {
     let navigate = useNavigate();
-    const { teamFight, tokensFight } = UseSelectorYourItems();
+    const { teamFight, tokensFight } = useSelectorYourItems();
 
     function saveInLocalStorage() {
         if (!teamFight.length) {

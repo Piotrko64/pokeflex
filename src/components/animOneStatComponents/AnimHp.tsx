@@ -29,11 +29,15 @@ function MotionValue({ value }: any) {
     );
 }
 
-export function AnimHP({ value, deleteHpChange }: { value: number; deleteHpChange: any }) {
+export function AnimHP({ value, deleteHpChange }: { value: number; deleteHpChange: () => void }) {
     useEffect(() => {
-        setTimeout(() => {
+        const timeShowHp = setTimeout(() => {
             deleteHpChange();
         }, 750);
+
+        return () => {
+            clearTimeout(timeShowHp);
+        };
     }, []);
     return value < 0 ? (
         <HPplus>

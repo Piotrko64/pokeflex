@@ -1,10 +1,10 @@
-import ScrollListComponent from "../ScrollListComponent";
-import OneTokenScroll from "./OneTokenScroll";
-import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
+import { ScrollListComponent } from "../ScrollListComponent";
+import { OneTokenScroll } from "./OneTokenScroll";
+import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
 
 export default function ListScrollTokens() {
-    const { tokens } = UseSelectorYourItems();
+    const { tokens } = useSelectorYourItems();
 
     return (
         <ScrollListComponent>

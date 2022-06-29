@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
 
-import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
+import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeamToken } from "../../../../_Reducer/YourItems";
 
 import { ItemToken } from "../../../Playground/Tokens/ItemToken";
@@ -14,7 +14,7 @@ const Token = styled.div`
         props.choose && props.scroll && "contrast(0.2)"};
 `;
 
-export default function OneTokenScroll({
+export function OneTokenScroll({
     item,
     scroll,
 }: {
@@ -23,7 +23,7 @@ export default function OneTokenScroll({
     scroll?: boolean;
 }) {
     const dispatch = useDispatch();
-    const { tokensFight } = UseSelectorYourItems();
+    const { tokensFight } = useSelectorYourItems();
 
     return (
         <Token

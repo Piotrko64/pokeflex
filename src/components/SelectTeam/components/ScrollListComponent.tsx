@@ -31,7 +31,7 @@ const Scroll = styled.div`
     }
 `;
 
-export default function ScrollListComponent({ children }: { children: JSX.Element }) {
+export function ScrollListComponent({ children }: { children: JSX.Element }) {
     const [width, setWidth] = useState(0);
 
     const carousel = useRef<HTMLDivElement>(null);

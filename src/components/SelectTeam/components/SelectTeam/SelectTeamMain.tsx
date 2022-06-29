@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
-import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
+import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import {
     addItemsFromLocalStorage,
     deleteFromTeam,
@@ -12,7 +12,7 @@ import {
 
 import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
-import OneTokenScroll from "../ScrollTokens/OneTokenScroll";
+import { OneTokenScroll } from "../ScrollTokens/OneTokenScroll";
 import TitleScroll from "../TitleScroll";
 
 const Alert = styled.div`
@@ -48,7 +48,7 @@ const OneTokenSelect = styled.div`
 
 export default function SelectTeamMain() {
     const dispatch = useDispatch();
-    const { teamFight, tokensFight } = UseSelectorYourItems();
+    const { teamFight, tokensFight } = useSelectorYourItems();
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());
     }, []);
