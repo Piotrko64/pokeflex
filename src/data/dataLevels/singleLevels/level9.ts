@@ -1,3 +1,4 @@
+import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
 import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
 import { v4 } from "uuid";
 import { levelInterface } from "../../../types/levels/levelInterface";
