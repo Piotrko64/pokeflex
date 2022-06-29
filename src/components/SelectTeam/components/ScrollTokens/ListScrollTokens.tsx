@@ -3,7 +3,7 @@ import { OneTokenScroll } from "./OneTokenScroll";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
 
-export default function ListScrollTokens() {
+export function ListScrollTokens() {
     const { tokens } = useSelectorYourItems();
 
     return (

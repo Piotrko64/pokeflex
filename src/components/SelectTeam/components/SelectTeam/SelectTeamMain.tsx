@@ -13,7 +13,7 @@ import {
 import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
 import { OneTokenScroll } from "../ScrollTokens/OneTokenScroll";
-import TitleScroll from "../TitleScroll";
+import { TitleScroll } from "../TitleScroll";
 
 const Alert = styled.div`
     background: "";

@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import TitleScroll from "../TitleScroll";
-import ListScrollTokens from "./ListScrollTokens";
+import { Fragment } from "react";
+import { TitleScroll } from "../TitleScroll";
+import { ListScrollTokens } from "./ListScrollTokens";
 
 const MainComponentScrollTokens = () => {
     return (
