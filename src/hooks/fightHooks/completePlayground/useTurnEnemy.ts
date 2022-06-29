@@ -17,7 +17,7 @@ export const useTurnEnemy = () => {
     }
     async function findRandom() {
         const randomEnemy = chooseRandomEnemy(myTeam, enemyTeam)[0];
-        console.log(allCoordinates, randomEnemy);
+
         if (allCoordinates.some((e: oneCoordinate) => e.id === randomEnemy)) {
             dispatch(animation(allCoordinates.find((e: oneCoordinate) => e.id === randomEnemy)!.coordinate));
             dispatch(computerMove(randomEnemy));

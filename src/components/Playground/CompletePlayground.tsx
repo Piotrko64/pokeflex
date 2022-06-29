@@ -41,7 +41,7 @@ export function CompletePlayground({ music = quickGameSoundtrack }) {
     useBeginFight();
     useShowWinner();
     useTurnEnemy();
-    console.log(enemyTeam);
+
     const GroundForFriends = useMemo(
         () => <GroundForCards pokemons={myTeam} tokens={myTokens} />,
         [myTeam, myTokens]
