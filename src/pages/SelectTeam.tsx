@@ -1,5 +1,4 @@
-import React from "react";
-import MainComponentSelectTeam from "../components/SelectTeam/MainComponentSelectTeam";
+import { MainComponentSelectTeam } from "../components/SelectTeam/MainComponentSelectTeam";
 
 const SelectTeam = () => {
     return <MainComponentSelectTeam />;

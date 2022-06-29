@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import levels from "../../data/dataLevels/levels";
+import { levels } from "../../data/dataLevels/levels";
 import { levelInterface } from "../../types/levels/levelInterface";
 import OneLevel from "./OneLevel";
 const ListLevel = styled.div`
@@ -16,7 +16,7 @@ const ChooseLevelPage = styled.div`
     flex-direction: column;
     height: 100vh;
 `;
-function ChooseLevelPageMain() {
+export function ChooseLevelPageMain() {
     return (
         <ChooseLevelPage>
             <h1> Choose level!</h1>
@@ -30,5 +30,3 @@ function ChooseLevelPageMain() {
         </ChooseLevelPage>
     );
 }
-
-export default ChooseLevelPageMain;

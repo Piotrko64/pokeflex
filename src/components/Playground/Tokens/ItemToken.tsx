@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import Tooltip from "../../Tooltip/tooltip";
+import { Tooltip } from "../../Tooltip/tooltip";
 
 import { motion } from "framer-motion";
 import { tokenPowerUse } from "../../../_Reducer/StateFight";
@@ -34,7 +34,15 @@ const Item = styled.button`
     }
 `;
 
-function ItemToken({ item, AI, noBattle }: { item: oneTokenInterface; AI?: boolean; noBattle?: boolean }) {
+export function ItemToken({
+    item,
+    AI,
+    noBattle,
+}: {
+    item: oneTokenInterface;
+    AI?: boolean;
+    noBattle?: boolean;
+}) {
     const dispatch = useDispatch();
     const { all, yourTurn } = useSelectorStateFight();
 
@@ -76,4 +84,3 @@ function ItemToken({ item, AI, noBattle }: { item: oneTokenInterface; AI?: boole
         </Tippy>
     );
 }
-export default ItemToken;

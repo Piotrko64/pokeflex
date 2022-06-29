@@ -301,5 +301,5 @@ const allPokemons: arrayPokemonInterface = [
 export const examplePokemons = allPokemons.map((e) => ({ ...e, id: v4() }));
 
 export function findPokemonByName(name: string) {
-    return { ...examplePokemons.find((el) => el.name === name), id: v4() };
+    return examplePokemons.find((el) => el.name === name) || examplePokemons[0];
 }

@@ -1,12 +1,12 @@
 import { arrayTokenInterface, oneTokenInterface } from "./../pokemonTokenData/tokenInterface";
-import { arrayPokemonInterface } from "./../pokemonTokenData/pokemonInterface";
-import { pokemonInterface } from "../pokemonTokenData/pokemonInterface";
+
+import { arrayPokemonInterface, pokemonInterface } from "../pokemonTokenData/pokemonInterface";
 export interface levelInterface {
     id: string;
     name: string;
     color: string;
-    enemyTeam: any;
-    enemyTokens: any;
+    enemyTeam: arrayPokemonInterface;
+    enemyTokens: arrayTokenInterface;
     award: awardsType;
     music?: HTMLAudioElement;
 }

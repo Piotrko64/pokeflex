@@ -3,7 +3,7 @@ import MainComponentScrollPokemons from "./components/ScrollPokemons/MainCompone
 import MainComponentScrollTokens from "./components/ScrollTokens/MainComponentScrollTokens";
 import SelectTeamMain from "./components/SelectTeam/SelectTeamMain";
 
-function MainComponentSelectTeam() {
+export function MainComponentSelectTeam() {
     return (
         <>
             <MainComponentScrollPokemons />
@@ -13,4 +13,3 @@ function MainComponentSelectTeam() {
         </>
     );
 }
-export default MainComponentSelectTeam;

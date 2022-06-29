@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
 import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeam } from "../../../../_Reducer/YourItems";
 
-import CardPokemon from "../../../CardPokemon/CardPokemon";
+import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
 const Card = styled.div`
     padding: 0 10px;

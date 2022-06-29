@@ -6,7 +6,7 @@ import Awards from "./AwardsComponents/Awards";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import ButtonsNavigate from "./AwardsComponents/ButtonsNavigate";
+import { ButtonsNavigate } from "./AwardsComponents/ButtonsNavigate";
 
 const Blur = styled.div`
     position: fixed;

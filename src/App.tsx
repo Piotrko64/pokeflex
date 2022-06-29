@@ -1,12 +1,12 @@
 import "atropos/css";
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
-import MainRouting from "./components/Routing/MainRouting";
-import MainComponentGuide from "./components/Quide/MainComponentGuide";
+import { MainRouting } from "./components/Routing/MainRouting";
+import { MainComponentGuide } from "./components/Quide/MainComponentGuide";
 import { useDispatch } from "react-redux";
 
-import MainComponentVolume from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
+import { MainComponentVolume } from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 import { useKeyboardGuide } from "./hooks/keyboardUsing/useKeyboardGuide";
 import { addItemsFromLocalStorage } from "./_Reducer/YourItems";
 

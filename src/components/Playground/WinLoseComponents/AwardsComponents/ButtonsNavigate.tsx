@@ -29,7 +29,7 @@ const Button = styled.button`
     }
 `;
 
-const ButtonsNavigate = () => {
+export const ButtonsNavigate = () => {
     const navigate = useNavigate();
     return (
         <Content>
@@ -44,5 +44,3 @@ const ButtonsNavigate = () => {
         </Content>
     );
 };
-
-export default ButtonsNavigate;

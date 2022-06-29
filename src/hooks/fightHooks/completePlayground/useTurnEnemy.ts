@@ -47,7 +47,6 @@ export const useTurnEnemy = () => {
                 } else if (chooseRandomEnemy(myTeam, enemyTeam)[1]) {
                     setTimeout(() => handleMoveComputer(chooseRandomEnemy(myTeam, enemyTeam)[1]), 400);
                 } else {
-                    console.log("else");
                     handleMoveComputer(myTeam[0].id!);
                 }
             }, 1000);

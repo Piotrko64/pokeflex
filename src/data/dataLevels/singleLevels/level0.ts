@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens } from "../../dataTokens/allTokens";
+import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
 
 import { examplePokemons } from "../../examplePokemons";
 
@@ -27,10 +27,7 @@ export const level0 = {
         rgba(255, 224, 180, 1) 100%
     )`,
     enemyTeam: [Raichu],
-    enemyTokens: [
-        allTokens.find((e) => e.name === "Electro Action"),
-        allTokens.find((e) => e.name === "Punch"),
-    ],
+    enemyTokens: [findTokenByName("Electro Action"), findTokenByName("Punch")],
     award: {
         pokemons: examplePokemons.find((e) => e.name === "Pikachu"),
     },

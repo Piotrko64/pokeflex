@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
-import levels from "../../../../data/dataLevels/levels";
+import { levels } from "../../../../data/dataLevels/levels";
 import ListAwards from "./ListAwards";
 import { levelInterface } from "../../../../types/levels/levelInterface";
 

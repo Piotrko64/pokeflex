@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens } from "../../dataTokens/allTokens";
+import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
@@ -20,9 +20,9 @@ export const level5 = {
     name: "level 5",
     color: "#2B951B",
     enemyTeam: [Torterra],
-    enemyTokens: [allTokens.find((el) => el.name === "High Grass")],
+    enemyTokens: [findTokenByName("High Grass")],
     award: {
-        tokens: allTokens.find((e) => e.name === "High Grass"),
+        tokens: findTokenByName("High Grass"),
     },
     music: Tribe,
 };

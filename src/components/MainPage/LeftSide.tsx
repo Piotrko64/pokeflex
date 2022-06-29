@@ -48,7 +48,7 @@ const Play = styled.button`
     }
 `;
 
-function LeftSide() {
+export function LeftSide() {
     return (
         <AllLeft>
             <Welcome>
@@ -67,5 +67,3 @@ function LeftSide() {
         </AllLeft>
     );
 }
-
-export default LeftSide;

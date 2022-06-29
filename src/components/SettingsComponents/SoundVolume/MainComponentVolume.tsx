@@ -45,7 +45,7 @@ const EntireComponent = styled.div`
     }
 `;
 
-const MainComponentVolume = () => {
+export const MainComponentVolume = () => {
     const dispatch = useDispatch();
     const { volume } = UseSelectorSettings();
 
@@ -72,5 +72,3 @@ const MainComponentVolume = () => {
         </EntireComponent>
     );
 };
-
-export default MainComponentVolume;

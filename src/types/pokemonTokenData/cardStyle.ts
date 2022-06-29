@@ -1,6 +1,6 @@
 export type cardStyleInt = {
     versionMini?: boolean;
-    isOdd?: boolean | undefined;
+    isOdd?: boolean;
     df: number;
     hp: number;
     rv: number;

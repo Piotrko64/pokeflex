@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 
-import ReadyPokemon from "./ReadyPokemon";
+import { ReadyPokemon } from "./ReadyPokemon";
 
-import ListTokens from "./Tokens/ListTokens";
+import { ListTokens } from "./Tokens/ListTokens";
 import { arrayPokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
 import { arrayTokenInterface } from "../../types/pokemonTokenData/tokenInterface";
 

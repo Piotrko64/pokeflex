@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens } from "../../dataTokens/allTokens";
+import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
@@ -21,9 +21,9 @@ export const level3 = {
     name: "level 3",
     color: "red",
     enemyTeam: [Charizard],
-    enemyTokens: [allTokens.find((e) => e.name === "Conflagration")],
+    enemyTokens: [findTokenByName("Conflagration")],
     award: {
-        tokens: allTokens.find((e) => e.name === "Lighter"),
+        tokens: findTokenByName("Lighter"),
     },
     music: Tribe,
 };

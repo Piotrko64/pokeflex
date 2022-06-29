@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import AtroposSide from "../components/MainPage/AtroposSide";
-import LeftSide from "../components/MainPage/LeftSide";
+import { AtroposSide } from "../components/MainPage/AtroposSide";
+import { LeftSide } from "../components/MainPage/LeftSide";
 
 const Main = styled.div`
     width: 100%;

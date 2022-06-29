@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import CardPokemon from "../CardPokemon/CardPokemon";
+import { CardPokemon } from "../CardPokemon/CardPokemon";
 
 import { useDispatch } from "react-redux";
 
@@ -22,8 +22,8 @@ const Pokemon = styled.div`
     margin: 15px;
 `;
 
-function ReadyPokemon({ value }: { value: pokemonInterface }) {
-    const [hpChange, setHpChange] = useState<any>(value.hp);
+export function ReadyPokemon({ value }: { value: pokemonInterface }) {
+    const [hpChange, setHpChange] = useState<number>(value.hp);
     const [arrayHp, setArrayHp] = useState<Array<number>>([]);
 
     const pokemonRef = useRef<HTMLDivElement>(null)!;
@@ -84,5 +84,3 @@ function ReadyPokemon({ value }: { value: pokemonInterface }) {
         </Pokemon>
     );
 }
-
-export default ReadyPokemon;

@@ -10,7 +10,7 @@ import {
     deleteFromTeamToken,
 } from "../../../../_Reducer/YourItems";
 
-import CardPokemon from "../../../CardPokemon/CardPokemon";
+import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
 import OneTokenScroll from "../ScrollTokens/OneTokenScroll";
 import TitleScroll from "../TitleScroll";

@@ -5,7 +5,7 @@ import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInter
 import UseSelectorYourItems from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeamToken } from "../../../../_Reducer/YourItems";
 
-import ItemToken from "../../../Playground/Tokens/ItemToken";
+import { ItemToken } from "../../../Playground/Tokens/ItemToken";
 
 const Token = styled.div`
     padding: 10px;

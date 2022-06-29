@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens } from "../../dataTokens/allTokens";
+import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
 
 const Gyarados = {
     id: v4(),
@@ -32,11 +32,8 @@ export const level1 = {
     name: "level 1",
     color: "linear-gradient(180deg, rgba(33,36,254,1) 0%, rgba(47,0,195,1) 89%)",
     enemyTeam: [Gyarados, Greninja],
-    enemyTokens: [
-        allTokens.find((e) => e.name === "Fishing Rod"),
-        allTokens.find((e) => e.name === "Fountain"),
-    ],
+    enemyTokens: [findTokenByName("Fishing Rod"), findTokenByName("Fountain")],
     award: {
-        tokens: allTokens.find((e) => e.name === "Fishing Rod"),
+        tokens: findTokenByName("Fishing Rod"),
     },
 };

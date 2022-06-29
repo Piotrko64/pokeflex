@@ -14,7 +14,6 @@ import { useShowWinner } from "../../hooks/fightHooks/completePlayground/useShow
 import { useTurnEnemy } from "../../hooks/fightHooks/completePlayground/useTurnEnemy";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
 import UseSelectorSettings from "../../_Reducer/selectors/useSelectorSettings";
-import { stateFightInterface } from "../../types/_Reducer/stateFight";
 
 const WholeField = styled.div`
     display: flex;
@@ -26,7 +25,7 @@ const WholeField = styled.div`
     min-height: 100vh;
 `;
 
-function CompletePlayground({ music = quickGameSoundtrack }) {
+export function CompletePlayground({ music = quickGameSoundtrack }) {
     const { whoWin, yourTurn, myTeam, myTokens, enemyTeam, enemyTokens } = useSelectorStateFight();
 
     const { volume } = UseSelectorSettings();
@@ -63,5 +62,3 @@ function CompletePlayground({ music = quickGameSoundtrack }) {
         </>
     );
 }
-
-export default CompletePlayground;

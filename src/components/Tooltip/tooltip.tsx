@@ -19,7 +19,7 @@ const ToolTipComponent = styled.div`
     }
 `;
 
-function Tooltip({ title, desc }: { title: string; desc: string }) {
+export function Tooltip({ title, desc }: { title: string; desc: string }) {
     return (
         <ToolTipComponent>
             <h2>{title}</h2>
@@ -30,4 +30,3 @@ function Tooltip({ title, desc }: { title: string; desc: string }) {
         </ToolTipComponent>
     );
 }
-export default Tooltip;

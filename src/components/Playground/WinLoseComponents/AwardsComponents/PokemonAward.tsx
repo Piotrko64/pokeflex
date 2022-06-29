@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
 
-import CardPokemon from "../../../CardPokemon/CardPokemon";
+import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
 function PokemonAward({ pokemon }: { pokemon: pokemonInterface }) {
     useEffect(() => {

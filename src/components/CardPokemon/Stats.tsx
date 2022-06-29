@@ -77,7 +77,7 @@ const ImportantStat = styled.div<Partial<cardStyleInt>>`
 
 ////
 
-function Stats({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
+export function Stats({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
 
     return (
@@ -155,5 +155,3 @@ function Stats({ value, versionMini }: { value: pokemonInterface; versionMini?: 
         </>
     );
 }
-
-export default Stats;

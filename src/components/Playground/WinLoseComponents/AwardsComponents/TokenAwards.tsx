@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { Fragment, useEffect } from "react";
 import Tippy from "@tippyjs/react";
-import Tooltip from "../../../Tooltip/tooltip";
+import { Tooltip } from "../../../Tooltip/tooltip";
 import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
 
 const TokenAward = styled.div`

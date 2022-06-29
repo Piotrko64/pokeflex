@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { allTokens } from "../../../../data/dataTokens/allTokens";
 
-import ItemToken from "../../../Playground/Tokens/ItemToken";
+import { ItemToken } from "../../../Playground/Tokens/ItemToken";
 
 const FlexWrap = styled.div`
     display: flex;

@@ -1,7 +1,6 @@
-import Stats from "./Stats";
+import { Stats } from "./Stats";
 import styled from "styled-components";
 
-import { useSelector } from "react-redux";
 import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
 
@@ -39,7 +38,7 @@ const Img = styled.img`
     transform: "scale(0.5)";
     filter: ${(props) => (props.choose ? "drop-shadow(0px 0px 95px red)" : "")};
 `;
-function CardPokemon({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
+export function CardPokemon({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
     const { whoAttackID } = useSelectorStateFight();
 
     return (
@@ -58,5 +57,3 @@ function CardPokemon({ value, versionMini }: { value: pokemonInterface; versionM
         // </Atropos>
     );
 }
-
-export default CardPokemon;
