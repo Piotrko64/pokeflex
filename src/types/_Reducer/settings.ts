@@ -1,3 +1,3 @@
-export interface settingsInterface {
+export interface SettingsInterface {
     volume: number;
 }

@@ -4,8 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import { ReadyPokemon } from "./ReadyPokemon";
 
 import { ListTokens } from "./Tokens/ListTokens";
-import { arrayPokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
-import { arrayTokenInterface } from "../../types/pokemonTokenData/tokenInterface";
+import { ArrayPokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
 
 const PlayGround = styled.div`
     display: flex;
@@ -24,8 +24,8 @@ function GroundForCards({
     tokens,
     AI = false,
 }: {
-    pokemons: arrayPokemonInterface;
-    tokens: arrayTokenInterface;
+    pokemons: ArrayPokemonInterface;
+    tokens: ArrayTokenInterface;
     AI?: boolean;
 }) {
     return (

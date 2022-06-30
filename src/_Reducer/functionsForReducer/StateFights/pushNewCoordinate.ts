@@ -1,6 +1,6 @@
-import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 export function pushNewCoordinateFn(
-    state: stateFightInterface,
+    state: StateFightInterface,
     id: string,
     coordinate: [number, number],
     name: string

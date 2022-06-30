@@ -1,8 +1,8 @@
-import { yourItemsInterface } from "./../../../types/_Reducer/yourItems";
+import { YourItemsInterface } from "../../../types/_Reducer/YourItems";
 
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import clone from "lodash.clone";
-export function addToTeamFn(state: yourItemsInterface, pokemon: pokemonInterface) {
+export function addToTeamFn(state: YourItemsInterface, pokemon: PokemonInterface) {
     let newStateTeamFight = clone(state.teamFight);
     if (newStateTeamFight.find((el) => el.name === pokemon.name)) {
         return state;

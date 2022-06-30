@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { allStateReducer } from "../../types/_Reducer/allStateReducer";
+import { AllStateReducer } from "../../types/_Reducer/AllStateReducer";
 
 const UseSelectorSettings = () => {
-    const volume = useSelector((state: allStateReducer) => state.SettingsReducer.volume);
+    const volume = useSelector((state: AllStateReducer) => state.SettingsReducer.volume);
     return { volume };
 };
 

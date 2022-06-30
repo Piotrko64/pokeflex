@@ -1,26 +1,26 @@
-import { allStateReducer } from "./../../types/_Reducer/allStateReducer";
+import { AllStateReducer } from "../../types/_Reducer/AllStateReducer";
 import { useSelector } from "react-redux";
 
 export const useSelectorStateFight = () => {
-    const all = useSelector((state: allStateReducer) => state.StateFightsReducer);
+    const all = useSelector((state: AllStateReducer) => state.StateFightsReducer);
 
-    const grave = useSelector((state: allStateReducer) => state.StateFightsReducer.grave);
+    const grave = useSelector((state: AllStateReducer) => state.StateFightsReducer.grave);
 
-    const whereIsEnemy = useSelector((state: allStateReducer) => state.StateFightsReducer.whereIsEnemy);
+    const whereIsEnemy = useSelector((state: AllStateReducer) => state.StateFightsReducer.whereIsEnemy);
 
-    const whoWin = useSelector((state: allStateReducer) => state.StateFightsReducer.whoWin);
+    const whoWin = useSelector((state: AllStateReducer) => state.StateFightsReducer.whoWin);
 
-    const whoAttackID = useSelector((state: allStateReducer) => state.StateFightsReducer.whoAttackID);
+    const whoAttackID = useSelector((state: AllStateReducer) => state.StateFightsReducer.whoAttackID);
 
-    const yourTurn = useSelector((state: allStateReducer) => state.StateFightsReducer.yourTurn);
+    const yourTurn = useSelector((state: AllStateReducer) => state.StateFightsReducer.yourTurn);
 
-    const myTeam = useSelector((state: allStateReducer) => state.StateFightsReducer.myTeam);
-    const myTokens = useSelector((state: allStateReducer) => state.StateFightsReducer.myTokens);
+    const myTeam = useSelector((state: AllStateReducer) => state.StateFightsReducer.myTeam);
+    const myTokens = useSelector((state: AllStateReducer) => state.StateFightsReducer.myTokens);
 
-    const enemyTeam = useSelector((state: allStateReducer) => state.StateFightsReducer.enemyTeam);
-    const enemyTokens = useSelector((state: allStateReducer) => state.StateFightsReducer.enemyTokens);
+    const enemyTeam = useSelector((state: AllStateReducer) => state.StateFightsReducer.enemyTeam);
+    const enemyTokens = useSelector((state: AllStateReducer) => state.StateFightsReducer.enemyTokens);
 
-    const allCoordinates = useSelector((state: allStateReducer) => state.StateFightsReducer.allCoordinates);
+    const allCoordinates = useSelector((state: AllStateReducer) => state.StateFightsReducer.allCoordinates);
     return {
         all,
         grave,

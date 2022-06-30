@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import styled from "styled-components";
-import { arrayTokenInterface } from "../../../types/pokemonTokenData/tokenInterface";
+import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
 import { ItemToken } from "./ItemToken";
 
 const List = styled.div`
@@ -12,7 +12,7 @@ const List = styled.div`
     height: 62px;
 `;
 
-export function ListTokens({ list, AI }: { list: arrayTokenInterface; AI?: boolean }) {
+export function ListTokens({ list, AI }: { list: ArrayTokenInterface; AI?: boolean }) {
     return (
         <List>
             <AnimatePresence>

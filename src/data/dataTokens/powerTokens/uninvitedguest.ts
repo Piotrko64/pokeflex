@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
-import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
-export default function uninvitedGuest(state: stateFightInterface, AI: boolean): stateFightInterface {
+export default function uninvitedGuest(state: StateFightInterface, AI: boolean): StateFightInterface {
     const Meowth = {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
         name: "Meowth",

@@ -1,7 +1,6 @@
-import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
-import { levelInterface } from "../../../types/levels/levelInterface";
+import { LevelInterface } from "../../../types/levels/LevelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -18,7 +17,7 @@ const swinub = {
     revenge: 3,
 };
 
-export const level9: levelInterface = {
+export const level9: LevelInterface = {
     id: "level9HARDD1",
     name: "level 9",
     color: `background: rgb(207,142,39);
@@ -36,6 +35,6 @@ background: linear-gradient(137deg, rgba(207,142,39,1) 0%, rgba(65,65,65,1) 46%,
         findTokenByName("Charging"),
     ],
     award: {
-        pokemons: findPokemonByName("Pichu") as pokemonInterface,
+        pokemons: findPokemonByName("Pichu") as PokemonInterface,
     },
 };

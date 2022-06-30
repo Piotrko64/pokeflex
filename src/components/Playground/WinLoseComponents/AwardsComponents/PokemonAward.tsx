@@ -1,9 +1,9 @@
 import { Fragment, useEffect } from "react";
-import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
 
 import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 
-function PokemonAward({ pokemon }: { pokemon: pokemonInterface }) {
+function PokemonAward({ pokemon }: { pokemon: PokemonInterface }) {
     useEffect(() => {
         const checkAllTokensAward = JSON.parse(localStorage.getItem("pokemonsAward")!) || [];
         !checkAllTokensAward.length && localStorage.setItem("pokemonsAward", "[]");

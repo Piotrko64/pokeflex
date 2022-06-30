@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeam } from "../../../../_Reducer/YourItems";
 
@@ -13,14 +13,14 @@ const Card = styled.div`
     filter: ${(props: { choose: boolean }) => props.choose && "grayscale(1)"};
 `;
 
-export function OnePokemonScroll({ value }: { value: pokemonInterface }) {
+export function OnePokemonScroll({ value }: { value: PokemonInterface }) {
     const dispatch = useDispatch();
     const { teamFight } = useSelectorYourItems();
 
     return (
         <Card
             onClick={() => dispatch(addToTeam(value))}
-            choose={teamFight.some((e: pokemonInterface) => e.name === value.name)}
+            choose={teamFight.some((e: PokemonInterface) => e.name === value.name)}
         >
             <CardPokemon value={value} versionMini />
         </Card>

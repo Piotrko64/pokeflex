@@ -3,7 +3,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { GiPunchBlast } from "react-icons/gi";
-import { oneTokenInterface } from "../../../types/pokemonTokenData/tokenInterface";
+import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
 
 const punchMachampToken = {
     id: v4(),
@@ -47,6 +47,6 @@ export const level6 = {
     enemyTeam: [Mime, Machamp],
     enemyTokens: [punchMachampToken, findTokenByName("Punch")],
     award: {
-        tokens: findTokenByName("Punch") as oneTokenInterface,
+        tokens: findTokenByName("Punch") as OneTokenInterface,
     },
 };

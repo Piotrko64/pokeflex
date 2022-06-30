@@ -1,6 +1,7 @@
-import { yourItemsInterface } from "./../../../types/_Reducer/yourItems";
 import clone from "lodash.clone";
-export function deleteFromTeamFn(state: yourItemsInterface, name: string) {
+import { YourItemsInterface } from "../../../types/_Reducer/YourItems";
+
+export function deleteFromTeamFn(state: YourItemsInterface, name: string) {
     let newStateTeamFight = clone(state.teamFight);
     newStateTeamFight = newStateTeamFight.filter((el) => el.name !== name);
 

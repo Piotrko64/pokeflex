@@ -1,4 +1,4 @@
-import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -15,6 +15,6 @@ background: linear-gradient(137deg, rgba(172,60,6,1) 0%, rgba(207,114,69,1) 44%,
         findTokenByName("Punch"),
     ],
     award: {
-        pokemons: findPokemonByName("Flareon") as pokemonInterface,
+        pokemons: findPokemonByName("Flareon") as PokemonInterface,
     },
 };

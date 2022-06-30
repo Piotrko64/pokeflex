@@ -1,6 +1,6 @@
 import { ReactElement } from "react-markdown/lib/react-markdown";
 
-export interface oneTokenInterface {
+export interface OneTokenInterface {
     id: string;
     idAward?: string;
     badForAI?: boolean;
@@ -9,4 +9,4 @@ export interface oneTokenInterface {
     functionToken: any;
     desc: string;
 }
-export type arrayTokenInterface = Array<oneTokenInterface>;
+export type ArrayTokenInterface = Array<OneTokenInterface>;

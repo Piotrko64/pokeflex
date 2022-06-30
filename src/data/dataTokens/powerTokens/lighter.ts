@@ -1,19 +1,19 @@
-import { arrayTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
-import { arrayPokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { allTokens } from "../allTokens";
 import clone from "lodash.clone";
-import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
 type objectTeam =
-    | { enemyTeam: arrayPokemonInterface }
-    | { myTeam: arrayPokemonInterface }
-    | arrayPokemonInterface;
+    | { enemyTeam: ArrayPokemonInterface }
+    | { myTeam: ArrayPokemonInterface }
+    | ArrayPokemonInterface;
 type objectToken =
-    | { enemyTokens: arrayTokenInterface }
-    | { myTokens: arrayTokenInterface }
-    | arrayTokenInterface;
+    | { enemyTokens: ArrayTokenInterface }
+    | { myTokens: ArrayTokenInterface }
+    | ArrayTokenInterface;
 
-export default function lighter(state: stateFightInterface, AI: boolean): stateFightInterface {
+export default function lighter(state: StateFightInterface, AI: boolean): StateFightInterface {
     const conflagration = allTokens.find((el) => el.name === "Conflagration")!;
     const newState = clone(state);
     let newStateTeam: objectTeam = AI

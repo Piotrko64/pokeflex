@@ -1,10 +1,10 @@
-import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 import clone from "lodash.clone";
 
 let VALUE_DAMAGE = 3;
 const MORE_DAMAGE = 13;
 
-export default function robber(state: stateFightInterface, AI: boolean): stateFightInterface {
+export default function robber(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
 
     let thisToken = !AI ? newState.enemyTokens : newState.myTokens;

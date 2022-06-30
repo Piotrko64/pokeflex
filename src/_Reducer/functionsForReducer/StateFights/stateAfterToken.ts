@@ -1,8 +1,8 @@
-import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 import tokenSound from "../../../Audio/tokens/Token.wav";
 import { audioPlay } from "../../../functions/audioPlay";
 
-export function stateAfterToken(fn: stateFightInterface, id: string) {
+export function stateAfterToken(fn: StateFightInterface, id: string) {
     let newStateTokens = [...fn.myTokens].filter((el) => el.id !== id);
     audioPlay(tokenSound);
 

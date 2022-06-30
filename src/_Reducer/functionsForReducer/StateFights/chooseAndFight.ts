@@ -1,6 +1,6 @@
-import { arrayTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
-import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
-import { arrayPokemonInterface, pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { ArrayPokemonInterface, PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import clone from "lodash.clone";
 import Hit from "../../../Audio/actions/Hit.wav";
 import pick from "../../../Audio/actions/PickingCart.wav";
@@ -13,25 +13,25 @@ import { audioPlay } from "../../../functions/audioPlay";
 let whoAttack = "";
 let whoAttackID = "";
 export function chooseAndFight(
-    state: stateFightInterface,
+    state: StateFightInterface,
     payload: string,
-    tF: arrayPokemonInterface,
-    tE: arrayPokemonInterface,
+    tF: ArrayPokemonInterface,
+    tE: ArrayPokemonInterface,
     computer?: boolean
 ) {
     const teamFriends = clone(tF).filter((e) => e.hp >= 1);
     const teamEnemy = clone(tE).filter((e) => e.hp >= 1);
 
-    const tokens: arrayTokenInterface = clone(computer ? state.enemyTokens : state.myTokens);
+    const tokens: ArrayTokenInterface = clone(computer ? state.enemyTokens : state.myTokens);
 
-    let Me: pokemonInterface;
+    let Me: PokemonInterface;
     let Enemy;
     let MeIndex: number;
     let Choosing = false;
     let EnemyIndex;
-    let stateAfterFightEnemy: arrayPokemonInterface = clone(teamEnemy);
-    let stateAfterFightFriends: arrayPokemonInterface = clone(teamFriends);
-    let stateAfterFightTokens: arrayTokenInterface = clone(tokens);
+    let stateAfterFightEnemy: ArrayPokemonInterface = clone(teamEnemy);
+    let stateAfterFightFriends: ArrayPokemonInterface = clone(teamFriends);
+    let stateAfterFightTokens: ArrayTokenInterface = clone(tokens);
 
     teamFriends.forEach((e) => {
         if (e.id === payload) {
@@ -121,7 +121,7 @@ export function chooseAndFight(
                             stateAfterFightTokens = [
                                 ...tokens,
                                 findTokenByName("Shield Stone"),
-                            ] as arrayTokenInterface;
+                            ] as ArrayTokenInterface;
                         }
                         break;
                     case "Ice":
@@ -129,7 +129,7 @@ export function chooseAndFight(
                             stateAfterFightTokens = [
                                 ...tokens,
                                 findTokenByName("Blizzard"),
-                            ] as arrayTokenInterface;
+                            ] as ArrayTokenInterface;
                         }
                         break;
                     case "Blocked":

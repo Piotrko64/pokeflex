@@ -1,8 +1,7 @@
-import { pokemonInterface } from "./../types/pokemonTokenData/pokemonInterface";
-import { arrayPokemonInterface } from "../types/pokemonTokenData/pokemonInterface";
+import { ArrayPokemonInterface } from "../types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
 
-const allPokemons: arrayPokemonInterface = [
+const allPokemons: ArrayPokemonInterface = [
     {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",

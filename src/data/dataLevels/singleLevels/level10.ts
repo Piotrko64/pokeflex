@@ -1,4 +1,4 @@
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -15,6 +15,6 @@ background: linear-gradient(137deg, rgba(74,39,207,1) 0%, rgba(23,120,173,1) 44%
     ],
     enemyTokens: [findTokenByName("Univinted Guest"), findTokenByName("Slow")],
     award: {
-        pokemons: findPokemonByName("Lapras") as pokemonInterface,
+        pokemons: findPokemonByName("Lapras") as PokemonInterface,
     },
 };

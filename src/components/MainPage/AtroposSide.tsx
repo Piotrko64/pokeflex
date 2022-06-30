@@ -2,11 +2,11 @@ import Atropos from "atropos/react";
 
 import { useEffect, useState } from "react";
 import { examplePokemons } from "../../data/examplePokemons";
-import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
 import { CardPokemon } from "../CardPokemon/CardPokemon";
 
 export function AtroposSide() {
-    const [atroposPokemon, setAtroposPokemon] = useState<false | pokemonInterface>(examplePokemons[0]);
+    const [atroposPokemon, setAtroposPokemon] = useState<false | PokemonInterface>(examplePokemons[0]);
     useEffect(() => {
         setAtroposPokemon(examplePokemons[Math.round(Math.random() * (examplePokemons.length - 1))]);
         return () => {

@@ -1,6 +1,6 @@
-import { oneTokenInterface } from "./../../../types/pokemonTokenData/tokenInterface";
+import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
 import { v4 } from "uuid";
-import { levelInterface } from "../../../types/levels/levelInterface";
+import { LevelInterface } from "../../../types/levels/LevelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 
 const Pikachu = {
@@ -29,7 +29,7 @@ const Raichu = {
     revenge: 2,
 };
 
-export const electrolevel1: levelInterface = {
+export const electrolevel1: LevelInterface = {
     id: "electrolevel1normal",
     name: "electro level 1",
     color: `linear-gradient(
@@ -48,6 +48,6 @@ export const electrolevel1: levelInterface = {
         findTokenByName("Electro Action"),
     ],
     award: {
-        tokens: findTokenByName("Electro Action") as oneTokenInterface,
+        tokens: findTokenByName("Electro Action") as OneTokenInterface,
     },
 };

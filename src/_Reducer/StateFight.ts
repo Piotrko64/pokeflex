@@ -1,4 +1,4 @@
-import { stateFightInterface } from "./../types/_Reducer/stateFight";
+import { StateFightInterface } from "../types/_Reducer/StateFight";
 import { createSlice } from "@reduxjs/toolkit";
 import { startPokemons } from "../data/startItems";
 import { chooseAndFight } from "./functionsForReducer/StateFights/chooseAndFight";
@@ -6,7 +6,7 @@ import { pushNewCoordinateFn } from "./functionsForReducer/StateFights/pushNewCo
 import { stateAfterToken } from "./functionsForReducer/StateFights/stateAfterToken";
 import { stateAfterTokenAI } from "./functionsForReducer/StateFights/stateAfterTokenAI";
 import { findTokensLocal } from "./helpers/findTokensLocal";
-const stateFight: stateFightInterface = {
+const stateFight: StateFightInterface = {
     myTeam: JSON.parse(localStorage.getItem("pokemons")!) || startPokemons.slice(0, 3),
     enemyTeam: [],
     whoAttack: "",

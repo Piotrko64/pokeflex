@@ -1,4 +1,4 @@
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
@@ -54,6 +54,6 @@ background: radial-gradient(circle, rgba(207,142,39,1) 0%, rgba(150,118,75,1) 46
         findTokenByName("Charging"),
     ],
     award: {
-        pokemons: findPokemonByName("Pachirisu") as pokemonInterface,
+        pokemons: findPokemonByName("Pachirisu") as PokemonInterface,
     },
 };

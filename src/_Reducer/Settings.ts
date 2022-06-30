@@ -1,6 +1,6 @@
-import { settingsInterface } from "./../types/_Reducer/settings";
+import { SettingsInterface } from "../types/_Reducer/Settings";
 import { createSlice } from "@reduxjs/toolkit";
-const Settings: settingsInterface = { volume: Number(localStorage.getItem("volume")) || 0.75 };
+const Settings: SettingsInterface = { volume: Number(localStorage.getItem("volume")) || 0.75 };
 const SliceSettings = createSlice({
     name: "Settings",
     initialState: Settings,

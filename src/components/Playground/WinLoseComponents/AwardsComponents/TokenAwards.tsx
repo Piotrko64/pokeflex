@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Fragment, useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import { Tooltip } from "../../../Tooltip/tooltip";
-import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
+import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
 
 const TokenAward = styled.div`
     border-radius: 50%;
@@ -20,7 +20,7 @@ const TokenAward = styled.div`
     margin-bottom: 25px;
 `;
 
-function TokenAwards({ token }: { token: oneTokenInterface }) {
+function TokenAwards({ token }: { token: OneTokenInterface }) {
     useEffect(() => {
         const checkAllTokensAward = JSON.parse(localStorage.getItem("tokensAward")!) || [];
 

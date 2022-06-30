@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -48,6 +48,6 @@ background: linear-gradient(150deg, rgba(2,67,113,1) 14%, rgba(142,151,186,1) 66
     enemyTeam: [swinub1, Glaceon, swinub2],
     enemyTokens: [findTokenByName("Fountain"), findTokenByName("Fishing Rod")],
     award: {
-        pokemons: findPokemonByName("Swinub") as pokemonInterface,
+        pokemons: findPokemonByName("Swinub") as PokemonInterface,
     },
 };

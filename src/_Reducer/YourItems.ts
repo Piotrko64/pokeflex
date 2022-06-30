@@ -1,4 +1,4 @@
-import { yourItemsInterface } from "./../types/_Reducer/yourItems";
+import { YourItemsInterface } from "../types/_Reducer/YourItems";
 import { startPokemons, startTokens } from "../data/startItems";
 import { deleteFromTeamFn } from "./functionsForReducer/YourItems/deleteFromTeam";
 import { addFromLocalStorageFn } from "./functionsForReducer/YourItems/addFromLocalStorage";
@@ -9,7 +9,7 @@ import { findTokensLocal } from "./helpers/findTokensLocal";
 import { addNewTokenFn } from "./functionsForReducer/YourItems/addNewToken";
 import { createSlice, current } from "@reduxjs/toolkit";
 
-const yourItems: yourItemsInterface = {
+const yourItems: YourItemsInterface = {
     pokemons: [...startPokemons],
     tokens: [...startTokens],
     teamFight: JSON.parse(localStorage.getItem("pokemons")!) || [...startPokemons.slice(0, 3)],

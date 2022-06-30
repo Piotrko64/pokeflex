@@ -1,7 +1,7 @@
-import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
 import { CardPokemon } from "../CardPokemon/CardPokemon";
 
-export function TooltipCard({ value }: { value: pokemonInterface }) {
+export function TooltipCard({ value }: { value: PokemonInterface }) {
     return (
         <>
             <CardPokemon value={value} versionMini />

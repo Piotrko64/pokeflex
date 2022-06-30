@@ -1,17 +1,17 @@
-import { arrayTokenInterface, oneTokenInterface } from "./../pokemonTokenData/tokenInterface";
+import { ArrayTokenInterface, OneTokenInterface } from "../pokemonTokenData/TokenInterface";
 
-import { arrayPokemonInterface, pokemonInterface } from "../pokemonTokenData/pokemonInterface";
-export interface levelInterface {
+import { ArrayPokemonInterface, PokemonInterface } from "../pokemonTokenData/PokemonInterface";
+export interface LevelInterface {
     id: string;
     name: string;
     color: string;
-    enemyTeam: arrayPokemonInterface;
-    enemyTokens: arrayTokenInterface;
-    award: awardsType;
+    enemyTeam: ArrayPokemonInterface;
+    enemyTokens: ArrayTokenInterface;
+    award: AwardsType;
     music?: HTMLAudioElement;
 }
-export type awardsType = {
-    tokens?: oneTokenInterface;
-    pokemons?: pokemonInterface;
+export type AwardsType = {
+    tokens?: OneTokenInterface;
+    pokemons?: PokemonInterface;
 };
-export type arrayLevelInterface = Array<levelInterface>;
+export type ArrayLevelInterface = Array<LevelInterface>;

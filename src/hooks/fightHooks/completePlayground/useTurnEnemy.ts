@@ -1,10 +1,11 @@
-import { oneCoordinate } from "./../../../types/_Reducer/stateFight";
+import { OneCoordinate } from "../../../types/_Reducer/StateFight";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEnemy";
-import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+
 import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 
 export const useTurnEnemy = () => {
     const { all, myTeam, enemyTeam, allCoordinates, enemyTokens, yourTurn } = useSelectorStateFight();
@@ -18,8 +19,8 @@ export const useTurnEnemy = () => {
     async function findRandom() {
         const randomEnemy = chooseRandomEnemy(myTeam, enemyTeam)[0];
 
-        if (allCoordinates.some((e: oneCoordinate) => e.id === randomEnemy)) {
-            dispatch(animation(allCoordinates.find((e: oneCoordinate) => e.id === randomEnemy)!.coordinate));
+        if (allCoordinates.some((e: OneCoordinate) => e.id === randomEnemy)) {
+            dispatch(animation(allCoordinates.find((e: OneCoordinate) => e.id === randomEnemy)!.coordinate));
             dispatch(computerMove(randomEnemy));
         } else {
             findRandom();
@@ -36,7 +37,7 @@ export const useTurnEnemy = () => {
     useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                if (!enemyTeam.some((e: pokemonInterface) => e.hp > 0)) {
+                if (!enemyTeam.some((e: PokemonInterface) => e.hp > 0)) {
                     return;
                 }
                 if (enemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {

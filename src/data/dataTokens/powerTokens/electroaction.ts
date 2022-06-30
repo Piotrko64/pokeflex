@@ -1,16 +1,16 @@
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
-import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
 const SMALL_ATTACK = 7;
 const STRONGER_ATTACK = 16;
 
-export default function electroAction(state: stateFightInterface, AI: boolean): stateFightInterface {
-    const newState: stateFightInterface = JSON.parse(JSON.stringify(state));
+export default function electroAction(state: StateFightInterface, AI: boolean): StateFightInterface {
+    const newState: StateFightInterface = JSON.parse(JSON.stringify(state));
 
     // AI move
     if (AI) {
         const newStateFriendsTeam = [...newState.myTeam];
-        let thisEnemy: pokemonInterface;
+        let thisEnemy: PokemonInterface;
         let thisAttack: number;
         if (newState.enemyTeam.some(({ type }) => type === "Electro" || type === "Turbo Electro")) {
             thisEnemy = newStateFriendsTeam.sort((a, b) => {
@@ -30,10 +30,8 @@ export default function electroAction(state: stateFightInterface, AI: boolean): 
 
         return { ...state, myTeam };
     } else {
-        // your move
-
         const newStateEnemyTeam = [...newState.enemyTeam];
-        let thisEnemy: pokemonInterface;
+        let thisEnemy: PokemonInterface;
         let thisAttack: number;
         if (newState.myTeam.find(({ type }) => type === "Electro" || type === "Turbo Electro")) {
             thisEnemy = newStateEnemyTeam.sort((a, b) => {

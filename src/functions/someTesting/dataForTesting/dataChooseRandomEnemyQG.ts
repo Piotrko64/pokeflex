@@ -1,6 +1,6 @@
-import { arrayPokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+import { ArrayPokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 
-export const fakeFriendArrayPokemons: arrayPokemonInterface = [
+export const fakeFriendArrayPokemons: ArrayPokemonInterface = [
     {
         id: "firstID",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
@@ -26,7 +26,7 @@ export const fakeFriendArrayPokemons: arrayPokemonInterface = [
         revenge: 0,
     },
 ];
-export const fakeEnemyArrayPokemons: arrayPokemonInterface = [
+export const fakeEnemyArrayPokemons: ArrayPokemonInterface = [
     {
         id: "secondID",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",

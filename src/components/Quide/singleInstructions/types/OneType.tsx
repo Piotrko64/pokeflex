@@ -1,7 +1,6 @@
-import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import { guideTypeInt } from "../../../../types/Guide/guideTypeInt";
+import { GuideTypeInt } from "../../../../types/Guide/GuideTypeInt";
 
 const Title = styled.div`
     text-align: center;
@@ -25,7 +24,7 @@ const Describe = styled.div`
     min-height: 50px;
 `;
 
-const OneType = ({ value }: { value: guideTypeInt }) => {
+const OneType = ({ value }: { value: GuideTypeInt }) => {
     const { color, name, description } = value;
     return (
         <>

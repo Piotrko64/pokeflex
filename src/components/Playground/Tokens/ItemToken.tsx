@@ -8,8 +8,8 @@ import { Tooltip } from "../../Tooltip/tooltip";
 import { motion } from "framer-motion";
 import { tokenPowerUse } from "../../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
-import { oneTokenInterface } from "../../../types/pokemonTokenData/tokenInterface";
-import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
 const Item = styled.button`
     border: 2px solid white;
@@ -39,18 +39,18 @@ export function ItemToken({
     AI,
     noBattle,
 }: {
-    item: oneTokenInterface;
+    item: OneTokenInterface;
     AI?: boolean;
     noBattle?: boolean;
 }) {
     const dispatch = useDispatch();
     const { all, yourTurn } = useSelectorStateFight();
 
-    function handleUseToken(fun: () => stateFightInterface, id: string) {
+    function handleUseToken(fun: () => StateFightInterface, id: string) {
         if (noBattle) {
             return;
         }
-        if (AI || !all.myTokens.find((e: oneTokenInterface) => e.id === id) || !yourTurn) {
+        if (AI || !all.myTokens.find((e: OneTokenInterface) => e.id === id) || !yourTurn) {
             return;
         }
         dispatch(tokenPowerUse([fun, id]));

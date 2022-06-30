@@ -1,14 +1,14 @@
-import { awardsType } from "./../../types/levels/levelInterface";
-import { oneTokenInterface } from "./../../types/pokemonTokenData/tokenInterface";
-import { pokemonInterface } from "./../../types/pokemonTokenData/pokemonInterface";
+import { AwardsType } from "../../types/levels/LevelInterface";
+import { OneTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
 import { useSelectorYourItems } from "../../_Reducer/selectors/useSelectorYourItems";
 
-export const useIsLevelWon = (award: awardsType) => {
+export const useIsLevelWon = (award: AwardsType) => {
     const { pokemons, tokens } = award;
     const allPokemons = useSelectorYourItems().pokemons;
-    const allPokemonsIdAward = allPokemons.map((el: pokemonInterface) => el.idAward).filter(Boolean);
+    const allPokemonsIdAward = allPokemons.map((el: PokemonInterface) => el.idAward).filter(Boolean);
     const allTokens = useSelectorYourItems().tokens;
-    const allTokensIdAward = allTokens.map((el: oneTokenInterface) => el.idAward).filter(Boolean);
+    const allTokensIdAward = allTokens.map((el: OneTokenInterface) => el.idAward).filter(Boolean);
 
     const isPokemonAward: boolean = allPokemonsIdAward.some((el) => el === pokemons?.idAward);
     const isTokensAward = allTokensIdAward?.some((el) => el === tokens?.idAward);

@@ -1,4 +1,5 @@
-import { arrayTokenInterface } from "./../../types/pokemonTokenData/tokenInterface";
+import { OneTokenInterface } from "./../../types/pokemonTokenData/TokenInterface";
+import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
 import { allTokens } from "../../data/dataTokens/allTokens";
 import { startTokens } from "../../data/startItems";
 
@@ -7,10 +8,10 @@ export function findTokensLocal() {
         (e: { name: string }) => e.name
     );
 
-    let arrayTokens: arrayTokenInterface = [];
+    let arrayTokens: ArrayTokenInterface = [];
 
     idTokens?.forEach((el) => {
-        arrayTokens.push(allTokens.find((t) => t.name === el)!);
+        arrayTokens.push(allTokens.find((t: OneTokenInterface) => t.name === el)!);
     });
     if (!arrayTokens.length) {
         return [...startTokens.slice(0, 2)];

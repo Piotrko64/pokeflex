@@ -1,4 +1,4 @@
-import { levelInterface } from "./../../types/levels/levelInterface";
+import { LevelInterface } from "../../types/levels/LevelInterface";
 import { electrolevel1 } from "./singleLevels/electrolevel1";
 import { electrolevel2 } from "./singleLevels/electrolevel2";
 import { electrolevel3 } from "./singleLevels/electrolevel3";
@@ -22,7 +22,7 @@ import { rocklevel1 } from "./singleLevels/rocklevel1";
 import { rocklevel2 } from "./singleLevels/rocklevel2";
 import { rocklevel3 } from "./singleLevels/rocklevel3";
 
-export const levels: Array<levelInterface> = [
+export const levels: Array<LevelInterface> = [
     level0,
     electrolevel1,
     level1,

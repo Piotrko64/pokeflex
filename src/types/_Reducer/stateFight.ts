@@ -1,21 +1,21 @@
-import { arrayTokenInterface } from "../pokemonTokenData/tokenInterface";
-import { arrayPokemonInterface } from "./../pokemonTokenData/pokemonInterface";
+import { ArrayTokenInterface } from "../pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../pokemonTokenData/PokemonInterface";
 
-type emptyOrString = "" | string;
+type EmptyOrString = "" | string;
 
-export interface stateFightInterface {
-    myTeam: arrayPokemonInterface;
-    enemyTeam: arrayPokemonInterface;
-    whoAttack: emptyOrString;
-    whoAttackID: emptyOrString;
-    whoIsAttack: emptyOrString;
-    whoIsAttackID: emptyOrString;
+export interface StateFightInterface {
+    myTeam: ArrayPokemonInterface;
+    enemyTeam: ArrayPokemonInterface;
+    whoAttack: EmptyOrString;
+    whoAttackID: EmptyOrString;
+    whoIsAttack: EmptyOrString;
+    whoIsAttackID: EmptyOrString;
     whereIsEnemy: Array<number>;
-    allCoordinates: Array<oneCoordinate>;
-    grave: arrayPokemonInterface;
-    myTokens: arrayTokenInterface;
-    enemyTokens: arrayTokenInterface;
+    allCoordinates: Array<OneCoordinate>;
+    grave: ArrayPokemonInterface;
+    myTokens: ArrayTokenInterface;
+    enemyTokens: ArrayTokenInterface;
     yourTurn: boolean;
     whoWin: string | false;
 }
-export type oneCoordinate = { id: string; name: string; coordinate: [number, number] };
+export type OneCoordinate = { id: string; name: string; coordinate: [number, number] };

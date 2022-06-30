@@ -1,9 +1,9 @@
-import { objectRender } from "./../types/hooks/switch";
+import { ObjectRender } from "../types/hooks/ObjectRender";
 import { useState } from "react";
 
 // 'listObjectRender must be array objects with propert 'name' and 'render''
 export function useSwitch(
-    listObjectsRender: Array<objectRender>,
+    listObjectsRender: Array<ObjectRender>,
     actualRender: string,
     defaultRender: string
 ) {
@@ -13,7 +13,7 @@ export function useSwitch(
         setActualValue(value);
     }
 
-    const findObject: objectRender =
+    const findObject: ObjectRender =
         listObjectsRender.find((objRen) => objRen.name === actualValue) ||
         listObjectsRender.find((objRen) => objRen.name === defaultRender)!;
 

@@ -1,4 +1,4 @@
-import { arrayTokenInterface, oneTokenInterface } from "../../types/pokemonTokenData/tokenInterface";
+import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
 import { v4 } from "uuid";
 // function for roken
 import electroAction from "./powerTokens/electroaction";
@@ -40,7 +40,7 @@ import punchMachamp from "./powerTokens/punchMachamp";
 
 import robber from "./powerTokens/robber";
 
-export const allTokens: arrayTokenInterface = [
+export const allTokens: ArrayTokenInterface = [
     {
         id: v4(),
         idAward: "Bilzisa456",

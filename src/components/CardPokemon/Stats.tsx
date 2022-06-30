@@ -16,8 +16,8 @@ import {
     TurboFire,
     Water,
 } from "./StylingStats";
-import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
-import { cardStyleInt } from "../../types/pokemonTokenData/cardStyle";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { CardStyleInt } from "../../types/pokemonTokenData/CardStyle";
 const TableWithAll = styled.div`
     display: flex;
     justify-content: space-around;
@@ -33,7 +33,7 @@ const GridStats = styled.div`
 
     width: 90%;
 `;
-const OneStat = styled.div<Partial<cardStyleInt>>`
+const OneStat = styled.div<Partial<CardStyleInt>>`
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -63,7 +63,7 @@ const rotate = keyframes`
         background-position: 0% 0%;
     }
 `;
-const ImportantStat = styled.div<Partial<cardStyleInt>>`
+const ImportantStat = styled.div<Partial<CardStyleInt>>`
     font-size: ${({ versionMini }) => (versionMini ? "20px" : "35px")};
     font-family: "Koulen", cursive;
     letter-spacing: 1px;
@@ -77,7 +77,7 @@ const ImportantStat = styled.div<Partial<cardStyleInt>>`
 
 ////
 
-export function Stats({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
+export function Stats({ value, versionMini }: { value: PokemonInterface; versionMini?: boolean }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
 
     return (

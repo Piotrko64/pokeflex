@@ -1,9 +1,9 @@
 import clone from "lodash.clone";
-import { stateFightInterface } from "../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
 const VALUE_PUNCH = 30;
 
-export default function punchMachamp(state: stateFightInterface, AI: boolean): stateFightInterface {
+export default function punchMachamp(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
     let thisTeam;
     thisTeam = !AI ? newState.enemyTeam : newState.myTeam;

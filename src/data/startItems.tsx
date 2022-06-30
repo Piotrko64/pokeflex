@@ -1,12 +1,12 @@
-import { arrayTokenInterface } from "../types/pokemonTokenData/tokenInterface";
-import { arrayPokemonInterface } from "../types/pokemonTokenData/pokemonInterface";
+import { ArrayTokenInterface } from "../types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
 import { GiWaterFountain, GiBlackHandShield } from "react-icons/gi";
 
 import fountain from "./dataTokens/powerTokens/fountain";
 import resurrection from "./dataTokens/powerTokens/resurrection";
 
-export const startPokemons: arrayPokemonInterface = [
+export const startPokemons: ArrayPokemonInterface = [
     {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
         name: "Squirtle",
@@ -42,7 +42,7 @@ export const startPokemons: arrayPokemonInterface = [
     },
 ].map((el) => ({ ...el, id: v4() }));
 
-export const startTokens: arrayTokenInterface = [
+export const startTokens: ArrayTokenInterface = [
     {
         name: "Fountain",
         icon: <GiWaterFountain />,

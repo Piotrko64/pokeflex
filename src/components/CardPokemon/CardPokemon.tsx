@@ -1,7 +1,7 @@
 import { Stats } from "./Stats";
 import styled from "styled-components";
 
-import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
 
 interface propsInt {
@@ -38,7 +38,7 @@ const Img = styled.img`
     transform: "scale(0.5)";
     filter: ${(props) => (props.choose ? "drop-shadow(0px 0px 95px red)" : "")};
 `;
-export function CardPokemon({ value, versionMini }: { value: pokemonInterface; versionMini?: boolean }) {
+export function CardPokemon({ value, versionMini }: { value: PokemonInterface; versionMini?: boolean }) {
     const { whoAttackID } = useSelectorStateFight();
 
     return (

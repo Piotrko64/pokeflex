@@ -1,7 +1,7 @@
 import { ScrollListComponent } from "../ScrollListComponent";
 import { OneTokenScroll } from "./OneTokenScroll";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
-import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
+import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
 
 export function ListScrollTokens() {
     const { tokens } = useSelectorYourItems();
@@ -9,7 +9,7 @@ export function ListScrollTokens() {
     return (
         <ScrollListComponent>
             <>
-                {tokens.map((el: oneTokenInterface) => (
+                {tokens.map((el: OneTokenInterface) => (
                     <OneTokenScroll key={el.id} item={el} noBattle scroll />
                 ))}
             </>

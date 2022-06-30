@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { pokemonInterface } from "../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
@@ -59,6 +59,6 @@ background: linear-gradient(150deg, rgba(113,66,2,1) 14%, rgba(142,181,186,1) 66
     enemyTeam: [swinub, Glaceon, Eevee, swinub2],
     enemyTokens: [findTokenByName("Slow"), findTokenByName("Univinted Guest")],
     award: {
-        pokemons: findPokemonByName("Eevee") as pokemonInterface,
+        pokemons: findPokemonByName("Eevee") as PokemonInterface,
     },
 };

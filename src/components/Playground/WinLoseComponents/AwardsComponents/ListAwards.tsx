@@ -2,10 +2,10 @@ import { Fragment } from "react";
 
 import TokenAwards from "./TokenAwards";
 import PokemonAward from "./PokemonAward";
-import { oneTokenInterface } from "../../../../types/pokemonTokenData/tokenInterface";
-import { pokemonInterface } from "../../../../types/pokemonTokenData/pokemonInterface";
+import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
+import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
 
-function ListAwards({ token, pokemon }: { token: oneTokenInterface; pokemon: pokemonInterface }) {
+function ListAwards({ token, pokemon }: { token: OneTokenInterface; pokemon: PokemonInterface }) {
     return (
         <Fragment>
             {token && <TokenAwards token={token} />}

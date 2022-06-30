@@ -1,16 +1,16 @@
-import { stateFightInterface } from "./../../../types/_Reducer/stateFight";
+import { StateFightInterface } from "../../../types/_Reducer/StateFight";
 
-import { pokemonInterface } from "./../../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
 import clone from "lodash.clone";
 
 const VALUE_SPEED = 6;
 const VALUE_HP = 2;
 
-export default function blizzard(state: stateFightInterface, AI: boolean): stateFightInterface {
-    const newState: stateFightInterface = clone(state);
+export default function blizzard(state: StateFightInterface, AI: boolean): StateFightInterface {
+    const newState: StateFightInterface = clone(state);
 
     let thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
-    thisTeam = thisTeam.filter((el: pokemonInterface) => el.hp > 0);
+    thisTeam = thisTeam.filter((el: PokemonInterface) => el.hp > 0);
     const newStateTeam = {
         [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) => ({
             ...el,

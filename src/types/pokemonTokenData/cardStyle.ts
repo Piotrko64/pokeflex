@@ -1,4 +1,4 @@
-export type cardStyleInt = {
+export type CardStyleInt = {
     versionMini?: boolean;
     isOdd?: boolean;
     df: number;

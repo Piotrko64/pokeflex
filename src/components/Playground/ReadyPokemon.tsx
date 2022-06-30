@@ -13,7 +13,7 @@ import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordi
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
-import { pokemonInterface } from "../../types/pokemonTokenData/pokemonInterface";
+import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
 
 const Pokemon = styled.div`
     z-index: 9;
@@ -22,7 +22,7 @@ const Pokemon = styled.div`
     margin: 15px;
 `;
 
-export function ReadyPokemon({ value }: { value: pokemonInterface }) {
+export function ReadyPokemon({ value }: { value: PokemonInterface }) {
     const [hpChange, setHpChange] = useState<number>(value.hp);
     const [arrayHp, setArrayHp] = useState<Array<number>>([]);
 

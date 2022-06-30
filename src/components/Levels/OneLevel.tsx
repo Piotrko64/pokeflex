@@ -1,7 +1,7 @@
 import { BsCheckLg } from "react-icons/bs";
 import styled from "styled-components";
 import { useIsLevelWon } from "../../hooks/levels/useIsLevelWon";
-import { levelInterface } from "../../types/levels/levelInterface";
+import { LevelInterface } from "../../types/levels/LevelInterface";
 
 const OneLevelDiv = styled.div`
     display: flex;
@@ -32,7 +32,7 @@ const Check = styled.div`
     padding-left: 15px;
 `;
 
-function OneLevel({ value }: { value: levelInterface }) {
+function OneLevel({ value }: { value: LevelInterface }) {
     const isWin = useIsLevelWon(value.award);
     return (
         <OneLevelDiv color={value.color}>

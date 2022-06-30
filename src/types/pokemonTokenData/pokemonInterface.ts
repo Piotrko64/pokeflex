@@ -1,4 +1,4 @@
-export interface pokemonInterface {
+export interface PokemonInterface {
     id?: string;
     idAward?: string;
     image: string;
@@ -11,4 +11,4 @@ export interface pokemonInterface {
     defense: number;
     revenge: number;
 }
-export type arrayPokemonInterface = Array<pokemonInterface>;
+export type ArrayPokemonInterface = Array<PokemonInterface>;
