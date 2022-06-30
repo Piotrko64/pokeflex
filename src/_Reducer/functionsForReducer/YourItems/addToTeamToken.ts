@@ -11,6 +11,6 @@ export function addToTeamTokenFn(state: YourItemsInterface, token: OneTokenInter
     } else {
         newStateTokenFight.push(token);
     }
-    console.log({ ...state, tokensFight: newStateTokenFight });
+
     return { ...state, tokensFight: newStateTokenFight };
 }
