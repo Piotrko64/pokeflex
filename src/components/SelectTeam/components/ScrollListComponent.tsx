@@ -35,7 +35,7 @@ export function ScrollListComponent({ children }: { children: JSX.Element }) {
 
     const carousel = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
+        setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth + 300);
     }, []);
     return (
         <Scroll>

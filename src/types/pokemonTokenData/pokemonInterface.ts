@@ -1,8 +1,8 @@
 export interface PokemonInterface {
-    id?: string;
-    idAward?: string;
-    image: string;
-    name: string;
+    readonly id?: string;
+    readonly idAward?: string;
+    readonly image: string;
+    readonly name: string;
     type: string;
     hp: number;
     attack: number;

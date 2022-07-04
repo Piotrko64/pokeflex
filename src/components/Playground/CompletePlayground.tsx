@@ -22,7 +22,7 @@ const WholeField = styled.div`
     max-width: 1800px;
     margin: auto;
     flex-direction: column-reverse;
-    min-height: 100vh;
+    height: 100vh;
 `;
 
 export function CompletePlayground({ music = quickGameSoundtrack }) {
