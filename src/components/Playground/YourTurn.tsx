@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Flip = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px #000000;
-    width: clamp(135px, 12vw, 175px);
+    width: clamp(135px, 10vw, 175px);
     aspect-ratio: 2.5;
 
     text-align: center;
@@ -27,7 +27,7 @@ const Front = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     border-radius: 10px;
     width: 100%;
     height: 100%;

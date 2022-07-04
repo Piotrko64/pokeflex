@@ -1,5 +1,5 @@
 import clone from "lodash.clone";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const MORE_SPEED = 10;
 const MORE_SPECIAL_ATTACK = 2;

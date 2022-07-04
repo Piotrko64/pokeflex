@@ -1,4 +1,4 @@
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 

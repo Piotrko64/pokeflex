@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import { GuideTypeInt } from "../../../../types/Guide/GuideTypeInt";
+import { GuideTypeInt } from "../../../../@types/Guide/GuideTypeInt";
 
 const Title = styled.div`
     text-align: center;

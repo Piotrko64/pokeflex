@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
-import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
+import { PokemonInterface } from "../../../../@types/pokemonTokenData/PokemonInterface";
+import { OneTokenInterface } from "../../../../@types/pokemonTokenData/TokenInterface";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import {
     addItemsFromLocalStorage,

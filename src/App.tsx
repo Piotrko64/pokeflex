@@ -32,6 +32,9 @@ function App() {
 
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            alert("This game was created for desktop devices!");
+        }
     }, []);
 
     return (

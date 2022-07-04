@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../../@types/pokemonTokenData/PokemonInterface";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeam } from "../../../../_Reducer/YourItems";
 

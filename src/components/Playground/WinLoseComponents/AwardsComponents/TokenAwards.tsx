@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Fragment, useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import { Tooltip } from "../../../Tooltip/tooltip";
-import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../../@types/pokemonTokenData/TokenInterface";
 
 const TokenAward = styled.div`
     border-radius: 50%;

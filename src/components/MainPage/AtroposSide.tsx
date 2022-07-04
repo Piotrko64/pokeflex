@@ -2,7 +2,7 @@ import Atropos from "atropos/react";
 
 import { useEffect, useState } from "react";
 import { examplePokemons } from "../../data/examplePokemons";
-import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 import { CardPokemon } from "../CardPokemon/CardPokemon";
 
 export function AtroposSide() {

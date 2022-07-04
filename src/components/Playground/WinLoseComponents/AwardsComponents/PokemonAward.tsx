@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from "react";
-import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../../@types/pokemonTokenData/PokemonInterface";
 
 import { CardPokemon } from "../../../CardPokemon/CardPokemon";
 

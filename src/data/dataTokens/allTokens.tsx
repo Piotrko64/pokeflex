@@ -1,4 +1,4 @@
-import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
+import { ArrayTokenInterface } from "../../@types/pokemonTokenData/TokenInterface";
 import { v4 } from "uuid";
 // function for roken
 import electroAction from "./powerTokens/electroaction";

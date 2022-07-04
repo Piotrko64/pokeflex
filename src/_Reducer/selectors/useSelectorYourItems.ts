@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { AllStateReducer } from "../../types/_Reducer/AllStateReducer";
+import { AllStateReducer } from "../../@types/_Reducer/AllStateReducer";
 
 export const useSelectorYourItems = () => {
     const pokemons = useSelector((state: AllStateReducer) => state.YourItemsReducer.pokemons);

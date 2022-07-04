@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CompletePlayground } from "../components/Playground/CompletePlayground";
 import { levels } from "../data/dataLevels/levels";
-import { LevelInterface } from "../types/levels/LevelInterface";
+import { LevelInterface } from "../@types/levels/LevelInterface";
 import { setEnemyTeam } from "../_Reducer/StateFight";
 
 function SingleLevel() {

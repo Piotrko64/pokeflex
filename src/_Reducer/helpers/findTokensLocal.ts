@@ -1,5 +1,5 @@
-import { OneTokenInterface } from "./../../types/pokemonTokenData/TokenInterface";
-import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../@types/pokemonTokenData/TokenInterface";
+import { ArrayTokenInterface } from "../../@types/pokemonTokenData/TokenInterface";
 import { allTokens } from "../../data/dataTokens/allTokens";
 import { startTokens } from "../../data/startItems";
 

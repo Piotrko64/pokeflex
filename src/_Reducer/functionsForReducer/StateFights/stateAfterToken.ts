@@ -1,4 +1,4 @@
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 import tokenSound from "../../../Audio/tokens/Token.wav";
 import { audioPlay } from "../../../functions/audioPlay";
 

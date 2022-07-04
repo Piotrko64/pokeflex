@@ -1,5 +1,5 @@
 import clone from "lodash.clone";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const VALUE_DEFENSE = 3;
 const VALUE_REVENGE = 3;

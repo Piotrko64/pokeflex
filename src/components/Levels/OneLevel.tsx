@@ -1,7 +1,7 @@
 import { BsCheckLg } from "react-icons/bs";
 import styled from "styled-components";
 import { useIsLevelWon } from "../../hooks/levels/useIsLevelWon";
-import { LevelInterface } from "../../types/levels/LevelInterface";
+import { LevelInterface } from "../../@types/levels/LevelInterface";
 
 const OneLevelDiv = styled.div`
     display: flex;

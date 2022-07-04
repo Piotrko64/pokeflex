@@ -1,4 +1,4 @@
-import { YourItemsInterface } from "../../../types/_Reducer/YourItems";
+import { YourItemsInterface } from "../../../@types/_Reducer/YourItems";
 import clone from "lodash.clone";
 export function deleteFromTeamTokenFn(state: YourItemsInterface, name: string) {
     let newStateTokenFight = clone(state.tokensFight);

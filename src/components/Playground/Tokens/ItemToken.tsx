@@ -8,8 +8,8 @@ import { Tooltip } from "../../Tooltip/tooltip";
 import { motion } from "framer-motion";
 import { tokenPowerUse } from "../../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const Item = styled.button`
     border: 2px solid white;

@@ -4,7 +4,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { findPokemonByName } from "../../examplePokemons";
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 const punchMachampToken = {
     id: v4(),
     name: "Punch of Machamp",

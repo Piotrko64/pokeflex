@@ -1,4 +1,4 @@
-import { ObjectRender } from "../../types/hooks/ObjectRender";
+import { ObjectRender } from "../../@types/hooks/ObjectRender";
 import { AllPokemonsGuide } from "./singleInstructions/pokemons/AllPokemonsGuide";
 import { AllTokensGuide } from "./singleInstructions/tokens/AllTokensGuide";
 import { GeneralGuide } from "./singleInstructions/general/GeneralGuide";

@@ -1,4 +1,4 @@
-import { YourItemsInterface } from "../types/_Reducer/YourItems";
+import { YourItemsInterface } from "../@types/_Reducer/YourItems";
 import { startPokemons, startTokens } from "../data/startItems";
 import { deleteFromTeamFn } from "./functionsForReducer/YourItems/deleteFromTeam";
 import { addFromLocalStorageFn } from "./functionsForReducer/YourItems/addFromLocalStorage";

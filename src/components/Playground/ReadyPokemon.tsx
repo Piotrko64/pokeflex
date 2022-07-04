@@ -13,7 +13,7 @@ import usePushCoordinates from "../../hooks/fightHooks/coordinates/usePushCoordi
 import useYourAttack from "../../hooks/fightHooks/toAnimations/useYourAttack";
 import { animation, choose, moveToGrave } from "../../_Reducer/StateFight";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
-import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 
 const Pokemon = styled.div`
     z-index: 9;

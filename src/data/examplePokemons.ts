@@ -1,4 +1,4 @@
-import { ArrayPokemonInterface } from "../types/pokemonTokenData/PokemonInterface";
+import { ArrayPokemonInterface } from "../@types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
 
 const allPokemons: ArrayPokemonInterface = [

@@ -1,4 +1,4 @@
-import { ObjectRender } from "../types/hooks/ObjectRender";
+import { ObjectRender } from "../@types/hooks/ObjectRender";
 import { useState } from "react";
 
 // 'listObjectRender must be array objects with propert 'name' and 'render''

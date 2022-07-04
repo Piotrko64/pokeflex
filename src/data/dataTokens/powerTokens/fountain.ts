@@ -1,5 +1,5 @@
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const MORE_HP = 16;
 

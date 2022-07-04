@@ -2,7 +2,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
 
 export const level13 = {
     id: "level13Normal",

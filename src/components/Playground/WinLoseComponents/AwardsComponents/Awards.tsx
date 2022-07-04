@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import { levels } from "../../../../data/dataLevels/levels";
 import ListAwards from "./ListAwards";
-import { LevelInterface } from "../../../../types/levels/LevelInterface";
+import { LevelInterface } from "../../../../@types/levels/LevelInterface";
 
 const AwardsSection = styled.div`
     color: black;

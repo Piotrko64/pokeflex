@@ -1,7 +1,7 @@
 import { Stats } from "./Stats";
 import styled from "styled-components";
 
-import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 import { useSelectorStateFight } from "../../_Reducer/selectors/useSelectorStateFight";
 
 interface propsInt {
@@ -32,6 +32,9 @@ const Card = styled.div`
         transform: scale(1.05);
     }
     box-shadow: ${(props) => (props.choose ? "0px 0px 46px -1px red" : "0px 0px 46px -1px transparent")};
+    @media (max-width: 1200px) {
+        transform: scale(0.9);
+    }
 `;
 const Img = styled.img`
     height: ${(props: propsInt) => (props.versionMini ? "110px" : "240px")};

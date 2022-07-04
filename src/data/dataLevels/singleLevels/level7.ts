@@ -1,4 +1,4 @@
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
 import { v4 } from "uuid";
 import { findTokenByName } from "../../dataTokens/allTokens";
 

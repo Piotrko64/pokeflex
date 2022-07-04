@@ -1,7 +1,7 @@
 import { OnePokemonScroll } from "./OnePokemonScroll";
 import { ScrollListComponent } from "../ScrollListComponent";
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
-import { PokemonInterface } from "../../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../../@types/pokemonTokenData/PokemonInterface";
 
 export function ListScrollPoke() {
     const { pokemons } = useSelectorYourItems();

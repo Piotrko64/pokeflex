@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { levels } from "../../data/dataLevels/levels";
-import { LevelInterface } from "../../types/levels/LevelInterface";
+import { LevelInterface } from "../../@types/levels/LevelInterface";
 import OneLevel from "./OneLevel";
 const ListLevel = styled.div`
     display: flex;

@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 export default function uninvitedGuest(state: StateFightInterface, AI: boolean): StateFightInterface {
     const Meowth = {

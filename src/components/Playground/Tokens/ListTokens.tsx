@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import styled from "styled-components";
-import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { ArrayTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
 import { ItemToken } from "./ItemToken";
 
 const List = styled.div`

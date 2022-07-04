@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { OneTokenInterface } from "../../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../../@types/pokemonTokenData/TokenInterface";
 
 import { useSelectorYourItems } from "../../../../_Reducer/selectors/useSelectorYourItems";
 import { addToTeamToken } from "../../../../_Reducer/YourItems";

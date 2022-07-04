@@ -4,8 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import { ReadyPokemon } from "./ReadyPokemon";
 
 import { ListTokens } from "./Tokens/ListTokens";
-import { ArrayPokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
-import { ArrayTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
+import { ArrayTokenInterface } from "../../@types/pokemonTokenData/TokenInterface";
 
 const PlayGround = styled.div`
     display: flex;

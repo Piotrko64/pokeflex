@@ -1,6 +1,6 @@
-import { AwardsType } from "../../types/levels/LevelInterface";
-import { OneTokenInterface } from "../../types/pokemonTokenData/TokenInterface";
-import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { AwardsType } from "../../@types/levels/LevelInterface";
+import { OneTokenInterface } from "../../@types/pokemonTokenData/TokenInterface";
+import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 import { useSelectorYourItems } from "../../_Reducer/selectors/useSelectorYourItems";
 
 export const useIsLevelWon = (award: AwardsType) => {

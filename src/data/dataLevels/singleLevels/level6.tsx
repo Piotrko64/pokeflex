@@ -3,7 +3,7 @@ import { findTokenByName } from "../../dataTokens/allTokens";
 
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { GiPunchBlast } from "react-icons/gi";
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
 
 const punchMachampToken = {
     id: v4(),

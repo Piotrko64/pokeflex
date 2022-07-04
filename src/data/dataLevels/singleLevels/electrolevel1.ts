@@ -1,6 +1,6 @@
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
 import { v4 } from "uuid";
-import { LevelInterface } from "../../../types/levels/LevelInterface";
+import { LevelInterface } from "../../../@types/levels/LevelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 
 const Pikachu = {

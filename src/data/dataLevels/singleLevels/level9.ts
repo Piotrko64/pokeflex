@@ -1,6 +1,6 @@
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
-import { LevelInterface } from "../../../types/levels/LevelInterface";
+import { LevelInterface } from "../../../@types/levels/LevelInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import { findPokemonByName } from "../../examplePokemons";
 

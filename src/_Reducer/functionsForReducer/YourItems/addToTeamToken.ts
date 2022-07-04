@@ -1,5 +1,5 @@
-import { OneTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
-import { YourItemsInterface } from "../../../types/_Reducer/YourItems";
+import { OneTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
+import { YourItemsInterface } from "../../../@types/_Reducer/YourItems";
 import clone from "lodash.clone";
 export function addToTeamTokenFn(state: YourItemsInterface, token: OneTokenInterface) {
     let newStateTokenFight = clone(state.tokensFight);

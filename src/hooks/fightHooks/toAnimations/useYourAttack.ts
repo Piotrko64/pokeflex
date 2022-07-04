@@ -1,6 +1,6 @@
 import { useSelectorStateFight } from "./../../../_Reducer/selectors/useSelectorStateFight";
 import { RefObject, useEffect } from "react";
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 
 const UseYourAttack = (value: PokemonInterface, pokemonRef: RefObject<HTMLDivElement>) => {
     const { whoAttackID, whereIsEnemy } = useSelectorStateFight();

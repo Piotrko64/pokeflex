@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const NEW_HP = 13;
 

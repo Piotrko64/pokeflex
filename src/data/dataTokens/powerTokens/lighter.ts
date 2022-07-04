@@ -1,8 +1,8 @@
-import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
-import { ArrayPokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { ArrayTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import { allTokens } from "../allTokens";
 import clone from "lodash.clone";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 type objectTeam =
     | { enemyTeam: ArrayPokemonInterface }

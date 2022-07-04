@@ -1,4 +1,4 @@
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const VALUE_DAMAGE = 6;
 

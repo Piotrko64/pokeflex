@@ -1,4 +1,4 @@
-import { StateFightInterface } from "../types/_Reducer/StateFight";
+import { StateFightInterface } from "../@types/_Reducer/StateFight";
 import { createSlice } from "@reduxjs/toolkit";
 import { startPokemons } from "../data/startItems";
 import { chooseAndFight } from "./functionsForReducer/StateFights/chooseAndFight";

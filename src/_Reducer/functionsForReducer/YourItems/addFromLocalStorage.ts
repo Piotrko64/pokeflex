@@ -1,6 +1,6 @@
-import { YourItemsInterface } from "../../../types/_Reducer/YourItems";
-import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
-import { ArrayPokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { YourItemsInterface } from "../../../@types/_Reducer/YourItems";
+import { ArrayTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 
 import { allTokens } from "../../../data/dataTokens/allTokens";
 import { examplePokemons } from "../../../data/examplePokemons";

@@ -2,7 +2,7 @@ import { useSelectorStateFight } from "./../../../_Reducer/selectors/useSelector
 import { RefObject, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { pushCoordinate } from "../../../_Reducer/StateFight";
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 
 const UsePushCoordinates = (value: PokemonInterface, pokemonRef: RefObject<HTMLDivElement>) => {
     const { myTeam, enemyTeam } = useSelectorStateFight();

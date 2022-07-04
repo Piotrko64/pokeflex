@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
 import styled from "styled-components";
-import { oneStatType } from "../../../../../types/Stats/oneStatType";
+import { oneStatType } from "../../../../../@types/Stats/oneStatType";
 
 const Title = styled.h2`
     display: flex;

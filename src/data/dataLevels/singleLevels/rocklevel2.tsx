@@ -1,7 +1,7 @@
 import { GiPunchBlast } from "react-icons/gi";
 import { v4 } from "uuid";
-import { LevelInterface } from "../../../types/levels/LevelInterface";
-import { PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { LevelInterface } from "../../../@types/levels/LevelInterface";
+import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import { findTokenByName } from "../../dataTokens/allTokens";
 import punchMachamp from "../../dataTokens/powerTokens/punchMachamp";
 import { findPokemonByName } from "../../examplePokemons";

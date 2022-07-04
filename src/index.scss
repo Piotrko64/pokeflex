@@ -60,3 +60,8 @@ a {
 .zIndex {
     z-index: 999999999;
 }
+@media (max-width: 1000px) {
+    body {
+        zoom: 0.95;
+    }
+}

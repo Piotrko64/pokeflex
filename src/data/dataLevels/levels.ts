@@ -1,4 +1,4 @@
-import { LevelInterface } from "../../types/levels/LevelInterface";
+import { LevelInterface } from "../../@types/levels/LevelInterface";
 import { electrolevel1 } from "./singleLevels/electrolevel1";
 import { electrolevel2 } from "./singleLevels/electrolevel2";
 import { electrolevel3 } from "./singleLevels/electrolevel3";

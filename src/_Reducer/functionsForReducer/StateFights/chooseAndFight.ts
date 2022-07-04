@@ -1,6 +1,6 @@
-import { ArrayTokenInterface } from "../../../types/pokemonTokenData/TokenInterface";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
-import { ArrayPokemonInterface, PokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { ArrayTokenInterface } from "../../../@types/pokemonTokenData/TokenInterface";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
+import { ArrayPokemonInterface, PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import clone from "lodash.clone";
 import Hit from "../../../Audio/actions/Hit.wav";
 import pick from "../../../Audio/actions/PickingCart.wav";

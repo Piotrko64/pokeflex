@@ -1,4 +1,4 @@
-import { ArrayPokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
+import { ArrayPokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 import clone from "lodash.clone";
 
 export function chooseRandomEnemy(everyFriend: ArrayPokemonInterface, everyEnemy: ArrayPokemonInterface) {

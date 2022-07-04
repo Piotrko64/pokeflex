@@ -1,6 +1,6 @@
-import { ArrayPokemonInterface } from "../../../types/pokemonTokenData/PokemonInterface";
+import { ArrayPokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
-import { StateFightInterface } from "../../../types/_Reducer/StateFight";
+import { StateFightInterface } from "../../../@types/_Reducer/StateFight";
 
 const Magikarp = {
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",

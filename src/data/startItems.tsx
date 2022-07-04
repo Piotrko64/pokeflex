@@ -1,5 +1,5 @@
-import { ArrayTokenInterface } from "../types/pokemonTokenData/TokenInterface";
-import { ArrayPokemonInterface } from "../types/pokemonTokenData/PokemonInterface";
+import { ArrayTokenInterface } from "../@types/pokemonTokenData/TokenInterface";
+import { ArrayPokemonInterface } from "../@types/pokemonTokenData/PokemonInterface";
 import { v4 } from "uuid";
 import { GiWaterFountain, GiBlackHandShield } from "react-icons/gi";
 

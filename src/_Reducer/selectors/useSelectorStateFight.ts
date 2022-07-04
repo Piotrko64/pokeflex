@@ -1,4 +1,4 @@
-import { AllStateReducer } from "../../types/_Reducer/AllStateReducer";
+import { AllStateReducer } from "../../@types/_Reducer/AllStateReducer";
 import { useSelector } from "react-redux";
 
 export const useSelectorStateFight = () => {

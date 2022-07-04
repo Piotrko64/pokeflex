@@ -16,8 +16,8 @@ import {
     TurboFire,
     Water,
 } from "./StylingStats";
-import { PokemonInterface } from "../../types/pokemonTokenData/PokemonInterface";
-import { CardStyleInt } from "../../types/pokemonTokenData/CardStyle";
+import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
+import { CardStyleInt } from "../../@types/pokemonTokenData/CardStyle";
 const TableWithAll = styled.div`
     display: flex;
     justify-content: space-around;
