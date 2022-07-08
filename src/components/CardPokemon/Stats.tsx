@@ -15,6 +15,7 @@ import {
     TurboElectro,
     TurboFire,
     Water,
+    Flying,
 } from "./StylingStats";
 import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";
 import { CardStyleInt } from "../../@types/pokemonTokenData/CardStyle";
@@ -144,6 +145,8 @@ export function Stats({ value, versionMini }: { value: PokemonInterface; version
                                 return <Rock>{type}</Rock>;
                             case "Ice":
                                 return <Ice>{type}</Ice>;
+                            case "Flying":
+                                return <Flying>{type}</Flying>;
                             case "Blocked":
                                 return <Blocked>Blocked</Blocked>;
                             default:

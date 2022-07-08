@@ -10,6 +10,10 @@ export const Electro = styled.div`
         rgba(255, 224, 180, 1) 100%
     );
 `;
+export const Flying = styled.div`
+    background: rgb(158, 103, 29);
+    background: linear-gradient(209deg, rgba(158, 103, 29, 1) 47%, rgba(79, 59, 36, 1) 100%);
+`;
 export const TurboElectro = styled.div`
     background: rgb(215, 167, 91);
     background: radial-gradient(

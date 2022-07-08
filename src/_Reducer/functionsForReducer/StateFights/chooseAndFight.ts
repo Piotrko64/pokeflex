@@ -116,6 +116,14 @@ export function chooseAndFight(
                     case "Psychic":
                         Enemy.type = "Blocked";
                         break;
+                    case "Flying": {
+                        if (Enemy.revenge) {
+                            Enemy.revenge = Math.max(0, Enemy.revenge - 1);
+                        } else {
+                            Enemy.speed -= 10;
+                        }
+                        break;
+                    }
                     case "Rock":
                         if (tokens.length <= 2) {
                             stateAfterFightTokens = [

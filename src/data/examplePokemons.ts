@@ -156,7 +156,7 @@ const allPokemons: ArrayPokemonInterface = [
         idAward: "Superspearowforme",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
         name: "Spearow",
-        type: "Blocked",
+        type: "Flying",
         hp: 22,
         attack: 7,
         specialAttack: 10,

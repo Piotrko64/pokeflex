@@ -19,6 +19,13 @@ const dataTypes = [
 background: radial-gradient(circle, rgba(215,167,91,1) 0%, rgba(179,122,44,1) 46%, rgba(213,164,95,1) 100%);`,
     },
     {
+        name: "Flying",
+        description:
+            "Enemy lose **1** point revenge. If he had 0 points revenge before your attack Enemy lose **10** speed",
+        color: ` background: rgb(158, 103, 29);
+    background: linear-gradient(209deg, rgba(158, 103, 29, 1) 47%, rgba(79, 59, 36, 1) 100%);`,
+    },
+    {
         name: "Water",
         description: "Your pokemon's gain 1 point hp with exception pokemon who attacked",
         color: `background: rgb(37, 186, 209);
