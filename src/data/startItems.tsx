@@ -29,18 +29,7 @@ export const startPokemons: ArrayPokemonInterface = [
         defense: 3,
         revenge: 0,
     },
-    {
-        idAward: "Superspearowforme",
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
-        name: "Spearow",
-        type: "Flying",
-        hp: 22,
-        attack: 7,
-        specialAttack: 10,
-        speed: 20,
-        defense: 1,
-        revenge: 6,
-    },
+
     {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         name: "Bulbasaur",

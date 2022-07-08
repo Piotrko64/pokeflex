@@ -29,6 +29,7 @@ import {
     GiExtraTime,
     GiPunchBlast,
     GiRobber,
+    GiBrutalHelm,
 } from "react-icons/gi";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import shieldStone from "./powerTokens/shieldStone";
@@ -39,6 +40,7 @@ import charging from "./powerTokens/charging";
 import punchMachamp from "./powerTokens/punchMachamp";
 
 import robber from "./powerTokens/robber";
+import { ready } from "./powerTokens/ready";
 
 export const allTokens: ArrayTokenInterface = [
     {
@@ -67,6 +69,14 @@ export const allTokens: ArrayTokenInterface = [
     },
     {
         id: v4(),
+        idAward: "EREady6",
+        name: "Ready",
+        icon: <GiBrutalHelm />,
+        functionToken: ready,
+        desc: "Your pokemon's gain **1** point defense, **1** point revenge, **1**  point hp  and **5** points speed",
+    },
+    {
+        id: v4(),
         name: "Univinted Guest",
         icon: <GiCat />,
         functionToken: uninvitedGuest,
@@ -74,6 +84,7 @@ export const allTokens: ArrayTokenInterface = [
     },
     {
         id: v4(),
+        idAward: "SLLSOlow",
         name: "Slow",
         badForAI: true,
         icon: <GiExtraTime />,

@@ -120,7 +120,7 @@ export function chooseAndFight(
                         if (Enemy.revenge) {
                             Enemy.revenge = Math.max(0, Enemy.revenge - 1);
                         } else {
-                            Enemy.speed -= 10;
+                            Enemy.speed = Math.max(0, Enemy.speed - 10);
                         }
                         break;
                     }
