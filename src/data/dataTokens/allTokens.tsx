@@ -113,7 +113,7 @@ export const allTokens: ArrayTokenInterface = [
         icon: <GiDeadlyStrike />,
         badForAI: true,
         functionToken: sacrifice,
-        desc: "Take your Pokemon to the ***grave*** with the lightest special attack. Your Pokemon with the strongest **special attack** gains that Pokemon's **health** and **+25 speed**",
+        desc: "Take your Pokemon to the ***grave*** with the lightest special attack. Your Pokemon with the strongest **special attack** gains that Pokemon's **health**, **+10 speed** and **+2 special attack**",
     },
     {
         id: v4(),
@@ -185,6 +185,7 @@ export const allTokens: ArrayTokenInterface = [
 ].map((token) => ({ ...token, id: v4() }));
 
 export function findTokenByName(name: string) {
-    const findToken = allTokens.find((el) => el.name === name) || allTokens[0];
+    let findToken = allTokens.find((el) => el.name === name) || allTokens[0];
+    findToken = { ...findToken, id: v4() };
     return findToken;
 }

@@ -136,7 +136,7 @@ export function chooseAndFight(
                         if (!tokens.find((el) => el.name === "Blizzard")) {
                             stateAfterFightTokens = [
                                 ...tokens,
-                                findTokenByName("Blizzard"),
+                                () => findTokenByName("Blizzard"),
                             ] as ArrayTokenInterface;
                         }
                         break;
