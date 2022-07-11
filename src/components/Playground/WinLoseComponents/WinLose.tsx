@@ -71,8 +71,9 @@ function WinLose({ value }: { value: false | string }) {
                     width={window.innerWidth}
                     height={window.innerHeight}
                     numberOfPieces={1000}
-                    gravity={0.3}
+                    gravity={0.9}
                     recycle={false}
+                    wind={0.6}
                 />
             )}
             <AnimatePresence>
