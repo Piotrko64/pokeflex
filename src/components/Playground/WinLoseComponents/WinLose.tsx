@@ -73,7 +73,7 @@ function WinLose({ value }: { value: false | string }) {
                     numberOfPieces={1000}
                     gravity={0.9}
                     recycle={false}
-                    wind={0.6}
+                    wind={0}
                 />
             )}
             <AnimatePresence>

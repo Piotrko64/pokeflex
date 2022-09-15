@@ -248,7 +248,7 @@ const allPokemons: ArrayPokemonInterface = [
         revenge: 0,
     },
     {
-        idAward: "ONii342XXyeo456n",
+        idAward: "ONsii342XXyeo456n",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
         name: "Onix",
         type: "Rock",
