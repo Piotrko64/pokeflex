@@ -76,8 +76,6 @@ const ImportantStat = styled.div<Partial<CardStyleInt>>`
     animation: ${rotate} 12s ease infinite;
 `;
 
-////
-
 export function Stats({ value, versionMini }: { value: PokemonInterface; versionMini?: boolean }) {
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
 

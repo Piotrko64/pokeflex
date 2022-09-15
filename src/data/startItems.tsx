@@ -18,18 +18,7 @@ export const startPokemons: ArrayPokemonInterface = [
         defense: 4,
         revenge: 0,
     },
-    {
-        idAward: "ONii342XXyeo456n",
-        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
-        name: "Onix",
-        type: "Rock",
-        hp: 42,
-        attack: 7,
-        specialAttack: 6,
-        speed: 18,
-        defense: 3,
-        revenge: 1,
-    },
+
     {
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
         name: "Charmander",

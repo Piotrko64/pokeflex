@@ -45,7 +45,6 @@ export function CardPokemon({ value, versionMini }: { value: PokemonInterface; v
     const { whoAttackID } = useSelectorStateFight();
 
     return (
-        // <Atropos className="atropos">
         <Card versionMini={versionMini} choose={value.id === whoAttackID}>
             <Img
                 data-atropos-opacity="1"
@@ -57,6 +56,5 @@ export function CardPokemon({ value, versionMini }: { value: PokemonInterface; v
 
             <Stats value={value} versionMini={versionMini} />
         </Card>
-        // </Atropos>
     );
 }
