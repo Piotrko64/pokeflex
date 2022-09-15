@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 const Range = styled.input`
     transition: all 0.2s linear;
