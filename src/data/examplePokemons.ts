@@ -255,7 +255,7 @@ const allPokemons: ArrayPokemonInterface = [
         hp: 42,
         attack: 7,
         specialAttack: 6,
-        speed: 18,
+        speed: 22,
         defense: 3,
         revenge: 1,
     },
