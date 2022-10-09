@@ -240,7 +240,7 @@ const allPokemons: ArrayPokemonInterface = [
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
         name: "Lapras",
         type: "Water",
-        hp: 60,
+        hp: 62,
         attack: 3,
         specialAttack: 6,
         speed: 20,
