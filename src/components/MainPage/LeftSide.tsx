@@ -24,7 +24,7 @@ const Demo = styled.div`
     transform: rotate(-35deg);
 `;
 const Describe = styled.div`
-    font-size: 32px;
+    font-size: 26px;
 
     font-family: "Lato", sans-serif;
     max-width: 600px;
@@ -54,7 +54,7 @@ export function LeftSide() {
             <Welcome>
                 PokeFLEX <Demo>DEMO</Demo>
             </Welcome>
-            <Describe>Card Game by FRONT FLEX</Describe>
+            <Describe>Card Game by Piotr Kołodziejczyk</Describe>
             <Link to="/QuickGame">
                 <Play>Quick Game</Play>
             </Link>
