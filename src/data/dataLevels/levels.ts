@@ -25,6 +25,7 @@ import { rocklevel2 } from "./singleLevels/rocklevel2";
 import { rocklevel3 } from "./singleLevels/rocklevel3";
 import { level16 } from "./singleLevels/level16";
 import { level17 } from "./singleLevels/level17";
+import { level18 } from "./singleLevels/level18";
 
 export const levels: Array<LevelInterface> = [
     level0,
@@ -53,4 +54,5 @@ export const levels: Array<LevelInterface> = [
     waterlevel1,
     level16,
     level17,
+    level18,
 ];

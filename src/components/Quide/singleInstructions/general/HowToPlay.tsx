@@ -7,6 +7,7 @@ const Center = styled.div`
     margin: 10px auto;
     padding: 10px;
     flex-direction: column;
+    font-size: 20px;
 `;
 
 const HowToPlay = () => {

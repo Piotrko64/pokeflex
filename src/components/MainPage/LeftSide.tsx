@@ -4,6 +4,9 @@ import styled from "styled-components";
 const AllLeft = styled.div`
     display: flex;
     flex-direction: column;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
 `;
 
 const Welcome = styled.div`
@@ -11,6 +14,7 @@ const Welcome = styled.div`
     font-family: "Koulen", cursive;
     position: relative;
     width: fit-content;
+    font-weight: 400;
 `;
 const Demo = styled.div`
     background: black;
@@ -25,7 +29,7 @@ const Demo = styled.div`
 `;
 const Describe = styled.div`
     font-size: 26px;
-
+    font-weight: 400;
     font-family: "Lato", sans-serif;
     max-width: 600px;
     text-align: center;
@@ -64,6 +68,7 @@ export function LeftSide() {
             <Link to="/SelectTeam">
                 <Play color="#020de5">Select Team</Play>
             </Link>
+            <p> If you have any question use our guide (press Q)</p>
         </AllLeft>
     );
 }

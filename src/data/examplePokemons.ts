@@ -130,6 +130,7 @@ const allPokemons: ArrayPokemonInterface = [
         revenge: 0,
     },
     {
+        idAward: "Tortella123456",
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/389.png",
         name: "Torterra",
         type: "Grass",
