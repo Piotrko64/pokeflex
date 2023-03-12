@@ -54,7 +54,7 @@ export default function SelectTeamMain() {
     }, []);
     return (
         <FlexCenter>
-            <TitleScroll title="Your Team" />
+            <TitleScroll title="Your Team to play" />
             <Row>
                 {teamFight.map((el: PokemonInterface) => (
                     <OneCardSelect key={el.name} onClick={() => dispatch(deleteFromTeam(el.name))}>
