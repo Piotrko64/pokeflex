@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import { audioPlay } from "../../../functions/audioPlay";
-
 import WinSound from "../../../Audio/winLose/Win.wav";
 import LoseSound from "../../../Audio/winLose/Lose.wav";
 import RemisSound from "../../../Audio/winLose/Scream.wav";
@@ -27,6 +26,7 @@ export const useShowWinner = () => {
             audioPlay(WinSound);
             dispatch(setWhoWin("win"));
         }
+
         return () => {
             setWhoWin("");
         };

@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { TiArrowBack } from "react-icons/ti";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useSelectorYourItems } from "../../_Reducer/selectors/useSelectorYourItems";
 const Back = styled.div`
     border-radius: 10px;

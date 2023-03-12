@@ -15,7 +15,7 @@ const HPminus = styled(HPplus)`
     text-shadow: 0px 0px 14px #2c8a00;
 `;
 
-function MotionValue({ value }: any) {
+function MotionValue({ value }: { value: number }) {
     return (
         <motion.div
             layout
@@ -39,6 +39,7 @@ export function AnimHP({ value, deleteHpChange }: { value: number; deleteHpChang
             clearTimeout(timeShowHp);
         };
     }, []);
+
     return value < 0 ? (
         <HPplus>
             <MotionValue value={-value} />

@@ -1,5 +1,5 @@
 import "atropos/css";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import { MainRouting } from "./components/Routing/MainRouting";
@@ -8,8 +8,8 @@ import { useDispatch } from "react-redux";
 import { MainComponentVolume } from "./components/SettingsComponents/SoundVolume/MainComponentVolume";
 import { useKeyboardGuide } from "./hooks/keyboardUsing/useKeyboardGuide";
 import { addItemsFromLocalStorage } from "./_Reducer/YourItems";
-
 import Tippy from "@tippyjs/react";
+import { useDevicesInformation } from "./hooks/useDevicesInformation";
 
 const Guide = styled.div`
     position: fixed;
@@ -28,25 +28,23 @@ function App() {
     const dispatch = useDispatch();
 
     useKeyboardGuide(setOpenGuide);
+    useDevicesInformation();
 
     useEffect(() => {
         dispatch(addItemsFromLocalStorage());
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            alert("This game was created for desktop devices!");
-        }
     }, []);
 
     return (
-        <Fragment>
+        <>
             <MainRouting />
-            <Tippy content={'Press "Q" to open'}>
+            <Tippy content={'Press "Q" to open guide'}>
                 <Guide onClick={() => setOpenGuide(!openGuide)} show={openGuide}>
                     <BsQuestionCircleFill />
                 </Guide>
             </Tippy>
             <MainComponentVolume />
             {openGuide && <MainComponentGuide setOpen={() => setOpenGuide(false)} />}
-        </Fragment>
+        </>
     );
 }
 

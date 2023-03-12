@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-import { Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import { levels } from "../../../../data/dataLevels/levels";
 import ListAwards from "./ListAwards";
@@ -35,11 +33,11 @@ function Awards() {
     const awardPokemon = findAwards?.award.pokemons!;
 
     return (
-        <Fragment>
+        <>
             {(awardToken || awardPokemon) && <AwardsSection>Your Awards</AwardsSection>}
 
             <ListAwards token={awardToken} pokemon={awardPokemon} />
-        </Fragment>
+        </>
     );
 }
 export default Awards;

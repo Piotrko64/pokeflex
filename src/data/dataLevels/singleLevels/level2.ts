@@ -1,6 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
-
+import { findTokenByName } from "../../dataTokens/allTokens";
 import { examplePokemons } from "../../examplePokemons";
 
 const Mime1 = {
