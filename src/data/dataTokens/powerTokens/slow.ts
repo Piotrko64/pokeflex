@@ -15,12 +15,15 @@ export default function slow(state: StateFightInterface, AI: boolean): StateFigh
         [AI ? "enemyTeam" : "myTeam"]: yourTeam.map((el) => ({
             ...el,
             speed: el.speed + VALUE_SPEED,
-            hp: el.hp + VALUE_HP,
+            hp: el.hp > 0 ? el.hp + VALUE_HP : 0,
             revenge: el.revenge + VALUE_REVENGE,
         })),
     };
     const newStateEnemyTeam = {
-        [!AI ? "enemyTeam" : "myTeam"]: enemyTeam.map((el) => ({ ...el, hp: el.hp + VALUE_HP })),
+        [!AI ? "enemyTeam" : "myTeam"]: enemyTeam.map((el) => ({
+            ...el,
+            hp: el.hp > 0 ? el.hp + VALUE_HP : 0,
+        })),
     };
 
     return { ...state, ...newStateYourTeam, ...newStateEnemyTeam };

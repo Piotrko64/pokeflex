@@ -121,7 +121,7 @@ export const allTokens: ArrayTokenInterface = [
         badForAI: true,
         icon: <GiBlackHandShield />,
         functionToken: resurrection,
-        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **11hp**",
+        desc: "A copy of the Pokemon that first appeared in the ***grave*** in this fight will appear in your field with **13hp**",
     },
     {
         id: v4(),
