@@ -7,7 +7,7 @@ const VALUE_DEFENSE = 1;
 export default function charging(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
 
-    let thisTeam = AI ? newState.enemyTeam : newState.myTeam;
+    const thisTeam = AI ? newState.enemyTeam : newState.myTeam;
     const strongerElectroPokemonID = [...thisTeam]
         .filter(({ type }) => type === "Electro")
         .sort((a, b) => b.hp - a.hp)[0]?.id;

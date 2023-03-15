@@ -9,10 +9,10 @@ const VALUE_HP = 2;
 export default function blizzard(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState: StateFightInterface = clone(state);
 
-    let thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
+    let thisTeam = AI ? newState.myTeam : newState.enemyTeam;
     thisTeam = thisTeam.filter((el: PokemonInterface) => el.hp > 0);
     const newStateTeam = {
-        [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) => ({
+        [AI ? "myTeam" : "enemyTeam"]: thisTeam.map((el) => ({
             ...el,
             speed: Math.max(0, el.speed - VALUE_SPEED),
             hp: el.hp - VALUE_HP,

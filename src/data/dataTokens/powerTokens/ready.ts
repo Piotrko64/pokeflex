@@ -5,8 +5,7 @@ const VALUE_SPEED = 5;
 
 export function ready(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
-    let thisTeam;
-    thisTeam = AI ? newState.enemyTeam : newState.myTeam;
+    const thisTeam = AI ? newState.enemyTeam : newState.myTeam;
 
     const newStateTeam = {
         [AI ? "enemyTeam" : "myTeam"]: thisTeam

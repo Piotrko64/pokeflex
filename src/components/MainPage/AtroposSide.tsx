@@ -1,5 +1,4 @@
 import Atropos from "atropos/react";
-
 import { useEffect, useState } from "react";
 import { examplePokemons } from "../../data/examplePokemons";
 import { PokemonInterface } from "../../@types/pokemonTokenData/PokemonInterface";

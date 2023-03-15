@@ -8,8 +8,8 @@ const VALUE_REVENGE = 1;
 export default function slow(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
 
-    let yourTeam = AI ? newState.enemyTeam : newState.myTeam;
-    let enemyTeam = !AI ? newState.enemyTeam : newState.myTeam;
+    const yourTeam = AI ? newState.enemyTeam : newState.myTeam;
+    const enemyTeam = AI ? newState.myTeam : newState.enemyTeam;
 
     const newStateYourTeam = {
         [AI ? "enemyTeam" : "myTeam"]: yourTeam.map((el) => ({
@@ -20,7 +20,7 @@ export default function slow(state: StateFightInterface, AI: boolean): StateFigh
         })),
     };
     const newStateEnemyTeam = {
-        [!AI ? "enemyTeam" : "myTeam"]: enemyTeam.map((el) => ({
+        [AI ? "myTeam" : "enemyTeam"]: enemyTeam.map((el) => ({
             ...el,
             hp: el.hp > 0 ? el.hp + VALUE_HP : 0,
         })),

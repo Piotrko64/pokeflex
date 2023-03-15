@@ -2,7 +2,6 @@ import { OneCoordinate } from "../../../@types/_Reducer/StateFight";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { chooseRandomEnemy } from "../../../functions/computerAI/chooseRandomEnemy";
-
 import { useSelectorStateFight } from "../../../_Reducer/selectors/useSelectorStateFight";
 import { animation, computerMove, noWhoAttack, tokenPowerAi } from "../../../_Reducer/StateFight";
 import { PokemonInterface } from "../../../@types/pokemonTokenData/PokemonInterface";

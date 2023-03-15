@@ -6,8 +6,8 @@ export function useDevicesInformation() {
             alert("This game was created for desktop devices!");
         }
 
-        console.log("%cATTENTION!", "color: red; font-size:40px");
-        console.log(
+        console.info("%cATTENTION!", "color: red; font-size:40px");
+        console.info(
             "%cRemember! This game is only for desktop devices (not for small screens or mobile devices).",
             "color: red; font-size:25px"
         );

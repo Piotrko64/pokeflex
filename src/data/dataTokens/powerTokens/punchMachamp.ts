@@ -5,11 +5,10 @@ const VALUE_PUNCH = 30;
 
 export default function punchMachamp(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
-    let thisTeam;
-    thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
+    const thisTeam = AI ? newState.myTeam : newState.enemyTeam;
     const strongestThisTeamID = [...thisTeam].sort((a, b) => b.hp - a.hp)[0].id;
     const newStateTeam = {
-        [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) =>
+        [AI ? "myTeam" : "enemyTeam"]: thisTeam.map((el) =>
             el.id === strongestThisTeamID
                 ? {
                       ...el,
