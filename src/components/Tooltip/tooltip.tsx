@@ -24,9 +24,9 @@ export function Tooltip({ title, desc }: { title: string; desc: string }) {
         <ToolTipComponent>
             <h2>{title}</h2>
             <hr />
-            <p>
+            <div>
                 <ReactMarkdown>{desc}</ReactMarkdown>
-            </p>
+            </div>
         </ToolTipComponent>
     );
 }

@@ -19,7 +19,7 @@ export function addFromLocalStorageFn(state: YourItemsInterface) {
             }
         })
     );
-    localTokens?.forEach((local: String) =>
+    localTokens?.forEach((local: string) =>
         allTokens.forEach((ex) => {
             if (ex.idAward === local && !arrayAllYourTokens.find((el) => el.idAward === ex.idAward)) {
                 arrayAllYourTokens.push(ex);

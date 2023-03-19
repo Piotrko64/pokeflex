@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
 export function useKeyboardGuide(fn: React.Dispatch<React.SetStateAction<boolean>>) {
-    function handleEscape(e: KeyboardEvent) {
-        const { key } = e;
+    function handleEscape(event: KeyboardEvent) {
+        const { key } = event;
         if (key === "Escape") {
             fn(false);
         } else if (key === "p" || key === "q") {

@@ -14,7 +14,12 @@ export function useSoundtrack(music: string, volumeMusic: number) {
     useEffect(() => {
         audio.loop = true;
         audio.volume = volumeMusic;
-        audio.play();
+
+        setTimeout(() => {
+            audio.play().catch(() => {
+                console.warn("Ooops!!! Something is wrong with music!");
+            });
+        }, 400);
         return () => {
             audio.pause();
         };

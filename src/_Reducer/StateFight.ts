@@ -69,8 +69,8 @@ const SliceStateFight = createSlice({
             return stateAfterTokenAI(action.payload[0], action.payload[1]);
         },
         moveToGrave: (state, action) => {
-            let newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
-            let newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
+            const newStateEnemy = [...state.enemyTeam].filter((el) => el.id !== action.payload.id);
+            const newStateFriends = [...state.myTeam].filter((el) => el.id !== action.payload.id);
 
             return {
                 ...state,

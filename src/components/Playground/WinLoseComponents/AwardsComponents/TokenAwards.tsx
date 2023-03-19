@@ -3,6 +3,10 @@ import { useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import { Tooltip } from "../../../Tooltip/tooltip";
 import { OneTokenInterface } from "../../../../@types/pokemonTokenData/TokenInterface";
+import { useDispatch, useSelector } from "react-redux";
+import { AllStateReducer } from "../../../../@types/_Reducer/AllStateReducer";
+import { addFromLocalStorageFn } from "../../../../_Reducer/functionsForReducer/YourItems/addFromLocalStorage";
+import { addItemsFromLocalStorage } from "../../../../_Reducer/YourItems";
 
 const TokenAward = styled.div`
     border-radius: 50%;
@@ -20,6 +24,8 @@ const TokenAward = styled.div`
 `;
 
 function TokenAwards({ token }: { token: OneTokenInterface }) {
+    const dispatch = useDispatch();
+
     useEffect(() => {
         const checkAllTokensAward = JSON.parse(localStorage.getItem("tokensAward")!) || [];
 
@@ -28,14 +34,13 @@ function TokenAwards({ token }: { token: OneTokenInterface }) {
         checkAllTokensAward.push(token.idAward);
 
         localStorage.setItem("tokensAward", JSON.stringify([...new Set(checkAllTokensAward)]));
+        dispatch(addItemsFromLocalStorage());
     }, []);
 
     return (
-        <>
-            <Tippy content={<Tooltip title={token.name} desc={token.desc} />}>
-                <TokenAward> {token.icon} </TokenAward>
-            </Tippy>
-        </>
+        <Tippy content={<Tooltip title={token.name} desc={token.desc} />}>
+            <TokenAward> {token.icon} </TokenAward>
+        </Tippy>
     );
 }
 export default TokenAwards;

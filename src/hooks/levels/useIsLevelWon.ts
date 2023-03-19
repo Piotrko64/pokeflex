@@ -12,5 +12,6 @@ export const useIsLevelWon = (award: AwardsType) => {
 
     const isPokemonAward: boolean = allPokemonsIdAward.some((el) => el === pokemons?.idAward);
     const isTokensAward = allTokensIdAward?.some((el) => el === tokens?.idAward);
-    if (isPokemonAward || isTokensAward) return true;
+
+    return isPokemonAward || isTokensAward;
 };
