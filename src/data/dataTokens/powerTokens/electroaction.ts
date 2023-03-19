@@ -25,30 +25,29 @@ export default function electroAction(state: StateFightInterface, AI: boolean): 
         }
 
         const powerfulEnemyIndex = newState.myTeam.findIndex((el) => el.id === thisEnemy.id);
-        let myTeam = newState.myTeam;
+        const myTeam = newState.myTeam;
         myTeam[powerfulEnemyIndex] = { ...thisEnemy, hp: thisEnemy.hp - thisAttack };
 
         return { ...state, myTeam };
-    } else {
-        const newStateEnemyTeam = [...newState.enemyTeam];
-        let thisEnemy: PokemonInterface;
-        let thisAttack: number;
-        if (newState.myTeam.find(({ type }) => type === "Electro" || type === "Turbo Electro")) {
-            thisEnemy = newStateEnemyTeam.sort((a, b) => {
-                return b.hp - a.hp;
-            })[0];
-            thisAttack = STRONGER_ATTACK;
-        } else {
-            thisEnemy = newStateEnemyTeam.sort((a, b) => {
-                return b.hp - a.hp;
-            })[newStateEnemyTeam.length - 1];
-            thisAttack = SMALL_ATTACK;
-        }
-
-        const powerfulEnemyIndex = newState.enemyTeam.findIndex((el) => el.id === thisEnemy.id);
-        let enemyTeam = newState.enemyTeam;
-        enemyTeam[powerfulEnemyIndex] = { ...thisEnemy, hp: thisEnemy.hp - thisAttack };
-
-        return { ...state, enemyTeam };
     }
+    const newStateEnemyTeam = [...newState.enemyTeam];
+    let thisEnemy: PokemonInterface;
+    let thisAttack: number;
+    if (newState.myTeam.find(({ type }) => type === "Electro" || type === "Turbo Electro")) {
+        thisEnemy = newStateEnemyTeam.sort((a, b) => {
+            return b.hp - a.hp;
+        })[0];
+        thisAttack = STRONGER_ATTACK;
+    } else {
+        thisEnemy = newStateEnemyTeam.sort((a, b) => {
+            return b.hp - a.hp;
+        })[newStateEnemyTeam.length - 1];
+        thisAttack = SMALL_ATTACK;
+    }
+
+    const powerfulEnemyIndex = newState.enemyTeam.findIndex((el) => el.id === thisEnemy.id);
+    const enemyTeam = newState.enemyTeam;
+    enemyTeam[powerfulEnemyIndex] = { ...thisEnemy, hp: thisEnemy.hp - thisAttack };
+
+    return { ...state, enemyTeam };
 }

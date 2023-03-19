@@ -6,12 +6,11 @@ const VALUE_PUNCH = 14;
 
 export default function punch(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
-    let thisTeam: ArrayPokemonInterface;
-    thisTeam = !AI ? newState.enemyTeam : newState.myTeam;
+    const thisTeam: ArrayPokemonInterface = AI ? newState.myTeam : newState.enemyTeam;
     const lengthTeamMinusOne: number = thisTeam.length - 1;
     const randomThisTeam = Math.round(Math.random() * lengthTeamMinusOne);
     const newStateTeam = {
-        [!AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el, i) =>
+        [AI ? "myTeam" : "enemyTeam"]: thisTeam.map((el, i) =>
             i === randomThisTeam
                 ? {
                       ...el,

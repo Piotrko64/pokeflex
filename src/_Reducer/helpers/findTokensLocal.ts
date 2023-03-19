@@ -8,7 +8,7 @@ export function findTokensLocal() {
         (e: { name: string }) => e.name
     );
 
-    let arrayTokens: ArrayTokenInterface = [];
+    const arrayTokens: ArrayTokenInterface = [];
 
     idTokens?.forEach((el) => {
         arrayTokens.push(allTokens.find((t: OneTokenInterface) => t.name === el)!);

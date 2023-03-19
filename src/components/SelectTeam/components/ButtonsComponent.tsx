@@ -22,7 +22,7 @@ const Button = styled.button`
     min-width: 100px;
 `;
 const ButtonsComponent = () => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const { teamFight, tokensFight } = useSelectorYourItems();
 
     function saveInLocalStorage() {

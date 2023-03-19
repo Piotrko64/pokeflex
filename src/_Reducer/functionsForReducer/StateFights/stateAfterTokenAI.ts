@@ -3,6 +3,10 @@ import tokenSound from "../../../Audio/tokens/Token2.wav";
 import { audioPlay } from "../../../functions/audioPlay";
 
 export function stateAfterTokenAI(stateFight: StateFightInterface, id: string) {
+    if (stateFight.enemyTeam.length === 0 || stateFight.myTeam.length === 0) {
+        return stateFight;
+    }
+
     const newStateTokens = [...stateFight.enemyTokens].filter((el) => el.id !== id);
     audioPlay(tokenSound);
     return {

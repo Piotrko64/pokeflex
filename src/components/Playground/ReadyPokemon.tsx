@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { CardPokemon } from "../CardPokemon/CardPokemon";
-
 import { useDispatch } from "react-redux";
-
 import { motion } from "framer-motion";
-
 import blockSound from "../../Audio/actions/blockAction.wav";
 import ListAnimHP from "../animOneStatComponents/ListAnimHp";
 import { audioPlay } from "../../functions/audioPlay";
@@ -46,9 +43,9 @@ export function ReadyPokemon({ value }: { value: PokemonInterface }) {
             const { x, y } = pokemonRef.current?.getBoundingClientRect()!;
 
             dispatch(animation([x, y]));
-        } else {
-            audioPlay(blockSound);
+            return;
         }
+        audioPlay(blockSound);
     }
 
     useEffect(() => {
@@ -56,7 +53,7 @@ export function ReadyPokemon({ value }: { value: PokemonInterface }) {
 
         const newHpChange = -(hpChange - hp);
 
-        newHpChange && setArrayHp((el) => [...el, newHpChange]);
+        if (newHpChange) setArrayHp((el) => [...el, newHpChange]);
 
         setHpChange(value.hp);
 

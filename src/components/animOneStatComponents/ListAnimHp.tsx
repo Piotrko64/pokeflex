@@ -1,12 +1,6 @@
 import { AnimHP } from "./AnimHp";
 
-function ListAnimHP({
-    listHp = [],
-    deleteHpChange,
-}: {
-    listHp: Array<number>;
-    deleteHpChange: () => void;
-}): any {
+function ListAnimHP({ listHp = [], deleteHpChange }: { listHp: Array<number>; deleteHpChange: () => void }) {
     return (
         <>
             {listHp.map((el) => (

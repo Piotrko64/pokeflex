@@ -80,79 +80,77 @@ export function Stats({ value, versionMini }: { value: PokemonInterface; version
     const { name, type, hp, attack, specialAttack, defense, revenge, speed } = value;
 
     return (
-        <>
-            <TableWithAll>
-                <ImportantStat versionMini={versionMini}>{name}</ImportantStat>
-                <GridStats>
-                    <div data-atropos-offset="3">
-                        <OneStat isOdd hp={hp}>
-                            {hp}
-                            <BsFillHeartFill />
-                        </OneStat>
-                    </div>
-                    <div data-atropos-offset="3">
-                        <OneStat df={defense}>
-                            {defense} <BsFillShieldFill />
-                        </OneStat>
-                    </div>
-                    <div data-atropos-offset="3">
-                        <OneStat isOdd>
-                            {attack}
-                            <GiBroadsword />
-                        </OneStat>
-                    </div>
-                    <div data-atropos-offset="3">
-                        <OneStat hpLessThanSpeed={hp <= speed}>
-                            {specialAttack}
-                            <GiZeusSword />
-                        </OneStat>
-                    </div>
-                    <div data-atropos-offset="3">
-                        <OneStat isOdd isLastTwo rv={revenge}>
-                            {revenge}
-                            <GiSpikes />
-                        </OneStat>
-                    </div>
-                    <div data-atropos-offset="3">
-                        <OneStat isLastTwo>
-                            {speed}
-                            <RiSpeedFill />
-                        </OneStat>
-                    </div>
-                </GridStats>
-                <ImportantStat versionMini={versionMini}>
-                    {(() => {
-                        switch (type) {
-                            case "Electro":
-                                return <Electro>{type}</Electro>;
-                            case "Turbo Electro":
-                                return <TurboElectro>{type}</TurboElectro>;
-                            case "Fire":
-                                return <Fire>{type}</Fire>;
-                            case "Turbo Fire":
-                                return <TurboFire>{type}</TurboFire>;
-                            case "Grass":
-                                return <Grass>{type}</Grass>;
-                            case "Water":
-                                return <Water>{type}</Water>;
-                            case "Psychic":
-                                return <Psychic>{type}</Psychic>;
-                            case "Normal":
-                                return <Normal>{type}</Normal>;
-                            case "Rock":
-                                return <Rock>{type}</Rock>;
-                            case "Ice":
-                                return <Ice>{type}</Ice>;
-                            case "Flying":
-                                return <Flying>{type}</Flying>;
-                            case "Blocked":
-                                return <Blocked>Blocked</Blocked>;
-                            default:
-                                return <Normal>Normal</Normal>;
-                        }
-                    })()}
-                </ImportantStat>
-            </TableWithAll>
-        </>
+        <TableWithAll>
+            <ImportantStat versionMini={versionMini}>{name}</ImportantStat>
+            <GridStats>
+                <div data-atropos-offset="3">
+                    <OneStat isOdd hp={hp}>
+                        {hp}
+                        <BsFillHeartFill />
+                    </OneStat>
+                </div>
+                <div data-atropos-offset="3">
+                    <OneStat df={defense}>
+                        {defense} <BsFillShieldFill />
+                    </OneStat>
+                </div>
+                <div data-atropos-offset="3">
+                    <OneStat isOdd>
+                        {attack}
+                        <GiBroadsword />
+                    </OneStat>
+                </div>
+                <div data-atropos-offset="3">
+                    <OneStat hpLessThanSpeed={hp <= speed}>
+                        {specialAttack}
+                        <GiZeusSword />
+                    </OneStat>
+                </div>
+                <div data-atropos-offset="3">
+                    <OneStat isOdd isLastTwo rv={revenge}>
+                        {revenge}
+                        <GiSpikes />
+                    </OneStat>
+                </div>
+                <div data-atropos-offset="3">
+                    <OneStat isLastTwo>
+                        {speed}
+                        <RiSpeedFill />
+                    </OneStat>
+                </div>
+            </GridStats>
+            <ImportantStat versionMini={versionMini}>
+                {(() => {
+                    switch (type) {
+                        case "Electro":
+                            return <Electro>{type}</Electro>;
+                        case "Turbo Electro":
+                            return <TurboElectro>{type}</TurboElectro>;
+                        case "Fire":
+                            return <Fire>{type}</Fire>;
+                        case "Turbo Fire":
+                            return <TurboFire>{type}</TurboFire>;
+                        case "Grass":
+                            return <Grass>{type}</Grass>;
+                        case "Water":
+                            return <Water>{type}</Water>;
+                        case "Psychic":
+                            return <Psychic>{type}</Psychic>;
+                        case "Normal":
+                            return <Normal>{type}</Normal>;
+                        case "Rock":
+                            return <Rock>{type}</Rock>;
+                        case "Ice":
+                            return <Ice>{type}</Ice>;
+                        case "Flying":
+                            return <Flying>{type}</Flying>;
+                        case "Blocked":
+                            return <Blocked>Blocked</Blocked>;
+                        default:
+                            return <Normal>Normal</Normal>;
+                    }
+                })()}
+            </ImportantStat>
+        </TableWithAll>
     );
 }

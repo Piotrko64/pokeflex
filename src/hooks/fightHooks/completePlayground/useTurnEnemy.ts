@@ -36,7 +36,10 @@ export const useTurnEnemy = () => {
     useEffect(() => {
         if (!yourTurn) {
             setTimeout(() => {
-                if (!enemyTeam.some((e: PokemonInterface) => e.hp > 0)) {
+                if (
+                    !enemyTeam.some((e: PokemonInterface) => e.hp > 0) ||
+                    !myTeam.some((e: PokemonInterface) => e.hp > 0)
+                ) {
                     return;
                 }
                 if (enemyTokens.length > 0 && Math.round(Math.random() * 5) + 1 > 3) {
@@ -44,7 +47,9 @@ export const useTurnEnemy = () => {
                     const randomToken = enemyTokens[randomNumberTokens];
 
                     dispatch(tokenPowerAi([randomToken.functionToken(all, true), randomToken.id]));
-                } else if (chooseRandomEnemy(myTeam, enemyTeam)[1]) {
+                    return;
+                }
+                if (chooseRandomEnemy(myTeam, enemyTeam)[1]) {
                     setTimeout(() => handleMoveComputer(chooseRandomEnemy(myTeam, enemyTeam)[1]), 400);
                 } else {
                     handleMoveComputer(myTeam[0].id!);

@@ -6,8 +6,8 @@ const VALUE_REVENGE = 3;
 
 export default function highGrass(state: StateFightInterface, AI: boolean): StateFightInterface {
     const newState = clone(state);
-    let thisTeam;
-    thisTeam = AI ? newState.enemyTeam : newState.myTeam;
+
+    const thisTeam = AI ? newState.enemyTeam : newState.myTeam;
     const newStateTeam = {
         [AI ? "enemyTeam" : "myTeam"]: thisTeam.map((el) =>
             el.type === "Grass"

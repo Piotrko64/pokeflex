@@ -79,7 +79,6 @@ export function chooseAndFight(
                 Enemy.hp = Math.max(0, Enemy.hp - Me.specialAttack);
             }
 
-            // TYPE
             if (Enemy.defense === 0) {
                 switch (Me.type) {
                     case "Electro":

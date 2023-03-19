@@ -62,13 +62,13 @@ export function ItemToken({
                 layout
                 animate={{ opacity: 1 }}
                 exit={
-                    !noBattle
-                        ? {
+                    noBattle
+                        ? {}
+                        : {
                               y: -50,
                               opacity: 0,
                               scale: 2,
                           }
-                        : {}
                 }
                 transition={{ duration: 0.5 }}
                 initial={{ opacity: 1 }}

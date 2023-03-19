@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 export function useSoundtrack(music: string, volumeMusic: number) {
     const [audio, setAudio] = useState<HTMLAudioElement>(new Audio(music));
 
-    function changeAudio(e: string) {
-        setAudio(new Audio(e));
+    function changeAudio(nameAudio: string) {
+        setAudio(new Audio(nameAudio));
     }
 
     useEffect(() => {
@@ -15,11 +15,10 @@ export function useSoundtrack(music: string, volumeMusic: number) {
         audio.loop = true;
         audio.volume = volumeMusic;
 
-        setTimeout(() => {
-            audio.play().catch(() => {
-                console.warn("Ooops!!! Something is wrong with music!");
-            });
-        }, 400);
+        audio.play().catch(() => {
+            console.warn("Ooops!!! Something is wrong with music!");
+        });
+
         return () => {
             audio.pause();
         };
