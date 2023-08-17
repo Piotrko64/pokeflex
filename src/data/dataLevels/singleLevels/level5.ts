@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { allTokens, findTokenByName } from "../../dataTokens/allTokens";
+import { findTokenByName } from "../../dataTokens/allTokens";
 
 import Tribe from "../../../Audio/mainSoundtracks/Tribe.mp3";
 
